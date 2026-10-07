@@ -1,0 +1,21 @@
+{
+  "failure": null,
+  "checks": [
+    "fresh_schema_creation",
+    "foreign_key_enforcement_enabled",
+    "second_startup_schema_preserves_document_and_category_rows"
+  ],
+  "documents": 10,
+  "categories": [
+    [
+      "141fe6aa-a5f6-4293-96c0-d93968858f93",
+      "M3验收-B-a247c055"
+    ],
+    [
+      "8677f2af-a496-4f28-8078-f7c62f6db8f9",
+      "M3验收-规范-a247c055"
+    ]
+  ],
+  "total_seconds": 0.06,
+  "scope": "database reopen only; no container restart proof"
+}

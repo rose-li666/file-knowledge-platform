@@ -70,7 +70,7 @@
 
 - 旧失败证据 `m2-docker/20261007T132049Z-d269f4` 保留：GBK 无法输出 Vite 的 U+2713，嵌套 runner 退出 1，构建子步骤 exit_code=None，不能当作应用构建失败或成功。
 - scripts/utf8_logs.py 固定当前 Python 的 stdout/stderr 为 UTF-8，为子进程继承 UTF-8 环境变量；各 runner 的 subprocess 明确按 UTF-8 解码，日志按 UTF-8 写入，不改变系统或执行策略。Dockerfile 在模型下载前同时复制此共享模块。
-- 强制初始 PYTHONIOENCODING=gbk/PYTHONUTF8=0，执行修复并启动嵌套 Python，实际输出 ✓ 中文，退出码 0，无 stderr。证据见 docs/evidence/m2/encoding-results.json。该脚本修复于本次在 Windows 本地验证，下一次 M3 构建将包含修复；不伪造此前容器运行已包含此改动。
+- 强制初始 PYTHONIOENCODING=gbk/PYTHONUTF8=0，执行修复并启动嵌套 Python，实际输出 ✓ 中文，退出码 0，无 stderr。证据见 docs/evidence/m2/encoding-results.json。M2 此前成功的容器运行不包含该修复；后续 M3 构建 `m3-docker/20261007T143120Z-c8948b` 已包含修复，构建/启动及容器校验退出码均为 0，未再发生 GBK 编码异常。
 
 ## 已知边界
 - 下载是原始字节；PDF 仅做文件头检查，未实现预览或全文提取。TXT/Markdown 不改变编码，正文索引后续建立。

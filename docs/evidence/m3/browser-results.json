@@ -1,0 +1,32 @@
+{
+  "verified_utc": "2026-10-07T14:45:18.074475+00:00",
+  "url": "http://127.0.0.1:8000/",
+  "failure": null,
+  "category_id": "d1988f99-f6c3-4e6a-9557-b6b60737895a",
+  "checks": [
+    "create_and_rename_category_visible",
+    "move_pdf_to_renamed_category",
+    "full_page_refresh_preserves_category_and_filter",
+    "archive_excluded_from_category_list_after_refresh",
+    "default_library_count_changes_11_to_10_and_pdf_absent",
+    "archive_zone_and_category_filter_preserved_after_full_refresh",
+    "restore_returns_pdf_to_same_category_after_full_refresh",
+    "empty_name_and_duplicate_name_show_clear_ui_errors",
+    "browser_download_saved_file_matches_zip_bytes_and_sha256"
+  ],
+  "download": {
+    "name": "04_星桥项目_需求与范围_v1.0.pdf",
+    "saved_path": "C:\\Users\\lenovo\\Downloads\\04_星桥项目_需求与范围_v1.0.pdf",
+    "size_bytes": 186886,
+    "modified_utc": "2026-10-07T14:42:39.887253+00:00",
+    "original_sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+    "saved_sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+    "equal": true
+  },
+  "download_event_api": "Timed out after 15 seconds; actual saved file was independently found and hashed. This timeout was not counted as an event API pass.",
+  "screenshots": [
+    "m3-browser-archive.png",
+    "m3-browser-restored.png"
+  ],
+  "scope": "Native browser AX interactions and actual saved download; no container recreation or mobile layout proof"
+}

@@ -1,0 +1,198 @@
+{
+  "checks": [
+    {
+      "check": "existing_original_files_download_unchanged",
+      "passed": true,
+      "count": 10
+    },
+    {
+      "check": "create_flat_categories",
+      "passed": true
+    },
+    {
+      "check": "duplicate_and_invalid_category_feedback",
+      "passed": true
+    },
+    {
+      "check": "move_documents_and_combined_category_filters",
+      "passed": true
+    },
+    {
+      "check": "rename_reflected_in_detail_and_list_and_conflict_preserves_name",
+      "passed": true
+    },
+    {
+      "check": "move_refresh_preserves_new_category",
+      "passed": true
+    },
+    {
+      "check": "default_and_category_lists_exclude_archive_while_archive_zone_includes_it",
+      "passed": true
+    },
+    {
+      "check": "independent_disk_read_preserves_archived_state_and_category",
+      "passed": true
+    },
+    {
+      "check": "fresh_requests_preserve_archive_and_category_counts",
+      "passed": true
+    },
+    {
+      "check": "archived_document_still_downloads_original_bytes",
+      "passed": true
+    },
+    {
+      "check": "restore_refresh_returns_to_category_and_download_sha256_matches",
+      "passed": true
+    },
+    {
+      "check": "move_to_unclassified_and_filter",
+      "passed": true
+    },
+    {
+      "check": "invalid_targets_and_filters_return_clear_errors_without_changing_assignment",
+      "passed": true
+    },
+    {
+      "check": "schema_upgrade_preserves_all_existing_ids_and_hashes",
+      "passed": true,
+      "existing": 10
+    }
+  ],
+  "original_files": [
+    {
+      "id": "ba491df8-383f-4c7b-b478-55665cdb889b",
+      "name": "01_代码提交规范_v2.1.md",
+      "sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+      "equal": true
+    },
+    {
+      "id": "22019d12-afc0-44db-bbf2-1b0b07d69f02",
+      "name": "02_发布检查清单_v1.4.md",
+      "sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+      "equal": true
+    },
+    {
+      "id": "b5f4e7ca-40ac-4b39-b0fa-7c83be83eb31",
+      "name": "03_文件服务接口约定_v1.2.md",
+      "sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+      "equal": true
+    },
+    {
+      "id": "48791199-c989-4741-8b49-0c8cb34d8ce2",
+      "name": "04_星桥项目_需求与范围_v1.0.pdf",
+      "sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+      "equal": true
+    },
+    {
+      "id": "f5340215-2ed6-4cf6-ae0c-783b74b827a2",
+      "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+      "sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+      "equal": true
+    },
+    {
+      "id": "0c3932af-cdc7-42d8-be4b-fdcdda7f86e5",
+      "name": "06_星桥项目_故障复盘_2026-09-21.md",
+      "sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+      "equal": true
+    },
+    {
+      "id": "ff7c5efc-c681-428a-9919-73cf72194a8c",
+      "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+      "sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+      "equal": true
+    },
+    {
+      "id": "a23be543-26f1-4110-aa07-c4e3eeb57f19",
+      "name": "08_检索技术说明_关键词与语义_v1.0.pdf",
+      "sha256": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+      "equal": true
+    },
+    {
+      "id": "55e29de1-4519-4b36-aaec-39f69b72f5e1",
+      "name": "09_本地部署故障排查_v1.3.txt",
+      "sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+      "equal": true
+    },
+    {
+      "id": "95ebfb98-11a9-4e7d-b885-d83a63c969a6",
+      "name": "10_文档分类与归档规范_v1.0.pdf",
+      "sha256": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+      "equal": true
+    }
+  ],
+  "failure": null,
+  "browser_refresh": "not proved by API script; separate browser verification required",
+  "database_before_startup": {
+    "exists": true,
+    "version": 0,
+    "columns": [
+      "id",
+      "name",
+      "extension",
+      "media_type",
+      "size_bytes",
+      "sha256",
+      "storage_key",
+      "uploaded_at",
+      "text_status",
+      "vector_status"
+    ],
+    "hashes_by_id": {
+      "ba491df8-383f-4c7b-b478-55665cdb889b": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+      "22019d12-afc0-44db-bbf2-1b0b07d69f02": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+      "b5f4e7ca-40ac-4b39-b0fa-7c83be83eb31": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+      "48791199-c989-4741-8b49-0c8cb34d8ce2": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+      "f5340215-2ed6-4cf6-ae0c-783b74b827a2": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+      "0c3932af-cdc7-42d8-be4b-fdcdda7f86e5": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+      "ff7c5efc-c681-428a-9919-73cf72194a8c": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+      "a23be543-26f1-4110-aa07-c4e3eeb57f19": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+      "55e29de1-4519-4b36-aaec-39f69b72f5e1": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+      "95ebfb98-11a9-4e7d-b885-d83a63c969a6": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695"
+    }
+  },
+  "transport": "in-process ASGI TestClient; not TCP/browser proof",
+  "categories": {
+    "a": "8677f2af-a496-4f28-8078-f7c62f6db8f9",
+    "b": "141fe6aa-a5f6-4293-96c0-d93968858f93"
+  },
+  "document_id": "48791199-c989-4741-8b49-0c8cb34d8ce2",
+  "restored_download": {
+    "id": "48791199-c989-4741-8b49-0c8cb34d8ce2",
+    "http": 200,
+    "original_sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+    "download_sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+    "equal": true
+  },
+  "database_after": {
+    "exists": true,
+    "version": 1,
+    "columns": [
+      "id",
+      "name",
+      "extension",
+      "media_type",
+      "size_bytes",
+      "sha256",
+      "storage_key",
+      "uploaded_at",
+      "text_status",
+      "vector_status",
+      "category_id",
+      "archived_at"
+    ],
+    "hashes_by_id": {
+      "ba491df8-383f-4c7b-b478-55665cdb889b": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+      "22019d12-afc0-44db-bbf2-1b0b07d69f02": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+      "b5f4e7ca-40ac-4b39-b0fa-7c83be83eb31": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+      "48791199-c989-4741-8b49-0c8cb34d8ce2": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+      "f5340215-2ed6-4cf6-ae0c-783b74b827a2": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+      "0c3932af-cdc7-42d8-be4b-fdcdda7f86e5": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+      "ff7c5efc-c681-428a-9919-73cf72194a8c": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+      "a23be543-26f1-4110-aa07-c4e3eeb57f19": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+      "55e29de1-4519-4b36-aaec-39f69b72f5e1": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+      "95ebfb98-11a9-4e7d-b885-d83a63c969a6": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695"
+    }
+  },
+  "total_seconds": 21.372
+}

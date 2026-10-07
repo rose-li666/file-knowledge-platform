@@ -1,0 +1,57 @@
+{
+  "failure": null,
+  "comparison": "M2 saved container file IDs/hashes versus M3 live database snapshot",
+  "files": [
+    {
+      "id": "d03c2ed3-0fd5-4c39-bfd6-4cd62b5d5266",
+      "sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+      "preserved": true
+    },
+    {
+      "id": "a2c82a7a-a63e-4d39-a13f-7ca3d54ce4c4",
+      "sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+      "preserved": true
+    },
+    {
+      "id": "e2072d67-369e-4cf8-beb6-b5ac6be4a08e",
+      "sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+      "preserved": true
+    },
+    {
+      "id": "a1e60c47-6363-4e4c-8d9a-1d5c5cf3a49f",
+      "sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+      "preserved": true
+    },
+    {
+      "id": "5d31ceb1-0b87-480f-962c-68cae9f87bf0",
+      "sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+      "preserved": true
+    },
+    {
+      "id": "bac4af28-2f90-4d53-af61-0a2ec7c600b0",
+      "sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+      "preserved": true
+    },
+    {
+      "id": "9f25565b-40df-4dd4-b39c-539b095432cf",
+      "sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+      "preserved": true
+    },
+    {
+      "id": "7c9891d4-bb4a-4e5f-abf4-154d0e3be143",
+      "sha256": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+      "preserved": true
+    },
+    {
+      "id": "bb86d30f-2a90-4c01-9a01-bbc666c84bca",
+      "sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+      "preserved": true
+    },
+    {
+      "id": "bef4d836-8636-41de-8eca-789bb2011aac",
+      "sha256": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+      "preserved": true
+    }
+  ],
+  "count": 10
+}

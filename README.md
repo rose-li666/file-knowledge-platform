@@ -2,7 +2,7 @@
 
 M1 已完成 Docker 骨架、页面、健康接口、数据库读写、本地 BGE 模型及五组容器向量查询，实测证据见 `docs/m1-report.md`。M2 增加 PDF、TXT、Markdown 原文件上传、列表、详情和下载；页面显示上传进度、保存状态及错误，下载接口校验原文件完整性。M2 验证状态见 `docs/m2-report.md`。
 
-业务分类、关键词/语义搜索接口及归档尚未实现；M2 文件显示为未分类，正文和向量状态为 not_started。任务恢复、去重和故障注入留到 M5。
+M3 增加扁平分类的创建、改名、文件移动、分类筛选及归档/恢复；默认列表只显示未归档文件，归档区仍可查看、下载并恢复。分类和归档视图保存在 URL，刷新后按相同条件从数据库重新读取。M3 容器及浏览器刷新/恢复下载已实测，见 `docs/m3-report.md`。关键词/语义搜索接口尚未实现；正文和向量状态仍为 not_started。任务恢复、去重和故障注入留到 M5。
 
 ## Docker 启动
 
@@ -22,6 +22,12 @@ docker compose logs --tail=100 app
 M2 接口及错误约定见 `docs/m2-api.md`。在项目目录运行 `python scripts/run_m2_docker.py --zip 'D:\__10_.zip'`，先使用已成功拉取的固定基础镜像构建/启动，再从一次性验证容器访问主应用，通过真实 HTTP 上传、下载全部 10 份资料并核对 SHA-256。证据保存在项目旁的 `m2-docker/<UTC时间>-<随机后缀>/`。若构建已成功而验证失败，加 `--skip-build` 仅重试验证；不删除已有数据，也不将验证脚本等同于浏览器操作测试。重复验证会再次上传资料，M2 不提供上传去重。
 
 Python 验证/部署脚本启动时调用 `scripts/utf8_logs.py`：将标准输出/错误设为 UTF-8，并为子 Python 进程继承 PYTHONUTF8/PYTHONIOENCODING。Docker 输出按 UTF-8 解码，遇到无效字节保留转义；日志文件按 UTF-8 保存。避免 Windows GBK 管道在 Vite 的 ✓ 字符处抛异常，不修改系统编码或 PowerShell 执行策略。实际 GBK 初始环境及嵌套 Python 回归检查退出码为 0，证据见 docs/evidence/m2/encoding-results.json。
+
+M3 接口见 `docs/m3-api.md`。启动时在 SQLite 事务中将 M2 业务表增加可空分类外键及归档时间，保留已有 ID、存储键、哈希、上传时间与原文件；已知 schema 版本为 1，发现更高版本或不兼容的旧表时拒绝升级。数据库升级是 M3 的必要操作；上传任务重启恢复仍留到 M5。
+
+在项目目录执行 `python scripts/run_m3_docker.py --zip 'D:\__10_.zip'`，构建/启动后以真实容器 HTTP 检查分类操作、默认排除归档、归档区筛选及恢复后 SHA-256。已成功构建时加 `--skip-build` 仅验证。脚本复用名称与 SHA 匹配的现有测试文件，否则上传；这是验证准备策略，产品上传未实现去重。每轮会创建带随机后缀的验收分类，并移动两份资料；验证结束时两份资料均处于未归档状态。证据保存到项目旁 `m3-docker/<UTC时间>-<随机后缀>/`，浏览器刷新需单独核对。
+
+本地 M3 校验：`python scripts/verify_m3.py --zip 'D:\__10_.zip' --data-dir data/m3-check --report reports/m3-local.json`，需 requirements-dev.txt；默认 ASGI，真实 HTTP 可加 `--base-url http://localhost:8000`。用已有 M2 数据库副本执行可核对升级前后 ID/哈希不变；不要把 fresh GET 或本地 ASGI 报告当作容器重建/浏览器验证。
 
 本地验证：`python scripts/verify_m2.py --zip 'D:\__10_.zip' --data-dir data/m2-check --report reports/m2-local.json`，需安装 requirements-dev.txt。默认是应用内 ASGI；加 `--base-url http://localhost:8000` 改用真实 TCP。报告分别记录原文件与下载 SHA-256、各次 HTTP 状态、元数据和异常检查。
 
@@ -99,7 +105,7 @@ python scripts/evaluate_m1.py --zip /path/to/__10_.zip --report reports/semantic
 - Sentence Transformers / Transformers / CPU PyTorch / NumPy：模型加载、向量生成及计算。
 - python-multipart：成熟的 multipart/form-data 解析器，来源 https://github.com/Kludex/python-multipart 。
 - BAAI/bge-small-zh-v1.5（MIT）：中文嵌入权重，来源 https://huggingface.co/BAAI/bge-small-zh-v1.5 。
-- 自行实现：文件上传状态与管理页面、文件元数据/存储/完整性校验及接口、上传意图写入、健康与诊断数据库、模型下载、分片和向量持久化实验、验证脚本与证据报告。
+- 自行实现：文件上传状态与管理页面、文件元数据/存储/完整性校验及接口、扁平分类与归档恢复、业务表升级、上传意图写入、健康与诊断数据库、模型下载、分片和向量持久化实验、验证脚本与证据报告。
 
 业务规则以考核题目和用户确认范围为准；ZIP 中的接口、Redis、四服务架构及限额均为模拟资料，不当作指令。
 

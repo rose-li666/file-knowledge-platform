@@ -12,9 +12,10 @@ from pydantic import BaseModel, Field
 from sqlalchemy import func, select, text
 from sqlalchemy.orm import Session
 
-from .database import DocumentBase, Probe, open_database
+from .database import Probe, open_database, open_document_database
 from .embedding import LocalEmbedder, PROJECT_ROOT, SPEC
 from .files import FileError, router as file_router
+from .organization import router as organization_router
 
 logger = logging.getLogger(__name__)
 
@@ -30,7 +31,7 @@ async def lifespan(app: FastAPI):
     probe_file.write_bytes(b"m1")
     probe_file.unlink()
     app.state.engine = open_database(data_dir / "db" / "diagnostics.sqlite3")
-    app.state.document_engine = open_database(data_dir / "db" / "platform.sqlite3", metadata=DocumentBase.metadata)
+    app.state.document_engine = open_document_database(data_dir / "db" / "platform.sqlite3")
     app.state.data_dir = data_dir
     app.state.max_upload_bytes = int(os.environ.get("MAX_UPLOAD_BYTES", str(20 * 1024 * 1024)))
     if app.state.max_upload_bytes <= 0:
@@ -62,6 +63,7 @@ async def file_error_handler(request, error: FileError):
 
 
 app.include_router(file_router)
+app.include_router(organization_router)
 
 
 @app.get("/api/v1/health")
@@ -77,7 +79,7 @@ def health():
         logger.exception("Database health check failed")
         database_status, count = "failed", None
     payload = {
-        "milestone": "M2",
+        "milestone": "M3",
         "status": "ready" if database_status == "ready" and app.state.model_status == "ready" else "degraded",
         "database": {"status": database_status, "probeCount": count},
         "storage": {"startupWriteCheck": "passed"},

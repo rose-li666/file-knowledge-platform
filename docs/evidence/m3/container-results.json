@@ -1,0 +1,191 @@
+{
+  "checks": [
+    {
+      "check": "existing_original_files_download_unchanged",
+      "passed": true,
+      "count": 10
+    },
+    {
+      "check": "create_flat_categories",
+      "passed": true
+    },
+    {
+      "check": "duplicate_and_invalid_category_feedback",
+      "passed": true
+    },
+    {
+      "check": "move_documents_and_combined_category_filters",
+      "passed": true
+    },
+    {
+      "check": "rename_reflected_in_detail_and_list_and_conflict_preserves_name",
+      "passed": true
+    },
+    {
+      "check": "move_refresh_preserves_new_category",
+      "passed": true
+    },
+    {
+      "check": "default_and_category_lists_exclude_archive_while_archive_zone_includes_it",
+      "passed": true
+    },
+    {
+      "check": "independent_disk_read_preserves_archived_state_and_category",
+      "passed": true
+    },
+    {
+      "check": "fresh_requests_preserve_archive_and_category_counts",
+      "passed": true
+    },
+    {
+      "check": "archived_document_still_downloads_original_bytes",
+      "passed": true
+    },
+    {
+      "check": "restore_refresh_returns_to_category_and_download_sha256_matches",
+      "passed": true
+    },
+    {
+      "check": "move_to_unclassified_and_filter",
+      "passed": true
+    },
+    {
+      "check": "invalid_targets_and_filters_return_clear_errors_without_changing_assignment",
+      "passed": true
+    },
+    {
+      "check": "schema_upgrade_preserves_all_existing_ids_and_hashes",
+      "passed": true,
+      "existing": 0
+    }
+  ],
+  "original_files": [
+    {
+      "id": "d03c2ed3-0fd5-4c39-bfd6-4cd62b5d5266",
+      "name": "01_代码提交规范_v2.1.md",
+      "sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+      "equal": true
+    },
+    {
+      "id": "a2c82a7a-a63e-4d39-a13f-7ca3d54ce4c4",
+      "name": "02_发布检查清单_v1.4.md",
+      "sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+      "equal": true
+    },
+    {
+      "id": "e2072d67-369e-4cf8-beb6-b5ac6be4a08e",
+      "name": "03_文件服务接口约定_v1.2.md",
+      "sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+      "equal": true
+    },
+    {
+      "id": "a1e60c47-6363-4e4c-8d9a-1d5c5cf3a49f",
+      "name": "04_星桥项目_需求与范围_v1.0.pdf",
+      "sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+      "equal": true
+    },
+    {
+      "id": "5d31ceb1-0b87-480f-962c-68cae9f87bf0",
+      "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+      "sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+      "equal": true
+    },
+    {
+      "id": "bac4af28-2f90-4d53-af61-0a2ec7c600b0",
+      "name": "06_星桥项目_故障复盘_2026-09-21.md",
+      "sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+      "equal": true
+    },
+    {
+      "id": "9f25565b-40df-4dd4-b39c-539b095432cf",
+      "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+      "sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+      "equal": true
+    },
+    {
+      "id": "7c9891d4-bb4a-4e5f-abf4-154d0e3be143",
+      "name": "08_检索技术说明_关键词与语义_v1.0.pdf",
+      "sha256": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+      "equal": true
+    },
+    {
+      "id": "bb86d30f-2a90-4c01-9a01-bbc666c84bca",
+      "name": "09_本地部署故障排查_v1.3.txt",
+      "sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+      "equal": true
+    },
+    {
+      "id": "bef4d836-8636-41de-8eca-789bb2011aac",
+      "name": "10_文档分类与归档规范_v1.0.pdf",
+      "sha256": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+      "equal": true
+    }
+  ],
+  "failure": null,
+  "browser_refresh": "not proved by API script; separate browser verification required",
+  "transport": "real TCP HTTP http://app:8000",
+  "health": {
+    "milestone": "M3",
+    "status": "ready",
+    "database": {
+      "status": "ready",
+      "probeCount": 5
+    },
+    "storage": {
+      "startupWriteCheck": "passed"
+    },
+    "model": {
+      "status": "ready",
+      "id": "BAAI/bge-small-zh-v1.5",
+      "revision": "7999e1d3359715c523056ef9478215996d62a620",
+      "dimension": 512,
+      "device": "cpu",
+      "loadSeconds": 0.069
+    },
+    "startupSeconds": 4.984
+  },
+  "categories": {
+    "a": "9c2622e6-10ed-43fa-880c-ee13d44a1a95",
+    "b": "7be5436d-2e7f-40fd-80a8-8a5ac65be0d0"
+  },
+  "document_id": "a1e60c47-6363-4e4c-8d9a-1d5c5cf3a49f",
+  "restored_download": {
+    "id": "a1e60c47-6363-4e4c-8d9a-1d5c5cf3a49f",
+    "http": 200,
+    "original_sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+    "download_sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+    "equal": true
+  },
+  "database_after": {
+    "exists": true,
+    "version": 1,
+    "columns": [
+      "id",
+      "name",
+      "extension",
+      "media_type",
+      "size_bytes",
+      "sha256",
+      "storage_key",
+      "uploaded_at",
+      "text_status",
+      "vector_status",
+      "category_id",
+      "archived_at"
+    ],
+    "hashes_by_id": {
+      "d03c2ed3-0fd5-4c39-bfd6-4cd62b5d5266": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+      "a2c82a7a-a63e-4d39-a13f-7ca3d54ce4c4": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+      "e2072d67-369e-4cf8-beb6-b5ac6be4a08e": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+      "a1e60c47-6363-4e4c-8d9a-1d5c5cf3a49f": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+      "5d31ceb1-0b87-480f-962c-68cae9f87bf0": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+      "bac4af28-2f90-4d53-af61-0a2ec7c600b0": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+      "9f25565b-40df-4dd4-b39c-539b095432cf": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+      "7c9891d4-bb4a-4e5f-abf4-154d0e3be143": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+      "bb86d30f-2a90-4c01-9a01-bbc666c84bca": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+      "bef4d836-8636-41de-8eca-789bb2011aac": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+      "3a5fe318-7e8f-4481-aaff-7cca6df775c4": "58f53c76d5d330742a83e640c1bb42bb82b882eadb76eee11bc2788741af84e4"
+    }
+  },
+  "total_seconds": 6.287
+}

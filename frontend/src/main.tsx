@@ -4,9 +4,12 @@ import './style.css';
 
 type Health = { status: string; database: { status: string; probeCount: number }; model: { status: string } };
 type Config = { maxUploadBytes: number; allowedExtensions: string[] };
+type Category = { id: string; name: string; activeCount: number; archivedCount: number };
+type Categories = { items: Category[]; unclassified: { activeCount: number; archivedCount: number } };
 type Document = {
   id: string; name: string; extension: string; mediaType: string; sizeBytes: number;
-  sha256: string; uploadedAt: string; category: null; textStatus: string; vectorStatus: string; downloadUrl: string;
+  sha256: string; uploadedAt: string; category: { id: string; name: string } | null; archivedAt: string | null;
+  textStatus: string; vectorStatus: string; downloadUrl: string;
 };
 type Page = { items: Document[]; total: number; limit: number; offset: number };
 type Upload = { key: string; file: File; state: 'waiting' | 'uploading' | 'saving' | 'done' | 'error';
@@ -16,7 +19,8 @@ class ApiError extends Error {
 }
 function errorFrom(body: unknown, fallback: string) {
   const data = body as { error?: { message?: string; retryable?: boolean }; detail?: unknown };
-  return new ApiError(data?.error?.message ?? (typeof data?.detail === 'string' ? data.detail : fallback),
+  const validation = Array.isArray(data?.detail) ? '请求参数无效，请核对输入后重试。' : fallback;
+  return new ApiError(data?.error?.message ?? (typeof data?.detail === 'string' ? data.detail : validation),
     data?.error?.retryable ?? false);
 }
 async function json<T>(path: string, options?: RequestInit): Promise<T> {
@@ -31,7 +35,10 @@ function size(bytes: number) {
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`;
 }
 function date(value: string) { return new Date(value).toLocaleString('zh-CN', { hour12: false }); }
-function message(error: unknown) { return error instanceof Error ? error.message : '请求失败，请稍后重试'; }
+function message(error: unknown) {
+  return error instanceof TypeError ? '无法连接服务器，请检查网络后重试。'
+    : error instanceof Error ? error.message : '请求失败，请稍后重试';
+}
 
 function sendFile(file: File, progress: (percent: number) => void): Promise<Document> {
   return new Promise((resolve, reject) => {
@@ -61,6 +68,20 @@ function App() {
   const [config, setConfig] = useState<Config | null>(null);
   const [configError, setConfigError] = useState('');
   const [health, setHealth] = useState<Health | null>(null);
+  const [categories, setCategories] = useState<Categories>({ items: [], unclassified: { activeCount: 0, archivedCount: 0 } });
+  const [categoryError, setCategoryError] = useState('');
+  const [categoryLoading, setCategoryLoading] = useState(true);
+  const [categoryFilter, setCategoryFilter] = useState(() => new URLSearchParams(window.location.search).get('category') ?? '');
+  const [archivedView, setArchivedView] = useState(() => new URLSearchParams(window.location.search).get('archived') === 'true');
+  const [newCategoryName, setNewCategoryName] = useState('');
+  const [renameId, setRenameId] = useState('');
+  const [renameName, setRenameName] = useState('');
+  const [categoryBusy, setCategoryBusy] = useState(false);
+  const [categoryMessage, setCategoryMessage] = useState('');
+  const categoryLock = useRef(false);
+  const [moveCategory, setMoveCategory] = useState('');
+  const [actionBusy, setActionBusy] = useState(false);
+  const actionLock = useRef(false);
   const [page, setPage] = useState<Page>({ items: [], total: 0, limit: 25, offset: 0 });
   const [loading, setLoading] = useState(true);
   const [listError, setListError] = useState('');
@@ -81,19 +102,70 @@ function App() {
     try { setConfig(await json<Config>('/api/v1/config')); }
     catch (error) { setConfigError(message(error)); }
   }
+  async function loadCategories() {
+    setCategoryLoading(true); setCategoryError('');
+    try { setCategories(await json<Categories>('/api/v1/categories')); }
+    catch (error) { setCategoryError(message(error)); }
+    finally { setCategoryLoading(false); }
+  }
   async function refresh(offset = 0) {
     const generation = ++listRequest.current;
     setLoading(true); setListError('');
     try {
-      const result = await json<Page>(`/api/v1/documents?limit=25&offset=${offset}`);
+      const parameters = new URLSearchParams({ limit: '25', offset: String(offset), archived: String(archivedView) });
+      if (categoryFilter) parameters.set('category_id', categoryFilter);
+      const result = await json<Page>(`/api/v1/documents?${parameters}`);
       if (generation === listRequest.current) setPage(result);
     } catch (error) { if (generation === listRequest.current) setListError(message(error)); }
     finally { if (generation === listRequest.current) setLoading(false); }
   }
   useEffect(() => {
-    void refresh(); void loadConfig();
+    void loadConfig(); void loadCategories();
     json<Health>('/api/v1/health').then(setHealth).catch(() => setHealth(null));
   }, []);
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    if (categoryFilter) url.searchParams.set('category', categoryFilter); else url.searchParams.delete('category');
+    if (archivedView) url.searchParams.set('archived', 'true'); else url.searchParams.delete('archived');
+    window.history.replaceState(null, '', url);
+    detailRequest.current++; setDetail(null); setDetailError(''); setDetailLoading(false);
+    setPage({ items: [], total: 0, limit: 25, offset: 0 });
+    void refresh(0);
+  }, [categoryFilter, archivedView]);
+  async function saveCategory(renaming: boolean) {
+    if (categoryLock.current) return;
+    const name = (renaming ? renameName : newCategoryName).trim();
+    if (!name || name.length > 80) { setCategoryMessage('分类名称不能为空且最多为 80 字。'); return; }
+    if (renaming && !renameId) { setCategoryMessage('请先选择要修改的分类。'); return; }
+    categoryLock.current = true; setCategoryBusy(true); setCategoryMessage('');
+    try {
+      const saved = await json<Category>(renaming ? `/api/v1/categories/${renameId}` : '/api/v1/categories', {
+        method: renaming ? 'PATCH' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name }),
+      });
+      if (!renaming) setNewCategoryName('');
+      else setRenameName(saved.name);
+      setCategoryMessage(`已${renaming ? '修改' : '创建'}分类「${saved.name}」。`);
+      await loadCategories(); await refresh(page.offset);
+      if (detail) await openDetail(detail.id);
+    } catch (error) { setCategoryMessage(message(error)); }
+    finally { categoryLock.current = false; setCategoryBusy(false); }
+  }
+  async function organize(document: Document, action: 'category' | 'archive' | 'restore') {
+    if (actionLock.current) return;
+    actionLock.current = true; setActionBusy(true); setNotice('');
+    try {
+      const saved = await json<Document>(`/api/v1/documents/${document.id}/${action}`, {
+        method: action === 'category' ? 'PATCH' : 'POST',
+        ...(action === 'category' ? { headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ categoryId: moveCategory || null }) } : {}),
+      });
+      setDetail(current => current?.id === saved.id ? saved : current);
+      setNotice(action === 'category' ? `已将「${saved.name}」移至「${saved.category?.name ?? '未分类'}」。`
+        : action === 'archive' ? `已归档「${saved.name}」，可在归档区找到并恢复。` : `已恢复「${saved.name}」，可在文件库找到。`);
+      await loadCategories(); await refresh(0);
+    } catch (error) { setNotice(message(error)); }
+    finally { actionLock.current = false; setActionBusy(false); }
+  }
   function selectFiles(files: FileList | null) {
     if (!files || !config) return;
     const rows = Array.from(files).map(file => {
@@ -127,7 +199,9 @@ function App() {
         }
       }
       if (successes) setNotice(`已保存 ${successes} 个文件。`);
-      await refresh(0);
+      await loadCategories();
+      if (successes && (categoryFilter || archivedView)) { setCategoryFilter(''); setArchivedView(false); }
+      else await refresh(0);
     } finally { uploadLock.current = false; setUploading(false); }
   }
   async function openDetail(id: string) {
@@ -135,7 +209,7 @@ function App() {
     setDetail(null); setDetailError(''); setDetailLoading(true);
     try {
       const result = await json<Document>(`/api/v1/documents/${id}`);
-      if (generation === detailRequest.current) setDetail(result);
+      if (generation === detailRequest.current) { setDetail(result); setMoveCategory(result.category?.id ?? ''); }
     } catch (error) { if (generation === detailRequest.current) setDetailError(message(error)); }
     finally { if (generation === detailRequest.current) setDetailLoading(false); }
   }
@@ -184,19 +258,26 @@ function App() {
         {row.state === 'error' && row.retryable && <button disabled={uploading} className="secondary" onClick={() => void upload([row])}>重试</button>}
       </div>)}{!uploading && <button className="text-button" onClick={() => { setUploads([]); if (input.current) input.current.value = ''; }}>清空选择</button>}</div>}
     </section>
+    <details className="category-manager"><summary>管理分类 <span className="count">{categories.items.length}</span></summary>
+      <div className="category-forms"><form onSubmit={event => { event.preventDefault(); void saveCategory(false); }}><label htmlFor="new-category">新分类名称</label><div><input id="new-category" maxLength={80} value={newCategoryName} disabled={categoryBusy} onChange={event => setNewCategoryName(event.target.value)} placeholder="例如：工程规范"/><button disabled={categoryBusy}>创建分类</button></div></form>
+        <form onSubmit={event => { event.preventDefault(); void saveCategory(true); }}><label htmlFor="rename-category">要修改的分类</label><select id="rename-category" value={renameId} disabled={categoryBusy || categoryLoading} onChange={event => { setRenameId(event.target.value); setRenameName(categories.items.find(row => row.id === event.target.value)?.name ?? ''); }}><option value="">请选择分类</option>{categories.items.map(row => <option key={row.id} value={row.id}>{row.name}</option>)}</select><label htmlFor="rename-name">修改后的名称</label><div><input id="rename-name" maxLength={80} value={renameName} disabled={categoryBusy || !renameId} onChange={event => setRenameName(event.target.value)}/><button disabled={categoryBusy || !renameId}>保存名称</button></div></form></div>
+      {categoryMessage && <p role="status">{categoryMessage}</p>}
+    </details>
+    {categoryError && <div className="error notice" role="alert">分类读取失败：{categoryError}<button className="text-button" onClick={() => void loadCategories()}>重试读取分类</button></div>}
+    <div className="view-controls"><div className="view-tabs"><button className={!archivedView ? 'active' : ''} aria-pressed={!archivedView} onClick={() => setArchivedView(false)}>文件库</button><button className={archivedView ? 'active' : ''} aria-pressed={archivedView} onClick={() => setArchivedView(true)}>归档区</button></div><label>分类筛选 <select aria-label="分类筛选" value={categoryFilter} disabled={categoryLoading} onChange={event => setCategoryFilter(event.target.value)}><option value="">全部分类</option><option value="unclassified">未分类 · {archivedView ? categories.unclassified.archivedCount : categories.unclassified.activeCount}</option>{categories.items.map(row => <option key={row.id} value={row.id}>{row.name} · {archivedView ? row.archivedCount : row.activeCount}</option>)}</select></label></div>
     <div className="library-layout"><section className="library" aria-labelledby="library-title">
-      <div className="section-heading"><div><h2 id="library-title">全部文件 <span className="count">{page.total}</span></h2><small>原文件已保存 · 按上传时间排列</small></div><button className="secondary" disabled={loading} onClick={() => void refresh(page.offset)}>刷新列表</button></div>
+      <div className="section-heading"><div><h2 id="library-title">{archivedView ? '归档文件' : categoryFilter === 'unclassified' ? '未分类文件' : categoryFilter ? categories.items.find(row => row.id === categoryFilter)?.name ?? '分类文件' : '全部文件'} <span className="count">{page.total}</span></h2><small>{archivedView ? '归档资料仍可下载，也可恢复至文件库' : '按上传时间排列 · 已归档资料不在此显示'}</small></div><button className="secondary" disabled={loading} onClick={() => { void refresh(page.offset); void loadCategories(); }}>刷新列表</button></div>
       {listError && <div className="error notice" role="alert">{listError}<button className="text-button" onClick={() => void refresh(page.offset)}>重试</button></div>}
-      {loading ? <div className="empty" role="status">正在加载文件…</div> : page.items.length === 0 ? <div className="empty"><span className="empty-icon">＋</span><h3>这里还没有文件</h3><p>选择上方的文件，开始保存第一份资料。</p></div> : <div className="table-wrap"><table><thead><tr><th>名称</th><th>分类</th><th>大小 / 上传时间</th><th>操作</th></tr></thead><tbody>{page.items.map(row => <tr key={row.id} className={detail?.id === row.id ? 'selected' : ''}>
+      {loading ? <div className="empty" role="status">正在加载文件…</div> : listError && page.items.length === 0 ? <div className="empty">暂时无法显示文件，请重试。</div> : page.items.length === 0 ? <div className="empty"><span className="empty-icon">{archivedView ? '◇' : '＋'}</span><h3>{archivedView ? '没有符合筛选的归档文件' : categoryFilter ? '该分类还没有文件' : '这里还没有文件'}</h3><p>{archivedView ? '归档的文件会出现在这里，可随时恢复。' : categoryFilter ? '切换分类，或在文件详情中调整归属。' : '选择上方的文件，开始保存第一份资料。'}</p></div> : <div className="table-wrap"><table><thead><tr><th>名称</th><th>分类</th><th>大小 / 上传时间</th><th>操作</th></tr></thead><tbody>{page.items.map(row => <tr key={row.id} className={detail?.id === row.id ? 'selected' : ''}>
         <td><div className="file-name"><span className={`file-badge ${row.extension}`}>{row.extension === 'markdown' ? 'MD' : row.extension.toUpperCase()}</span><button className="name-button" title={row.name} onClick={() => void openDetail(row.id)}>{row.name}</button></div></td>
-        <td><span className="category">未分类</span></td><td><span>{size(row.sizeBytes)}</span><small>{date(row.uploadedAt)}</small></td>
-        <td><button className="text-button" aria-label={`下载 ${row.name}`} disabled={!!downloadId} onClick={() => void download(row)}>{downloadId === row.id ? '下载中…' : '下载'}</button></td>
+        <td><span className="category" title={row.category?.name ?? '未分类'}>{row.category?.name ?? '未分类'}</span></td><td><span>{size(row.sizeBytes)}</span><small>{date(row.uploadedAt)}</small></td>
+        <td><button className="text-button" aria-label={`下载 ${row.name}`} disabled={!!downloadId} onClick={() => void download(row)}>{downloadId === row.id ? '下载中…' : '下载'}</button><button className="text-button archive-button" disabled={actionBusy} aria-label={`${row.archivedAt ? '恢复' : '归档'} ${row.name}`} onClick={() => void organize(row, row.archivedAt ? 'restore' : 'archive')}>{row.archivedAt ? '恢复' : '归档'}</button></td>
       </tr>)}</tbody></table></div>}
       {page.total > 25 && <div className="pagination"><button className="secondary" disabled={loading || page.offset === 0} onClick={() => void refresh(Math.max(0, page.offset - 25))}>上一页</button><span>{Math.floor(page.offset / 25) + 1} / {Math.ceil(page.total / 25)}</span><button className="secondary" disabled={loading || page.offset + 25 >= page.total} onClick={() => void refresh(page.offset + 25)}>下一页</button></div>}
     </section>
     <aside className="detail" aria-labelledby="detail-title"><span className="label">资料信息</span><h2 id="detail-title">文件详情</h2>
       {detailLoading ? <p role="status">正在加载详情…</p> : detailError ? <p className="error" role="alert">{detailError}</p> : detail ? <><h3 className="detail-name">{detail.name}</h3><dl>
-        <dt>文件类型</dt><dd>{detail.extension.toUpperCase()}</dd><dt>分类</dt><dd>未分类</dd><dt>大小</dt><dd>{size(detail.sizeBytes)} <small>{detail.sizeBytes.toLocaleString()} 字节</small></dd><dt>上传时间</dt><dd>{date(detail.uploadedAt)}</dd><dt>SHA-256</dt><dd className="hash">{detail.sha256}</dd></dl><p className="saved-note">已保存，可下载。检索索引尚未建立。</p><button disabled={!!downloadId} onClick={() => void download(detail)}>{downloadId === detail.id ? '下载中…' : '下载原文件'}</button></> : <p className="detail-placeholder">点击文件名称，查看完整名称、上传时间和文件校验值。</p>}
+        <dt>文件类型</dt><dd>{detail.extension.toUpperCase()}</dd><dt>分类</dt><dd>{detail.category?.name ?? '未分类'}</dd><dt>状态</dt><dd>{detail.archivedAt ? `已归档 · ${date(detail.archivedAt)}` : '文件库'}</dd><dt>大小</dt><dd>{size(detail.sizeBytes)} <small>{detail.sizeBytes.toLocaleString()} 字节</small></dd><dt>上传时间</dt><dd>{date(detail.uploadedAt)}</dd><dt>SHA-256</dt><dd className="hash">{detail.sha256}</dd></dl><label className="move-label" htmlFor="move-category">调整文件归属</label><select id="move-category" value={moveCategory} disabled={actionBusy || categoryLoading || !!categoryError} onChange={event => setMoveCategory(event.target.value)}><option value="">未分类</option>{categories.items.map(row => <option key={row.id} value={row.id}>{row.name}</option>)}</select><button className="secondary" disabled={actionBusy || categoryLoading || !!categoryError || moveCategory === (detail.category?.id ?? '')} onClick={() => void organize(detail, 'category')}>移动文件</button><p className="saved-note">{detail.archivedAt ? '归档保留原文件，可随时恢复和下载。' : '已保存，可下载。检索索引尚未建立。'}</p><button disabled={!!downloadId} onClick={() => void download(detail)}>{downloadId === detail.id ? '下载中…' : '下载原文件'}</button><button className="secondary" disabled={actionBusy} onClick={() => void organize(detail, detail.archivedAt ? 'restore' : 'archive')}>{actionBusy ? '正在保存…' : detail.archivedAt ? '恢复文件' : '归档文件'}</button></> : <p className="detail-placeholder">点击文件名称，查看详情、调整分类或归档。</p>}
     </aside></div>
     <details className="diagnostics"><summary>服务状态 <span className={`dot ${health?.database.status === 'ready' ? 'ok' : ''}`}/></summary><div><p>数据库：{health?.database.status ?? '未能确认'} · 本地模型：{health?.model.status ?? '未能确认'} · 验证记录：{health?.database.probeCount ?? '—'}</p><button className="secondary" disabled={probeBusy} onClick={() => void probe()}>{probeBusy ? '正在核对…' : '验证数据库读写'}</button><p role="status">{probeMessage}</p></div></details>
     <footer>知识文件库 · 原文件保存在持久化存储中</footer>

@@ -19,7 +19,7 @@ from starlette.datastructures import UploadFile
 from starlette.formparsers import MultiPartException, MultiPartParser
 from starlette.requests import ClientDisconnect
 
-from .database import Document
+from .database import Category, Document
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/v1")
@@ -34,6 +34,11 @@ class FileError(Exception):
         self.status, self.code, self.message, self.retryable = status, code, message, retryable
 
 
+class CategoryBrief(BaseModel):
+    id: str
+    name: str
+
+
 class DocumentResponse(BaseModel):
     id: str
     name: str
@@ -42,7 +47,8 @@ class DocumentResponse(BaseModel):
     sizeBytes: int
     sha256: str
     uploadedAt: datetime
-    category: None = None
+    category: CategoryBrief | None = None
+    archivedAt: datetime | None = None
     textStatus: str
     vectorStatus: str
     downloadUrl: str
@@ -60,6 +66,8 @@ def serialize(row: Document):
         id=row.id, name=row.name, extension=row.extension, mediaType=row.media_type,
         sizeBytes=row.size_bytes, sha256=row.sha256,
         uploadedAt=row.uploaded_at.replace(tzinfo=timezone.utc),
+        category=CategoryBrief(id=row.category.id, name=row.category.name) if row.category else None,
+        archivedAt=row.archived_at.replace(tzinfo=timezone.utc) if row.archived_at else None,
         textStatus=row.text_status, vectorStatus=row.vector_status,
         downloadUrl=f"/api/v1/documents/{row.id}/download",
     )
@@ -207,11 +215,23 @@ async def upload_document(request: Request):
 
 
 @router.get("/documents", response_model=DocumentList)
-def list_documents(request: Request, limit: int = Query(50, ge=1, le=100), offset: int = Query(0, ge=0)):
+def list_documents(request: Request, limit: int = Query(50, ge=1, le=100), offset: int = Query(0, ge=0),
+                   archived: bool = False, category_id: str | None = None):
     try:
         with Session(request.app.state.document_engine) as session:
-            total = session.scalar(select(func.count()).select_from(Document))
-            rows = session.scalars(select(Document).order_by(Document.uploaded_at.desc(), Document.id.desc())
+            filters = [Document.archived_at.is_not(None) if archived else Document.archived_at.is_(None)]
+            if category_id == "unclassified":
+                filters.append(Document.category_id.is_(None))
+            elif category_id is not None:
+                try:
+                    category_id = str(uuid.UUID(category_id))
+                except ValueError as error:
+                    raise FileError(422, "INVALID_CATEGORY", "分类标识无效，请重新选择分类。") from error
+                if session.get(Category, category_id) is None:
+                    raise FileError(404, "CATEGORY_NOT_FOUND", "分类不存在，请刷新分类列表。")
+                filters.append(Document.category_id == category_id)
+            total = session.scalar(select(func.count()).select_from(Document).where(*filters))
+            rows = session.scalars(select(Document).where(*filters).order_by(Document.uploaded_at.desc(), Document.id.desc())
                                    .offset(offset).limit(limit)).all()
             return {"items": [serialize(row) for row in rows], "total": total, "limit": limit, "offset": offset}
     except SQLAlchemyError as error:
