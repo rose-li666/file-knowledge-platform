@@ -11,11 +11,13 @@ import urllib.request
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
+from utf8_logs import configure_utf8_io
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
+    configure_utf8_io()
     parser = argparse.ArgumentParser()
     parser.add_argument("--zip", type=Path, required=True)
     parser.add_argument("--report-dir", type=Path, default=ROOT.parent / "m1-docker")
@@ -36,7 +38,7 @@ def main():
         print("Executing: " + subprocess.list2cmdline(command), flush=True)
         with (reports / f"{label}.log").open("w", encoding="utf-8") as log:
             process = subprocess.Popen(command, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                                       encoding="utf-8", errors="replace")
+                                       encoding="utf-8", errors="backslashreplace")
             for line in process.stdout:
                 print(line, end="", flush=True)
                 log.write(line)
@@ -109,7 +111,7 @@ def main():
     finally:
         try:
             logs = subprocess.run(["docker", "compose", "logs", "--tail=100", "app"], cwd=ROOT,
-                                  capture_output=True, encoding="utf-8", errors="replace", timeout=30)
+                                  capture_output=True, encoding="utf-8", errors="backslashreplace", timeout=30)
             (reports / "app.log").write_text(logs.stdout + logs.stderr, encoding="utf-8")
         except Exception as error:
             summary["log_collection_error"] = str(error)

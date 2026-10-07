@@ -8,6 +8,7 @@ import sys
 import time
 import zipfile
 from pathlib import Path
+from utf8_logs import configure_utf8_io
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -107,6 +108,7 @@ def split_document(name, text, tokenizer):
 
 
 def main():
+    configure_utf8_io()
     parser = argparse.ArgumentParser()
     parser.add_argument("--zip", type=Path, required=True)
     parser.add_argument("--model-dir", type=Path, default=ROOT / "models" / "bge")

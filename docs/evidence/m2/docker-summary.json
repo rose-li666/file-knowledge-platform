@@ -1,0 +1,60 @@
+{
+  "started_utc": "2026-10-07T13:40:41.596313+00:00",
+  "steps": [
+    {
+      "step": "01-build-start",
+      "command": [
+        "C:\\Users\\lenovo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\scripts\\m1_docker_stage.py",
+        "--stage",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 90.156,
+      "launch_error": null
+    },
+    {
+      "step": "02-health-and-hashes",
+      "command": [
+        "docker",
+        "compose",
+        "run",
+        "--rm",
+        "--no-deps",
+        "-v",
+        "D:\\__10_.zip:/fixtures/test-documents.zip:ro",
+        "-v",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m2-docker\\20261007T134041Z-485852:/reports",
+        "app",
+        "python",
+        "scripts/verify_m2.py",
+        "--base-url",
+        "http://app:8000",
+        "--zip",
+        "/fixtures/test-documents.zip",
+        "--report",
+        "/reports/m2-results.json"
+      ],
+      "exit_code": 0,
+      "seconds": 9.405,
+      "launch_error": null
+    },
+    {
+      "step": "03-app-logs",
+      "command": [
+        "docker",
+        "compose",
+        "logs",
+        "--tail=100",
+        "app"
+      ],
+      "exit_code": 0,
+      "seconds": 0.206,
+      "launch_error": null
+    }
+  ],
+  "failure": null,
+  "browser_interaction": "not verified by this runner",
+  "total_seconds": 99.768,
+  "finished_utc": "2026-10-07T13:42:21.364812+00:00"
+}

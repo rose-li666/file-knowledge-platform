@@ -15,7 +15,7 @@ COPY requirements.txt requirements.lock.txt ./
 RUN pip install --no-cache-dir torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu \
     && pip install --no-cache-dir -r requirements.txt -c requirements.lock.txt
 COPY model-spec.json ./
-COPY scripts/download_model.py ./scripts/download_model.py
+COPY scripts/download_model.py scripts/utf8_logs.py ./scripts/
 RUN python scripts/download_model.py --destination /opt/models/bge
 COPY app/ ./app/
 COPY scripts/ ./scripts/

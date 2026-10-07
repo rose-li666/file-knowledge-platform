@@ -5,6 +5,7 @@ import json
 import time
 import urllib.request
 from pathlib import Path
+from utf8_logs import configure_utf8_io
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = json.loads((ROOT / "model-spec.json").read_text("utf-8"))
@@ -16,6 +17,7 @@ FILES = [
 
 
 def main():
+    configure_utf8_io()
     parser = argparse.ArgumentParser()
     parser.add_argument("--destination", type=Path, default=ROOT / "models" / "bge")
     args = parser.parse_args()

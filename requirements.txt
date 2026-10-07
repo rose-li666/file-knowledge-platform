@@ -5,3 +5,4 @@ sentence-transformers==5.1.2
 transformers==4.57.1
 numpy==2.3.5
 psutil==7.1.0
+python-multipart==0.0.20

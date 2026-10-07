@@ -8,6 +8,7 @@ import sys
 import time
 import uuid
 from pathlib import Path
+from utf8_logs import configure_utf8_io
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -48,6 +49,7 @@ def verify(client, data_dir):
 
 
 def main():
+    configure_utf8_io()
     parser = argparse.ArgumentParser()
     parser.add_argument("--report", type=Path, required=True)
     parser.add_argument("--data-dir", type=Path, required=True)

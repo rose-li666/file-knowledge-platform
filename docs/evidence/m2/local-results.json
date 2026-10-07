@@ -1,0 +1,244 @@
+{
+  "files": [
+    {
+      "name": "01_代码提交规范_v2.1.md",
+      "extension": "md",
+      "id": "ba491df8-383f-4c7b-b478-55665cdb889b",
+      "size_bytes": 3131,
+      "upload_http": 201,
+      "detail_http": 200,
+      "download_http": 200,
+      "original_sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+      "download_sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+      "equal": true,
+      "seconds": 0.0478
+    },
+    {
+      "name": "02_发布检查清单_v1.4.md",
+      "extension": "md",
+      "id": "22019d12-afc0-44db-bbf2-1b0b07d69f02",
+      "size_bytes": 2963,
+      "upload_http": 201,
+      "detail_http": 200,
+      "download_http": 200,
+      "original_sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+      "download_sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+      "equal": true,
+      "seconds": 0.0265
+    },
+    {
+      "name": "03_文件服务接口约定_v1.2.md",
+      "extension": "md",
+      "id": "b5f4e7ca-40ac-4b39-b0fa-7c83be83eb31",
+      "size_bytes": 2984,
+      "upload_http": 201,
+      "detail_http": 200,
+      "download_http": 200,
+      "original_sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+      "download_sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+      "equal": true,
+      "seconds": 0.0273
+    },
+    {
+      "name": "04_星桥项目_需求与范围_v1.0.pdf",
+      "extension": "pdf",
+      "id": "48791199-c989-4741-8b49-0c8cb34d8ce2",
+      "size_bytes": 186886,
+      "upload_http": 201,
+      "detail_http": 200,
+      "download_http": 200,
+      "original_sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+      "download_sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+      "equal": true,
+      "seconds": 0.0316
+    },
+    {
+      "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+      "extension": "txt",
+      "id": "f5340215-2ed6-4cf6-ae0c-783b74b827a2",
+      "size_bytes": 2483,
+      "upload_http": 201,
+      "detail_http": 200,
+      "download_http": 200,
+      "original_sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+      "download_sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+      "equal": true,
+      "seconds": 0.0265
+    },
+    {
+      "name": "06_星桥项目_故障复盘_2026-09-21.md",
+      "extension": "md",
+      "id": "0c3932af-cdc7-42d8-be4b-fdcdda7f86e5",
+      "size_bytes": 3092,
+      "upload_http": 201,
+      "detail_http": 200,
+      "download_http": 200,
+      "original_sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+      "download_sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+      "equal": true,
+      "seconds": 0.0316
+    },
+    {
+      "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+      "extension": "txt",
+      "id": "ff7c5efc-c681-428a-9919-73cf72194a8c",
+      "size_bytes": 2908,
+      "upload_http": 201,
+      "detail_http": 200,
+      "download_http": 200,
+      "original_sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+      "download_sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+      "equal": true,
+      "seconds": 0.0321
+    },
+    {
+      "name": "08_检索技术说明_关键词与语义_v1.0.pdf",
+      "extension": "pdf",
+      "id": "a23be543-26f1-4110-aa07-c4e3eeb57f19",
+      "size_bytes": 187732,
+      "upload_http": 201,
+      "detail_http": 200,
+      "download_http": 200,
+      "original_sha256": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+      "download_sha256": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+      "equal": true,
+      "seconds": 0.0361
+    },
+    {
+      "name": "09_本地部署故障排查_v1.3.txt",
+      "extension": "txt",
+      "id": "55e29de1-4519-4b36-aaec-39f69b72f5e1",
+      "size_bytes": 3017,
+      "upload_http": 201,
+      "detail_http": 200,
+      "download_http": 200,
+      "original_sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+      "download_sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+      "equal": true,
+      "seconds": 0.0321
+    },
+    {
+      "name": "10_文档分类与归档规范_v1.0.pdf",
+      "extension": "pdf",
+      "id": "95ebfb98-11a9-4e7d-b885-d83a63c969a6",
+      "size_bytes": 170109,
+      "upload_http": 201,
+      "detail_http": 200,
+      "download_http": 200,
+      "original_sha256": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+      "download_sha256": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+      "equal": true,
+      "seconds": 0.0379
+    }
+  ],
+  "checks": [
+    {
+      "check": "list_metadata_and_pagination",
+      "passed": true,
+      "total": 10
+    },
+    {
+      "check": "empty_file",
+      "passed": true,
+      "http": 400,
+      "error": {
+        "error": {
+          "code": "EMPTY_FILE",
+          "message": "不能上传空文件。",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "check": "unsupported_type",
+      "passed": true,
+      "http": 415,
+      "error": {
+        "error": {
+          "code": "UNSUPPORTED_FILE_TYPE",
+          "message": "仅支持 PDF、TXT、Markdown（.md / .markdown）。",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "check": "invalid_pdf",
+      "passed": true,
+      "http": 415,
+      "error": {
+        "error": {
+          "code": "INVALID_PDF",
+          "message": "文件没有有效的 PDF 文件头，请核对原文件。",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "check": "invalid_filename",
+      "passed": true,
+      "http": 400,
+      "error": {
+        "error": {
+          "code": "INVALID_FILENAME",
+          "message": "文件名无效；请使用不含路径或控制字符的文件名（最多 255 字）。",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "check": "oversized_file",
+      "passed": true,
+      "http": 413,
+      "error": {
+        "error": {
+          "code": "FILE_TOO_LARGE",
+          "message": "文件超过允许的大小，请选择较小文件。",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "check": "unknown_file",
+      "passed": true,
+      "http": 404
+    },
+    {
+      "check": "unknown_download",
+      "passed": true,
+      "http": 404
+    },
+    {
+      "check": "invalid_pagination",
+      "passed": true,
+      "http": 422
+    },
+    {
+      "check": "missing_multipart_boundary",
+      "passed": true,
+      "http": 400
+    },
+    {
+      "check": "rejected_uploads_do_not_create_records",
+      "passed": true
+    },
+    {
+      "check": "independent_sqlite_and_storage_hashes",
+      "passed": true
+    }
+  ],
+  "failure": null,
+  "browser_interaction": "not verified by this script",
+  "transport": "in-process ASGI TestClient; not TCP/browser proof",
+  "config": {
+    "maxUploadBytes": 20971520,
+    "allowedExtensions": [
+      "pdf",
+      "txt",
+      "md",
+      "markdown"
+    ]
+  },
+  "initial_total": 0,
+  "final_total": 10,
+  "total_seconds": 101.676
+}

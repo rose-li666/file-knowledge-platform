@@ -12,8 +12,9 @@ from pydantic import BaseModel, Field
 from sqlalchemy import func, select, text
 from sqlalchemy.orm import Session
 
-from .database import Probe, open_database
+from .database import DocumentBase, Probe, open_database
 from .embedding import LocalEmbedder, PROJECT_ROOT, SPEC
+from .files import FileError, router as file_router
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +30,11 @@ async def lifespan(app: FastAPI):
     probe_file.write_bytes(b"m1")
     probe_file.unlink()
     app.state.engine = open_database(data_dir / "db" / "diagnostics.sqlite3")
+    app.state.document_engine = open_database(data_dir / "db" / "platform.sqlite3", metadata=DocumentBase.metadata)
     app.state.data_dir = data_dir
+    app.state.max_upload_bytes = int(os.environ.get("MAX_UPLOAD_BYTES", str(20 * 1024 * 1024)))
+    if app.state.max_upload_bytes <= 0:
+        raise ValueError("MAX_UPLOAD_BYTES must be a positive integer")
     app.state.model = None
     app.state.model_status = "loading"
     try:
@@ -44,9 +49,19 @@ async def lifespan(app: FastAPI):
     app.state.startup_seconds = time.perf_counter() - started
     yield
     app.state.engine.dispose()
+    app.state.document_engine.dispose()
 
 
-app = FastAPI(title="文件管理与知识检索平台 — M1", lifespan=lifespan)
+app = FastAPI(title="文件管理与知识检索平台", lifespan=lifespan)
+
+
+@app.exception_handler(FileError)
+async def file_error_handler(request, error: FileError):
+    return JSONResponse({"error": {"code": error.code, "message": error.message,
+                                   "retryable": error.retryable}}, status_code=error.status)
+
+
+app.include_router(file_router)
 
 
 @app.get("/api/v1/health")
@@ -55,12 +70,14 @@ def health():
         with Session(app.state.engine) as session:
             session.execute(text("SELECT 1")).scalar_one()
             count = session.scalar(select(func.count()).select_from(Probe))
+        with Session(app.state.document_engine) as session:
+            session.execute(text("SELECT 1")).scalar_one()
         database_status = "ready"
     except Exception:
         logger.exception("Database health check failed")
         database_status, count = "failed", None
     payload = {
-        "milestone": "M1",
+        "milestone": "M2",
         "status": "ready" if database_status == "ready" and app.state.model_status == "ready" else "degraded",
         "database": {"status": database_status, "probeCount": count},
         "storage": {"startupWriteCheck": "passed"},

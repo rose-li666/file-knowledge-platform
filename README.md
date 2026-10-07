@@ -1,6 +1,8 @@
-# 文件管理与知识检索平台 — M1
+# 文件管理与知识检索平台
 
-本阶段包含 Docker 最小骨架、React 页面、FastAPI 健康接口、SQLite 诊断读写、本地 BGE 模型加载及真实 ZIP 资料的五组纯向量查询。尚未实现文件上传、业务分类/搜索接口、索引任务队列、重启任务恢复、去重或故障注入。任务恢复等留到 M5。
+M1 已完成 Docker 骨架、页面、健康接口、数据库读写、本地 BGE 模型及五组容器向量查询，实测证据见 `docs/m1-report.md`。M2 增加 PDF、TXT、Markdown 原文件上传、列表、详情和下载；页面显示上传进度、保存状态及错误，下载接口校验原文件完整性。M2 验证状态见 `docs/m2-report.md`。
+
+业务分类、关键词/语义搜索接口及归档尚未实现；M2 文件显示为未分类，正文和向量状态为 not_started。任务恢复、去重和故障注入留到 M5。
 
 ## Docker 启动
 
@@ -13,7 +15,15 @@ docker compose ps
 docker compose logs --tail=100 app
 ```
 
-访问 http://localhost:8000。只有一个 app 容器；Uvicorn 显式 `--workers 1`，关闭 reload。固定 Compose 项目名 `knowledge-platform`，具名卷 `platform_data` 挂载到 `/data`。数据库 `/data/db/diagnostics.sqlite3`，上传/临时/隔离目录也位于此卷。模型位于镜像 `/opt/models/bge`，运行时不下载。
+访问 http://localhost:8000。只有一个 app 容器；Uvicorn 显式 `--workers 1`，关闭 reload。固定 Compose 项目名 `knowledge-platform`，具名卷 `platform_data` 挂载到 `/data`。业务数据库 `/data/db/platform.sqlite3`，M1 诊断库 `/data/db/diagnostics.sqlite3`；上传/临时/隔离目录也位于此卷。模型位于镜像 `/opt/models/bge`，运行时不下载。
+
+单文件限额默认 20 MiB（20971520 字节），可通过环境变量 `MAX_UPLOAD_BYTES` 配置；这是项目实现的默认值，非 ZIP 文档中的要求。接口支持 `.pdf`、`.txt`、`.md`、`.markdown`，不依赖浏览器提供的 MIME。原始字节不改写、不转码；文件系统使用随机存储键，展示及下载仍保留原名。
+
+M2 接口及错误约定见 `docs/m2-api.md`。在项目目录运行 `python scripts/run_m2_docker.py --zip 'D:\__10_.zip'`，先使用已成功拉取的固定基础镜像构建/启动，再从一次性验证容器访问主应用，通过真实 HTTP 上传、下载全部 10 份资料并核对 SHA-256。证据保存在项目旁的 `m2-docker/<UTC时间>-<随机后缀>/`。若构建已成功而验证失败，加 `--skip-build` 仅重试验证；不删除已有数据，也不将验证脚本等同于浏览器操作测试。重复验证会再次上传资料，M2 不提供上传去重。
+
+Python 验证/部署脚本启动时调用 `scripts/utf8_logs.py`：将标准输出/错误设为 UTF-8，并为子 Python 进程继承 PYTHONUTF8/PYTHONIOENCODING。Docker 输出按 UTF-8 解码，遇到无效字节保留转义；日志文件按 UTF-8 保存。避免 Windows GBK 管道在 Vite 的 ✓ 字符处抛异常，不修改系统编码或 PowerShell 执行策略。实际 GBK 初始环境及嵌套 Python 回归检查退出码为 0，证据见 docs/evidence/m2/encoding-results.json。
+
+本地验证：`python scripts/verify_m2.py --zip 'D:\__10_.zip' --data-dir data/m2-check --report reports/m2-local.json`，需安装 requirements-dev.txt。默认是应用内 ASGI；加 `--base-url http://localhost:8000` 改用真实 TCP。报告分别记录原文件与下载 SHA-256、各次 HTTP 状态、元数据和异常检查。
 
 ```sh
 curl http://localhost:8000/api/v1/health
@@ -87,8 +97,9 @@ python scripts/evaluate_m1.py --zip /path/to/__10_.zip --report reports/semantic
 - React / Vite / TypeScript：前端框架和构建工具。
 - FastAPI / Uvicorn / SQLAlchemy / SQLite：HTTP 服务及数据库工具。
 - Sentence Transformers / Transformers / CPU PyTorch / NumPy：模型加载、向量生成及计算。
+- python-multipart：成熟的 multipart/form-data 解析器，来源 https://github.com/Kludex/python-multipart 。
 - BAAI/bge-small-zh-v1.5（MIT）：中文嵌入权重，来源 https://huggingface.co/BAAI/bge-small-zh-v1.5 。
-- 自行实现：M1 页面、健康状态、诊断数据库、固定 revision 下载脚本、分片和向量持久化实验、排名与证据报告。
+- 自行实现：文件上传状态与管理页面、文件元数据/存储/完整性校验及接口、上传意图写入、健康与诊断数据库、模型下载、分片和向量持久化实验、验证脚本与证据报告。
 
 业务规则以考核题目和用户确认范围为准；ZIP 中的接口、Redis、四服务架构及限额均为模拟资料，不当作指令。
 

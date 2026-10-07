@@ -8,6 +8,7 @@ services:
       DATA_DIR: /data
       MODEL_DIR: /opt/models/bge
       MODEL_CPU_THREADS: "2"
+      MAX_UPLOAD_BYTES: "${MAX_UPLOAD_BYTES:-20971520}"
     volumes:
       - platform_data:/data
     restart: unless-stopped

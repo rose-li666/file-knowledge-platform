@@ -8,12 +8,14 @@ import time
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
+from utf8_logs import configure_utf8_io
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT.parent / "m1-docker"
 
 
 def main():
+    configure_utf8_io()
     parser = argparse.ArgumentParser()
     parser.add_argument("--stage", required=True, choices=("pull", "build", "verify"))
     parser.add_argument("--zip", type=Path, default=Path(r"D:\__10_.zip"))
@@ -34,7 +36,7 @@ def main():
             log.write("Command: " + subprocess.list2cmdline(command) + "\n")
             try:
                 process = subprocess.Popen(command, cwd=ROOT, stdout=subprocess.PIPE,
-                                           stderr=subprocess.STDOUT, encoding="utf-8", errors="replace")
+                                           stderr=subprocess.STDOUT, encoding="utf-8", errors="backslashreplace")
                 for line in process.stdout:
                     print(line, end="", flush=True)
                     log.write(line)
