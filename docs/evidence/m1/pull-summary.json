@@ -1,0 +1,45 @@
+{
+  "stage": "pull",
+  "started_utc": "2026-10-07T12:28:47.734838+00:00",
+  "steps": [
+    {
+      "step": "01-version",
+      "command": [
+        "docker",
+        "version"
+      ],
+      "exit_code": 0,
+      "seconds": 0.054,
+      "log": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m1-docker\\20261007T122847Z-pull-fb385a\\01-version.log"
+    },
+    {
+      "step": "02-pull-1",
+      "command": [
+        "docker",
+        "pull",
+        "node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df"
+      ],
+      "exit_code": 0,
+      "seconds": 25.715,
+      "log": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m1-docker\\20261007T122847Z-pull-fb385a\\02-pull-1.log"
+    },
+    {
+      "step": "02-pull-2",
+      "command": [
+        "docker",
+        "pull",
+        "python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e"
+      ],
+      "exit_code": 0,
+      "seconds": 14.541,
+      "log": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m1-docker\\20261007T122847Z-pull-fb385a\\02-pull-2.log"
+    }
+  ],
+  "failure": null,
+  "images": [
+    "node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df",
+    "python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e"
+  ],
+  "total_seconds": 40.314,
+  "finished_utc": "2026-10-07T12:29:28.048387+00:00"
+}

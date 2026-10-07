@@ -1,0 +1,7 @@
+{
+  "id": "BAAI/bge-small-zh-v1.5",
+  "revision": "7999e1d3359715c523056ef9478215996d62a620",
+  "dimension": 512,
+  "query_instruction": "为这个句子生成表示以用于检索相关文章：",
+  "license": "MIT"
+}

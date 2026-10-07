@@ -1,0 +1,20 @@
+{
+  "milestone": "M1",
+  "status": "ready",
+  "database": {
+    "status": "ready",
+    "probeCount": 0
+  },
+  "storage": {
+    "startupWriteCheck": "passed"
+  },
+  "model": {
+    "status": "ready",
+    "id": "BAAI/bge-small-zh-v1.5",
+    "revision": "7999e1d3359715c523056ef9478215996d62a620",
+    "dimension": 512,
+    "device": "cpu",
+    "loadSeconds": 0.21
+  },
+  "startupSeconds": 4.217
+}

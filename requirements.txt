@@ -1,0 +1,7 @@
+fastapi==0.119.1
+uvicorn==0.38.0
+SQLAlchemy==2.0.44
+sentence-transformers==5.1.2
+transformers==4.57.1
+numpy==2.3.5
+psutil==7.1.0

@@ -1,0 +1,96 @@
+{
+  "stage": "build",
+  "started_utc": "2026-10-07T12:32:31.618572+00:00",
+  "steps": [
+    {
+      "step": "01-version",
+      "command": [
+        "docker",
+        "version"
+      ],
+      "exit_code": 0,
+      "seconds": 0.145,
+      "log": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m1-docker\\20261007T123231Z-build-d369b5\\01-version.log"
+    },
+    {
+      "step": "02-inspect-1",
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07,
+      "log": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m1-docker\\20261007T123231Z-build-d369b5\\02-inspect-1.log"
+    },
+    {
+      "step": "02-inspect-2",
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07,
+      "log": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m1-docker\\20261007T123231Z-build-d369b5\\02-inspect-2.log"
+    },
+    {
+      "step": "03-config",
+      "command": [
+        "docker",
+        "compose",
+        "config",
+        "--quiet"
+      ],
+      "exit_code": 0,
+      "seconds": 0.249,
+      "log": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m1-docker\\20261007T123231Z-build-d369b5\\03-config.log"
+    },
+    {
+      "step": "04-build",
+      "command": [
+        "docker",
+        "compose",
+        "--progress",
+        "plain",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 256.081,
+      "log": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m1-docker\\20261007T123231Z-build-d369b5\\04-build.log"
+    },
+    {
+      "step": "05-start",
+      "command": [
+        "docker",
+        "compose",
+        "up",
+        "-d",
+        "--no-build"
+      ],
+      "exit_code": 0,
+      "seconds": 1.243,
+      "log": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m1-docker\\20261007T123231Z-build-d369b5\\05-start.log"
+    },
+    {
+      "step": "06-status",
+      "command": [
+        "docker",
+        "compose",
+        "ps"
+      ],
+      "exit_code": 0,
+      "seconds": 0.217,
+      "log": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m1-docker\\20261007T123231Z-build-d369b5\\06-status.log"
+    }
+  ],
+  "failure": null,
+  "images": [
+    "node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df",
+    "python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e"
+  ],
+  "total_seconds": 258.083,
+  "finished_utc": "2026-10-07T12:36:49.702011+00:00"
+}

@@ -1,0 +1,88 @@
+{
+  "started_utc": "2026-10-07T12:42:51.674832+00:00",
+  "steps": [
+    {
+      "step": "01-version",
+      "command": [
+        "docker",
+        "version"
+      ],
+      "exit_code": 0,
+      "seconds": 0.064
+    },
+    {
+      "step": "02-config",
+      "command": [
+        "docker",
+        "compose",
+        "config",
+        "--quiet"
+      ],
+      "exit_code": 0,
+      "seconds": 0.284
+    },
+    {
+      "step": "04-status",
+      "command": [
+        "docker",
+        "compose",
+        "ps"
+      ],
+      "exit_code": 0,
+      "seconds": 0.153
+    },
+    {
+      "step": "real_tcp_health_and_model",
+      "passed": true
+    },
+    {
+      "step": "database_write_read",
+      "passed": true,
+      "id": 1
+    },
+    {
+      "step": "frontend_assets_real_tcp",
+      "passed": true,
+      "assets": [
+        "/assets/index-C5TnHL9G.js",
+        "/assets/index-CMWB0pDU.css"
+      ]
+    },
+    {
+      "step": "05-container-semantic",
+      "command": [
+        "docker",
+        "compose",
+        "run",
+        "--rm",
+        "--no-deps",
+        "-v",
+        "D:\\__10_.zip:/fixtures/test-documents.zip:ro",
+        "-v",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m1-docker\\20261007T124251Z-verify-6b535b\\verification:/reports",
+        "app",
+        "python",
+        "scripts/evaluate_m1.py",
+        "--zip",
+        "/fixtures/test-documents.zip",
+        "--model-dir",
+        "/opt/models/bge",
+        "--data-dir",
+        "/data",
+        "--report",
+        "/reports/semantic-results.json"
+      ],
+      "exit_code": 0,
+      "seconds": 7.249
+    }
+  ],
+  "failure": null,
+  "browser_render": "not verified by this runner",
+  "deferred": [
+    "M5 task recovery",
+    "M5 deduplication",
+    "M5 fault injection"
+  ],
+  "total_seconds": 8.156,
+  "finished_utc": "2026-10-07T12:42:59.830938+00:00"
+}
