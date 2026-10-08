@@ -28,7 +28,9 @@ P2：`search.retry_text` 原先先提取正文，再使用对 pending/processing
 
 默认启动没有导入测试数据；历史Docker验证入口不再操作演示服务，转入随机项目/新卷；外部HTTP测试需要marker，本地历史ASGI拒绝既有业务数据库。只读秘密模式扫描141个已跟踪文件，无匹配（并非绝对不存在秘密的证明）；.env/模型/数据/node_modules不入Git及Docker构建上下文。
 
-已发现并修正的是验收夹具污染，而非用调整目标问题掩盖检索退步；首轮失败报告保留。检索相对窗口保留展开入口，不能保证所有未见问题的召回。无新增认证/权限；只适用于本地考核演示。Docker冷构建/重启重建专项待运行结束后写实际结果。
+已发现并修正的是验收夹具污染，而非用调整目标问题掩盖检索退步；首轮失败报告保留。检索相对窗口保留展开入口，不能保证所有未见问题的召回。无新增认证/权限；只适用于本地考核演示。Docker冷构建/重启重建及修复后候选源码部署均已实际通过，分别见deployment-check.md。
 
 
 冷构建npm ci实际提示1个高危Vite依赖。npm audit退出1确认旧7.1.12受影响；[维护方公告](https://github.com/vitejs/vite/security/advisories/GHSA-fx2h-pf6j-xcff)说明Windows开发服务器路径访问问题。应用Docker只提供静态构建，不运行Vite开发服务器；仍升级并精确锁定7.3.7，未使用audit fix --force。升级后TypeScript/Vite构建退出0（5.803秒），npm audit退出0、0已知审计项。前后JSON见evidence/review。审计只覆盖当前npm已知项目，不当作全面安全保证。
+
+最后补查M1 staged助手只构建独立随机项目，不启动演示服务；实际Compose参数/config退出0、缺ZIP verify入口在调用Docker前拒绝（预期退出2）。最终应用21个运行源码/锁文件与已测69944d3按规范化LF字节逐一一致，证据runtime-source-match.json；后续差异仅报告及历史隔离助手。

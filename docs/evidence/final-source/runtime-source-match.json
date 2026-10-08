@@ -1,0 +1,91 @@
+{
+  "testedSourceSha": "69944d3de1707d14b5feecf56679d010fce9d9eb",
+  "runtimeFilesMatch": true,
+  "records": [
+    {
+      "file": "app/chunking.py",
+      "sha256NormalizedLF": "8c80c6a3e89cc949819a29d52a311a075b56c0479df4df604cb51310814744c8"
+    },
+    {
+      "file": "app/database.py",
+      "sha256NormalizedLF": "60930b1257e0c45c1aff695d9c847fcca16623ea85b1b42777cdf09f2558741f"
+    },
+    {
+      "file": "app/embedding.py",
+      "sha256NormalizedLF": "3c91808da3975fe9fd86f5b786d597ad3e0ef20039a1750f5ea1a506ac533465"
+    },
+    {
+      "file": "app/files.py",
+      "sha256NormalizedLF": "29a6acc69d79a5f26acee5234f08cd0086b9aece9f7819b5233b7a3a39dd212a"
+    },
+    {
+      "file": "app/indexing.py",
+      "sha256NormalizedLF": "1a3e129b913daf3380b6c42f1f794595da16a1b7cc00ee5b2dcbda3d735c06ba"
+    },
+    {
+      "file": "app/main.py",
+      "sha256NormalizedLF": "76792f91cf679c67d46593ae4e131b4f08fffb324e7359bdf97fd75d6feb9d08"
+    },
+    {
+      "file": "app/organization.py",
+      "sha256NormalizedLF": "4bb8aebbb58abe7da3b82a8728219b4195a4a5fd166c5717669ea4e300c12459"
+    },
+    {
+      "file": "app/recovery.py",
+      "sha256NormalizedLF": "593e9b653a5a96a6fc351d1b5ac0318dacbb6966885f95f579f5e1b2a9f22396"
+    },
+    {
+      "file": "app/search.py",
+      "sha256NormalizedLF": "ea1ecfadf338115c6ad25286725c7460d05ec7aa983fe4c52e3fcaa087a9ed6e"
+    },
+    {
+      "file": "app/texts.py",
+      "sha256NormalizedLF": "3ed904303b2ecca903eac475ddd7909a45545de274fc5c3ad5121f2ce3c9f977"
+    },
+    {
+      "file": "app/text_normalization.py",
+      "sha256NormalizedLF": "3303d0b71b72b9341f710cab698386c9c25d94e9a995758212c9a6e929f80ddc"
+    },
+    {
+      "file": "app/__init__.py",
+      "sha256NormalizedLF": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "frontend/src/main.tsx",
+      "sha256NormalizedLF": "79563f9f5edec2e0d493a5f3e1adb99b2742e549b5e8c11fe8eba4b9d5fab3e5"
+    },
+    {
+      "file": "frontend/src/style.css",
+      "sha256NormalizedLF": "685574bece64981c90f0da391ab53f4b2d15dbadb6339cdab0fe4e273376aec3"
+    },
+    {
+      "file": "Dockerfile",
+      "sha256NormalizedLF": "2baa982d77487f0c88084061794ac0dcf9e8699f7424f86e40194f900017c408"
+    },
+    {
+      "file": "compose.yaml",
+      "sha256NormalizedLF": "ac79bc2b9df1ed515fd1b898b6928ce3a94ee1e4e3e87e6cdda7a56fd0193cdd"
+    },
+    {
+      "file": "model-spec.json",
+      "sha256NormalizedLF": "ac044d71be947fc60dd9ccda4e27b5c5b43a0966800a7608b86bb585194e3633"
+    },
+    {
+      "file": "requirements.txt",
+      "sha256NormalizedLF": "a44d812d773f231b4aa769e37d8e9d9f767da84dfc8a2a2070b8da620c391ca4"
+    },
+    {
+      "file": "requirements.lock.txt",
+      "sha256NormalizedLF": "c4f7b810b208eb80072e45b7536fa576be635222197e5012626686e0b634224c"
+    },
+    {
+      "file": "frontend/package.json",
+      "sha256NormalizedLF": "89205683ecb4fe22a1001873436305d9d251c901ae142b2caf27a93e3804b524"
+    },
+    {
+      "file": "frontend/package-lock.json",
+      "sha256NormalizedLF": "afca9eebe81a9fb0b6516f48b090cfda11b859d25f957a0c96bf0f29aa910b51"
+    }
+  ],
+  "excluded": "docs and historical M1 Docker stage helper; final source includes isolation fix to helper"
+}

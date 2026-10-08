@@ -18,8 +18,9 @@ def main():
     configure_utf8_io()
     parser = argparse.ArgumentParser()
     parser.add_argument("--stage", required=True, choices=("pull", "build", "verify"))
-    parser.add_argument("--zip", type=Path, default=Path(r"D:\__10_.zip"))
+    parser.add_argument("--zip", type=Path)
     args = parser.parse_args()
+    if args.stage == "verify" and not args.zip:parser.error("--zip is required for isolated verification")
     attempt = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + args.stage + "-" + uuid.uuid4().hex[:6]
     directory = REPORTS / attempt
     directory.mkdir(parents=True, exist_ok=False)
@@ -79,10 +80,10 @@ def main():
                 raise RuntimeError("No successful pull evidence for current Dockerfile. Run --stage pull first.")
             for number, image in enumerate(images, 1):
                 required(f"02-inspect-{number}", ["docker", "image", "inspect", image])
-            required("03-config", ["docker", "compose", "config", "--quiet"])
-            required("04-build", ["docker", "compose", "--progress", "plain", "build"])
-            required("05-start", ["docker", "compose", "up", "-d", "--no-build"])
-            required("06-status", ["docker", "compose", "ps"])
+            compose = ["docker", "compose", "-p", "base-check-" + uuid.uuid4().hex[:12]]
+            required("03-config", compose + ["config", "--quiet"])
+            required("04-build", compose + ["--progress", "plain", "build"])
+            print("Built an independent image only; use run_m6_docker.py for isolated startup/verification.")
         else:
             required("02-verify", [sys.executable, str(ROOT / "scripts" / "run_m1_docker.py"),
                                    "--skip-build", "--zip", str(args.zip),

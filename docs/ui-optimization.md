@@ -18,3 +18,5 @@
 浏览器还实际多选上传本轮用户的两份虚构TXT/MD，看到保存2份、pending→ready；点击上传成功项“查看文件”直接打开新设备文件（6片段）。从详情下载的SHA与源相等：`0df385de253d6227442864fcd6d43eced78e77f8d9d978b167e8e6a48c0dca25`。动作记录见 ui-chain-trace.txt。测试未向演示端口8000新增文件或分类。
 
 这是Agent内置浏览器证据。普通Chrome与用户390px逐项核对仍待完成；用户手动记录独立存放于 user-validation.md。最终Docker镜像/无缓存构建和检索优化另行验证。
+
+最终已验证镜像已部署8000，保留原26文件/8分类，最终同一演示库桌面前后图见evidence/final-source/desktop-before-after.png。最终390px主页面inputY187.10、上传标题Y303.10、列表标题Y436.90，innerWidth390/scrollWidth375，无横向溢出。Agent再次通过UI输入设备问题、展开/收起和清除，默认1个正确设备来源、展开出现发布2副本；用户普通浏览器结果仍待确认。

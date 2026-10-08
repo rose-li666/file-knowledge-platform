@@ -1,0 +1,77 @@
+Browser tab: 1, Title: "知识文件库", URL: "http://localhost:8000/?mode=semantic&q=%E5%80%9F%E6%9D%A5%E7%9A%84%E8%AE%BE%E5%A4%87%E5%9D%8F%E4%BA%86%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F".
+1 AXWebArea 知识文件库, URL: localhost:8000/?mode=semantic&q=%E5%80%9F%E6%9D%A5%E7%9A%84%E8%AE%BE%E5%A4%87%E5%9D%8F%E4%BA%86%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F
+	2 container
+		3 text K
+		4 text 知识文件库
+		5 text 文件管理与检索
+		6 container 分类导航
+			7 button (collapsed) 管理分类 8, Secondary Actions: Expand
+				8 text 管理分类 
+				9 text 8
+		10 container 知识检索
+			11 container 检索方式
+				12 checkbox 关键词, Value: 0
+				13 checkbox 自然语言, Value: 1
+			14 container
+				15 text 自然语言问题
+				16 text field (settable) 自然语言问题, Value: 借来的设备坏了应该怎么办？, ID: keyword-input
+				17 button 搜索
+				18 button 清除搜索
+			19 container
+				20 text 按含义查找 TXT / Markdown，显示来源原文；相似度不是正确概率。 搜索全部分类。
+		21 container 上传文件
+			22 heading 上传文件, Value: 2, ID: upload-title
+				23 text 上传文件
+			24 container
+				25 text PDF / TXT / Markdown ·  单个文件不超过 20.0 MB
+			26 button Description: 选择上传文件, ID: file-input
+			27 button (disabled) 开始上传
+		28 checkbox 文件库, Value: 1
+		29 checkbox 归档区, Value: 0
+		431 text 分类筛选
+		432 pop up button (collapsed, settable) Description: 分类筛选, Value: 全部分类 · 26, Secondary Actions: Expand
+			433 menu
+				434 (selected) 全部分类 · 26
+				435 未分类 · 13
+				436 M3浏览器验收-已改名 · 1
+				437 M3验收-B-f9164ae7 · 0
+				438 M3验收-规范-f9164ae7 · 0
+				439 M4检索-A-5d0b97f6 · 0
+				440 M4检索-B-5d0b97f6 · 0
+				441 M5新上传-fc7aa50f · 10
+				442 M5浏览器新资料 · 2
+				443 M5空范围-fc7aa50f · 0
+		43 container 搜索结果 1
+			44 heading 搜索结果 1, Value: 2, ID: library-title
+				45 text 搜索结果 1
+			46 text 问题「借来的设备坏了应该怎么办？」 · 已归档资料不在此显示
+			47 button 刷新列表
+			444 container
+				445 text 当前范围有  1  份文本索引尚未就绪，不参与语义结果；详情可查看状态、下载或重试。
+			446 text 优先展示与首位相近的文件。
+			447 button 展开更多结果（2）
+			448 table
+				449 row
+					450 cell
+						451 text TXT
+						452 button 上传测试_设备借用.txt
+						453 container
+							454 text 三、使用期间出现问题  · 片段 # 4  · 相似度  0.641 发现投影仪无法开机、相机报错或附件损坏时，应停止使用，并记录现象和发现时间，联系设备管理员。不要自行拆机。管理员判断是否需要维修或安排替代设备，借用人补充当时的使用情况。
+						455 container
+							456 text 一、借用前登记  · 片段 # 2  · 相似度  0.630 团队成员需要借用投影仪、相机或录音设备时，应先登记设备名称、数量、使用目的、领取时间和预计归还时间。设备管理员核对库存后确认预约。同一时间设备已被预约时，需要协商其他时段，不能直接拿走。
+						457 container
+							458 text 文件 ID ·  43876231
+						459 text 可语义检索
+					460 cell
+						461 text 未分类
+					462 cell
+						463 text 1.4 KB
+						464 text 2026/10/8 12:30:46
+					465 cell
+						466 button 下载 上传测试_设备借用.txt
+						467 button 归档 上传测试_设备借用.txt
+		428 button (collapsed) 服务状态 , Secondary Actions: Expand
+			429 text 服务状态 
+		430 text 原文件持久化保存 · PDF 仅名称检索
+
+The focused UI element is 17 button 搜索

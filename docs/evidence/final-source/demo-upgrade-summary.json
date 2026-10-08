@@ -1,0 +1,27 @@
+[
+  {
+    "command": [
+      "docker",
+      "tag",
+      "m6-bc6c13232470-app:latest",
+      "knowledge-platform-app:latest"
+    ],
+    "exit": 0,
+    "seconds": 0.167
+  },
+  {
+    "command": [
+      "docker",
+      "compose",
+      "up",
+      "-d",
+      "--no-build",
+      "--force-recreate",
+      "--wait",
+      "--wait-timeout",
+      "180"
+    ],
+    "exit": 0,
+    "seconds": 7.223
+  }
+]

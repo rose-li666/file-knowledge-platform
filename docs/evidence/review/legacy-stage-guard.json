@@ -1,0 +1,13 @@
+{
+  "command": [
+    "../../work/m1-venv/Scripts/python.exe",
+    "scripts/m1_docker_stage.py",
+    "--stage",
+    "verify"
+  ],
+  "exit": 2,
+  "expectedExit": 2,
+  "passed": true,
+  "seconds": 0.104,
+  "stderr": "usage: m1_docker_stage.py [-h] --stage {pull,build,verify} [--zip ZIP]\r\nm1_docker_stage.py: error: --zip is required for isolated verification\r\n"
+}
