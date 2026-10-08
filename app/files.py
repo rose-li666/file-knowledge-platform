@@ -282,7 +282,18 @@ def document_detail(request: Request, document_id: uuid.UUID):
 
 @router.get("/documents/{document_id}/download")
 def download_document(request: Request, document_id: uuid.UUID):
+    return stored_response(request, document_id, inline=False)
+
+
+@router.get("/documents/{document_id}/preview")
+def preview_document(request: Request, document_id: uuid.UUID):
+    return stored_response(request, document_id, inline=True)
+
+
+def stored_response(request: Request, document_id: uuid.UUID, *, inline: bool):
     row = find_document(request, document_id)
+    if inline and row.extension != "pdf":
+        raise FileError(409, "PREVIEW_NOT_SUPPORTED", "在线预览只支持 PDF，请下载原文件查看。")
     directory = (request.app.state.data_dir / "uploads").resolve()
     if not re.fullmatch(r"[0-9a-f]{32}\.bin", row.storage_key):
         raise FileError(409, "STORAGE_UNAVAILABLE", "原文件存储信息异常，请联系维护人员。")
@@ -302,4 +313,5 @@ def download_document(request: Request, document_id: uuid.UUID):
         logger.exception("Stored file unavailable: %s", row.id)
         raise FileError(409, "STORAGE_UNAVAILABLE", "原文件暂不可读取；文件记录仍保留，请联系维护人员。") from error
     return FileResponse(source, filename=row.name, media_type=row.media_type,
+                        content_disposition_type="inline" if inline else "attachment",
                         headers={"X-Content-SHA256": row.sha256, "X-Content-Type-Options": "nosniff"})

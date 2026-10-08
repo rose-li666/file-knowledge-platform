@@ -187,16 +187,20 @@ def verify(client, fixture, report, data_dir=None):
 def main():
     configure_utf8_io()
     parser = argparse.ArgumentParser()
-    parser.add_argument("--zip", type=Path, default=Path(r"D:\__10_.zip"))
+    parser.add_argument("--zip", type=Path, required=True)
     parser.add_argument("--report", type=Path, required=True)
     parser.add_argument("--data-dir", type=Path)
     parser.add_argument("--base-url")
     args = parser.parse_args()
+    if args.data_dir and (args.data_dir.resolve() / "db/platform.sqlite3").exists():
+        raise RuntimeError("Use a new empty test data directory")
     started = time.perf_counter()
     report = {"checks": [], "queries": [], "original_files": [], "failure": None,
               "browser": "not proved by this script"}
     try:
         if args.base_url:
+            if not os.environ.get("ACCEPTANCE_TEST_RUN"):
+                raise RuntimeError("External HTTP verification requires an isolated test runner marker")
             report["transport"] = "real TCP HTTP " + args.base_url
             client = TcpClient(args.base_url)
             deadline = time.perf_counter() + 120

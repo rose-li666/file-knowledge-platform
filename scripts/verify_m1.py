@@ -55,10 +55,14 @@ def main():
     parser.add_argument("--data-dir", type=Path, required=True)
     parser.add_argument("--base-url", help="Use real TCP HTTP instead of application-local ASGI transport")
     args = parser.parse_args()
+    if args.data_dir and (args.data_dir.resolve() / "db/platform.sqlite3").exists():
+        raise RuntimeError("Use a new empty test data directory")
     os.environ["DATA_DIR"] = str(args.data_dir.resolve())
     os.environ.setdefault("MODEL_DIR", str(ROOT / "models" / "bge"))
     started = time.perf_counter()
     if args.base_url:
+        if not os.environ.get("ACCEPTANCE_TEST_RUN"):
+            raise RuntimeError("Use independent test runner for external HTTP writes")
         import httpx
         with httpx.Client(base_url=args.base_url, timeout=15, trust_env=False) as client:
             checks = verify(client, args.data_dir)

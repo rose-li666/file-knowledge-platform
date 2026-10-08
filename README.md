@@ -29,7 +29,7 @@ docker compose logs --tail=100 app
 4. TXT/Markdown 显示等待索引、处理中、可语义检索或失败。正文已就绪但向量失败时仍可关键词查找和下载，在详情重试索引。
 5. 归档后默认列表和两种搜索排除文件；在归档区可找回和下载，恢复后重新参与检索。筛选/问题保存在页面 URL，刷新保留。
 
-空数据卷会显示空列表，上传第一份资料即可使用。PDF 本版仅文件名称搜索和原文件下载，不提取正文。文本支持 UTF-8、带 BOM 的 UTF-16、GB18030；失败不损坏原文件。
+空数据卷会显示空列表，上传第一份资料即可使用。PDF 支持名称搜索、原文件下载及详情中的浏览器在线预览，不提取正文。预览依赖浏览器PDF阅读器，不能显示时下载查看；扫描件不会OCR。文本支持 UTF-8、带 BOM 的 UTF-16、GB18030；失败不损坏原文件。
 
 ## 持久化与崩溃处理
 
@@ -48,7 +48,7 @@ docker compose up -d --force-recreate
 
 真实考核 ZIP 不随源码提交，正常启动不需要它。将资料置于任意可读路径后，验证脚本通过 `--zip` 指定；日志 UTF-8，无需改变 Windows 执行策略。
 
-M5 验证脚本会新上传全部资料到独立分类，核对下载 SHA-256、分片向量持久化、5 组改写问题排名、过滤；进程故障实验使用独立测试数据目录，不影响主服务数据。使用当前镜像执行（先将测试 ZIP 复制为项目目录 `test-documents.zip`）：
+M5 验证脚本会新上传全部资料到独立临时数据库/目录的分类，核对下载 SHA-256、分片向量持久化、5 组改写问题排名、过滤；进程故障实验使用独立测试数据目录，不影响主服务数据。使用当前镜像执行（先将测试 ZIP 复制为项目目录 `test-documents.zip`）：
 
 ```sh
 docker compose run --no-deps --name platform-m5-check -v ./test-documents.zip:/fixtures/documents.zip:ro app python scripts/verify_m5.py --zip /fixtures/documents.zip --data-dir /tmp/m5-verification --report /tmp/m5-reports/results.json
@@ -62,4 +62,19 @@ docker rm platform-m5-check
 
 本人实现文件保存及崩溃对账、分类归档、正文提取、分片任务、向量存储与精确检索、API、React 操作页面和验证脚本。使用开源组件：[FastAPI](https://github.com/fastapi/fastapi)、[React](https://github.com/facebook/react)、[SQLAlchemy](https://github.com/sqlalchemy/sqlalchemy)、[Sentence Transformers](https://github.com/huggingface/sentence-transformers)、[BGE 模型](https://huggingface.co/BAAI/bge-small-zh-v1.5)。包版本锁定在 requirements 和前端 lock 文件；模型版本及查询前缀在 model-spec.json。未复制现成知识库项目。
 
-SQLite BLOB 保存标准化 512 维向量，NumPy 点积精确检索，以文件最佳片段排序，展示最多 2 个来源片段；默认相似度阈值 0.45，非相关性概率。适合少量考核文档，无 ANN、大库性能承诺或统一排序精度保证。单文件最多 2000 片段，过多时索引失败仍保留原文件。暂不做用户权限、问答、文件版本、PDF 正文与在线预览；当前用于本地考核演示。
+SQLite BLOB 保存标准化 512 维向量，NumPy 点积精确检索，以文件最佳片段排序，展示最多 2 个来源片段；基础相似度阈值0.45，默认最多5项且距首位得分不超过0.12；可展开原门槛下全部候选（25项/页）。来源片段距文件最佳得分不超过0.08，最多2段。相似度非相关性概率，窗口可能隐藏低分相关项；实测与局限见 `docs/retrieval-quality.md`。适合少量考核文档，无 ANN、大库性能承诺或统一排序精度保证。单文件最多 2000 片段，过多时索引失败仍保留原文件。暂不做用户权限、问答、文件版本、PDF 正文/OCR；当前用于本地考核演示。
+
+
+## 独立回归与常见失败
+
+默认启动为空库，不自动导入 `scripts/fixtures`；这些虚构资料仅用于主动执行测试。可选自动化验收需要宿主机Python3（仅编排Docker，应用启动不需要它）：
+
+```sh
+python scripts/run_m6_docker.py --zip ./test-documents.zip
+```
+
+脚本为每次运行生成独立Compose项目、随机端口和新命名卷；构建→健康→真实HTTP/模型→重启→重建逐步执行，任一步失败停止依赖步骤，UTF-8日志含命令、退出码和耗时。结束只停止自建项目，保留其测试卷和报告。历史 `run_m1_docker.py` 至 `run_m5_docker.py` 现在均转入这套隔离回归，不连接演示端口；历史报告中的旧命令对应当时提交。`--no-cache` 强制重新安装依赖及下载模型。独立项目每次构建自己的镜像，普通回归可以使用依赖层缓存；不覆盖演示镜像。
+
+下载失败：查看日志中具体 registry/npm/pip/Hugging Face 地址，检查Docker代理/DNS/网络，再重试失败的构建步骤。PowerShell把Docker进度stderr显示成红字并不代表失败，以进程退出码及最后错误为准。无需降低执行策略，使用上面Python命令。端口占用时在 `.env` 更改 `APP_PORT` 后启动。模型下载在构建期间完成，运行时不联网补下载；缺失时健康degraded，文件管理仍可用，检查镜像构建日志后重新构建/创建容器。数据目录写入错误时检查命名卷权限，不在两个服务间共享同一目录。
+
+更新源码后运行 `docker compose up --build -d`，保持同一Compose项目名以使用原卷。独立考官环境直接用干净源码和新Compose项目即可，ZIP不属于启动依赖。验收表、人工检查步骤和用户记录分别见 `docs/acceptance.md`、`docs/manual-check.md`、`docs/user-validation.md`。

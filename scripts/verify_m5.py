@@ -308,6 +308,8 @@ def main():
     started=time.perf_counter(); server=None
     try:
         if args.base_url:
+            if not os.environ.get("ACCEPTANCE_TEST_RUN"):
+                raise RuntimeError("External HTTP verification requires an isolated test runner marker")
             client=TcpClient(args.base_url)
         else:
             if (args.data_dir/'business/db/platform.sqlite3').exists():

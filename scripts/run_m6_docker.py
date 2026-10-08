@@ -16,7 +16,13 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def main():
     configure_utf8_io();parser=argparse.ArgumentParser()
-    parser.add_argument('--zip',type=Path,required=True);args=parser.parse_args()
+    parser.add_argument('--zip',type=Path,required=True)
+    parser.add_argument('--source-dir',type=Path,default=ROOT)
+    parser.add_argument('--source-sha')
+    parser.add_argument('--no-cache',action='store_true')
+    args=parser.parse_args()
+    source=args.source_dir.resolve(strict=True)
+    assert (source/'compose.yaml').is_file()
     fixture=args.zip.resolve(strict=True)
     project='m6-'+uuid.uuid4().hex[:12]
     reports=ROOT.parent/'m6-docker'/(datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+project)
@@ -24,8 +30,9 @@ def main():
     with socket.socket() as sock:
         sock.bind(('127.0.0.1',0));port=sock.getsockname()[1]
     environment=dict(os.environ,APP_PORT=str(port))
-    compose=['docker','compose','-p',project,'-f',str(ROOT/'compose.yaml')]
+    compose=['docker','compose','-p',project,'-f',str(source/'compose.yaml')]
     summary={'project':project,'port':port,'steps':[],'failure':None,'volumeRetained':project+'_platform_data',
+             'source':str(source),'sourceSha':args.source_sha,'noCache':args.no_cache,
              'scope':'new independent volume; user knowledge-platform volume untouched'}
     started=time.perf_counter()
     def run(label,command,required=True):
@@ -45,7 +52,7 @@ def main():
         if required and code != 0: raise RuntimeError(label+' failed; dependent checks stopped')
     def verify(label,phase,before=None,restore=False):
         name=project+'-verify-'+uuid.uuid4().hex[:6]
-        command=compose+['run','--no-deps','--name',name,'-v',f'{fixture}:/fixtures/documents.zip:ro']
+        command=compose+['run','--no-deps','--name',name,'-e','ACCEPTANCE_TEST_RUN='+project,'-v',f'{fixture}:/fixtures/documents.zip:ro']
         if before: command += ['-v',f'{before}:/fixtures/before.json:ro']
         command += ['app','python','scripts/verify_m6.py','--phase',phase,'--zip','/fixtures/documents.zip',
                     '--report','/tmp/m6-reports/'+label+'.json']
@@ -56,7 +63,8 @@ def main():
             run(label+'-copy',['docker','cp',name+':/tmp/m6-reports/.',str(reports)],required=False)
             run(label+'-clean',['docker','rm','-f',name],required=False)
     try:
-        run('01-fresh-build-start',compose+['up','--build','-d','--wait','--wait-timeout','180'])
+        run('00-build',compose+['build',*(['--no-cache'] if args.no_cache else [])])
+        run('01-fresh-build-start',compose+['up','--no-build','-d','--wait','--wait-timeout','180'])
         run('02-volume-inspect',['docker','volume','inspect',project+'_platform_data'])
         run('03-container-inspect',['docker','inspect',project+'-app-1'])
         name=project+'-review'

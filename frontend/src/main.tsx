@@ -112,7 +112,15 @@ function App() {
   const drawer = useRef<HTMLDialogElement>(null);
   const detailRequest = useRef(0);
   const listRequest = useRef(0);
+  const [previewUrl, setPreviewUrl] = useState('');
+  const [previewBusy, setPreviewBusy] = useState(false);
+  const [previewError, setPreviewError] = useState('');
+  const previewRequest = useRef(0);
   const [downloadId, setDownloadId] = useState('');
+  useEffect(() => {
+    previewRequest.current++; setPreviewUrl(''); setPreviewError(''); setPreviewBusy(false);
+  }, [detail?.id, detailOpen]);
+  useEffect(() => () => { if (previewUrl) URL.revokeObjectURL(previewUrl); }, [previewUrl]);
   const [probeBusy, setProbeBusy] = useState(false);
   const [probeMessage, setProbeMessage] = useState('');
   useEffect(() => {
@@ -289,6 +297,17 @@ function App() {
     } catch (error) { if (generation === detailRequest.current) setDetailError(message(error)); }
     finally { if (generation === detailRequest.current) setDetailLoading(false); }
   }
+  async function preview(document: Document) {
+    const generation = ++previewRequest.current;
+    setPreviewBusy(true); setPreviewError('');
+    try {
+      const response = await fetch(`/api/v1/documents/${document.id}/preview`);
+      if (!response.ok) throw errorFrom(await response.json(), '预览读取失败，请下载原文件查看。');
+      const blob = await response.blob();
+      if (generation === previewRequest.current) setPreviewUrl(URL.createObjectURL(blob));
+    } catch (error) { if (generation === previewRequest.current) setPreviewError(message(error)); }
+    finally { if (generation === previewRequest.current) setPreviewBusy(false); }
+  }
   async function download(document: Document) {
     if (downloadId) return;
     setDownloadId(document.id); setNotice('');
@@ -382,8 +401,7 @@ function App() {
     <details className="diagnostics"><summary>服务状态 <span className={`dot ${health?.database.status === 'ready' ? 'ok' : ''}`}/></summary><div><p>数据库：{health?.database.status ?? '未能确认'} · 本地模型：{health?.model.status ?? '未能确认'} · 验证记录：{health?.database.probeCount ?? '—'}</p><button className="secondary" disabled={probeBusy} onClick={() => void probe()}>{probeBusy ? '正在核对…' : '验证数据库读写'}</button><p role="status">{probeMessage}</p></div></details>
     </div></div>
     <dialog ref={drawer} className="detail-drawer" aria-labelledby="detail-title" onCancel={closeDetail} onClose={() => setDetailOpen(false)}><div className="drawer-heading"><button className="secondary" aria-label="关闭文件详情" onClick={closeDetail}>关闭</button><span className="label">资料信息</span><h2 id="detail-title">文件详情</h2></div><div className="drawer-body">
-      {detailLoading ? <p role="status">正在加载详情…</p> : detailError ? <p className="error" role="alert">{detailError}</p> : detail ? <><h3 className="detail-name">{detail.name}</h3><dl>
-        <dt>文件 ID</dt><dd className="hash">{detail.id}</dd><dt>文件类型</dt><dd>{detail.extension.toUpperCase()}</dd><dt>分类</dt><dd>{detail.category?.name ?? '未分类'}</dd><dt>状态</dt><dd>{detail.archivedAt ? `已归档 · ${date(detail.archivedAt)}` : '文件库'}</dd><dt>正文检索</dt><dd>{textStatus(detail.textStatus)}{detail.textEncoding && <small>{detail.textEncoding}</small>}</dd><dt>语义索引</dt><dd>{vectorStatus(detail.vectorStatus)}{detail.vectorStatus === 'ready' && <small>{detail.chunkCount} 个片段</small>}</dd><dt>大小</dt><dd>{size(detail.sizeBytes)} <small>{detail.sizeBytes.toLocaleString()} 字节</small></dd><dt>上传时间</dt><dd>{date(detail.uploadedAt)}</dd><dt>SHA-256</dt><dd className="hash">{detail.sha256}</dd></dl>{detail.vectorError && <p className="error" role="alert">{detail.vectorError} 原文件仍可下载。</p>}{!['not_supported', 'pending', 'processing'].includes(detail.vectorStatus) && <button className="secondary" disabled={indexBusy} onClick={() => void retryIndex(detail)}>{indexBusy ? '正在提交…' : detail.vectorStatus === 'ready' ? '重新建立索引' : '重试索引'}</button>}{detail.textError && <p className="error" role="alert">{detail.textError}</p>}{['failed', 'not_started'].includes(detail.textStatus) && <button className="secondary" disabled={textBusy} onClick={() => void retryText(detail)}>{textBusy ? '正在提取正文…' : '重试正文提取'}</button>}<label className="move-label" htmlFor="move-category">调整文件归属</label><select id="move-category" value={moveCategory} disabled={actionBusy || categoryLoading || !!categoryError} onChange={event => setMoveCategory(event.target.value)}><option value="">未分类</option>{categories.items.map(row => <option key={row.id} value={row.id}>{row.name}</option>)}</select><button className="secondary" disabled={actionBusy || categoryLoading || !!categoryError || moveCategory === (detail.category?.id ?? '')} onClick={() => void organize(detail, 'category')}>移动文件</button><p className="saved-note">{detail.archivedAt ? '归档保留原文件，可随时恢复和下载。' : '原文件已保存，可下载。'}</p><button disabled={!!downloadId} onClick={() => void download(detail)}>{downloadId === detail.id ? '下载中…' : '下载原文件'}</button><button className="secondary" disabled={actionBusy} onClick={() => void organize(detail, detail.archivedAt ? 'restore' : 'archive')}>{actionBusy ? '正在保存…' : detail.archivedAt ? '恢复文件' : '归档文件'}</button></> : <p className="detail-placeholder">点击文件名称，查看详情、调整分类或归档。</p>}
+      {detailLoading ? <p role="status">正在加载详情…</p> : detailError ? <p className="error" role="alert">{detailError}</p> : detail ? <><h3 className="detail-name">{detail.name}</h3>{detail.extension === 'pdf' && <div className="pdf-preview"><button className="secondary" disabled={previewBusy} onClick={() => void preview(detail)}>{previewBusy ? '读取预览中…' : previewUrl ? '重新加载预览' : '在线预览 PDF'}</button><p>使用浏览器 PDF 阅读器；若当前浏览器无法显示，请下载原文件查看。PDF 暂不参与正文或语义检索。</p>{previewError && <p className="error" role="alert">{previewError}</p>}{previewUrl && <iframe title={`PDF 预览 ${detail.name}`} src={previewUrl} />}</div>}<dl><dt>文件 ID</dt><dd className="hash">{detail.id}</dd><dt>文件类型</dt><dd>{detail.extension.toUpperCase()}</dd><dt>分类</dt><dd>{detail.category?.name ?? '未分类'}</dd><dt>状态</dt><dd>{detail.archivedAt ? `已归档 · ${date(detail.archivedAt)}` : '文件库'}</dd><dt>正文检索</dt><dd>{textStatus(detail.textStatus)}{detail.textEncoding && <small>{detail.textEncoding}</small>}</dd><dt>语义索引</dt><dd>{vectorStatus(detail.vectorStatus)}{detail.vectorStatus === 'ready' && <small>{detail.chunkCount} 个片段</small>}</dd><dt>大小</dt><dd>{size(detail.sizeBytes)} <small>{detail.sizeBytes.toLocaleString()} 字节</small></dd><dt>上传时间</dt><dd>{date(detail.uploadedAt)}</dd><dt>SHA-256</dt><dd className="hash">{detail.sha256}</dd></dl>{detail.vectorError && <p className="error" role="alert">{detail.vectorError} 原文件仍可下载。</p>}{!['not_supported', 'pending', 'processing'].includes(detail.vectorStatus) && <button className="secondary" disabled={indexBusy} onClick={() => void retryIndex(detail)}>{indexBusy ? '正在提交…' : detail.vectorStatus === 'ready' ? '重新建立索引' : '重试索引'}</button>}{detail.textError && <p className="error" role="alert">{detail.textError}</p>}{['failed', 'not_started'].includes(detail.textStatus) && <button className="secondary" disabled={textBusy} onClick={() => void retryText(detail)}>{textBusy ? '正在提取正文…' : '重试正文提取'}</button>}<label className="move-label" htmlFor="move-category">调整文件归属</label><select id="move-category" value={moveCategory} disabled={actionBusy || categoryLoading || !!categoryError} onChange={event => setMoveCategory(event.target.value)}><option value="">未分类</option>{categories.items.map(row => <option key={row.id} value={row.id}>{row.name}</option>)}</select><button className="secondary" disabled={actionBusy || categoryLoading || !!categoryError || moveCategory === (detail.category?.id ?? '')} onClick={() => void organize(detail, 'category')}>移动文件</button><p className="saved-note">{detail.archivedAt ? '归档保留原文件，可随时恢复和下载。' : '原文件已保存，可下载。'}</p><button disabled={!!downloadId} onClick={() => void download(detail)}>{downloadId === detail.id ? '下载中…' : '下载原文件'}</button><button className="secondary" disabled={actionBusy} onClick={() => void organize(detail, detail.archivedAt ? 'restore' : 'archive')}>{actionBusy ? '正在保存…' : detail.archivedAt ? '恢复文件' : '归档文件'}</button></> : <p className="detail-placeholder">点击文件名称，查看详情、调整分类或归档。</p>}
     </div></dialog>
     <footer>原文件持久化保存 · PDF 仅名称检索</footer>
   </main>;

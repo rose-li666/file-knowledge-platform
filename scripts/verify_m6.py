@@ -1,7 +1,9 @@
 """Fresh-volume regression and exact metadata/vector checks after recreation."""
 import argparse
+import os
 import hashlib
 import json
+import hashlib
 import sqlite3
 import sys
 import time
@@ -69,6 +71,15 @@ def prepare(client, fixture, data_dir, report):
         api(client,'GET',path,expected=expected)
     pdf=next(row for row in fresh['uploads'] if row['name'].endswith('.pdf'))
     api(client,'POST',f'/api/v1/documents/{pdf["id"]}/index/retry',expected=409)
+    for row in fresh['uploads']:
+        if row['name'].endswith('.pdf'):
+            status,raw,headers=client.request('GET',f'/api/v1/documents/{row["id"]}/preview')
+            expected=api(client,'GET',f'/api/v1/documents/{row["id"]}')
+            assert status == 200 and hashlib.sha256(raw).hexdigest() == expected['sha256']
+            assert headers['content-disposition'].startswith('inline') and headers['content-type'] == 'application/pdf'
+            report['checks'].append({'check':'pdf_preview_original_sha_inline','passed':True,'name':row['name'],'sha256':expected['sha256']})
+    txt=next(row for row in fresh['uploads'] if row['name'].endswith('.txt'))
+    api(client,'GET',f'/api/v1/documents/{txt["id"]}/preview',expected=409)
     probe=api(client,'POST','/api/v1/m1/probes',{'value':'M6 fresh volume read/write'},201)
     assert api(client,'GET','/api/v1/m1/probes')['items'][0]['id'] == probe['id']
     report['checks'].append({'check':'category_rename_duplicate_validation_parameter_errors_and_database_rw','passed':True})
@@ -131,6 +142,7 @@ def main():
     report={'checks':[],'failure':None,'phase':args.phase,'transport':'real Docker TCP HTTP','browser':'separate verification'}
     started=time.perf_counter()
     try:
+        assert os.environ.get("ACCEPTANCE_TEST_RUN"),"Use independent run_m6_docker.py"
         client=TcpClient(args.base_url)
         report['health']=api(client,'GET','/api/v1/health')
         if args.phase == 'prepare': prepare(client,args.zip,args.data_dir,report)

@@ -1,0 +1,62 @@
+{
+  "checks": [
+    {
+      "id": "0a91403c-9108-433f-847e-36bddc3abccb",
+      "name": "10_文档分类与归档规范_v1.0.pdf",
+      "sha256": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+      "status": 200,
+      "headers": {
+        "date": "Thu, 08 Oct 2026 05:23:57 GMT",
+        "server": "uvicorn",
+        "x-content-sha256": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/pdf",
+        "accept-ranges": "bytes",
+        "content-disposition": "inline; filename*=utf-8''10_%E6%96%87%E6%A1%A3%E5%88%86%E7%B1%BB%E4%B8%8E%E5%BD%92%E6%A1%A3%E8%A7%84%E8%8C%83_v1.0.pdf",
+        "content-length": "170109",
+        "last-modified": "Thu, 08 Oct 2026 05:20:17 GMT",
+        "etag": "\"cd058b58975f15ea326f2f6c8a52e8ca\"",
+        "Connection": "close"
+      }
+    },
+    {
+      "id": "e25d9e54-4582-4101-a002-5ec64e9a684e",
+      "name": "08_检索技术说明_关键词与语义_v1.0.pdf",
+      "sha256": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+      "status": 200,
+      "headers": {
+        "date": "Thu, 08 Oct 2026 05:23:57 GMT",
+        "server": "uvicorn",
+        "x-content-sha256": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/pdf",
+        "accept-ranges": "bytes",
+        "content-disposition": "inline; filename*=utf-8''08_%E6%A3%80%E7%B4%A2%E6%8A%80%E6%9C%AF%E8%AF%B4%E6%98%8E_%E5%85%B3%E9%94%AE%E8%AF%8D%E4%B8%8E%E8%AF%AD%E4%B9%89_v1.0.pdf",
+        "content-length": "187732",
+        "last-modified": "Thu, 08 Oct 2026 05:20:16 GMT",
+        "etag": "\"3940c6e60436e3ff436fe65d8a65d67b\"",
+        "Connection": "close"
+      }
+    },
+    {
+      "id": "24021de8-d347-477c-bfff-4b988aa3afb5",
+      "name": "04_星桥项目_需求与范围_v1.0.pdf",
+      "sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+      "status": 200,
+      "headers": {
+        "date": "Thu, 08 Oct 2026 05:23:57 GMT",
+        "server": "uvicorn",
+        "x-content-sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+        "x-content-type-options": "nosniff",
+        "content-type": "application/pdf",
+        "accept-ranges": "bytes",
+        "content-disposition": "inline; filename*=utf-8''04_%E6%98%9F%E6%A1%A5%E9%A1%B9%E7%9B%AE_%E9%9C%80%E6%B1%82%E4%B8%8E%E8%8C%83%E5%9B%B4_v1.0.pdf",
+        "content-length": "186886",
+        "last-modified": "Thu, 08 Oct 2026 05:20:14 GMT",
+        "etag": "\"e0e6449dc1808c9a4d87afede08d8a7a\"",
+        "Connection": "close"
+      }
+    }
+  ],
+  "textRejected409": true
+}
