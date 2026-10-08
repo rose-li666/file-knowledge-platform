@@ -1,0 +1,4 @@
+Command: docker run -d --name candidate-quality-092a0c3633 -e ACCEPTANCE_TEST_RUN=candidate-quality-092a0c3633 -p 127.0.0.1:55114:8000 --mount type=volume,source=candidate-quality-092a0c3633-data,target=/data --mount type=bind,source=D:\__10_.zip,target=/fixtures/documents.zip,readonly m6-dec5b5de6fc8-app
+8c9ce2b3151b338b679d64363d34d0a0996789f9c5f2cadc1769ff0a56353026
+
+Exit code: 0

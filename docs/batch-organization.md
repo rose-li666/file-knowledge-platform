@@ -55,7 +55,7 @@
 | 低高度布局 | 390×300底部按钮top240.5/bottom278<300。首次滚动探测未移动，未算通过；等待20条文件实际加载后再次鼠标滚动，内容scrollHeight1589、scrollTop0→300，底部287<300；宽度scrollWidth=clientWidth=375（390视口另有15px纵向滚动条） | browser-records.json、demo-390x300-picker-scrolled.png |
 | 最终Docker镜像 | build退出0、90.551秒；up -d --no-build --force-recreate --wait退出0、12.336秒；另一独立空卷无业务源码/前端绑定，既有4项0.470秒、批量6项2.250秒均通过 | build-summary.json、up-summary.json、final-image/results.json、final-image/batch-final-image.json、final-image/execution-summary.json |
 | 演示数据保留与新入口 | 更新前后26文件、9分类完整元数据及26份下载SHA完全一致；在8000内置浏览器只打开/取消新弹窗，看到最终index-BdynQb7T.js和20条真实文件、底部按钮可达，没有添加演示测试资料或修改归属 | demo-before.json、demo-after.json、demo-narrow-picker.png、demo-page.png |
-| 普通Chrome用户人工 | **用户手动通过**：添加文件入口清晰、多选移动、数量更新、刷新保留、关键词和语义分类过滤正常。窗口尺寸未说明；改名/低高度/390px及部分失败重试不据此推断通过 | user-validation.md |
+| 普通Chrome用户人工 | **用户手动通过**：添加文件入口清晰、多选移动、数量更新、刷新保留、关键词和语义分类过滤正常。窗口尺寸未说明；当时不据此推断改名/低高度/390px及部分失败重试；后续用户已汇总确认完成，专项明细未提供 | user-validation.md |
 
 命令在项目根目录执行，日志记录实测，不用预期代替通过：
 
@@ -77,7 +77,7 @@ docker exec <最终镜像隔离容器> python scripts/verify_batch_organization.
 
 ## 复验与限制
 
-普通Chrome添加入口、多选移动、数量变化、刷新和两种搜索分类过滤已获得用户手动通过，不要求重复验收已确认范围。约390px重复选择和提交、低高度鼠标/键盘可达，以及部分失败提示/重试的人工确认仍缺；见manual-check.md和remaining-acceptance.md。
+普通Chrome添加入口、多选移动、数量变化、刷新和两种搜索分类过滤已获得用户手动通过，不要求重复验收已确认范围。后续用户汇总确认验证完成，未附尺寸/动作明细；参考步骤保留于manual-check.md。当前候选代码完整隔离回归见final-candidate-review.md，交付条件见remaining-acceptance.md。
 
 选择只保存在本次页面会话，浏览器整页刷新后需重新选择。文件选择弹窗只列未归档文件，归档文件可从归档区主列表批量移动。没有撤销历史或乐观锁；并发修改同一文件的归属以最后提交为准，需要时可再次移动。没有增加目录树。
 

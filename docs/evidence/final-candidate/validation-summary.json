@@ -1,0 +1,86 @@
+{
+  "candidateSourceSha": "2e6f81fd4ba242073a0d1f57e8c77d0d1171ba06",
+  "unexpectedTestFailures": 0,
+  "allCommandExitCodesZero": true,
+  "gitArchiveSource": true,
+  "noCache": true,
+  "serviceMounts": [
+    {
+      "Type": "volume",
+      "Name": "m6-dec5b5de6fc8_platform_data",
+      "Source": "m6-dec5b5de6fc8_platform_data",
+      "Destination": "/data",
+      "Driver": "local",
+      "Mode": "rw",
+      "RW": true,
+      "Propagation": ""
+    }
+  ],
+  "serviceUser": "appuser",
+  "serviceCmd": [
+    "uvicorn",
+    "app.main:app",
+    "--host",
+    "0.0.0.0",
+    "--port",
+    "8000",
+    "--workers",
+    "1"
+  ],
+  "demoBeforeAfterAllEqual": true,
+  "demoFiles": 26,
+  "demoCategories": 9,
+  "demoDownloadShaChecks": 26,
+  "reports": {
+    "03-review-after.json": {
+      "checks": 3,
+      "seconds": 14.412
+    },
+    "04-prepare.json": {
+      "checks": 11,
+      "seconds": 6.759
+    },
+    "07-after-restart.json": {
+      "checks": 2,
+      "seconds": 0.136
+    },
+    "09-after-recreate.json": {
+      "checks": 3,
+      "seconds": 0.18
+    },
+    "p0.json": {
+      "checks": 4,
+      "seconds": 0.682
+    },
+    "batch.json": {
+      "checks": 6,
+      "seconds": 2.3
+    },
+    "post-browser.json": {
+      "checks": 3,
+      "seconds": 0.089
+    },
+    "quality.json": {
+      "checks": 4,
+      "seconds": 8.411
+    },
+    "m5.json": {
+      "checks": 11,
+      "seconds": 46.289
+    }
+  },
+  "originalRanks": [
+    1,
+    1,
+    2,
+    1,
+    1
+  ],
+  "supplementFixturePreparation": "HTTP only; no new browser execution",
+  "testVolumesRetained": [
+    "m6-dec5b5de6fc8_platform_data",
+    "candidate-batch-93e37792f7-data",
+    "candidate-quality-092a0c3633-data",
+    "candidate-faults-0c63b6080b-data"
+  ]
+}

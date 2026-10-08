@@ -1,0 +1,12 @@
+INFO:     Started server process [360]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:33435 (Press CTRL+C to quit)
+INFO:     127.0.0.1:37448 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37462 - "GET /api/v1/documents/2ae81314-9b02-405f-ab78-e5c2b9a2cfdd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37472 - "GET /api/v1/search/semantic?q=%E4%BB%A3%E7%A0%81%E4%BA%A4%E4%BB%98%E5%89%8D%E6%80%8E%E4%B9%88%E6%A3%80%E6%9F%A5&limit=25&min_score=0&score_window=1&archived=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37474 - "GET /api/v1/documents/2ae81314-9b02-405f-ab78-e5c2b9a2cfdd/download HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [360]

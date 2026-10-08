@@ -1,0 +1,4 @@
+Command: docker exec candidate-batch-93e37792f7 python scripts/verify_batch_organization.py --report /tmp/check-reports/batch.json
+{"checks": 6, "seconds": 2.3, "failure": null}
+
+Exit code: 0

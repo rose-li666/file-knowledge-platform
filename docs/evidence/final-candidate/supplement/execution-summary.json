@@ -1,0 +1,275 @@
+{
+  "image": "m6-dec5b5de6fc8-app",
+  "sourceSha": "2e6f81fd4ba242073a0d1f57e8c77d0d1171ba06",
+  "steps": [
+    {
+      "step": "batch-start",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--name",
+        "candidate-batch-93e37792f7",
+        "-e",
+        "ACCEPTANCE_TEST_RUN=candidate-batch-93e37792f7",
+        "-p",
+        "127.0.0.1:53549:8000",
+        "--mount",
+        "type=volume,source=candidate-batch-93e37792f7-data,target=/data",
+        "m6-dec5b5de6fc8-app"
+      ],
+      "exit_code": 0,
+      "seconds": 0.381
+    },
+    {
+      "step": "batch-inspect",
+      "command": [
+        "docker",
+        "inspect",
+        "candidate-batch-93e37792f7"
+      ],
+      "exit_code": 0,
+      "seconds": 0.152
+    },
+    {
+      "step": "p0-http",
+      "command": [
+        "docker",
+        "exec",
+        "candidate-batch-93e37792f7",
+        "python",
+        "scripts/verify_acceptance.py",
+        "--report",
+        "/tmp/check-reports/p0.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.095
+    },
+    {
+      "step": "batch-http",
+      "command": [
+        "docker",
+        "exec",
+        "candidate-batch-93e37792f7",
+        "python",
+        "scripts/verify_batch_organization.py",
+        "--report",
+        "/tmp/check-reports/batch.json"
+      ],
+      "exit_code": 0,
+      "seconds": 2.721
+    },
+    {
+      "step": "batch-fault-fixture-http-only",
+      "command": [
+        "docker",
+        "exec",
+        "candidate-batch-93e37792f7",
+        "python",
+        "-c",
+        "import json,sys;sys.path.insert(0,'scripts');from verify_m2 import TcpClient;from verify_m5 import api;from pathlib import Path;c=TcpClient('http://127.0.0.1:8000');f=json.loads(Path('/tmp/check-reports/batch.json').read_text())['browserFixture'];ids=[r['id'] for r in f['documents']];b=api(c,'POST','/api/v1/categories',{'name':'浏览器批量目标'},201);api(c,'PATCH','/api/v1/documents/batch/category',{'categoryId':f['target']['id'],'documentIds':ids[:2]});api(c,'PATCH','/api/v1/documents/batch/category',{'categoryId':b['id'],'documentIds':ids[2:]});print('Prepared fixture by HTTP only; no new browser execution')"
+      ],
+      "exit_code": 0,
+      "seconds": 0.449
+    },
+    {
+      "step": "batch-sql-fault",
+      "command": [
+        "docker",
+        "exec",
+        "candidate-batch-93e37792f7",
+        "python",
+        "scripts/verify_batch_after_browser.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.516
+    },
+    {
+      "step": "batch-copy",
+      "command": [
+        "docker",
+        "cp",
+        "candidate-batch-93e37792f7:/tmp/check-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793\\supplement"
+      ],
+      "exit_code": 0,
+      "seconds": 0.154
+    },
+    {
+      "step": "batch-logs",
+      "command": [
+        "docker",
+        "logs",
+        "candidate-batch-93e37792f7"
+      ],
+      "exit_code": 0,
+      "seconds": 0.154
+    },
+    {
+      "step": "batch-stop",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "candidate-batch-93e37792f7"
+      ],
+      "exit_code": 0,
+      "seconds": 0.425
+    },
+    {
+      "step": "quality-start",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--name",
+        "candidate-quality-092a0c3633",
+        "-e",
+        "ACCEPTANCE_TEST_RUN=candidate-quality-092a0c3633",
+        "-p",
+        "127.0.0.1:55114:8000",
+        "--mount",
+        "type=volume,source=candidate-quality-092a0c3633-data,target=/data",
+        "--mount",
+        "type=bind,source=D:\\__10_.zip,target=/fixtures/documents.zip,readonly",
+        "m6-dec5b5de6fc8-app"
+      ],
+      "exit_code": 0,
+      "seconds": 0.355
+    },
+    {
+      "step": "quality-inspect",
+      "command": [
+        "docker",
+        "inspect",
+        "candidate-quality-092a0c3633"
+      ],
+      "exit_code": 0,
+      "seconds": 0.153
+    },
+    {
+      "step": "quality-http",
+      "command": [
+        "docker",
+        "exec",
+        "candidate-quality-092a0c3633",
+        "python",
+        "scripts/verify_retrieval_quality.py",
+        "--zip",
+        "/fixtures/documents.zip",
+        "--report",
+        "/tmp/check-reports/quality.json"
+      ],
+      "exit_code": 0,
+      "seconds": 8.82
+    },
+    {
+      "step": "quality-copy",
+      "command": [
+        "docker",
+        "cp",
+        "candidate-quality-092a0c3633:/tmp/check-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793\\supplement"
+      ],
+      "exit_code": 0,
+      "seconds": 0.161
+    },
+    {
+      "step": "quality-logs",
+      "command": [
+        "docker",
+        "logs",
+        "candidate-quality-092a0c3633"
+      ],
+      "exit_code": 0,
+      "seconds": 0.157
+    },
+    {
+      "step": "quality-stop",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "candidate-quality-092a0c3633"
+      ],
+      "exit_code": 0,
+      "seconds": 0.469
+    },
+    {
+      "step": "m5-full-faults",
+      "command": [
+        "docker",
+        "run",
+        "--name",
+        "candidate-faults-0c63b6080b",
+        "-e",
+        "ACCEPTANCE_TEST_RUN=candidate-faults-0c63b6080b",
+        "--mount",
+        "type=volume,source=candidate-faults-0c63b6080b-data,target=/data",
+        "--mount",
+        "type=bind,source=D:\\__10_.zip,target=/fixtures/documents.zip,readonly",
+        "m6-dec5b5de6fc8-app",
+        "python",
+        "scripts/verify_m5.py",
+        "--zip",
+        "/fixtures/documents.zip",
+        "--data-dir",
+        "/data/final-m5",
+        "--report",
+        "/tmp/check-reports/m5.json"
+      ],
+      "exit_code": 0,
+      "seconds": 47.064
+    },
+    {
+      "step": "faults-copy",
+      "command": [
+        "docker",
+        "cp",
+        "candidate-faults-0c63b6080b:/tmp/check-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793\\supplement"
+      ],
+      "exit_code": 0,
+      "seconds": 0.162
+    },
+    {
+      "step": "final-copy",
+      "command": [
+        "docker",
+        "cp",
+        "candidate-faults-0c63b6080b:/tmp/check-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793\\supplement"
+      ],
+      "exit_code": 0,
+      "seconds": 0.17
+    },
+    {
+      "step": "final-logs",
+      "command": [
+        "docker",
+        "logs",
+        "candidate-faults-0c63b6080b"
+      ],
+      "exit_code": 0,
+      "seconds": 0.152
+    },
+    {
+      "step": "final-stop",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "candidate-faults-0c63b6080b"
+      ],
+      "exit_code": 0,
+      "seconds": 0.165
+    }
+  ],
+  "failure": null,
+  "volumes": [
+    "candidate-batch-93e37792f7-data",
+    "candidate-quality-092a0c3633-data",
+    "candidate-faults-0c63b6080b-data"
+  ],
+  "seconds": 75.729
+}

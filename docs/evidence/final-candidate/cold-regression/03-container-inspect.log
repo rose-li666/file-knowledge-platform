@@ -1,0 +1,294 @@
+Command: docker inspect m6-dec5b5de6fc8-app-1
+[
+    {
+        "Id": "447358a3fd49a910f8fa8e19f93700fd5b183fe74252061c60227783a247a389",
+        "Created": "2026-10-08T11:34:25.226430832Z",
+        "Path": "uvicorn",
+        "Args": [
+            "app.main:app",
+            "--host",
+            "0.0.0.0",
+            "--port",
+            "8000",
+            "--workers",
+            "1"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 49630,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-10-08T11:34:25.534273777Z",
+            "FinishedAt": "0001-01-01T00:00:00Z",
+            "Health": {
+                "Status": "healthy",
+                "FailingStreak": 0,
+                "Log": [
+                    {
+                        "Start": "2026-10-08T11:34:30.648174962Z",
+                        "End": "2026-10-08T11:34:31.005670189Z",
+                        "ExitCode": 0,
+                        "Output": ""
+                    }
+                ]
+            }
+        },
+        "Image": "sha256:1d9deece72681591ce294a03be5456c64cc449ffec15a16a6aa09120c957ff5f",
+        "ResolvConfPath": "/var/lib/docker/containers/447358a3fd49a910f8fa8e19f93700fd5b183fe74252061c60227783a247a389/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/447358a3fd49a910f8fa8e19f93700fd5b183fe74252061c60227783a247a389/hostname",
+        "HostsPath": "/var/lib/docker/containers/447358a3fd49a910f8fa8e19f93700fd5b183fe74252061c60227783a247a389/hosts",
+        "LogPath": "/var/lib/docker/containers/447358a3fd49a910f8fa8e19f93700fd5b183fe74252061c60227783a247a389/447358a3fd49a910f8fa8e19f93700fd5b183fe74252061c60227783a247a389-json.log",
+        "Name": "/m6-dec5b5de6fc8-app-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "m6-dec5b5de6fc8_platform_data:/data:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "m6-dec5b5de6fc8_default",
+            "PortBindings": {
+                "8000/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "63769"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "m6-dec5b5de6fc8_platform_data",
+                "Source": "m6-dec5b5de6fc8_platform_data",
+                "Destination": "/data",
+                "Driver": "local",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "447358a3fd49",
+            "Domainname": "",
+            "User": "appuser",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "MODEL_CPU_THREADS=2",
+                "MAX_UPLOAD_BYTES=20971520",
+                "DATA_DIR=/data",
+                "MODEL_DIR=/opt/models/bge",
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.14",
+                "PYTHON_SHA256=5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1",
+                "HF_HUB_OFFLINE=1",
+                "TRANSFORMERS_OFFLINE=1"
+            ],
+            "Cmd": [
+                "uvicorn",
+                "app.main:app",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "8000",
+                "--workers",
+                "1"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health',timeout=4)\""
+                ],
+                "Interval": 20000000000,
+                "Timeout": 5000000000,
+                "StartPeriod": 90000000000,
+                "Retries": 3
+            },
+            "Image": "m6-dec5b5de6fc8-app",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "8039c68860610513b4e5e81eb9dda117190a53cecc6d5e18c3703988c9d0c1fb",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:e863ba755eb176c41f902471268b1193c960ac3124c2605f0fa7dea90a07c3bf",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "m6-dec5b5de6fc8",
+                "com.docker.compose.project.config_files": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793\\source\\compose.yaml",
+                "com.docker.compose.project.working_dir": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793\\source",
+                "com.docker.compose.service": "app",
+                "com.docker.compose.version": "5.5.0"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "f3bcbbb165be28568ae4b77adcc276f3060042defebd637176819971471207ee",
+            "SandboxKey": "/var/run/docker/netns/f3bcbbb165be",
+            "Ports": {
+                "8000/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "63769"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "63769"
+                    }
+                ]
+            },
+            "Networks": {
+                "m6-dec5b5de6fc8_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "m6-dec5b5de6fc8-app-1",
+                        "app"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "d913e43fb3258a47016abd24e3bd0d38914bf4f1b6c3a153e778200a2ab8e0da",
+                    "EndpointID": "0a32e91b86ebaee20dd997362aa94a5cc212a3d4a2dee69153986d2832834ca5",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.2",
+                    "MacAddress": "46:21:88:f1:2b:b8",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "m6-dec5b5de6fc8-app-1",
+                        "app",
+                        "447358a3fd49"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:e863ba755eb176c41f902471268b1193c960ac3124c2605f0fa7dea90a07c3bf",
+            "size": 2953,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+
+Exit code: 0; seconds: 0.152

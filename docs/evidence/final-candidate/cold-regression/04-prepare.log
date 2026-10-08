@@ -1,0 +1,30 @@
+Command: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml run --no-deps --name m6-dec5b5de6fc8-verify-34bada -e ACCEPTANCE_TEST_RUN=m6-dec5b5de6fc8 -v D:\__10_.zip:/fixtures/documents.zip:ro app python scripts/verify_m6.py --phase prepare --zip /fixtures/documents.zip --report /tmp/m6-reports/04-prepare.json
+ Container m6-dec5b5de6fc8-verify-34bada Creating 
+ Container m6-dec5b5de6fc8-verify-34bada Created 
+PASS new business upload 01_代码提交规范_v2.1.md
+PASS new business upload 02_发布检查清单_v1.4.md
+PASS new business upload 03_文件服务接口约定_v1.2.md
+PASS new business upload 04_星桥项目_需求与范围_v1.0.pdf
+PASS new business upload 05_星桥项目_发布检查清单_2026-09-18.txt
+PASS new business upload 06_星桥项目_故障复盘_2026-09-21.md
+PASS new business upload 07_星桥项目_用户访谈纪要_2026-09-12.txt
+PASS new business upload 08_检索技术说明_关键词与语义_v1.0.pdf
+PASS new business upload 09_本地部署故障排查_v1.3.txt
+PASS new business upload 10_文档分类与归档规范_v1.0.pdf
+QUERY rank=1 01_代码提交规范_v2.1.md
+QUERY rank=1 03_文件服务接口约定_v1.2.md
+QUERY rank=2 02_发布检查清单_v1.4.md
+QUERY rank=1 06_星桥项目_故障复盘_2026-09-21.md
+QUERY rank=1 09_本地部署故障排查_v1.3.txt
+PASS zip_7_texts_ready_3_pdfs_name_only_and_10_downloads_unchanged
+PASS chinese_keywords_complete_identifiers_and_pdf_filename_return_expected_zip_files_with_snippets
+PASS identifier_case_insensitive_and_underscore_percent_are_literal_not_wildcards
+PASS empty_results_and_invalid_query_feedback
+PASS search_count_and_pagination_are_consistent
+PASS move_search_archive_search_restore_search_and_download_consistency
+PASS invalid_category_search_has_clear_feedback
+PASS actual_invalid_encoding_fails_extraction_but_upload_name_search_retry_and_original_download_work
+PASS pdf_extraction_not_supported_and_missing_document_retry_feedback
+{"phase": "prepare", "checks": 11, "failure": null, "seconds": 6.759}
+
+Exit code: 0; seconds: 7.761

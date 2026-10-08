@@ -1,0 +1,16 @@
+INFO:     Started server process [120]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:42147 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51574 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51588 - "GET /api/v1/documents/e418449d-5826-429d-af0f-7435d03e42ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51602 - "POST /api/v1/documents/e418449d-5826-429d-af0f-7435d03e42ad/index/retry HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:51608 - "GET /api/v1/documents/e418449d-5826-429d-af0f-7435d03e42ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51622 - "GET /api/v1/documents/e418449d-5826-429d-af0f-7435d03e42ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51630 - "GET /api/v1/documents/e418449d-5826-429d-af0f-7435d03e42ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51642 - "GET /api/v1/documents/e418449d-5826-429d-af0f-7435d03e42ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51654 - "GET /api/v1/search/semantic?q=%E5%9C%A8%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E4%BB%A5%E5%89%8D%E5%A6%82%E4%BD%95%E9%AA%8C%E8%AF%81%E8%B4%A8%E9%87%8F&limit=25&min_score=0&score_window=1&archived=false HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [120]

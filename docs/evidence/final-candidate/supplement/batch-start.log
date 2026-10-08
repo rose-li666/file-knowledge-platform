@@ -1,0 +1,4 @@
+Command: docker run -d --name candidate-batch-93e37792f7 -e ACCEPTANCE_TEST_RUN=candidate-batch-93e37792f7 -p 127.0.0.1:53549:8000 --mount type=volume,source=candidate-batch-93e37792f7-data,target=/data m6-dec5b5de6fc8-app
+1ff0529aef982406d817e6762b6fb106d0756d4a53569024c34a9439ca35b72c
+
+Exit code: 0

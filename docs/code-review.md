@@ -38,4 +38,9 @@ P2：`search.retry_text` 原先先提取正文，再使用对 pending/processing
 
 本轮 Agent 自查新增路径：批量接口有 UUID/1–100 数量校验、完整 ID 去重，静态 batch 路由在动态 UUID 路由前注册；目标错误不更新任何文件，缺失文件逐项反馈，SQL失败回滚整个事务，响应丢失后同目标重试不重复计数。请求只写 category_id，不改变路径、原字节、归档、正文、索引和密钥配置。名称筛选是参数化字面子串，不使用 SQL 通配符。
 
-页面检查：两入口统一批量提交，成功移除选择、失败保留姓名/ID/原因；分类刷新不清空弹窗草稿；旧请求通过代次与 AbortController 丢弃，选择跨分页保留；明确目标且提示原归属会被替换。补正末页移空后的分页偏移，以及部分失败后再选择新文件时的按钮文案。窄屏可滚动内容与固定操作区分开。真实HTTP、故障、最终镜像及浏览器证据见 [batch-organization.md](batch-organization.md)。用户已明确普通Chrome批量整理入口、多选移动、数量、刷新及两种搜索过滤通过；改名/低高度/390px等未涵盖专项仍待确认，见user-validation.md。
+页面检查：两入口统一批量提交，成功移除选择、失败保留姓名/ID/原因；分类刷新不清空弹窗草稿；旧请求通过代次与 AbortController 丢弃，选择跨分页保留；明确目标且提示原归属会被替换。补正末页移空后的分页偏移，以及部分失败后再选择新文件时的按钮文案。窄屏可滚动内容与固定操作区分开。真实HTTP、故障、最终镜像及浏览器证据见 [batch-organization.md](batch-organization.md)。用户已明确普通Chrome批量整理入口、多选移动、数量、刷新及两种搜索过滤通过；后续用户汇总确认验证完成，未提供专项动作/尺寸明细，见user-validation.md。
+
+
+## 最新候选收尾结果
+
+用户已另行汇总确认“我已验证完成”，原话与证据来源见[user-validation.md](user-validation.md)，不补造专项动作/尺寸。本轮从候选Git源码无缓存构建、独立空卷部署和完整回归均通过，运行代码无新增修改，演示26文件/9分类及26份下载SHA保留。早期待核对描述对应当时阶段；最新实测、故障恢复、限制及原始日志见[final-candidate-review.md](final-candidate-review.md)，剩余交付条件见[remaining-acceptance.md](remaining-acceptance.md)。按要求暂不锁定最终SHA。

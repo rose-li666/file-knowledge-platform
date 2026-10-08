@@ -1,0 +1,17 @@
+Command: docker exec candidate-quality-092a0c3633 python scripts/verify_retrieval_quality.py --zip /fixtures/documents.zip --report /tmp/check-reports/quality.json
+original 01_代码提交规范_v2.1.md before 1 after 1
+original 03_文件服务接口约定_v1.2.md before 1 after 1
+original 02_发布检查清单_v1.4.md before 2 after 2
+original 06_星桥项目_故障复盘_2026-09-21.md before 1 after 1
+original 09_本地部署故障排查_v1.3.txt before 1 after 1
+synonym 01_代码提交规范_v2.1.md before 1 after 1
+synonym 03_文件服务接口约定_v1.2.md before 1 after 1
+synonym 02_发布检查清单_v1.4.md before 1 after 1
+synonym 06_星桥项目_故障复盘_2026-09-21.md before 1 after 1
+synonym 09_本地部署故障排查_v1.3.txt before 2 after 2
+new_upload 上传测试_设备借用.txt before 1 after 1
+new_upload_synonym 上传测试_设备借用.txt before 1 after 1
+new_upload 上传测试_会议行动项.md before 1 after 1
+{"checks": 4, "seconds": 8.411, "failure": null}
+
+Exit code: 0

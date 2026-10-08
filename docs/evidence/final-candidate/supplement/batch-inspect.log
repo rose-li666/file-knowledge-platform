@@ -1,0 +1,281 @@
+Command: docker inspect candidate-batch-93e37792f7
+[
+    {
+        "Id": "1ff0529aef982406d817e6762b6fb106d0756d4a53569024c34a9439ca35b72c",
+        "Created": "2026-10-08T11:35:46.172761178Z",
+        "Path": "uvicorn",
+        "Args": [
+            "app.main:app",
+            "--host",
+            "0.0.0.0",
+            "--port",
+            "8000",
+            "--workers",
+            "1"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 50817,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-10-08T11:35:46.253583025Z",
+            "FinishedAt": "0001-01-01T00:00:00Z",
+            "Health": {
+                "Status": "healthy",
+                "FailingStreak": 0,
+                "Log": [
+                    {
+                        "Start": "2026-10-08T11:35:51.353749545Z",
+                        "End": "2026-10-08T11:35:51.590259881Z",
+                        "ExitCode": 0,
+                        "Output": ""
+                    }
+                ]
+            }
+        },
+        "Image": "sha256:1d9deece72681591ce294a03be5456c64cc449ffec15a16a6aa09120c957ff5f",
+        "ResolvConfPath": "/var/lib/docker/containers/1ff0529aef982406d817e6762b6fb106d0756d4a53569024c34a9439ca35b72c/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/1ff0529aef982406d817e6762b6fb106d0756d4a53569024c34a9439ca35b72c/hostname",
+        "HostsPath": "/var/lib/docker/containers/1ff0529aef982406d817e6762b6fb106d0756d4a53569024c34a9439ca35b72c/hosts",
+        "LogPath": "/var/lib/docker/containers/1ff0529aef982406d817e6762b6fb106d0756d4a53569024c34a9439ca35b72c/1ff0529aef982406d817e6762b6fb106d0756d4a53569024c34a9439ca35b72c-json.log",
+        "Name": "/candidate-batch-93e37792f7",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {
+                "8000/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "53549"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "volume",
+                    "Source": "candidate-batch-93e37792f7-data",
+                    "Target": "/data"
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "candidate-batch-93e37792f7-data",
+                "Source": "/var/lib/docker/volumes/candidate-batch-93e37792f7-data/_data",
+                "Destination": "/data",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "1ff0529aef98",
+            "Domainname": "",
+            "User": "appuser",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "ACCEPTANCE_TEST_RUN=candidate-batch-93e37792f7",
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.14",
+                "PYTHON_SHA256=5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1",
+                "DATA_DIR=/data",
+                "MODEL_DIR=/opt/models/bge",
+                "MODEL_CPU_THREADS=2",
+                "HF_HUB_OFFLINE=1",
+                "TRANSFORMERS_OFFLINE=1"
+            ],
+            "Cmd": [
+                "uvicorn",
+                "app.main:app",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "8000",
+                "--workers",
+                "1"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health',timeout=4)\""
+                ],
+                "Interval": 20000000000,
+                "Timeout": 5000000000,
+                "StartPeriod": 90000000000,
+                "Retries": 3
+            },
+            "Image": "m6-dec5b5de6fc8-app",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.project": "m6-dec5b5de6fc8",
+                "com.docker.compose.service": "app",
+                "com.docker.compose.version": "5.5.0"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "b59a63cace5a9fdfe6fbc34c01c7c23106cebe2dc8be5e6493e35431b08a16f5",
+            "SandboxKey": "/var/run/docker/netns/b59a63cace5a",
+            "Ports": {
+                "8000/tcp": [
+                    {
+                        "HostIp": "127.0.0.1",
+                        "HostPort": "53549"
+                    }
+                ]
+            },
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "da1684138f9e13420f824d69da211e663434145657bcc20027fdfdaa9739749d",
+                    "EndpointID": "e148e6a64db0a0ca9971febc8bc5c2a848e2b74504b39fbbf3ad4de2fe75c61a",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "MacAddress": "0a:d1:41:eb:93:a2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:e863ba755eb176c41f902471268b1193c960ac3124c2605f0fa7dea90a07c3bf",
+            "size": 2953,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+
+Exit code: 0

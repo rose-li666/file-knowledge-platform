@@ -1,0 +1,4 @@
+Command: docker exec candidate-batch-93e37792f7 python -c "import json,sys;sys.path.insert(0,'scripts');from verify_m2 import TcpClient;from verify_m5 import api;from pathlib import Path;c=TcpClient('http://127.0.0.1:8000');f=json.loads(Path('/tmp/check-reports/batch.json').read_text())['browserFixture'];ids=[r['id'] for r in f['documents']];b=api(c,'POST','/api/v1/categories',{'name':'浏览器批量目标'},201);api(c,'PATCH','/api/v1/documents/batch/category',{'categoryId':f['target']['id'],'documentIds':ids[:2]});api(c,'PATCH','/api/v1/documents/batch/category',{'categoryId':b['id'],'documentIds':ids[2:]});print('Prepared fixture by HTTP only; no new browser execution')"
+Prepared fixture by HTTP only; no new browser execution
+
+Exit code: 0

@@ -1,0 +1,20 @@
+Command: docker run --name candidate-faults-0c63b6080b -e ACCEPTANCE_TEST_RUN=candidate-faults-0c63b6080b --mount type=volume,source=candidate-faults-0c63b6080b-data,target=/data --mount type=bind,source=D:\__10_.zip,target=/fixtures/documents.zip,readonly m6-dec5b5de6fc8-app python scripts/verify_m5.py --zip /fixtures/documents.zip --data-dir /data/final-m5 --report /tmp/check-reports/m5.json
+PASS new business upload 01_代码提交规范_v2.1.md
+PASS new business upload 02_发布检查清单_v1.4.md
+PASS new business upload 03_文件服务接口约定_v1.2.md
+PASS new business upload 04_星桥项目_需求与范围_v1.0.pdf
+PASS new business upload 05_星桥项目_发布检查清单_2026-09-18.txt
+PASS new business upload 06_星桥项目_故障复盘_2026-09-21.md
+PASS new business upload 07_星桥项目_用户访谈纪要_2026-09-12.txt
+PASS new business upload 08_检索技术说明_关键词与语义_v1.0.pdf
+PASS new business upload 09_本地部署故障排查_v1.3.txt
+PASS new business upload 10_文档分类与归档规范_v1.0.pdf
+QUERY rank=1 01_代码提交规范_v2.1.md
+QUERY rank=1 03_文件服务接口约定_v1.2.md
+QUERY rank=2 02_发布检查清单_v1.4.md
+QUERY rank=1 06_星桥项目_故障复盘_2026-09-21.md
+QUERY rank=1 09_本地部署故障排查_v1.3.txt
+Report: /tmp/check-reports/m5.json
+M5 HTTP checks passed. Browser and M6 fresh-volume deployment remain separate.
+
+Exit code: 0

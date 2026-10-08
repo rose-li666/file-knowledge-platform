@@ -1,0 +1,47 @@
+{
+  "steps": [
+    {
+      "step": "00-candidate-sha",
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "seconds": 0.033
+    },
+    {
+      "step": "01-archive",
+      "command": [
+        "git",
+        "archive",
+        "--format=tar",
+        "--output=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793\\source.tar",
+        "2e6f81fd4ba242073a0d1f57e8c77d0d1171ba06"
+      ],
+      "exit_code": 0,
+      "seconds": 1.54
+    },
+    {
+      "step": "02-independent-cold-regression",
+      "command": [
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\work\\m1-venv\\Scripts\\python.exe",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793\\source\\scripts\\run_m6_docker.py",
+        "--source-dir",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793\\source",
+        "--source-sha",
+        "2e6f81fd4ba242073a0d1f57e8c77d0d1171ba06",
+        "--zip",
+        "D:\\__10_.zip",
+        "--no-cache"
+      ],
+      "exit_code": 0,
+      "seconds": 491.391
+    }
+  ],
+  "failure": null,
+  "evidence": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793",
+  "candidateSourceSha": "2e6f81fd4ba242073a0d1f57e8c77d0d1171ba06",
+  "source": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793\\source",
+  "demoUnchanged": true
+}

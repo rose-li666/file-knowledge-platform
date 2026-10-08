@@ -1,0 +1,128 @@
+{
+  "candidate": "2e6f81fd4ba242073a0d1f57e8c77d0d1171ba06",
+  "scannedTextFiles": 208,
+  "secretPatternFindings": [],
+  "scope": "Read-only pattern scan; values are never printed; not a comprehensive security audit",
+  "runtimeSourceMatch": [
+    {
+      "file": "Dockerfile",
+      "sha256LF": "2baa982d77487f0c88084061794ac0dcf9e8699f7424f86e40194f900017c408",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "app/__init__.py",
+      "sha256LF": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "app/chunking.py",
+      "sha256LF": "8c80c6a3e89cc949819a29d52a311a075b56c0479df4df604cb51310814744c8",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "app/database.py",
+      "sha256LF": "60930b1257e0c45c1aff695d9c847fcca16623ea85b1b42777cdf09f2558741f",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "app/embedding.py",
+      "sha256LF": "3c91808da3975fe9fd86f5b786d597ad3e0ef20039a1750f5ea1a506ac533465",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "app/files.py",
+      "sha256LF": "43c2a1bca43ce4e75db57cc1ff6f2d6c51796dde3ca2038cbbc1f2434d326fdc",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "app/indexing.py",
+      "sha256LF": "1a3e129b913daf3380b6c42f1f794595da16a1b7cc00ee5b2dcbda3d735c06ba",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "app/main.py",
+      "sha256LF": "76792f91cf679c67d46593ae4e131b4f08fffb324e7359bdf97fd75d6feb9d08",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "app/organization.py",
+      "sha256LF": "6817c50036e78b6d15c979e0326d3eadb5ecf47e91bc9fd075f9f927001560a4",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "app/recovery.py",
+      "sha256LF": "593e9b653a5a96a6fc351d1b5ac0318dacbb6966885f95f579f5e1b2a9f22396",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "app/search.py",
+      "sha256LF": "ea1ecfadf338115c6ad25286725c7460d05ec7aa983fe4c52e3fcaa087a9ed6e",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "app/text_normalization.py",
+      "sha256LF": "3303d0b71b72b9341f710cab698386c9c25d94e9a995758212c9a6e929f80ddc",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "app/texts.py",
+      "sha256LF": "3ed904303b2ecca903eac475ddd7909a45545de274fc5c3ad5121f2ce3c9f977",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "compose.yaml",
+      "sha256LF": "ac79bc2b9df1ed515fd1b898b6928ce3a94ee1e4e3e87e6cdda7a56fd0193cdd",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "frontend/package-lock.json",
+      "sha256LF": "afca9eebe81a9fb0b6516f48b090cfda11b859d25f957a0c96bf0f29aa910b51",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "frontend/package.json",
+      "sha256LF": "89205683ecb4fe22a1001873436305d9d251c901ae142b2caf27a93e3804b524",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "frontend/src/CategoryManagerDialog.tsx",
+      "sha256LF": "bb0214378d15cfc7aee376a6cc10c17208ec230671058ba21fd6799450be3fe8",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "frontend/src/FileOrganizerDialog.tsx",
+      "sha256LF": "5de6d38a5628156db9ff6b31807e66796918684ed8cd2de19268c6800a157886",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "frontend/src/main.tsx",
+      "sha256LF": "76424fca6a806bb4f417da65e296793dfce5a2b9038eb3b4b31287f35281a5c6",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "frontend/src/style.css",
+      "sha256LF": "81b384c4d2901c2539d897430e94224771e4bc7f5804ca861e1033f943ed0103",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "frontend/tsconfig.json",
+      "sha256LF": "370939ad30927696e99cb8071b493ea2fc6c5769f70fb135fa32c7a05eac51ec",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "model-spec.json",
+      "sha256LF": "ac044d71be947fc60dd9ccda4e27b5c5b43a0966800a7608b86bb585194e3633",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "requirements.lock.txt",
+      "sha256LF": "c4f7b810b208eb80072e45b7536fa576be635222197e5012626686e0b634224c",
+      "workingMatchesCandidate": true
+    },
+    {
+      "file": "requirements.txt",
+      "sha256LF": "a44d812d773f231b4aa769e37d8e9d9f767da84dfc8a2a2070b8da620c391ca4",
+      "workingMatchesCandidate": true
+    }
+  ]
+}

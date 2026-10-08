@@ -1,0 +1,9 @@
+Command: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml up -d --no-build --force-recreate --wait --wait-timeout 180
+ Container m6-dec5b5de6fc8-app-1 Recreate 
+ Container m6-dec5b5de6fc8-app-1 Recreated 
+ Container m6-dec5b5de6fc8-app-1 Starting 
+ Container m6-dec5b5de6fc8-app-1 Started 
+ Container m6-dec5b5de6fc8-app-1 Waiting 
+ Container m6-dec5b5de6fc8-app-1 Healthy 
+
+Exit code: 0; seconds: 7.18

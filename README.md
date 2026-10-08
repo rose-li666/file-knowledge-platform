@@ -78,3 +78,5 @@ python scripts/run_m6_docker.py --zip ./test-documents.zip
 下载失败：查看日志中具体 registry/npm/pip/Hugging Face 地址，检查Docker代理/DNS/网络，再重试失败的构建步骤。PowerShell把Docker进度stderr显示成红字并不代表失败，以进程退出码及最后错误为准。无需降低执行策略，使用上面Python命令。端口占用时在 `.env` 更改 `APP_PORT` 后启动。模型下载在构建期间完成，运行时不联网补下载；缺失时健康degraded，文件管理仍可用，检查镜像构建日志后重新构建/创建容器。数据目录写入错误时检查命名卷权限，不在两个服务间共享同一目录。
 
 更新源码后运行 `docker compose up --build -d`，保持同一Compose项目名以使用原卷。独立考官环境直接用干净源码和新Compose项目即可，ZIP不属于启动依赖。验收表、人工检查步骤和用户记录分别见 `docs/acceptance.md`、`docs/manual-check.md`、`docs/user-validation.md`。
+
+候选Git源码最新完整回归与审查见 `docs/final-candidate-review.md`：独立空卷无缓存部署、上传下载SHA、检索、批量整理、故障恢复及重启重建证据。最终版本暂未锁定，剩余交付条件见 `docs/remaining-acceptance.md`。

@@ -1,0 +1,36 @@
+Command: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml logs --tail=200 app
+app-1  | INFO:     Started server process [1]
+app-1  | INFO:     Waiting for application startup.
+app-1  | INFO:     Application startup complete.
+app-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+app-1  | INFO:     127.0.0.1:36714 - "GET /api/v1/health HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37650 - "GET /api/v1/health HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37656 - "GET /api/v1/documents?archived=false&limit=100&offset=0 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37666 - "GET /api/v1/documents?archived=true&limit=100&offset=0 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37676 - "GET /api/v1/categories HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37684 - "GET /api/v1/m1/probes HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37692 - "GET /api/v1/documents/d037f873-693b-448d-9c65-34197feefc44/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37696 - "GET /api/v1/documents/1798a5c8-5bf8-457f-84b6-9751ceca85cb/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37702 - "GET /api/v1/documents/efde89ae-3981-4c6e-9096-6bcb41942a4a/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37714 - "GET /api/v1/documents/5faefe76-858f-48ac-a0dc-57f91487beb2/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37718 - "GET /api/v1/documents/e8278349-0702-4cec-8d31-649332c17e35/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37724 - "GET /api/v1/documents/75e156c6-211d-45fc-acd4-dc06971a9771/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37734 - "GET /api/v1/documents/976646b2-2876-42ba-a0c1-87e9afb50029/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37742 - "GET /api/v1/documents/f707e19d-1e1a-4cb3-8439-2c703097d6ea/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37756 - "GET /api/v1/documents/7014ab50-7bda-4196-807b-670bd03ac3f5/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37760 - "GET /api/v1/documents/4b150784-358f-42b6-b817-9c4f504aa248/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37768 - "GET /api/v1/documents?limit=100 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37780 - "GET /api/v1/documents?archived=true&limit=100 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37790 - "GET /api/v1/documents?limit=100 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37806 - "GET /api/v1/documents?archived=true&limit=100 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37822 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=58585088-df94-49ab-b707-2088714dd165 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37830 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=true&category_id=58585088-df94-49ab-b707-2088714dd165 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37834 - "GET /api/v1/search/keyword?q=DOC-238&archived=true&category_id=58585088-df94-49ab-b707-2088714dd165 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37842 - "POST /api/v1/documents/5faefe76-858f-48ac-a0dc-57f91487beb2/restore HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37846 - "GET /api/v1/documents/5faefe76-858f-48ac-a0dc-57f91487beb2/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37850 - "POST /api/v1/documents/d037f873-693b-448d-9c65-34197feefc44/restore HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37856 - "GET /api/v1/documents/d037f873-693b-448d-9c65-34197feefc44/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37870 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=58585088-df94-49ab-b707-2088714dd165 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37882 - "GET /api/v1/documents?archived=true HTTP/1.1" 200 OK
+
+Exit code: 0; seconds: 0.38

@@ -1,0 +1,24 @@
+INFO:     Started server process [149]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:40825 (Press CTRL+C to quit)
+INFO:     127.0.0.1:45742 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45744 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:45750 - "GET /api/v1/documents/81844cd5-b025-4fa1-b5f8-f2aaff4a2213 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45758 - "GET /api/v1/documents/81844cd5-b025-4fa1-b5f8-f2aaff4a2213 HTTP/1.1" 200 OK
+Index failed: 81844cd5-b025-4fa1-b5f8-f2aaff4a2213 generation=1
+Traceback (most recent call last):
+  File "/app/app/indexing.py", line 97, in process_next
+    vectors = state.model.encode([c["input"] for c in chunks])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/scripts/m5_fault_server.py", line 24, in encode
+    raise RuntimeError("M5 injected inference failure after real text extraction")
+RuntimeError: M5 injected inference failure after real text extraction
+INFO:     127.0.0.1:45766 - "GET /api/v1/documents/81844cd5-b025-4fa1-b5f8-f2aaff4a2213 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45770 - "GET /api/v1/search/keyword?q=%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45784 - "GET /api/v1/documents/81844cd5-b025-4fa1-b5f8-f2aaff4a2213/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45786 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E4%BB%98%E5%89%8D%E8%A6%81%E5%81%9A%E4%BB%80%E4%B9%88%E6%A3%80%E6%9F%A5&limit=25&min_score=0&score_window=1&archived=false HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [149]

@@ -17,3 +17,8 @@
 Vite修复后候选69944d3de1707d14b5feecf56679d010fce9d9eb再次git archive导出，独立项目m6-bc6c13232470、新卷启动/重启/重建回归全部退出0，总142.279秒。该轮Python/模型层有缓存，Vite7.3.7 npm ci实际重新安装4.2秒、审计0项、前端重新构建；没有宣称此轮为全无缓存。两轮结果分别保留。
 
 已用该候选验证镜像更新演示8000容器，原命名卷保留，26份文件与8分类的完整JSON更新前后完全相同。只读设备查询默认1项（0.640802），展开可见2份发布副本；下载SHA一致。没有在演示库新增测试分类/文件。最终浏览器截图/运行命令及HTTP结果见evidence/final-source。
+
+
+## 最新候选收尾结果
+
+用户已另行汇总确认“我已验证完成”，原话与证据来源见[user-validation.md](user-validation.md)，不补造专项动作/尺寸。本轮从候选Git源码无缓存构建、独立空卷部署和完整回归均通过，运行代码无新增修改，演示26文件/9分类及26份下载SHA保留。早期待核对描述对应当时阶段；最新实测、故障恢复、限制及原始日志见[final-candidate-review.md](final-candidate-review.md)，剩余交付条件见[remaining-acceptance.md](remaining-acceptance.md)。按要求暂不锁定最终SHA。

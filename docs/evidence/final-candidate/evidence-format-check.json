@@ -1,0 +1,61 @@
+{
+  "initialStagedDiffCheckExit": 2,
+  "cause": "Windows CRLF JSON imported without Git line-ending normalization; CR flagged as trailing whitespace",
+  "fix": "Normalize only evidence JSON copies to LF; source logs/reports retained in outputs/candidate-review-3fe3cfe793",
+  "files": [
+    {
+      "file": "demo-after-all.json",
+      "originalSha256": "729a90f1d67e27ba9e49676acb64ad4b294ecdb2f3f28808b9360644b275a255",
+      "lfSha256": "91045c570ea9c560a0a6bdb3441befd1b711d34bb68e207bb3e8058f0426c25f",
+      "jsonValueUnchanged": true
+    },
+    {
+      "file": "demo-after.json",
+      "originalSha256": "729a90f1d67e27ba9e49676acb64ad4b294ecdb2f3f28808b9360644b275a255",
+      "lfSha256": "91045c570ea9c560a0a6bdb3441befd1b711d34bb68e207bb3e8058f0426c25f",
+      "jsonValueUnchanged": true
+    },
+    {
+      "file": "demo-before.json",
+      "originalSha256": "729a90f1d67e27ba9e49676acb64ad4b294ecdb2f3f28808b9360644b275a255",
+      "lfSha256": "91045c570ea9c560a0a6bdb3441befd1b711d34bb68e207bb3e8058f0426c25f",
+      "jsonValueUnchanged": true
+    },
+    {
+      "file": "execution-summary.json",
+      "originalSha256": "80013e18deb3330a6661163f9c254395b597eefbed2859ff74d28870395b4eab",
+      "lfSha256": "ef9dbf1ff12fbd6bd2d566bf692cc7b1f85a0b253257a9120c28a212d2a54ec7",
+      "jsonValueUnchanged": true
+    },
+    {
+      "file": "static-review.json",
+      "originalSha256": "dc15bc39f845d8e9a7bacccaac8bd1243c2539aab7dbc897c300a21f9499fd5a",
+      "lfSha256": "2661e8eeb057a4577de710ae235d4c9237bd3c5bd9905a92f33b0b1df0d9e58d",
+      "jsonValueUnchanged": true
+    },
+    {
+      "file": "validation-summary.json",
+      "originalSha256": "70e655276f37e5407482513d153280cc1f7b83579ab74350349e6facf1a76ffb",
+      "lfSha256": "f114758652d649136725e16fc997f3ac00559d422d4febf536df5f3db4e70bdb",
+      "jsonValueUnchanged": true
+    },
+    {
+      "file": "cold-regression/execution-summary.json",
+      "originalSha256": "f9d69101cb0fe906011ff6ca558a75c32466a99366da15bf98d49cf681212364",
+      "lfSha256": "00e8aa28838e7ec919e2edc46c729cb8e673dae4b166a25360b214d939289484",
+      "jsonValueUnchanged": true
+    },
+    {
+      "file": "supplement/batch-rollback-http.json",
+      "originalSha256": "34efd227a5b7c2915ca10a295f961562b68ed13852296607743c6be023ba5e63",
+      "lfSha256": "3e3fe0a6b0a673472df81c114a2cf091d0bc4212125e89a1b35e0cd1487722e2",
+      "jsonValueUnchanged": true
+    },
+    {
+      "file": "supplement/execution-summary.json",
+      "originalSha256": "51725a62d164856ae7dde4f224ed580c6821777176ebaf27a5a2750017c2cf8b",
+      "lfSha256": "5dc6aadcb21a3bb9215bb693fa018738f8f254a6c007d237a3907d2632ea3702",
+      "jsonValueUnchanged": true
+    }
+  ]
+}

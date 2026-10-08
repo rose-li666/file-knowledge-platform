@@ -1,0 +1,95 @@
+INFO:     Started server process [7]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:51533 (Press CTRL+C to quit)
+INFO:     127.0.0.1:54304 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54310 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54322 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54338 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54342 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:54358 - "PATCH /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54360 - "GET /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48400 - "GET /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48402 - "GET /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48418 - "GET /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48426 - "GET /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48438 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:48448 - "PATCH /api/v1/documents/8fd524c7-6bc1-4f19-b514-44954e8f5316/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48454 - "GET /api/v1/documents/8fd524c7-6bc1-4f19-b514-44954e8f5316 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48464 - "GET /api/v1/documents/8fd524c7-6bc1-4f19-b514-44954e8f5316 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48470 - "GET /api/v1/documents/8fd524c7-6bc1-4f19-b514-44954e8f5316 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48474 - "GET /api/v1/documents/8fd524c7-6bc1-4f19-b514-44954e8f5316 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48488 - "GET /api/v1/documents/8fd524c7-6bc1-4f19-b514-44954e8f5316 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48490 - "GET /api/v1/documents/8fd524c7-6bc1-4f19-b514-44954e8f5316/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48498 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:48504 - "PATCH /api/v1/documents/b19a1ca6-1a11-458f-b209-6c5395d07ade/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48510 - "GET /api/v1/documents/b19a1ca6-1a11-458f-b209-6c5395d07ade HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48522 - "GET /api/v1/documents/b19a1ca6-1a11-458f-b209-6c5395d07ade HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48532 - "GET /api/v1/documents/b19a1ca6-1a11-458f-b209-6c5395d07ade HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48534 - "GET /api/v1/documents/b19a1ca6-1a11-458f-b209-6c5395d07ade HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48540 - "GET /api/v1/documents/b19a1ca6-1a11-458f-b209-6c5395d07ade HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48542 - "GET /api/v1/documents/b19a1ca6-1a11-458f-b209-6c5395d07ade/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48550 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:48554 - "PATCH /api/v1/documents/3e4c449a-ca66-4521-9325-475b1fd1b7c7/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48558 - "GET /api/v1/documents/3e4c449a-ca66-4521-9325-475b1fd1b7c7/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48562 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:48576 - "PATCH /api/v1/documents/3a9fcf4b-1601-4238-96c7-c91c541e162d/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48588 - "GET /api/v1/documents/3a9fcf4b-1601-4238-96c7-c91c541e162d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48596 - "GET /api/v1/documents/3a9fcf4b-1601-4238-96c7-c91c541e162d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48600 - "GET /api/v1/documents/3a9fcf4b-1601-4238-96c7-c91c541e162d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48616 - "GET /api/v1/documents/3a9fcf4b-1601-4238-96c7-c91c541e162d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48626 - "GET /api/v1/documents/3a9fcf4b-1601-4238-96c7-c91c541e162d/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48630 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:48644 - "PATCH /api/v1/documents/2837b05e-f658-4250-9a85-f3cd605a4457/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48652 - "GET /api/v1/documents/2837b05e-f658-4250-9a85-f3cd605a4457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48656 - "GET /api/v1/documents/2837b05e-f658-4250-9a85-f3cd605a4457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48662 - "GET /api/v1/documents/2837b05e-f658-4250-9a85-f3cd605a4457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48674 - "GET /api/v1/documents/2837b05e-f658-4250-9a85-f3cd605a4457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48686 - "GET /api/v1/documents/2837b05e-f658-4250-9a85-f3cd605a4457 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48700 - "GET /api/v1/documents/2837b05e-f658-4250-9a85-f3cd605a4457/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48708 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:48720 - "PATCH /api/v1/documents/bc714302-1bf3-4963-a34c-8a4c8c9883f9/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48730 - "GET /api/v1/documents/bc714302-1bf3-4963-a34c-8a4c8c9883f9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48738 - "GET /api/v1/documents/bc714302-1bf3-4963-a34c-8a4c8c9883f9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48740 - "GET /api/v1/documents/bc714302-1bf3-4963-a34c-8a4c8c9883f9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48752 - "GET /api/v1/documents/bc714302-1bf3-4963-a34c-8a4c8c9883f9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48758 - "GET /api/v1/documents/bc714302-1bf3-4963-a34c-8a4c8c9883f9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48762 - "GET /api/v1/documents/bc714302-1bf3-4963-a34c-8a4c8c9883f9/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48766 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:48780 - "PATCH /api/v1/documents/6bc8c6b6-bbf2-4170-be1c-93c8f34eb6f9/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48792 - "GET /api/v1/documents/6bc8c6b6-bbf2-4170-be1c-93c8f34eb6f9/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48798 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:48804 - "PATCH /api/v1/documents/6dc7f23b-9909-48bb-a1c0-6954bd41017b/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48818 - "GET /api/v1/documents/6dc7f23b-9909-48bb-a1c0-6954bd41017b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48822 - "GET /api/v1/documents/6dc7f23b-9909-48bb-a1c0-6954bd41017b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48838 - "GET /api/v1/documents/6dc7f23b-9909-48bb-a1c0-6954bd41017b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48848 - "GET /api/v1/documents/6dc7f23b-9909-48bb-a1c0-6954bd41017b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48856 - "GET /api/v1/documents/6dc7f23b-9909-48bb-a1c0-6954bd41017b/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48862 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:48872 - "PATCH /api/v1/documents/89887a2f-ffa3-4a2c-8ac0-c21ef0cb1572/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48874 - "GET /api/v1/documents/89887a2f-ffa3-4a2c-8ac0-c21ef0cb1572/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48890 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=84a4d8bd-c8c9-4167-b904-6432357d2dc9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48906 - "GET /api/v1/search/semantic?q=%E7%BD%91%E7%BB%9C%E6%96%AD%E4%BA%86%E5%8F%88%E6%8F%90%E4%BA%A4%E5%90%8C%E4%B8%80%E4%BB%BD%E4%B8%8A%E4%BC%A0%E8%AF%B7%E6%B1%82%EF%BC%8C%E6%9C%8D%E5%8A%A1%E6%80%8E%E6%A0%B7%E9%98%B2%E6%AD%A2%E4%BF%9D%E5%AD%98%E4%B8%A4%E6%AC%A1%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=84a4d8bd-c8c9-4167-b904-6432357d2dc9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48922 - "GET /api/v1/search/semantic?q=%E4%B8%8A%E7%BA%BF%E5%88%9A%E5%90%AF%E5%8A%A8%EF%BC%8C%E6%96%B0%E7%89%88%E6%9C%AC%E8%A6%81%E9%AA%8C%E8%AF%81%E5%93%AA%E4%BA%9B%E7%94%A8%E6%88%B7%E6%93%8D%E4%BD%9C%E6%89%8D%E8%83%BD%E6%94%BE%E5%BF%83%E4%BA%A4%E4%BB%98%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=84a4d8bd-c8c9-4167-b904-6432357d2dc9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48934 - "GET /api/v1/search/semantic?q=%E6%96%87%E6%A1%A3%E4%B8%8A%E4%BC%A0%E6%88%90%E5%8A%9F%E5%8D%B4%E6%9F%A5%E4%B8%8D%E5%88%B0%E6%AD%A3%E6%96%87%EF%BC%8C%E6%95%B0%E6%8D%AE%E6%8D%A2%E4%BA%86%E5%B5%8C%E5%A5%97%E7%BB%93%E6%9E%84%EF%BC%8C%E6%80%8E%E4%B9%88%E8%A1%A5%E6%95%91%E8%80%8C%E4%B8%8D%E7%94%A8%E9%87%8D%E4%BC%A0%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=84a4d8bd-c8c9-4167-b904-6432357d2dc9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48938 - "GET /api/v1/search/semantic?q=%E9%87%8D%E5%BB%BA%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E5%90%8E%E4%BB%A5%E5%89%8D%E7%9A%84%E8%B5%84%E6%96%99%E4%B8%A2%E4%BA%86%EF%BC%8C%E8%AF%A5%E6%80%8E%E6%A0%B7%E6%8E%92%E6%9F%A5%E6%8C%82%E8%BD%BD%E5%92%8C%E4%BF%9D%E4%BD%8F%E5%8E%9F%E6%9C%89%E6%95%B0%E6%8D%AE%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=84a4d8bd-c8c9-4167-b904-6432357d2dc9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48954 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=cac78fa1-3890-4e1c-a7b5-37aaa76657fb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48960 - "PATCH /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48976 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=84a4d8bd-c8c9-4167-b904-6432357d2dc9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48992 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=cac78fa1-3890-4e1c-a7b5-37aaa76657fb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48994 - "POST /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561/archive HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49010 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=cac78fa1-3890-4e1c-a7b5-37aaa76657fb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49014 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=true&category_id=cac78fa1-3890-4e1c-a7b5-37aaa76657fb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49016 - "POST /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561/restore HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49024 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=cac78fa1-3890-4e1c-a7b5-37aaa76657fb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49028 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=true&category_id=cac78fa1-3890-4e1c-a7b5-37aaa76657fb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49042 - "GET /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49048 - "PATCH /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49050 - "POST /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561/index/retry HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:49056 - "GET /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49068 - "GET /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49084 - "GET /api/v1/documents/b837a9c5-4a95-48f4-9201-66e9cbfc8561 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [7]

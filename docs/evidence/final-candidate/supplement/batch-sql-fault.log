@@ -1,0 +1,4 @@
+Command: docker exec candidate-batch-93e37792f7 python scripts/verify_batch_after_browser.py
+{"checks": 3, "seconds": 0.089, "passed": true}
+
+Exit code: 0

@@ -1,0 +1,811 @@
+Command: C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\work\m1-venv\Scripts\python.exe C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\scripts\run_m6_docker.py --source-dir C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source --source-sha 2e6f81fd4ba242073a0d1f57e8c77d0d1171ba06 --zip D:\__10_.zip --no-cache
+Executing: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml build --no-cache
+ Image m6-dec5b5de6fc8-app Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 713B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile:
+#2 transferring dockerfile: 1.55kB 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#3 ...
+
+#4 [auth] library/python:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#5 ...
+
+#6 [auth] library/node:pull token for registry-1.docker.io
+#6 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#3 ...
+
+#7 [auth] library/python:pull token for registry-1.docker.io
+#7 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#3 ...
+
+#8 [auth] library/node:pull token for registry-1.docker.io
+#8 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#3 DONE 47.1s
+
+#5 [internal] load metadata for docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#5 DONE 66.3s
+
+#9 [internal] load .dockerignore
+#9 transferring context: 143B 0.0s done
+#9 DONE 0.0s
+
+#10 [internal] load build context
+#10 DONE 0.0s
+
+#11 [auth] library/python:pull token for registry-1.docker.io
+#11 DONE 0.0s
+
+#12 [auth] library/node:pull token for registry-1.docker.io
+#12 DONE 0.0s
+
+#13 [frontend 1/7] FROM docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#13 resolve docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#13 ...
+
+#14 [stage-1  1/11] FROM docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#14 resolve docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#14 ...
+
+#15 [auth] library/python:pull token for registry-1.docker.io
+#15 DONE 0.0s
+
+#16 [auth] library/node:pull token for registry-1.docker.io
+#16 DONE 0.0s
+
+#14 [stage-1  1/11] FROM docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#14 ...
+
+#13 [frontend 1/7] FROM docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#13 resolve docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df 42.7s done
+#13 DONE 42.7s
+
+#14 [stage-1  1/11] FROM docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#14 resolve docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e 42.7s done
+#14 DONE 42.7s
+
+#17 [stage-1  2/11] WORKDIR /app
+#17 CACHED
+
+#18 [frontend 2/7] WORKDIR /frontend
+#18 CACHED
+
+#10 [internal] load build context
+#10 transferring context: 243.83kB 0.1s
+#10 transferring context: 326.26kB 0.1s done
+#10 DONE 0.1s
+
+#19 [stage-1  3/11] COPY requirements.txt requirements.lock.txt ./
+#19 DONE 0.0s
+
+#20 [stage-1  4/11] RUN pip install --no-cache-dir torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu     && pip install --no-cache-dir -r requirements.txt -c requirements.lock.txt
+#20 1.194 Looking in indexes: https://download.pytorch.org/whl/cpu
+#20 8.513 Collecting torch==2.9.0
+#20 ...
+
+#21 [frontend 3/7] RUN npm install --global npm@11.6.2
+#21 9.052 
+#21 9.052 removed 3 packages, and changed 93 packages in 9s
+#21 9.052 
+#21 9.052 28 packages are looking for funding
+#21 9.052   run `npm fund` for details
+#21 DONE 9.1s
+
+#22 [frontend 4/7] COPY frontend/package.json frontend/package-lock.json ./
+#22 DONE 0.0s
+
+#23 [frontend 5/7] RUN npm ci
+#23 ...
+
+#20 [stage-1  4/11] RUN pip install --no-cache-dir torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu     && pip install --no-cache-dir -r requirements.txt -c requirements.lock.txt
+#20 11.47   Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.9.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (29 kB)
+#20 12.19 Collecting filelock (from torch==2.9.0)
+#20 16.32   Downloading filelock-3.32.3-py3-none-any.whl.metadata (2.0 kB)
+#20 16.46 Collecting typing-extensions>=4.10.0 (from torch==2.9.0)
+#20 16.60   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#20 16.73 Collecting setuptools (from torch==2.9.0)
+#20 16.84   Downloading https://download.pytorch.org/whl/setuptools-78.1.0-py3-none-any.whl.metadata (6.6 kB)
+#20 16.98 Collecting sympy>=1.13.3 (from torch==2.9.0)
+#20 17.12   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+#20 17.50 Collecting networkx>=2.5.1 (from torch==2.9.0)
+#20 17.65   Downloading networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+#20 17.79 Collecting jinja2 (from torch==2.9.0)
+#20 17.91   Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#20 18.06 Collecting fsspec>=0.8.5 (from torch==2.9.0)
+#20 18.20   Downloading fsspec-2026.7.0-py3-none-any.whl.metadata (10 kB)
+#20 18.37 Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.9.0)
+#20 18.52   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+#20 18.68 Collecting MarkupSafe>=2.0 (from jinja2->torch==2.9.0)
+#20 18.88   Downloading https://download.pytorch.org/whl/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#20 19.03 Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.9.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (184.4 MB)
+#20 ...
+
+#23 [frontend 5/7] RUN npm ci
+#23 19.80 
+#23 19.80 added 22 packages, and audited 23 packages in 20s
+#23 19.80 
+#23 19.80 5 packages are looking for funding
+#23 19.80   run `npm fund` for details
+#23 19.80 
+#23 19.80 found 0 vulnerabilities
+#23 19.81 npm notice
+#23 19.81 npm notice New major version of npm available! 11.6.2 -> 12.2.0
+#23 19.81 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+#23 19.81 npm notice To update run: npm install -g npm@12.2.0
+#23 19.81 npm notice
+#23 DONE 19.8s
+
+#24 [frontend 6/7] COPY frontend/ ./
+#24 DONE 0.1s
+
+#25 [frontend 7/7] RUN npm run build
+#25 0.279 
+#25 0.279 > knowledge-platform-m1@0.1.0 build
+#25 0.279 > tsc --noEmit && vite build
+#25 0.279 
+#25 1.339 vite v7.3.7 building client environment for production...
+#25 1.387 transforming...
+#25 2.338 ✓ 30 modules transformed.
+#25 2.425 rendering chunks...
+#25 2.431 computing gzip size...
+#25 2.438 dist/index.html                   0.37 kB │ gzip:  0.29 kB
+#25 2.438 dist/assets/index-D8KlFT1d.css   15.85 kB │ gzip:  3.97 kB
+#25 2.438 dist/assets/index-BdynQb7T.js   231.38 kB │ gzip: 72.82 kB
+#25 2.438 ✓ built in 1.08s
+#25 DONE 2.5s
+
+#20 [stage-1  4/11] RUN pip install --no-cache-dir torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu     && pip install --no-cache-dir -r requirements.txt -c requirements.lock.txt
+#20 51.64    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 184.4/184.4 MB 5.7 MB/s eta 0:00:00
+#20 51.81 Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
+#20 52.35 Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+#20 52.93    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 4.4 MB/s eta 0:00:00
+#20 53.12 Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+#20 54.18    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 5.9 MB/s eta 0:00:00
+#20 54.45 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#20 54.62 Downloading filelock-3.32.3-py3-none-any.whl (98 kB)
+#20 54.76 Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl (134 kB)
+#20 54.98 Downloading https://download.pytorch.org/whl/setuptools-78.1.0-py3-none-any.whl (1.3 MB)
+#20 55.29    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 3.9 MB/s eta 0:00:00
+#20 55.47 Downloading https://download.pytorch.org/whl/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#20 55.65 Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+#20 55.70    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 8.0 MB/s eta 0:00:00
+#20 55.94 Installing collected packages: mpmath, typing-extensions, sympy, setuptools, networkx, MarkupSafe, fsspec, filelock, jinja2, torch
+#20 67.95 Successfully installed MarkupSafe-3.0.3 filelock-3.32.3 fsspec-2026.7.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.6.1 setuptools-78.1.0 sympy-1.14.0 torch-2.9.0+cpu typing-extensions-4.16.0
+#20 67.95 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#20 80.33 Collecting fastapi==0.119.1 (from -r requirements.txt (line 1))
+#20 86.43   Downloading fastapi-0.119.1-py3-none-any.whl.metadata (28 kB)
+#20 86.70 Collecting uvicorn==0.38.0 (from -r requirements.txt (line 2))
+#20 86.82   Downloading uvicorn-0.38.0-py3-none-any.whl.metadata (6.8 kB)
+#20 87.44 Collecting SQLAlchemy==2.0.44 (from -r requirements.txt (line 3))
+#20 87.55   Downloading sqlalchemy-2.0.44-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.5 kB)
+#20 87.84 Collecting sentence-transformers==5.1.2 (from -r requirements.txt (line 4))
+#20 87.95   Downloading sentence_transformers-5.1.2-py3-none-any.whl.metadata (16 kB)
+#20 88.12 Collecting transformers==4.57.1 (from -r requirements.txt (line 5))
+#20 88.24   Downloading transformers-4.57.1-py3-none-any.whl.metadata (43 kB)
+#20 88.68 Collecting numpy==2.3.5 (from -r requirements.txt (line 6))
+#20 88.79   Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+#20 89.20 Collecting psutil==7.1.0 (from -r requirements.txt (line 7))
+#20 89.37   Downloading psutil-7.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (23 kB)
+#20 89.51 Collecting python-multipart==0.0.20 (from -r requirements.txt (line 8))
+#20 89.62   Downloading python_multipart-0.0.20-py3-none-any.whl.metadata (1.8 kB)
+#20 89.76 Collecting starlette<0.49.0,>=0.40.0 (from fastapi==0.119.1->-r requirements.txt (line 1))
+#20 89.88   Downloading starlette-0.48.0-py3-none-any.whl.metadata (6.3 kB)
+#20 90.12 Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 (from fastapi==0.119.1->-r requirements.txt (line 1))
+#20 90.23   Downloading pydantic-2.13.5-py3-none-any.whl.metadata (110 kB)
+#20 90.39 Requirement already satisfied: typing-extensions>=4.8.0 in /usr/local/lib/python3.12/site-packages (from fastapi==0.119.1->-r requirements.txt (line 1)) (4.16.0)
+#20 90.50 Collecting click>=7.0 (from uvicorn==0.38.0->-r requirements.txt (line 2))
+#20 90.76   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#20 90.87 Collecting h11>=0.8 (from uvicorn==0.38.0->-r requirements.txt (line 2))
+#20 90.98   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#20 91.20 Collecting greenlet>=1 (from SQLAlchemy==2.0.44->-r requirements.txt (line 3))
+#20 91.31   Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+#20 91.44 Collecting tqdm (from sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 91.55   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+#20 91.59 Requirement already satisfied: torch>=1.11.0 in /usr/local/lib/python3.12/site-packages (from sentence-transformers==5.1.2->-r requirements.txt (line 4)) (2.9.0+cpu)
+#20 91.75 Collecting scikit-learn (from sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 91.86   Downloading scikit_learn-1.9.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.3 kB)
+#20 92.26 Collecting scipy (from sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 92.37   Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+#20 92.56 Collecting huggingface-hub>=0.20.0 (from sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 92.67   Downloading huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+#20 92.93 Collecting Pillow (from sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 93.04   Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+#20 93.07 Requirement already satisfied: filelock in /usr/local/lib/python3.12/site-packages (from transformers==4.57.1->-r requirements.txt (line 5)) (3.32.3)
+#20 93.20 Collecting packaging>=20.0 (from transformers==4.57.1->-r requirements.txt (line 5))
+#20 93.48   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+#20 93.61 Collecting pyyaml>=5.1 (from transformers==4.57.1->-r requirements.txt (line 5))
+#20 93.73   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+#20 94.16 Collecting regex!=2019.12.17 (from transformers==4.57.1->-r requirements.txt (line 5))
+#20 94.28   Downloading regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+#20 94.53 Collecting requests (from transformers==4.57.1->-r requirements.txt (line 5))
+#20 94.64   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+#20 94.85 Collecting tokenizers<=0.23.0,>=0.22.0 (from transformers==4.57.1->-r requirements.txt (line 5))
+#20 95.03   Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+#20 95.26 Collecting safetensors>=0.4.3 (from transformers==4.57.1->-r requirements.txt (line 5))
+#20 95.37   Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+#20 95.39 Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.12/site-packages (from huggingface-hub>=0.20.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (2026.7.0)
+#20 95.52 Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub>=0.20.0->sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 95.63   Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+#20 95.76 Collecting annotated-types>=0.6.0 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi==0.119.1->-r requirements.txt (line 1))
+#20 95.86   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#20 96.54 Collecting pydantic-core==2.46.5 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi==0.119.1->-r requirements.txt (line 1))
+#20 96.66   Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+#20 96.77 Collecting typing-inspection>=0.4.2 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi==0.119.1->-r requirements.txt (line 1))
+#20 96.88   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+#20 97.00 Collecting anyio<5,>=3.6.2 (from starlette<0.49.0,>=0.40.0->fastapi==0.119.1->-r requirements.txt (line 1))
+#20 97.11   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+#20 97.13 Requirement already satisfied: setuptools in /usr/local/lib/python3.12/site-packages (from torch>=1.11.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (78.1.0)
+#20 97.13 Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/site-packages (from torch>=1.11.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (1.14.0)
+#20 97.13 Requirement already satisfied: networkx>=2.5.1 in /usr/local/lib/python3.12/site-packages (from torch>=1.11.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (3.6.1)
+#20 97.13 Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/site-packages (from torch>=1.11.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (3.1.6)
+#20 97.32 Collecting charset_normalizer<4,>=2 (from requests->transformers==4.57.1->-r requirements.txt (line 5))
+#20 97.43   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+#20 97.57 Collecting idna<4,>=2.5 (from requests->transformers==4.57.1->-r requirements.txt (line 5))
+#20 97.87   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#20 97.99 Collecting urllib3<3,>=1.26 (from requests->transformers==4.57.1->-r requirements.txt (line 5))
+#20 98.10   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+#20 98.23 Collecting certifi>=2023.5.7 (from requests->transformers==4.57.1->-r requirements.txt (line 5))
+#20 98.45   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+#20 98.60 Collecting joblib>=1.4.0 (from scikit-learn->sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 98.72   Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+#20 98.86 Collecting narwhals>=2.0.1 (from scikit-learn->sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 99.16   Downloading narwhals-2.26.0-py3-none-any.whl.metadata (15 kB)
+#20 99.29 Collecting threadpoolctl>=3.5.0 (from scikit-learn->sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 99.40   Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+#20 99.55 Collecting cloudpickle>=3.0 (from joblib>=1.4.0->scikit-learn->sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 99.68   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+#20 99.69 Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/site-packages (from sympy>=1.13.3->torch>=1.11.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (1.3.0)
+#20 99.69 Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/site-packages (from jinja2->torch>=1.11.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (3.0.3)
+#20 99.81 Downloading fastapi-0.119.1-py3-none-any.whl (108 kB)
+#20 99.98 Downloading uvicorn-0.38.0-py3-none-any.whl (68 kB)
+#20 100.1 Downloading sqlalchemy-2.0.44-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+#20 101.8    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 2.0 MB/s eta 0:00:00
+#20 101.9 Downloading sentence_transformers-5.1.2-py3-none-any.whl (488 kB)
+#20 102.1 Downloading transformers-4.57.1-py3-none-any.whl (12.0 MB)
+#20 104.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 6.2 MB/s eta 0:00:00
+#20 104.2 Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+#20 107.0    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 6.0 MB/s eta 0:00:00
+#20 107.1 Downloading psutil-7.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (291 kB)
+#20 107.2 Downloading python_multipart-0.0.20-py3-none-any.whl (24 kB)
+#20 107.3 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#20 107.5 Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (621 kB)
+#20 107.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 621.4/621.4 kB 6.4 MB/s eta 0:00:00
+#20 107.7 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#20 107.8 Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+#20 107.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 7.0 MB/s eta 0:00:00
+#20 108.1 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+#20 108.2 Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+#20 108.4 Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+#20 108.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 6.4 MB/s eta 0:00:00
+#20 108.8 Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+#20 108.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 6.9 MB/s eta 0:00:00
+#20 109.1 Downloading regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+#20 109.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.8/807.8 kB 6.5 MB/s eta 0:00:00
+#20 109.3 Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+#20 109.6 Downloading starlette-0.48.0-py3-none-any.whl (73 kB)
+#20 109.7 Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+#20 110.2    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 6.4 MB/s eta 0:00:00
+#20 110.3 Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+#20 110.5 Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+#20 111.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 6.2 MB/s eta 0:00:00
+#20 111.8 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+#20 111.9 Downloading scikit_learn-1.9.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.2 MB)
+#20 113.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.2/9.2 MB 5.1 MB/s eta 0:00:00
+#20 113.8 Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+#20 119.6    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 6.2 MB/s eta 0:00:00
+#20 119.7 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#20 119.8 Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+#20 119.9 Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+#20 120.1 Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+#20 120.2 Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
+#20 120.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 6.3 MB/s eta 0:00:00
+#20 121.0 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#20 121.1 Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+#20 121.3 Downloading narwhals-2.26.0-py3-none-any.whl (474 kB)
+#20 121.4 Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+#20 121.6 Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+#20 121.8 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+#20 122.0 Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+#20 122.1 Installing collected packages: urllib3, typing-inspection, tqdm, threadpoolctl, safetensors, regex, pyyaml, python-multipart, pydantic-core, psutil, Pillow, packaging, numpy, narwhals, idna, hf-xet, h11, greenlet, cloudpickle, click, charset_normalizer, certifi, annotated-types, uvicorn, SQLAlchemy, scipy, requests, pydantic, joblib, anyio, starlette, scikit-learn, huggingface-hub, tokenizers, fastapi, transformers, sentence-transformers
+#20 135.7 Successfully installed Pillow-12.3.0 SQLAlchemy-2.0.44 annotated-types-0.8.0 anyio-4.15.1 certifi-2026.7.22 charset_normalizer-3.5.2 click-8.5.0 cloudpickle-3.1.2 fastapi-0.119.1 greenlet-3.5.6 h11-0.16.0 hf-xet-1.7.0 huggingface-hub-0.36.2 idna-3.20 joblib-1.6.0 narwhals-2.26.0 numpy-2.3.5 packaging-26.3 psutil-7.1.0 pydantic-2.13.5 pydantic-core-2.46.5 python-multipart-0.0.20 pyyaml-6.0.3 regex-2026.9.29 requests-2.34.2 safetensors-0.8.0 scikit-learn-1.9.1 scipy-1.18.1 sentence-transformers-5.1.2 starlette-0.48.0 threadpoolctl-3.7.0 tokenizers-0.22.2 tqdm-4.70.1 transformers-4.57.1 typing-inspection-0.4.4 urllib3-2.8.0 uvicorn-0.38.0
+#20 135.7 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#20 138.5 
+#20 138.5 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#20 138.5 [notice] To update, run: pip install --upgrade pip
+#20 DONE 138.9s
+
+#26 [stage-1  5/11] COPY model-spec.json ./
+#26 DONE 0.1s
+
+#27 [stage-1  6/11] COPY scripts/download_model.py scripts/utf8_logs.py ./scripts/
+#27 DONE 0.0s
+
+#28 [stage-1  7/11] RUN python scripts/download_model.py --destination /opt/models/bge
+#28 6.809 {"name": "config.json", "size_bytes": 776, "sha256": "3853a7979202c348751b753e36f579c41d8da7d36af617d3d907e1fc9b441f2a"}
+#28 18.27 {"name": "config_sentence_transformers.json", "size_bytes": 124, "sha256": "940d5f50db195fa6e5e6a4f122c095f77880de259d74b14a65779ed48bdd7c56"}
+#28 19.81 {"name": "modules.json", "size_bytes": 349, "sha256": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf"}
+#28 37.26 {"name": "sentence_bert_config.json", "size_bytes": 52, "sha256": "84e39fda68ccbff05bfa723ae9c0e70e23e2ec373b76e0f8c6e71af72a693cbf"}
+#28 39.63 {"name": "special_tokens_map.json", "size_bytes": 125, "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"}
+#28 81.31 {"name": "tokenizer.json", "size_bytes": 439125, "sha256": "48cea5d44424912a6fd1ea647bf4fe50b55ab8b1e5879c3275f80e339e8fae26"}
+#28 90.81 {"name": "tokenizer_config.json", "size_bytes": 367, "sha256": "e6f3b96db926a37d4039995fbf5ad17de158dfb8f6343d607e4dbaad18d75f5a"}
+#28 100.6 {"name": "vocab.txt", "size_bytes": 109540, "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"}
+#28 109.2 {"name": "1_Pooling/config.json", "size_bytes": 190, "sha256": "aaa8861589f80c961a03cc86c7eeaef7605c1676b9ab55329d33a304738769c6"}
+#28 150.4 {"name": "model.safetensors", "size_bytes": 95827648, "sha256": "354763b9b1357bc9c44f62c6be2276321081ed2567773608c0d0785b61d5a026"}
+#28 150.4 {"download_seconds": 150.085}
+#28 DONE 150.4s
+
+#29 [stage-1  8/11] COPY app/ ./app/
+#29 DONE 0.0s
+
+#30 [stage-1  9/11] COPY scripts/ ./scripts/
+#30 DONE 0.0s
+
+#31 [stage-1 10/11] COPY --from=frontend /frontend/dist ./frontend/dist/
+#31 DONE 0.0s
+
+#32 [stage-1 11/11] RUN useradd --uid 10001 --create-home appuser     && mkdir -p /data/db /data/uploads /data/tmp /data/quarantine     && chown -R appuser:appuser /data
+#32 DONE 0.2s
+
+#33 exporting to image
+#33 exporting layers
+#33 exporting layers 34.9s done
+#33 exporting manifest sha256:e863ba755eb176c41f902471268b1193c960ac3124c2605f0fa7dea90a07c3bf done
+#33 exporting config sha256:4d45fcd18b4725b64e3a1aa9174f839254067d0cef2e53c04ca85174df4c1a2e done
+#33 exporting attestation manifest sha256:711aa27c2b8c374f5317420122bbda304642e5e9a46ba7fbc2faf5d6a7f26342 done
+#33 exporting manifest list sha256:1d9deece72681591ce294a03be5456c64cc449ffec15a16a6aa09120c957ff5f done
+#33 naming to docker.io/library/m6-dec5b5de6fc8-app:latest done
+#33 unpacking to docker.io/library/m6-dec5b5de6fc8-app:latest
+#33 unpacking to docker.io/library/m6-dec5b5de6fc8-app:latest 6.8s done
+#33 DONE 41.9s
+
+#34 resolving provenance for metadata file
+#34 DONE 0.0s
+ Image m6-dec5b5de6fc8-app Built 
+Executing: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml up --no-build -d --wait --wait-timeout 180
+ Volume m6-dec5b5de6fc8_platform_data Creating 
+ Network m6-dec5b5de6fc8_default Creating 
+ Volume m6-dec5b5de6fc8_platform_data Creating 
+ Network m6-dec5b5de6fc8_default Creating 
+ Volume m6-dec5b5de6fc8_platform_data Created 
+ Volume m6-dec5b5de6fc8_platform_data Created 
+ Network m6-dec5b5de6fc8_default Created 
+ Network m6-dec5b5de6fc8_default Created 
+ Container m6-dec5b5de6fc8-app-1 Creating 
+ Container m6-dec5b5de6fc8-app-1 Created 
+ Container m6-dec5b5de6fc8-app-1 Starting 
+ Container m6-dec5b5de6fc8-app-1 Started 
+ Container m6-dec5b5de6fc8-app-1 Waiting 
+ Container m6-dec5b5de6fc8-app-1 Healthy 
+Executing: docker volume inspect m6-dec5b5de6fc8_platform_data
+[
+    {
+        "CreatedAt": "2026-10-08T11:34:25Z",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.compose.config-hash": "9ccdb02b23a18f4710f91bbdb05a694a2cf1a4be16f752653d5a136ff9c86fa9",
+            "com.docker.compose.project": "m6-dec5b5de6fc8",
+            "com.docker.compose.version": "5.5.0",
+            "com.docker.compose.volume": "platform_data"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/m6-dec5b5de6fc8_platform_data/_data",
+        "Name": "m6-dec5b5de6fc8_platform_data",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+Executing: docker inspect m6-dec5b5de6fc8-app-1
+[
+    {
+        "Id": "447358a3fd49a910f8fa8e19f93700fd5b183fe74252061c60227783a247a389",
+        "Created": "2026-10-08T11:34:25.226430832Z",
+        "Path": "uvicorn",
+        "Args": [
+            "app.main:app",
+            "--host",
+            "0.0.0.0",
+            "--port",
+            "8000",
+            "--workers",
+            "1"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 49630,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-10-08T11:34:25.534273777Z",
+            "FinishedAt": "0001-01-01T00:00:00Z",
+            "Health": {
+                "Status": "healthy",
+                "FailingStreak": 0,
+                "Log": [
+                    {
+                        "Start": "2026-10-08T11:34:30.648174962Z",
+                        "End": "2026-10-08T11:34:31.005670189Z",
+                        "ExitCode": 0,
+                        "Output": ""
+                    }
+                ]
+            }
+        },
+        "Image": "sha256:1d9deece72681591ce294a03be5456c64cc449ffec15a16a6aa09120c957ff5f",
+        "ResolvConfPath": "/var/lib/docker/containers/447358a3fd49a910f8fa8e19f93700fd5b183fe74252061c60227783a247a389/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/447358a3fd49a910f8fa8e19f93700fd5b183fe74252061c60227783a247a389/hostname",
+        "HostsPath": "/var/lib/docker/containers/447358a3fd49a910f8fa8e19f93700fd5b183fe74252061c60227783a247a389/hosts",
+        "LogPath": "/var/lib/docker/containers/447358a3fd49a910f8fa8e19f93700fd5b183fe74252061c60227783a247a389/447358a3fd49a910f8fa8e19f93700fd5b183fe74252061c60227783a247a389-json.log",
+        "Name": "/m6-dec5b5de6fc8-app-1",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "m6-dec5b5de6fc8_platform_data:/data:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "m6-dec5b5de6fc8_default",
+            "PortBindings": {
+                "8000/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "63769"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "volume",
+                "Name": "m6-dec5b5de6fc8_platform_data",
+                "Source": "m6-dec5b5de6fc8_platform_data",
+                "Destination": "/data",
+                "Driver": "local",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": ""
+            }
+        ],
+        "Config": {
+            "Hostname": "447358a3fd49",
+            "Domainname": "",
+            "User": "appuser",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "8000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "MODEL_CPU_THREADS=2",
+                "MAX_UPLOAD_BYTES=20971520",
+                "DATA_DIR=/data",
+                "MODEL_DIR=/opt/models/bge",
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.14",
+                "PYTHON_SHA256=5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1",
+                "HF_HUB_OFFLINE=1",
+                "TRANSFORMERS_OFFLINE=1"
+            ],
+            "Cmd": [
+                "uvicorn",
+                "app.main:app",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "8000",
+                "--workers",
+                "1"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health',timeout=4)\""
+                ],
+                "Interval": 20000000000,
+                "Timeout": 5000000000,
+                "StartPeriod": 90000000000,
+                "Retries": 3
+            },
+            "Image": "m6-dec5b5de6fc8-app",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "8039c68860610513b4e5e81eb9dda117190a53cecc6d5e18c3703988c9d0c1fb",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "",
+                "com.docker.compose.image": "sha256:e863ba755eb176c41f902471268b1193c960ac3124c2605f0fa7dea90a07c3bf",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "m6-dec5b5de6fc8",
+                "com.docker.compose.project.config_files": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793\\source\\compose.yaml",
+                "com.docker.compose.project.working_dir": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\candidate-review-3fe3cfe793\\source",
+                "com.docker.compose.service": "app",
+                "com.docker.compose.version": "5.5.0"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "f3bcbbb165be28568ae4b77adcc276f3060042defebd637176819971471207ee",
+            "SandboxKey": "/var/run/docker/netns/f3bcbbb165be",
+            "Ports": {
+                "8000/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "63769"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "63769"
+                    }
+                ]
+            },
+            "Networks": {
+                "m6-dec5b5de6fc8_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "m6-dec5b5de6fc8-app-1",
+                        "app"
+                    ],
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "d913e43fb3258a47016abd24e3bd0d38914bf4f1b6c3a153e778200a2ab8e0da",
+                    "EndpointID": "0a32e91b86ebaee20dd997362aa94a5cc212a3d4a2dee69153986d2832834ca5",
+                    "Gateway": "172.19.0.1",
+                    "IPAddress": "172.19.0.2",
+                    "MacAddress": "46:21:88:f1:2b:b8",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": [
+                        "m6-dec5b5de6fc8-app-1",
+                        "app",
+                        "447358a3fd49"
+                    ]
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:e863ba755eb176c41f902471268b1193c960ac3124c2605f0fa7dea90a07c3bf",
+            "size": 2953,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]
+Executing: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml run --no-deps --name m6-dec5b5de6fc8-review app python scripts/verify_m6_review.py --data-dir /tmp/m6-review --model-dir /opt/models/bge --report /tmp/m6-review-reports/03-review-after.json
+ Container m6-dec5b5de6fc8-review Creating 
+ Container m6-dec5b5de6fc8-review Created 
+{"checks": [{"check": "text_retry_fences_old_generation_actual_inference_and_unique_chunks", "passed": true, "attempts": 2, "generation": 2, "http": 200, "originalSha256": "395aecf3cced27d5603f5c9fcee33e27fb095a7b8a4fd449ae61dee7af50035e", "downloadSha256": "395aecf3cced27d5603f5c9fcee33e27fb095a7b8a4fd449ae61dee7af50035e"}, {"check": "actual_missing_model_degraded_keyword_download_and_semantic_503", "passed": true, "health": {"milestone": "M5", "indexing": {"concurrency": 1, "workerRunning": true, "recovery": {"requeued": 0, "scheduled": 0}}, "uploadRecovery": {"committedIntentsCleared": 0, "quarantined": [], "retainedAnomalies": []}, "keywordBackfill": {"ready": 0, "failed": 0, "not_supported": 0, "unconfirmed": 0}, "status": "degraded", "database": {"status": "ready", "probeCount": 0}, "storage": {"startupWriteCheck": "passed"}, "model": {"status": "failed", "id": "BAAI/bge-small-zh-v1.5", "revision": "7999e1d3359715c523056ef9478215996d62a620", "dimension": 512, "device": "cpu", "loadSeconds": null}, "startupSeconds": 2.893}, "error": {"error": {"code": "MODEL_UNAVAILABLE", "message": "本地模型未就绪，请检查服务状态；关键词搜索和原文件下载仍可用。", "retryable": true}}, "http": 200, "originalSha256": "395aecf3cced27d5603f5c9fcee33e27fb095a7b8a4fd449ae61dee7af50035e", "downloadSha256": "395aecf3cced27d5603f5c9fcee33e27fb095a7b8a4fd449ae61dee7af50035e"}, {"check": "real_model_restored_then_explicit_retry_and_source_query", "passed": true}], "failure": null, "transport": "real TCP HTTP isolated processes", "raceObservation": {"generationAfterTextRetry": 2, "jobState": "pending", "document": {"id": "e8c8b61e-d102-4c64-838b-f94969481351", "name": "M6正文重试竞态.md", "extension": "md", "mediaType": "text/markdown", "sizeBytes": 90, "sha256": "395aecf3cced27d5603f5c9fcee33e27fb095a7b8a4fd449ae61dee7af50035e", "uploadedAt": "2026-10-08T11:34:36.831407Z", "category": null, "archivedAt": null, "textStatus": "ready", "textError": null, "textEncoding": "utf-8", "vectorStatus": "pending", "vectorError": null, "chunkCount": 0, "downloadUrl": "/api/v1/documents/e8c8b61e-d102-4c64-838b-f94969481351/download"}}, "seconds": 14.412}
+Executing: docker cp m6-dec5b5de6fc8-review:/tmp/m6-review-reports/. C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\m6-docker\20261008T112703Z-m6-dec5b5de6fc8
+Executing: docker rm -f m6-dec5b5de6fc8-review
+m6-dec5b5de6fc8-review
+Executing: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml run --no-deps --name m6-dec5b5de6fc8-verify-34bada -e ACCEPTANCE_TEST_RUN=m6-dec5b5de6fc8 -v D:\__10_.zip:/fixtures/documents.zip:ro app python scripts/verify_m6.py --phase prepare --zip /fixtures/documents.zip --report /tmp/m6-reports/04-prepare.json
+ Container m6-dec5b5de6fc8-verify-34bada Creating 
+ Container m6-dec5b5de6fc8-verify-34bada Created 
+PASS new business upload 01_代码提交规范_v2.1.md
+PASS new business upload 02_发布检查清单_v1.4.md
+PASS new business upload 03_文件服务接口约定_v1.2.md
+PASS new business upload 04_星桥项目_需求与范围_v1.0.pdf
+PASS new business upload 05_星桥项目_发布检查清单_2026-09-18.txt
+PASS new business upload 06_星桥项目_故障复盘_2026-09-21.md
+PASS new business upload 07_星桥项目_用户访谈纪要_2026-09-12.txt
+PASS new business upload 08_检索技术说明_关键词与语义_v1.0.pdf
+PASS new business upload 09_本地部署故障排查_v1.3.txt
+PASS new business upload 10_文档分类与归档规范_v1.0.pdf
+QUERY rank=1 01_代码提交规范_v2.1.md
+QUERY rank=1 03_文件服务接口约定_v1.2.md
+QUERY rank=2 02_发布检查清单_v1.4.md
+QUERY rank=1 06_星桥项目_故障复盘_2026-09-21.md
+QUERY rank=1 09_本地部署故障排查_v1.3.txt
+PASS zip_7_texts_ready_3_pdfs_name_only_and_10_downloads_unchanged
+PASS chinese_keywords_complete_identifiers_and_pdf_filename_return_expected_zip_files_with_snippets
+PASS identifier_case_insensitive_and_underscore_percent_are_literal_not_wildcards
+PASS empty_results_and_invalid_query_feedback
+PASS search_count_and_pagination_are_consistent
+PASS move_search_archive_search_restore_search_and_download_consistency
+PASS invalid_category_search_has_clear_feedback
+PASS actual_invalid_encoding_fails_extraction_but_upload_name_search_retry_and_original_download_work
+PASS pdf_extraction_not_supported_and_missing_document_retry_feedback
+{"phase": "prepare", "checks": 11, "failure": null, "seconds": 6.759}
+Executing: docker cp m6-dec5b5de6fc8-verify-34bada:/tmp/m6-reports/. C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\m6-docker\20261008T112703Z-m6-dec5b5de6fc8
+Executing: docker rm -f m6-dec5b5de6fc8-verify-34bada
+m6-dec5b5de6fc8-verify-34bada
+Executing: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml restart app
+ Container m6-dec5b5de6fc8-app-1 Restarting 
+ Container m6-dec5b5de6fc8-app-1 Started 
+Executing: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml up -d --no-build --wait --wait-timeout 180
+ Container m6-dec5b5de6fc8-app-1 Running 
+ Container m6-dec5b5de6fc8-app-1 Waiting 
+ Container m6-dec5b5de6fc8-app-1 Healthy 
+Executing: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml run --no-deps --name m6-dec5b5de6fc8-verify-189a73 -e ACCEPTANCE_TEST_RUN=m6-dec5b5de6fc8 -v D:\__10_.zip:/fixtures/documents.zip:ro -v C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\m6-docker\20261008T112703Z-m6-dec5b5de6fc8\04-prepare.json:/fixtures/before.json:ro app python scripts/verify_m6.py --phase after --zip /fixtures/documents.zip --report /tmp/m6-reports/07-after-restart.json --before /fixtures/before.json
+ Container m6-dec5b5de6fc8-verify-189a73 Creating 
+ Container m6-dec5b5de6fc8-verify-189a73 Created 
+{"phase": "after", "checks": 2, "failure": null, "seconds": 0.136}
+Executing: docker cp m6-dec5b5de6fc8-verify-189a73:/tmp/m6-reports/. C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\m6-docker\20261008T112703Z-m6-dec5b5de6fc8
+Executing: docker rm -f m6-dec5b5de6fc8-verify-189a73
+m6-dec5b5de6fc8-verify-189a73
+Executing: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml up -d --no-build --force-recreate --wait --wait-timeout 180
+ Container m6-dec5b5de6fc8-app-1 Recreate 
+ Container m6-dec5b5de6fc8-app-1 Recreated 
+ Container m6-dec5b5de6fc8-app-1 Starting 
+ Container m6-dec5b5de6fc8-app-1 Started 
+ Container m6-dec5b5de6fc8-app-1 Waiting 
+ Container m6-dec5b5de6fc8-app-1 Healthy 
+Executing: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml run --no-deps --name m6-dec5b5de6fc8-verify-7a7314 -e ACCEPTANCE_TEST_RUN=m6-dec5b5de6fc8 -v D:\__10_.zip:/fixtures/documents.zip:ro -v C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\m6-docker\20261008T112703Z-m6-dec5b5de6fc8\04-prepare.json:/fixtures/before.json:ro app python scripts/verify_m6.py --phase after --zip /fixtures/documents.zip --report /tmp/m6-reports/09-after-recreate.json --before /fixtures/before.json --restore
+ Container m6-dec5b5de6fc8-verify-7a7314 Creating 
+ Container m6-dec5b5de6fc8-verify-7a7314 Created 
+{"phase": "after", "checks": 3, "failure": null, "seconds": 0.18}
+Executing: docker cp m6-dec5b5de6fc8-verify-7a7314:/tmp/m6-reports/. C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\m6-docker\20261008T112703Z-m6-dec5b5de6fc8
+Executing: docker rm -f m6-dec5b5de6fc8-verify-7a7314
+m6-dec5b5de6fc8-verify-7a7314
+Executing: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml logs --tail=200 app
+app-1  | INFO:     Started server process [1]
+app-1  | INFO:     Waiting for application startup.
+app-1  | INFO:     Application startup complete.
+app-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+app-1  | INFO:     127.0.0.1:36714 - "GET /api/v1/health HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37650 - "GET /api/v1/health HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37656 - "GET /api/v1/documents?archived=false&limit=100&offset=0 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37666 - "GET /api/v1/documents?archived=true&limit=100&offset=0 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37676 - "GET /api/v1/categories HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37684 - "GET /api/v1/m1/probes HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37692 - "GET /api/v1/documents/d037f873-693b-448d-9c65-34197feefc44/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37696 - "GET /api/v1/documents/1798a5c8-5bf8-457f-84b6-9751ceca85cb/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37702 - "GET /api/v1/documents/efde89ae-3981-4c6e-9096-6bcb41942a4a/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37714 - "GET /api/v1/documents/5faefe76-858f-48ac-a0dc-57f91487beb2/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37718 - "GET /api/v1/documents/e8278349-0702-4cec-8d31-649332c17e35/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37724 - "GET /api/v1/documents/75e156c6-211d-45fc-acd4-dc06971a9771/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37734 - "GET /api/v1/documents/976646b2-2876-42ba-a0c1-87e9afb50029/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37742 - "GET /api/v1/documents/f707e19d-1e1a-4cb3-8439-2c703097d6ea/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37756 - "GET /api/v1/documents/7014ab50-7bda-4196-807b-670bd03ac3f5/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37760 - "GET /api/v1/documents/4b150784-358f-42b6-b817-9c4f504aa248/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37768 - "GET /api/v1/documents?limit=100 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37780 - "GET /api/v1/documents?archived=true&limit=100 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37790 - "GET /api/v1/documents?limit=100 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37806 - "GET /api/v1/documents?archived=true&limit=100 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37822 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=58585088-df94-49ab-b707-2088714dd165 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37830 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=true&category_id=58585088-df94-49ab-b707-2088714dd165 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37834 - "GET /api/v1/search/keyword?q=DOC-238&archived=true&category_id=58585088-df94-49ab-b707-2088714dd165 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37842 - "POST /api/v1/documents/5faefe76-858f-48ac-a0dc-57f91487beb2/restore HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37846 - "GET /api/v1/documents/5faefe76-858f-48ac-a0dc-57f91487beb2/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37850 - "POST /api/v1/documents/d037f873-693b-448d-9c65-34197feefc44/restore HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37856 - "GET /api/v1/documents/d037f873-693b-448d-9c65-34197feefc44/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37870 - "GET /api/v1/search/semantic?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&limit=25&min_score=0&score_window=1&archived=false&category_id=58585088-df94-49ab-b707-2088714dd165 HTTP/1.1" 200 OK
+app-1  | INFO:     172.19.0.3:37882 - "GET /api/v1/documents?archived=true HTTP/1.1" 200 OK
+Executing: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml down
+ Container m6-dec5b5de6fc8-app-1 Stopping 
+ Container m6-dec5b5de6fc8-app-1 Stopped 
+ Container m6-dec5b5de6fc8-app-1 Removing 
+ Container m6-dec5b5de6fc8-app-1 Removed 
+ Network m6-dec5b5de6fc8_default Removing 
+ Network m6-dec5b5de6fc8_default Removed 
+Evidence: C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\m6-docker\20261008T112703Z-m6-dec5b5de6fc8
+
+Exit code: 0

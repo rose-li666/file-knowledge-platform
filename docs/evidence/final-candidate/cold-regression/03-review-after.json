@@ -1,0 +1,95 @@
+{
+  "checks": [
+    {
+      "check": "text_retry_fences_old_generation_actual_inference_and_unique_chunks",
+      "passed": true,
+      "attempts": 2,
+      "generation": 2,
+      "http": 200,
+      "originalSha256": "395aecf3cced27d5603f5c9fcee33e27fb095a7b8a4fd449ae61dee7af50035e",
+      "downloadSha256": "395aecf3cced27d5603f5c9fcee33e27fb095a7b8a4fd449ae61dee7af50035e"
+    },
+    {
+      "check": "actual_missing_model_degraded_keyword_download_and_semantic_503",
+      "passed": true,
+      "health": {
+        "milestone": "M5",
+        "indexing": {
+          "concurrency": 1,
+          "workerRunning": true,
+          "recovery": {
+            "requeued": 0,
+            "scheduled": 0
+          }
+        },
+        "uploadRecovery": {
+          "committedIntentsCleared": 0,
+          "quarantined": [],
+          "retainedAnomalies": []
+        },
+        "keywordBackfill": {
+          "ready": 0,
+          "failed": 0,
+          "not_supported": 0,
+          "unconfirmed": 0
+        },
+        "status": "degraded",
+        "database": {
+          "status": "ready",
+          "probeCount": 0
+        },
+        "storage": {
+          "startupWriteCheck": "passed"
+        },
+        "model": {
+          "status": "failed",
+          "id": "BAAI/bge-small-zh-v1.5",
+          "revision": "7999e1d3359715c523056ef9478215996d62a620",
+          "dimension": 512,
+          "device": "cpu",
+          "loadSeconds": null
+        },
+        "startupSeconds": 2.893
+      },
+      "error": {
+        "error": {
+          "code": "MODEL_UNAVAILABLE",
+          "message": "本地模型未就绪，请检查服务状态；关键词搜索和原文件下载仍可用。",
+          "retryable": true
+        }
+      },
+      "http": 200,
+      "originalSha256": "395aecf3cced27d5603f5c9fcee33e27fb095a7b8a4fd449ae61dee7af50035e",
+      "downloadSha256": "395aecf3cced27d5603f5c9fcee33e27fb095a7b8a4fd449ae61dee7af50035e"
+    },
+    {
+      "check": "real_model_restored_then_explicit_retry_and_source_query",
+      "passed": true
+    }
+  ],
+  "failure": null,
+  "transport": "real TCP HTTP isolated processes",
+  "raceObservation": {
+    "generationAfterTextRetry": 2,
+    "jobState": "pending",
+    "document": {
+      "id": "e8c8b61e-d102-4c64-838b-f94969481351",
+      "name": "M6正文重试竞态.md",
+      "extension": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 90,
+      "sha256": "395aecf3cced27d5603f5c9fcee33e27fb095a7b8a4fd449ae61dee7af50035e",
+      "uploadedAt": "2026-10-08T11:34:36.831407Z",
+      "category": null,
+      "archivedAt": null,
+      "textStatus": "ready",
+      "textError": null,
+      "textEncoding": "utf-8",
+      "vectorStatus": "pending",
+      "vectorError": null,
+      "chunkCount": 0,
+      "downloadUrl": "/api/v1/documents/e8c8b61e-d102-4c64-838b-f94969481351/download"
+    }
+  },
+  "seconds": 14.412
+}

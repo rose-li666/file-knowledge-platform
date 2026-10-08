@@ -1,0 +1,9 @@
+Command: docker compose -p m6-dec5b5de6fc8 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\candidate-review-3fe3cfe793\source\compose.yaml down
+ Container m6-dec5b5de6fc8-app-1 Stopping 
+ Container m6-dec5b5de6fc8-app-1 Stopped 
+ Container m6-dec5b5de6fc8-app-1 Removing 
+ Container m6-dec5b5de6fc8-app-1 Removed 
+ Network m6-dec5b5de6fc8_default Removing 
+ Network m6-dec5b5de6fc8_default Removed 
+
+Exit code: 0; seconds: 1.521

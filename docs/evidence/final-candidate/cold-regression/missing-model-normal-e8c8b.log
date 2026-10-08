@@ -1,0 +1,42 @@
+INFO:     Started server process [78]
+INFO:     Waiting for application startup.
+Local model load failed
+Traceback (most recent call last):
+  File "/app/app/main.py", line 52, in lifespan
+    app.state.model = await asyncio.to_thread(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/embedding.py", line 20, in __init__
+    manifest = json.loads((model_dir / "download-manifest.json").read_text("utf-8"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/m6-review/nonexistent-model/download-manifest.json'
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:57575 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59256 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59270 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:59276 - "GET /api/v1/documents/e418449d-5826-429d-af0f-7435d03e42ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59292 - "GET /api/v1/documents/e418449d-5826-429d-af0f-7435d03e42ad HTTP/1.1" 200 OK
+Index failed: e418449d-5826-429d-af0f-7435d03e42ad generation=1
+Traceback (most recent call last):
+  File "/app/app/indexing.py", line 88, in process_next
+    raise ValueError("本地向量模型未能加载；正文仍可搜索。修复模型后重试索引。")
+ValueError: 本地向量模型未能加载；正文仍可搜索。修复模型后重试索引。
+INFO:     127.0.0.1:59298 - "GET /api/v1/documents/e418449d-5826-429d-af0f-7435d03e42ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59304 - "GET /api/v1/search/keyword?q=%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59312 - "GET /api/v1/search/semantic?q=%E6%A3%80%E6%9F%A5 HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:59328 - "GET /api/v1/documents/e418449d-5826-429d-af0f-7435d03e42ad/download HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [78]
