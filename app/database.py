@@ -4,6 +4,7 @@ from pathlib import Path
 
 from sqlalchemy import DateTime, ForeignKey, Integer, LargeBinary, String, Text, create_engine, event
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
+from .text_normalization import search_key
 
 
 class Base(DeclarativeBase):
@@ -33,9 +34,18 @@ class Document(DocumentBase):
     uploaded_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
     text_status: Mapped[str] = mapped_column(String(20), default="not_started")
     vector_status: Mapped[str] = mapped_column(String(20), default="not_started")
+    text_error: Mapped[str | None] = mapped_column(String(300))
+    text_encoding: Mapped[str | None] = mapped_column(String(32))
     category_id: Mapped[str | None] = mapped_column(String(36), ForeignKey("categories.id", ondelete="RESTRICT"))
     category: Mapped[Category | None] = relationship(lazy="selectin")
     archived_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
+class DocumentText(DocumentBase):
+    __tablename__ = "document_texts"
+    document_id: Mapped[str] = mapped_column(String(36), ForeignKey("documents.id", ondelete="CASCADE"), primary_key=True)
+    content: Mapped[str] = mapped_column(Text)
+    search_content: Mapped[str] = mapped_column(Text)
 
 
 class Probe(Base):
@@ -67,6 +77,7 @@ def open_database(path: Path, *, metadata=None, initialize=True):
 
     @event.listens_for(engine, "connect")
     def configure(connection, _):
+        connection.create_function("search_key", 1, search_key, deterministic=True)
         connection.execute("PRAGMA foreign_keys=ON")
         connection.execute("PRAGMA journal_mode=WAL")
         connection.execute("PRAGMA synchronous=FULL")
@@ -84,7 +95,7 @@ def open_document_database(path: Path):
         with engine.connect() as connection:
             connection.exec_driver_sql("BEGIN IMMEDIATE")
             version = connection.exec_driver_sql("PRAGMA user_version").scalar_one()
-            if version > 1:
+            if version > 2:
                 raise ValueError("Business database schema is newer than this application")
             columns = {row[1] for row in connection.exec_driver_sql("PRAGMA table_info(documents)")}
             if columns:
@@ -97,9 +108,12 @@ def open_document_database(path: Path):
                     connection.exec_driver_sql("ALTER TABLE documents ADD COLUMN category_id VARCHAR(36) REFERENCES categories(id) ON DELETE RESTRICT")
                 if "archived_at" not in columns:
                     connection.exec_driver_sql("ALTER TABLE documents ADD COLUMN archived_at DATETIME")
+                for name, type_name in (("text_error", "VARCHAR(300)"), ("text_encoding", "VARCHAR(32)")):
+                    if name not in columns:
+                        connection.exec_driver_sql(f"ALTER TABLE documents ADD COLUMN {name} {type_name}")
             DocumentBase.metadata.create_all(connection)
             connection.exec_driver_sql("CREATE INDEX IF NOT EXISTS ix_documents_category_archive ON documents(category_id, archived_at)")
-            connection.exec_driver_sql("PRAGMA user_version=1")
+            connection.exec_driver_sql("PRAGMA user_version=2")
             connection.commit()
     except Exception:
         engine.dispose()

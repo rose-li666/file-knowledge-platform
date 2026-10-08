@@ -20,6 +20,7 @@ from starlette.formparsers import MultiPartException, MultiPartParser
 from starlette.requests import ClientDisconnect
 
 from .database import Category, Document
+from .texts import extract_document
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/v1")
@@ -50,6 +51,8 @@ class DocumentResponse(BaseModel):
     category: CategoryBrief | None = None
     archivedAt: datetime | None = None
     textStatus: str
+    textError: str | None = None
+    textEncoding: str | None = None
     vectorStatus: str
     downloadUrl: str
 
@@ -68,7 +71,7 @@ def serialize(row: Document):
         uploadedAt=row.uploaded_at.replace(tzinfo=timezone.utc),
         category=CategoryBrief(id=row.category.id, name=row.category.name) if row.category else None,
         archivedAt=row.archived_at.replace(tzinfo=timezone.utc) if row.archived_at else None,
-        textStatus=row.text_status, vectorStatus=row.vector_status,
+        textStatus=row.text_status, textError=row.text_error, textEncoding=row.text_encoding, vectorStatus=row.vector_status,
         downloadUrl=f"/api/v1/documents/{row.id}/download",
     )
 
@@ -209,7 +212,16 @@ async def upload_document(request: Request):
             raise FileError(415, "UNSUPPORTED_FILE_TYPE", "仅支持 PDF、TXT、Markdown（.md / .markdown）。")
         if upload.size is not None and upload.size > request.app.state.max_upload_bytes:
             raise FileError(413, "FILE_TOO_LARGE", "文件超过允许的大小，请选择较小文件。")
-        return await asyncio.to_thread(save_file, upload, request, extension)
+        saved = await asyncio.to_thread(save_file, upload, request, extension)
+        def extract_saved():
+            with request.app.state.text_lock:
+                return extract_document(request.app.state.document_engine, request.app.state.data_dir, saved.id)
+        try:
+            result = await asyncio.to_thread(extract_saved)
+            return saved.model_copy(update=result)
+        except Exception:
+            logger.exception("Upload committed but text extraction could not complete: %s", saved.id)
+            return saved.model_copy(update={"textError": "原文件已保存；正文处理尚未确认完成，请刷新详情并重试正文提取。"})
     finally:
         await form.close()
 
@@ -219,17 +231,7 @@ def list_documents(request: Request, limit: int = Query(50, ge=1, le=100), offse
                    archived: bool = False, category_id: str | None = None):
     try:
         with Session(request.app.state.document_engine) as session:
-            filters = [Document.archived_at.is_not(None) if archived else Document.archived_at.is_(None)]
-            if category_id == "unclassified":
-                filters.append(Document.category_id.is_(None))
-            elif category_id is not None:
-                try:
-                    category_id = str(uuid.UUID(category_id))
-                except ValueError as error:
-                    raise FileError(422, "INVALID_CATEGORY", "分类标识无效，请重新选择分类。") from error
-                if session.get(Category, category_id) is None:
-                    raise FileError(404, "CATEGORY_NOT_FOUND", "分类不存在，请刷新分类列表。")
-                filters.append(Document.category_id == category_id)
+            filters = document_filters(session, archived, category_id)
             total = session.scalar(select(func.count()).select_from(Document).where(*filters))
             rows = session.scalars(select(Document).where(*filters).order_by(Document.uploaded_at.desc(), Document.id.desc())
                                    .offset(offset).limit(limit)).all()
@@ -237,6 +239,21 @@ def list_documents(request: Request, limit: int = Query(50, ge=1, le=100), offse
     except SQLAlchemyError as error:
         logger.exception("Document list failed")
         raise FileError(503, "DATABASE_UNAVAILABLE", "无法读取文件列表，请稍后重试。", retryable=True) from error
+
+
+def document_filters(session, archived, category_id):
+    filters = [Document.archived_at.is_not(None) if archived else Document.archived_at.is_(None)]
+    if category_id == "unclassified":
+        filters.append(Document.category_id.is_(None))
+    elif category_id is not None:
+        try:
+            category_id = str(uuid.UUID(category_id))
+        except ValueError as error:
+            raise FileError(422, "INVALID_CATEGORY", "分类标识无效，请重新选择分类。") from error
+        if session.get(Category, category_id) is None:
+            raise FileError(404, "CATEGORY_NOT_FOUND", "分类不存在，请刷新分类列表。")
+        filters.append(Document.category_id == category_id)
+    return filters
 
 
 def find_document(request: Request, document_id: uuid.UUID):

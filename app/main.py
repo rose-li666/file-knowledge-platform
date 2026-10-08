@@ -2,6 +2,7 @@ import asyncio
 import logging
 import os
 import time
+import threading
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -16,6 +17,8 @@ from .database import Probe, open_database, open_document_database
 from .embedding import LocalEmbedder, PROJECT_ROOT, SPEC
 from .files import FileError, router as file_router
 from .organization import router as organization_router
+from .search import router as search_router
+from .texts import backfill_texts
 
 logger = logging.getLogger(__name__)
 
@@ -33,9 +36,11 @@ async def lifespan(app: FastAPI):
     app.state.engine = open_database(data_dir / "db" / "diagnostics.sqlite3")
     app.state.document_engine = open_document_database(data_dir / "db" / "platform.sqlite3")
     app.state.data_dir = data_dir
+    app.state.text_lock = threading.Lock()
     app.state.max_upload_bytes = int(os.environ.get("MAX_UPLOAD_BYTES", str(20 * 1024 * 1024)))
     if app.state.max_upload_bytes <= 0:
         raise ValueError("MAX_UPLOAD_BYTES must be a positive integer")
+    app.state.text_backfill = await asyncio.to_thread(backfill_texts, app.state.document_engine, data_dir, app.state.text_lock)
     app.state.model = None
     app.state.model_status = "loading"
     try:
@@ -64,6 +69,7 @@ async def file_error_handler(request, error: FileError):
 
 app.include_router(file_router)
 app.include_router(organization_router)
+app.include_router(search_router)
 
 
 @app.get("/api/v1/health")
@@ -79,7 +85,8 @@ def health():
         logger.exception("Database health check failed")
         database_status, count = "failed", None
     payload = {
-        "milestone": "M3",
+        "milestone": "M4",
+        "keywordBackfill": app.state.text_backfill,
         "status": "ready" if database_status == "ready" and app.state.model_status == "ready" else "degraded",
         "database": {"status": database_status, "probeCount": count},
         "storage": {"startupWriteCheck": "passed"},

@@ -1,0 +1,393 @@
+{
+  "checks": [
+    {
+      "check": "zip_7_texts_ready_3_pdfs_name_only_and_10_downloads_unchanged",
+      "passed": true
+    },
+    {
+      "check": "chinese_keywords_complete_identifiers_and_pdf_filename_return_expected_zip_files_with_snippets",
+      "passed": true
+    },
+    {
+      "check": "identifier_case_insensitive_and_underscore_percent_are_literal_not_wildcards",
+      "passed": true
+    },
+    {
+      "check": "empty_results_and_invalid_query_feedback",
+      "passed": true
+    },
+    {
+      "check": "search_count_and_pagination_are_consistent",
+      "passed": true
+    },
+    {
+      "check": "move_search_archive_search_restore_search_and_download_consistency",
+      "passed": true
+    },
+    {
+      "check": "invalid_category_search_has_clear_feedback",
+      "passed": true
+    },
+    {
+      "check": "actual_invalid_encoding_fails_extraction_but_upload_name_search_retry_and_original_download_work",
+      "passed": true
+    },
+    {
+      "check": "pdf_extraction_not_supported_and_missing_document_retry_feedback",
+      "passed": true
+    },
+    {
+      "check": "schema_upgrade_preserves_existing_document_ids_and_hashes",
+      "passed": true,
+      "count": 10
+    },
+    {
+      "check": "independent_database_read_has_original_texts_and_no_pdf_or_failed_text_rows",
+      "passed": true
+    }
+  ],
+  "queries": [
+    {
+      "query": "代码提交规范",
+      "total": 2,
+      "hits": [
+        {
+          "name": "01_代码提交规范_v2.1.md",
+          "fields": [
+            "name",
+            "body"
+          ],
+          "snippet": "# 代码提交规范\n\n文档编号:eng-014  \n版本:2.1  \n维护团队:研发效能组  \n生效日期:2026-09-10  \n适用范围:星桥协作平台的前端、api 和后台任务服务\n\n## 1. 目的与边界\n\n本文约定开发者把修改交给同事审阅之…"
+        },
+        {
+          "name": "02_发布检查清单_v1.4.md",
+          "fields": [
+            "body"
+          ],
+          "snippet": "…清单只说明应该做什么,某一天做了什么应写入对应项目的发布执行记录。\n\n## 6. 关联资料\n\n提交前的质量检查见 eng-014《代码提交规范》。docker 启动、端口和存储问题见 run-008《本地部署故障排查》。星桥项目 2026-09-18 的发布执行记录单独保存,不代表本清单已经全部执行。\n"
+        }
+      ]
+    },
+    {
+      "query": "最终版",
+      "total": 1,
+      "hits": [
+        {
+          "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+          "fields": [
+            "body"
+          ],
+          "snippet": "…求讨论,不代表统计调查结论。\n\n一、最近一次找不到文件的经历\n产品角色:想找已经确认的需求稿,搜索“需求”出现十几份,名称里都有“最终版”。最后去聊天记录里问哪一份有效。比起更多搜索结果,更希望看到文件的所属项目、更新时间和当前状态。\n\n开发角色:同事只说“看一下发布检查清单”,找到一份通用规范和一份某次发布的执行记录。两份文件都相关,但用途不同。通用规范告诉我下…"
+        }
+      ]
+    },
+    {
+      "query": "幂等",
+      "total": 3,
+      "hits": [
+        {
+          "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+          "fields": [
+            "body"
+          ],
+          "snippet": "…摘要如果能显示文档类型,会少点开几次。\n\n测试角色:知道自己要找“同样的请求重发会不会多建一份文件”,但不知道资料里把这件事叫作“幂等”。直接输入自己的问题比猜术语更自然。找到结果后仍然需要看到原文依据,不能只有一个相关性分数。\n\n二、分类的使用习惯\n三个角色都能理解“项目文件”和“技术规范”这两个大类,但有人会把接口约定放在所属项目下,有人认为它应归入技术规范…"
+        },
+        {
+          "name": "06_星桥项目_故障复盘_2026-09-21.md",
+          "fields": [
+            "body"
+          ],
+          "snippet": "…组 | 覆盖旧格式、新格式和空正文 |\n| 增加失败任务告警 | 值班维护岗 | 失败持续增长时可定位到处理阶段 |\n| 重复任务幂等验证 | 测试负责人 | 同一任务重放不会产生重复片段 |\n\n对用户的说明应准确:文件已经保存,索引处理失败,正在恢复检索。不要让用户为了恢复搜索而反复上传同一份文件。\n"
+        },
+        {
+          "name": "03_文件服务接口约定_v1.2.md",
+          "fields": [
+            "body"
+          ],
+          "snippet": "…,超出后交给人工重试,避免无限消耗资源。\n\n## 5. 常用错误\n\n400:请求字段不完整或分类无效;404:文档不存在;409:幂等键对应的内容冲突或状态不允许;413:文件超过上传上限。接口不返回服务器磁盘路径、内部凭证或完整堆栈。\n\n正文和语义搜索都应检查 archived 状态。归档与恢复的产品规则见 pol-006,索引异常的排查案例见 inc-202…"
+        }
+      ]
+    },
+    {
+      "query": "ENG-014",
+      "total": 2,
+      "hits": [
+        {
+          "name": "02_发布检查清单_v1.4.md",
+          "fields": [
+            "body"
+          ],
+          "snippet": "…勾选为通过。通用清单只说明应该做什么,某一天做了什么应写入对应项目的发布执行记录。\n\n## 6. 关联资料\n\n提交前的质量检查见 eng-014《代码提交规范》。docker 启动、端口和存储问题见 run-008《本地部署故障排查》。星桥项目 2026-09-18 的发布执行记录单独保存,不代表本清单已经全部执行。\n"
+        },
+        {
+          "name": "01_代码提交规范_v2.1.md",
+          "fields": [
+            "body"
+          ],
+          "snippet": "# 代码提交规范\n\n文档编号:eng-014  \n版本:2.1  \n维护团队:研发效能组  \n生效日期:2026-09-10  \n适用范围:星桥协作平台的前端、api 和后台任务服务\n\n## 1. 目的与边界\n\n本文约定开发者把修改交给同事审阅之前必须完成的准备。合并代码不…"
+        }
+      ]
+    },
+    {
+      "query": "API-032",
+      "total": 1,
+      "hits": [
+        {
+          "name": "03_文件服务接口约定_v1.2.md",
+          "fields": [
+            "body"
+          ],
+          "snippet": "# 文件服务接口约定\n\n文档编号:api-032  \n版本:1.2  \n维护团队:文件服务组  \n更新日期:2026-09-15  \n适用系统:星桥协作平台\n\n## 1. 文件与索引分别记录\n\n文件保存成功表示原始字节已经持久化,并产生 documentid。能否被正文检索或语…"
+        }
+      ]
+    },
+    {
+      "query": "REL-20260918",
+      "total": 1,
+      "hits": [
+        {
+          "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+          "fields": [
+            "body"
+          ],
+          "snippet": "星桥项目 - 发布检查清单(执行记录)\n记录编号:rel-20260918\n计划版本:1.4.0\n执行时间:2026-09-18 18:30-19:20\n负责人:发布值班岗\n依据文档:ops-021《发布检查清单》v1.4\n记录状态:发布中止,应用已回退至 1.3.2\n\n一、这次准备发布什么\n1.4.0…"
+        }
+      ]
+    },
+    {
+      "query": "INC-20260921",
+      "total": 3,
+      "hits": [
+        {
+          "name": "06_星桥项目_故障复盘_2026-09-21.md",
+          "fields": [
+            "body"
+          ],
+          "snippet": "# 上传成功后正文检索缺失 - 故障复盘\n\n事件编号:inc-20260921  \n所属项目:星桥协作平台  \n事件窗口:2026-09-21 09:10-10:35  \n编写日期:2026-09-22  \n状态:已恢复,改进项跟进中\n\n## 1. 用户首先遇到了什么\n\n用户上传一份 markdown 方案…"
+        },
+        {
+          "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+          "fields": [
+            "body"
+          ],
+          "snippet": "…记录的区别\n本文件是 9 月 18 日一次部署的实际执行记录。9 月 21 日的正文检索故障由新格式响应解析失败引起,处理过程见 inc-20260921,不能套用本次 redis 配置问题的结论。\n"
+        },
+        {
+          "name": "03_文件服务接口约定_v1.2.md",
+          "fields": [
+            "body"
+          ],
+          "snippet": "…凭证或完整堆栈。\n\n正文和语义搜索都应检查 archived 状态。归档与恢复的产品规则见 pol-006,索引异常的排查案例见 inc-20260921。\n"
+        }
+      ]
+    },
+    {
+      "query": "RUN-008",
+      "total": 2,
+      "hits": [
+        {
+          "name": "09_本地部署故障排查_v1.3.txt",
+          "fields": [
+            "body"
+          ],
+          "snippet": "本地部署故障排查\n文档编号:run-008\n版本:1.3\n维护团队:平台运维组\n更新日期:2026-09-17\n适用环境:星桥协作平台 docker compose 演示部署\n\n一、先确认失败发生在哪一层\n不要在看到网页打不开后立即重建数据库。先检查容器状态和最近日志,再…"
+        },
+        {
+          "name": "02_发布检查清单_v1.4.md",
+          "fields": [
+            "body"
+          ],
+          "snippet": "…布执行记录。\n\n## 6. 关联资料\n\n提交前的质量检查见 eng-014《代码提交规范》。docker 启动、端口和存储问题见 run-008《本地部署故障排查》。星桥项目 2026-09-18 的发布执行记录单独保存,不代表本清单已经全部执行。\n"
+        }
+      ]
+    },
+    {
+      "query": "04_星桥项目_需求与范围_v1.0.pdf",
+      "total": 1,
+      "hits": [
+        {
+          "name": "04_星桥项目_需求与范围_v1.0.pdf",
+          "fields": [
+            "name"
+          ],
+          "snippet": "04_星桥项目_需求与范围_v1.0.pdf"
+        }
+      ]
+    }
+  ],
+  "original_files": [
+    {
+      "id": "ba491df8-383f-4c7b-b478-55665cdb889b",
+      "name": "01_代码提交规范_v2.1.md",
+      "sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+      "equal": true,
+      "textStatus": "ready"
+    },
+    {
+      "id": "22019d12-afc0-44db-bbf2-1b0b07d69f02",
+      "name": "02_发布检查清单_v1.4.md",
+      "sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+      "equal": true,
+      "textStatus": "ready"
+    },
+    {
+      "id": "b5f4e7ca-40ac-4b39-b0fa-7c83be83eb31",
+      "name": "03_文件服务接口约定_v1.2.md",
+      "sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+      "equal": true,
+      "textStatus": "ready"
+    },
+    {
+      "id": "48791199-c989-4741-8b49-0c8cb34d8ce2",
+      "name": "04_星桥项目_需求与范围_v1.0.pdf",
+      "sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+      "equal": true,
+      "textStatus": "not_supported"
+    },
+    {
+      "id": "f5340215-2ed6-4cf6-ae0c-783b74b827a2",
+      "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+      "sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+      "equal": true,
+      "textStatus": "ready"
+    },
+    {
+      "id": "0c3932af-cdc7-42d8-be4b-fdcdda7f86e5",
+      "name": "06_星桥项目_故障复盘_2026-09-21.md",
+      "sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+      "equal": true,
+      "textStatus": "ready"
+    },
+    {
+      "id": "ff7c5efc-c681-428a-9919-73cf72194a8c",
+      "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+      "sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+      "equal": true,
+      "textStatus": "ready"
+    },
+    {
+      "id": "a23be543-26f1-4110-aa07-c4e3eeb57f19",
+      "name": "08_检索技术说明_关键词与语义_v1.0.pdf",
+      "sha256": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+      "equal": true,
+      "textStatus": "not_supported"
+    },
+    {
+      "id": "55e29de1-4519-4b36-aaec-39f69b72f5e1",
+      "name": "09_本地部署故障排查_v1.3.txt",
+      "sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+      "equal": true,
+      "textStatus": "ready"
+    },
+    {
+      "id": "95ebfb98-11a9-4e7d-b885-d83a63c969a6",
+      "name": "10_文档分类与归档规范_v1.0.pdf",
+      "sha256": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+      "equal": true,
+      "textStatus": "not_supported"
+    }
+  ],
+  "failure": null,
+  "browser": "not proved by this script",
+  "database_before_startup": {
+    "exists": true,
+    "version": 1,
+    "documents": {
+      "ba491df8-383f-4c7b-b478-55665cdb889b": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+      "22019d12-afc0-44db-bbf2-1b0b07d69f02": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+      "b5f4e7ca-40ac-4b39-b0fa-7c83be83eb31": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+      "48791199-c989-4741-8b49-0c8cb34d8ce2": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+      "f5340215-2ed6-4cf6-ae0c-783b74b827a2": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+      "0c3932af-cdc7-42d8-be4b-fdcdda7f86e5": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+      "ff7c5efc-c681-428a-9919-73cf72194a8c": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+      "a23be543-26f1-4110-aa07-c4e3eeb57f19": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+      "55e29de1-4519-4b36-aaec-39f69b72f5e1": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+      "95ebfb98-11a9-4e7d-b885-d83a63c969a6": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695"
+    }
+  },
+  "transport": "in-process ASGI TestClient; not TCP/browser proof",
+  "health": {
+    "milestone": "M4",
+    "keywordBackfill": {
+      "ready": 7,
+      "failed": 0,
+      "not_supported": 3,
+      "unconfirmed": 0
+    },
+    "status": "ready",
+    "database": {
+      "status": "ready",
+      "probeCount": 0
+    },
+    "storage": {
+      "startupWriteCheck": "passed"
+    },
+    "model": {
+      "status": "ready",
+      "id": "BAAI/bge-small-zh-v1.5",
+      "revision": "7999e1d3359715c523056ef9478215996d62a620",
+      "dimension": 512,
+      "device": "cpu",
+      "loadSeconds": 0.22
+    },
+    "startupSeconds": 33.991
+  },
+  "categories": {
+    "a": "e5232b5f-5085-4907-b53a-c784d72eec6c",
+    "b": "c94097d2-3e92-4fe3-8108-4d0ce2bbee53"
+  },
+  "consistency_flow": [
+    {
+      "action": "move_then_search",
+      "category": "e5232b5f-5085-4907-b53a-c784d72eec6c",
+      "total": 1
+    },
+    {
+      "action": "move_then_search",
+      "category": "c94097d2-3e92-4fe3-8108-4d0ce2bbee53",
+      "total": 1
+    },
+    {
+      "action": "archive_then_search",
+      "default_contains_document": false,
+      "category_total": 0,
+      "archive_total": 1
+    },
+    {
+      "action": "restore_then_search",
+      "category_total": 1,
+      "download_http": 200,
+      "download_sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599"
+    }
+  ],
+  "extraction_failure": {
+    "id": "fe2dd8f4-b7e8-42cf-8877-b7859b4974b2",
+    "name": "M4-正文失败-4078fdfc.txt",
+    "upload_http": 201,
+    "textStatus": "failed",
+    "error": "正文编码无效或含二进制控制字符；请使用 UTF-8、带 BOM 的 UTF-16 或 GB18030 文本。原文件仍保留，可下载。",
+    "retryStatus": "failed",
+    "download_http": 200,
+    "original_sha256": "d5e1679bb098e65c4f1efd9c1db7febb2b90dcbe0df1ae64da614520492247b6",
+    "download_sha256": "d5e1679bb098e65c4f1efd9c1db7febb2b90dcbe0df1ae64da614520492247b6",
+    "equal": true
+  },
+  "database_after": {
+    "exists": true,
+    "version": 2,
+    "documents": {
+      "ba491df8-383f-4c7b-b478-55665cdb889b": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+      "22019d12-afc0-44db-bbf2-1b0b07d69f02": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+      "b5f4e7ca-40ac-4b39-b0fa-7c83be83eb31": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+      "48791199-c989-4741-8b49-0c8cb34d8ce2": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+      "f5340215-2ed6-4cf6-ae0c-783b74b827a2": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+      "0c3932af-cdc7-42d8-be4b-fdcdda7f86e5": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+      "ff7c5efc-c681-428a-9919-73cf72194a8c": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+      "a23be543-26f1-4110-aa07-c4e3eeb57f19": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+      "55e29de1-4519-4b36-aaec-39f69b72f5e1": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+      "95ebfb98-11a9-4e7d-b885-d83a63c969a6": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+      "fe2dd8f4-b7e8-42cf-8877-b7859b4974b2": "d5e1679bb098e65c4f1efd9c1db7febb2b90dcbe0df1ae64da614520492247b6"
+    }
+  },
+  "total_seconds": 35.911
+}

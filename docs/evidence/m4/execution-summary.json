@@ -1,0 +1,68 @@
+{
+  "started_utc": "2026-10-08T02:24:59.400213+00:00",
+  "steps": [
+    {
+      "step": "01-build-start",
+      "command": [
+        "C:\\Users\\lenovo\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\scripts\\m1_docker_stage.py",
+        "--stage",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 95.777,
+      "launch_error": null
+    },
+    {
+      "step": "02-health-and-hashes",
+      "command": [
+        "docker",
+        "compose",
+        "run",
+        "--rm",
+        "--no-deps",
+        "-v",
+        "D:\\__10_.zip:/fixtures/test-documents.zip:ro",
+        "-v",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m4-docker\\20261008T022459Z-cab035:/reports",
+        "app",
+        "python",
+        "scripts/verify_m4.py",
+        "--base-url",
+        "http://app:8000",
+        "--zip",
+        "/fixtures/test-documents.zip",
+        "--data-dir",
+        "/data",
+        "--report",
+        "/reports/m4-results.json"
+      ],
+      "exit_code": 0,
+      "seconds": 5.095,
+      "launch_error": null
+    },
+    {
+      "step": "03-app-logs",
+      "command": [
+        "docker",
+        "compose",
+        "logs",
+        "--tail=100",
+        "app"
+      ],
+      "exit_code": 0,
+      "seconds": 0.163,
+      "launch_error": null
+    }
+  ],
+  "failure": null,
+  "browser_interaction": "not verified by this runner",
+  "upgrade_persistence": {
+    "passed": true,
+    "existing_document_count": 11,
+    "existing_category_count": 3,
+    "scope": "Before-build and after-verification HTTP snapshots; originals/hash/category/archive metadata"
+  },
+  "total_seconds": 101.366,
+  "finished_utc": "2026-10-08T02:26:40.766466+00:00"
+}
