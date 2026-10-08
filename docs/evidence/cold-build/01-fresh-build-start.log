@@ -1,0 +1,17 @@
+Command: docker compose -p m6-365334880f4b -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\work\release-source-8bb301e9\compose.yaml up --no-build -d --wait --wait-timeout 180
+ Volume m6-365334880f4b_platform_data Creating 
+ Network m6-365334880f4b_default Creating 
+ Network m6-365334880f4b_default Creating 
+ Volume m6-365334880f4b_platform_data Creating 
+ Volume m6-365334880f4b_platform_data Created 
+ Volume m6-365334880f4b_platform_data Created 
+ Network m6-365334880f4b_default Created 
+ Network m6-365334880f4b_default Created 
+ Container m6-365334880f4b-app-1 Creating 
+ Container m6-365334880f4b-app-1 Created 
+ Container m6-365334880f4b-app-1 Starting 
+ Container m6-365334880f4b-app-1 Started 
+ Container m6-365334880f4b-app-1 Waiting 
+ Container m6-365334880f4b-app-1 Healthy 
+
+Exit code: 0; seconds: 6.48

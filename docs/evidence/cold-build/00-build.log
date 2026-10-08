@@ -1,0 +1,369 @@
+Command: docker compose -p m6-365334880f4b -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\work\release-source-8bb301e9\compose.yaml build --no-cache
+ Image m6-365334880f4b-app Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 683B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.55kB 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#3 ...
+
+#4 [auth] library/python:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [auth] library/node:pull token for registry-1.docker.io
+#5 DONE 0.0s
+
+#6 [internal] load metadata for docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#6 ...
+
+#7 [auth] library/node:pull token for registry-1.docker.io
+#7 DONE 0.0s
+
+#8 [auth] library/python:pull token for registry-1.docker.io
+#8 DONE 0.0s
+
+#6 [internal] load metadata for docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#6 ...
+
+#3 [internal] load metadata for docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#3 DONE 43.8s
+
+#6 [internal] load metadata for docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#6 DONE 43.8s
+
+#9 [internal] load .dockerignore
+#9 transferring context: 143B 0.0s done
+#9 DONE 0.0s
+
+#10 [internal] load build context
+#10 DONE 0.0s
+
+#11 [auth] library/python:pull token for registry-1.docker.io
+#11 DONE 0.0s
+
+#12 [auth] library/node:pull token for registry-1.docker.io
+#12 DONE 0.0s
+
+#13 [stage-1  1/11] FROM docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#13 resolve docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#13 ...
+
+#14 [frontend 1/7] FROM docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#14 resolve docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#14 ...
+
+#15 [auth] library/node:pull token for registry-1.docker.io
+#15 DONE 0.0s
+
+#16 [auth] library/python:pull token for registry-1.docker.io
+#16 DONE 0.0s
+
+#13 [stage-1  1/11] FROM docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#13 resolve docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e 42.7s done
+#13 DONE 42.7s
+
+#14 [frontend 1/7] FROM docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#14 resolve docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df 42.7s done
+#14 DONE 42.7s
+
+#17 [stage-1  2/11] WORKDIR /app
+#17 CACHED
+
+#18 [frontend 2/7] WORKDIR /frontend
+#18 CACHED
+
+#10 [internal] load build context
+#10 transferring context: 285.02kB 0.1s done
+#10 DONE 0.1s
+
+#19 [stage-1  3/11] COPY requirements.txt requirements.lock.txt ./
+#19 DONE 0.0s
+
+#20 [stage-1  4/11] RUN pip install --no-cache-dir torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu     && pip install --no-cache-dir -r requirements.txt -c requirements.lock.txt
+#20 1.250 Looking in indexes: https://download.pytorch.org/whl/cpu
+#20 2.835 Collecting torch==2.9.0
+#20 3.931   Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.9.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (29 kB)
+#20 4.207 Collecting filelock (from torch==2.9.0)
+#20 4.920   Downloading filelock-3.32.3-py3-none-any.whl.metadata (2.0 kB)
+#20 5.051 Collecting typing-extensions>=4.10.0 (from torch==2.9.0)
+#20 5.162   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#20 5.272 Collecting setuptools (from torch==2.9.0)
+#20 5.383   Downloading https://download.pytorch.org/whl/setuptools-78.1.0-py3-none-any.whl.metadata (6.6 kB)
+#20 5.517 Collecting sympy>=1.13.3 (from torch==2.9.0)
+#20 5.622   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+#20 5.756 Collecting networkx>=2.5.1 (from torch==2.9.0)
+#20 5.862   Downloading networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+#20 5.974 Collecting jinja2 (from torch==2.9.0)
+#20 6.082   Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#20 6.326 Collecting fsspec>=0.8.5 (from torch==2.9.0)
+#20 6.436   Downloading fsspec-2026.7.0-py3-none-any.whl.metadata (10 kB)
+#20 6.571 Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.9.0)
+#20 6.769   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+#20 7.187 Collecting MarkupSafe>=2.0 (from jinja2->torch==2.9.0)
+#20 7.301   Downloading https://download.pytorch.org/whl/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#20 7.419 Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.9.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (184.4 MB)
+#20 ...
+
+#21 [frontend 3/7] RUN npm install --global npm@11.6.2
+#21 8.044 
+#21 8.044 removed 3 packages, and changed 93 packages in 8s
+#21 8.044 
+#21 8.044 28 packages are looking for funding
+#21 8.044   run `npm fund` for details
+#21 DONE 8.1s
+
+#22 [frontend 4/7] COPY frontend/package.json frontend/package-lock.json ./
+#22 DONE 0.0s
+
+#23 [frontend 5/7] RUN npm ci
+#23 4.925 
+#23 4.925 added 22 packages, and audited 23 packages in 5s
+#23 4.925 
+#23 4.925 5 packages are looking for funding
+#23 4.925   run `npm fund` for details
+#23 4.931 
+#23 4.931 1 high severity vulnerability
+#23 4.931 
+#23 4.931 To address all issues, run:
+#23 4.931   npm audit fix --force
+#23 4.931 
+#23 4.931 Run `npm audit` for details.
+#23 4.932 npm notice
+#23 4.932 npm notice New major version of npm available! 11.6.2 -> 12.2.0
+#23 4.932 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+#23 4.932 npm notice To update run: npm install -g npm@12.2.0
+#23 4.932 npm notice
+#23 DONE 5.0s
+
+#24 [frontend 6/7] COPY frontend/ ./
+#24 DONE 0.0s
+
+#25 [frontend 7/7] RUN npm run build
+#25 0.260 
+#25 0.260 > knowledge-platform-m1@0.1.0 build
+#25 0.260 > tsc --noEmit && vite build
+#25 0.260 
+#25 1.265 vite v7.1.12 building for production...
+#25 1.315 transforming...
+#25 2.317 ✓ 28 modules transformed.
+#25 2.402 rendering chunks...
+#25 2.408 computing gzip size...
+#25 2.414 dist/index.html                   0.37 kB │ gzip:  0.29 kB
+#25 2.414 dist/assets/index-CR4qw_WO.css   11.48 kB │ gzip:  3.16 kB
+#25 2.414 dist/assets/index-CbClZt5Y.js   221.11 kB │ gzip: 69.62 kB
+#25 2.414 ✓ built in 1.13s
+#25 DONE 2.5s
+
+#20 [stage-1  4/11] RUN pip install --no-cache-dir torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu     && pip install --no-cache-dir -r requirements.txt -c requirements.lock.txt
+#20 46.47    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 184.4/184.4 MB 5.1 MB/s eta 0:00:00
+#20 46.64 Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
+#20 46.79 Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+#20 47.28    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 3.9 MB/s eta 0:00:00
+#20 47.39 Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+#20 49.31    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 3.2 MB/s eta 0:00:00
+#20 49.48 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#20 49.62 Downloading filelock-3.32.3-py3-none-any.whl (98 kB)
+#20 49.83 Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl (134 kB)
+#20 50.03 Downloading https://download.pytorch.org/whl/setuptools-78.1.0-py3-none-any.whl (1.3 MB)
+#20 50.22    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 6.7 MB/s eta 0:00:00
+#20 50.39 Downloading https://download.pytorch.org/whl/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#20 50.52 Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+#20 50.61    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 6.5 MB/s eta 0:00:00
+#20 50.86 Installing collected packages: mpmath, typing-extensions, sympy, setuptools, networkx, MarkupSafe, fsspec, filelock, jinja2, torch
+#20 63.30 Successfully installed MarkupSafe-3.0.3 filelock-3.32.3 fsspec-2026.7.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.6.1 setuptools-78.1.0 sympy-1.14.0 torch-2.9.0+cpu typing-extensions-4.16.0
+#20 63.30 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#20 65.59 Collecting fastapi==0.119.1 (from -r requirements.txt (line 1))
+#20 65.83   Downloading fastapi-0.119.1-py3-none-any.whl.metadata (28 kB)
+#20 65.96 Collecting uvicorn==0.38.0 (from -r requirements.txt (line 2))
+#20 66.07   Downloading uvicorn-0.38.0-py3-none-any.whl.metadata (6.8 kB)
+#20 66.42 Collecting SQLAlchemy==2.0.44 (from -r requirements.txt (line 3))
+#20 66.52   Downloading sqlalchemy-2.0.44-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.5 kB)
+#20 66.65 Collecting sentence-transformers==5.1.2 (from -r requirements.txt (line 4))
+#20 66.84   Downloading sentence_transformers-5.1.2-py3-none-any.whl.metadata (16 kB)
+#20 66.98 Collecting transformers==4.57.1 (from -r requirements.txt (line 5))
+#20 67.09   Downloading transformers-4.57.1-py3-none-any.whl.metadata (43 kB)
+#20 67.44 Collecting numpy==2.3.5 (from -r requirements.txt (line 6))
+#20 67.56   Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+#20 67.91 Collecting psutil==7.1.0 (from -r requirements.txt (line 7))
+#20 68.02   Downloading psutil-7.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (23 kB)
+#20 68.28 Collecting python-multipart==0.0.20 (from -r requirements.txt (line 8))
+#20 68.39   Downloading python_multipart-0.0.20-py3-none-any.whl.metadata (1.8 kB)
+#20 68.52 Collecting starlette<0.49.0,>=0.40.0 (from fastapi==0.119.1->-r requirements.txt (line 1))
+#20 68.63   Downloading starlette-0.48.0-py3-none-any.whl.metadata (6.3 kB)
+#20 68.84 Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 (from fastapi==0.119.1->-r requirements.txt (line 1))
+#20 68.95   Downloading pydantic-2.13.5-py3-none-any.whl.metadata (110 kB)
+#20 68.95 Requirement already satisfied: typing-extensions>=4.8.0 in /usr/local/lib/python3.12/site-packages (from fastapi==0.119.1->-r requirements.txt (line 1)) (4.16.0)
+#20 69.07 Collecting click>=7.0 (from uvicorn==0.38.0->-r requirements.txt (line 2))
+#20 69.18   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#20 69.29 Collecting h11>=0.8 (from uvicorn==0.38.0->-r requirements.txt (line 2))
+#20 69.40   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#20 69.61 Collecting greenlet>=1 (from SQLAlchemy==2.0.44->-r requirements.txt (line 3))
+#20 69.80   Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+#20 69.93 Collecting tqdm (from sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 70.05   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+#20 70.05 Requirement already satisfied: torch>=1.11.0 in /usr/local/lib/python3.12/site-packages (from sentence-transformers==5.1.2->-r requirements.txt (line 4)) (2.9.0+cpu)
+#20 70.22 Collecting scikit-learn (from sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 70.33   Downloading scikit_learn-1.9.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.3 kB)
+#20 70.53 Collecting scipy (from sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 70.64   Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+#20 70.81 Collecting huggingface-hub>=0.20.0 (from sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 70.92   Downloading huggingface_hub-0.36.2-py3-none-any.whl.metadata (15 kB)
+#20 71.17 Collecting Pillow (from sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 71.29   Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+#20 71.31 Requirement already satisfied: filelock in /usr/local/lib/python3.12/site-packages (from transformers==4.57.1->-r requirements.txt (line 5)) (3.32.3)
+#20 71.77 Collecting packaging>=20.0 (from transformers==4.57.1->-r requirements.txt (line 5))
+#20 72.09   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+#20 72.36 Collecting pyyaml>=5.1 (from transformers==4.57.1->-r requirements.txt (line 5))
+#20 72.57   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+#20 73.08 Collecting regex!=2019.12.17 (from transformers==4.57.1->-r requirements.txt (line 5))
+#20 73.29   Downloading regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+#20 73.50 Collecting requests (from transformers==4.57.1->-r requirements.txt (line 5))
+#20 73.79   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+#20 74.18 Collecting tokenizers<=0.23.0,>=0.22.0 (from transformers==4.57.1->-r requirements.txt (line 5))
+#20 74.36   Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.3 kB)
+#20 74.68 Collecting safetensors>=0.4.3 (from transformers==4.57.1->-r requirements.txt (line 5))
+#20 74.81   Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+#20 74.82 Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.12/site-packages (from huggingface-hub>=0.20.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (2026.7.0)
+#20 74.98 Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub>=0.20.0->sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 75.28   Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+#20 75.40 Collecting annotated-types>=0.6.0 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi==0.119.1->-r requirements.txt (line 1))
+#20 75.51   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#20 76.45 Collecting pydantic-core==2.46.5 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi==0.119.1->-r requirements.txt (line 1))
+#20 76.56   Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+#20 76.68 Collecting typing-inspection>=0.4.2 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi==0.119.1->-r requirements.txt (line 1))
+#20 76.79   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+#20 77.09 Collecting anyio<5,>=3.6.2 (from starlette<0.49.0,>=0.40.0->fastapi==0.119.1->-r requirements.txt (line 1))
+#20 77.20   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+#20 77.22 Requirement already satisfied: setuptools in /usr/local/lib/python3.12/site-packages (from torch>=1.11.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (78.1.0)
+#20 77.22 Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/site-packages (from torch>=1.11.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (1.14.0)
+#20 77.22 Requirement already satisfied: networkx>=2.5.1 in /usr/local/lib/python3.12/site-packages (from torch>=1.11.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (3.6.1)
+#20 77.22 Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/site-packages (from torch>=1.11.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (3.1.6)
+#20 77.41 Collecting charset_normalizer<4,>=2 (from requests->transformers==4.57.1->-r requirements.txt (line 5))
+#20 77.53   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+#20 77.65 Collecting idna<4,>=2.5 (from requests->transformers==4.57.1->-r requirements.txt (line 5))
+#20 77.78   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#20 77.90 Collecting urllib3<3,>=1.26 (from requests->transformers==4.57.1->-r requirements.txt (line 5))
+#20 78.01   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+#20 78.13 Collecting certifi>=2023.5.7 (from requests->transformers==4.57.1->-r requirements.txt (line 5))
+#20 78.24   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+#20 78.37 Collecting joblib>=1.4.0 (from scikit-learn->sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 78.48   Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+#20 78.62 Collecting narwhals>=2.0.1 (from scikit-learn->sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 78.90   Downloading narwhals-2.26.0-py3-none-any.whl.metadata (15 kB)
+#20 79.01 Collecting threadpoolctl>=3.5.0 (from scikit-learn->sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 79.12   Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+#20 79.25 Collecting cloudpickle>=3.0 (from joblib>=1.4.0->scikit-learn->sentence-transformers==5.1.2->-r requirements.txt (line 4))
+#20 79.35   Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+#20 79.36 Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/site-packages (from sympy>=1.13.3->torch>=1.11.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (1.3.0)
+#20 79.36 Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/site-packages (from jinja2->torch>=1.11.0->sentence-transformers==5.1.2->-r requirements.txt (line 4)) (3.0.3)
+#20 79.48 Downloading fastapi-0.119.1-py3-none-any.whl (108 kB)
+#20 79.59 Downloading uvicorn-0.38.0-py3-none-any.whl (68 kB)
+#20 79.71 Downloading sqlalchemy-2.0.44-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+#20 80.60    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 3.6 MB/s eta 0:00:00
+#20 80.71 Downloading sentence_transformers-5.1.2-py3-none-any.whl (488 kB)
+#20 80.88 Downloading transformers-4.57.1-py3-none-any.whl (12.0 MB)
+#20 84.12    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 3.7 MB/s eta 0:00:00
+#20 84.26 Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+#20 87.31    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 5.4 MB/s eta 0:00:00
+#20 87.43 Downloading psutil-7.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (291 kB)
+#20 87.78 Downloading python_multipart-0.0.20-py3-none-any.whl (24 kB)
+#20 87.90 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#20 88.01 Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (621 kB)
+#20 88.10    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 621.4/621.4 kB 6.5 MB/s eta 0:00:00
+#20 88.21 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#20 88.33 Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+#20 88.42    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 kB 6.4 MB/s eta 0:00:00
+#20 88.52 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+#20 88.64 Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+#20 88.81 Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+#20 89.36    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 3.5 MB/s eta 0:00:00
+#20 89.48 Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+#20 89.61    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 6.5 MB/s eta 0:00:00
+#20 89.71 Downloading regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+#20 89.83    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.8/807.8 kB 6.2 MB/s eta 0:00:00
+#20 89.94 Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+#20 90.13 Downloading starlette-0.48.0-py3-none-any.whl (73 kB)
+#20 90.26 Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+#20 91.10    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 3.7 MB/s eta 0:00:00
+#20 91.21 Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+#20 91.33 Downloading pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+#20 92.83    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 4.6 MB/s eta 0:00:00
+#20 92.95 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+#20 93.11 Downloading scikit_learn-1.9.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.2 MB)
+#20 95.20    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.2/9.2 MB 4.3 MB/s eta 0:00:00
+#20 95.64 Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+#20 102.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 5.3 MB/s eta 0:00:00
+#20 102.5 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#20 102.6 Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+#20 102.7 Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+#20 102.9 Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+#20 103.2 Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
+#20 104.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 4.6 MB/s eta 0:00:00
+#20 104.2 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#20 104.3 Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+#20 104.5 Downloading narwhals-2.26.0-py3-none-any.whl (474 kB)
+#20 104.8 Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+#20 104.9 Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+#20 105.1 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+#20 105.2 Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+#20 105.4 Installing collected packages: urllib3, typing-inspection, tqdm, threadpoolctl, safetensors, regex, pyyaml, python-multipart, pydantic-core, psutil, Pillow, packaging, numpy, narwhals, idna, hf-xet, h11, greenlet, cloudpickle, click, charset_normalizer, certifi, annotated-types, uvicorn, SQLAlchemy, scipy, requests, pydantic, joblib, anyio, starlette, scikit-learn, huggingface-hub, tokenizers, fastapi, transformers, sentence-transformers
+#20 118.8 Successfully installed Pillow-12.3.0 SQLAlchemy-2.0.44 annotated-types-0.8.0 anyio-4.15.1 certifi-2026.7.22 charset_normalizer-3.5.2 click-8.5.0 cloudpickle-3.1.2 fastapi-0.119.1 greenlet-3.5.6 h11-0.16.0 hf-xet-1.7.0 huggingface-hub-0.36.2 idna-3.20 joblib-1.6.0 narwhals-2.26.0 numpy-2.3.5 packaging-26.3 psutil-7.1.0 pydantic-2.13.5 pydantic-core-2.46.5 python-multipart-0.0.20 pyyaml-6.0.3 regex-2026.9.29 requests-2.34.2 safetensors-0.8.0 scikit-learn-1.9.1 scipy-1.18.1 sentence-transformers-5.1.2 starlette-0.48.0 threadpoolctl-3.7.0 tokenizers-0.22.2 tqdm-4.70.1 transformers-4.57.1 typing-inspection-0.4.4 urllib3-2.8.0 uvicorn-0.38.0
+#20 118.8 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#20 119.6 
+#20 119.6 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#20 119.6 [notice] To update, run: pip install --upgrade pip
+#20 DONE 119.8s
+
+#26 [stage-1  5/11] COPY model-spec.json ./
+#26 DONE 0.1s
+
+#27 [stage-1  6/11] COPY scripts/download_model.py scripts/utf8_logs.py ./scripts/
+#27 DONE 0.0s
+
+#28 [stage-1  7/11] RUN python scripts/download_model.py --destination /opt/models/bge
+#28 1.513 {"name": "config.json", "size_bytes": 776, "sha256": "3853a7979202c348751b753e36f579c41d8da7d36af617d3d907e1fc9b441f2a"}
+#28 2.509 {"name": "config_sentence_transformers.json", "size_bytes": 124, "sha256": "940d5f50db195fa6e5e6a4f122c095f77880de259d74b14a65779ed48bdd7c56"}
+#28 3.300 {"name": "modules.json", "size_bytes": 349, "sha256": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf"}
+#28 3.932 {"name": "sentence_bert_config.json", "size_bytes": 52, "sha256": "84e39fda68ccbff05bfa723ae9c0e70e23e2ec373b76e0f8c6e71af72a693cbf"}
+#28 4.554 {"name": "special_tokens_map.json", "size_bytes": 125, "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"}
+#28 5.344 {"name": "tokenizer.json", "size_bytes": 439125, "sha256": "48cea5d44424912a6fd1ea647bf4fe50b55ab8b1e5879c3275f80e339e8fae26"}
+#28 6.076 {"name": "tokenizer_config.json", "size_bytes": 367, "sha256": "e6f3b96db926a37d4039995fbf5ad17de158dfb8f6343d607e4dbaad18d75f5a"}
+#28 6.858 {"name": "vocab.txt", "size_bytes": 109540, "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"}
+#28 7.506 {"name": "1_Pooling/config.json", "size_bytes": 190, "sha256": "aaa8861589f80c961a03cc86c7eeaef7605c1676b9ab55329d33a304738769c6"}
+#28 28.34 {"name": "model.safetensors", "size_bytes": 95827648, "sha256": "354763b9b1357bc9c44f62c6be2276321081ed2567773608c0d0785b61d5a026"}
+#28 28.34 {"download_seconds": 28.05}
+#28 DONE 28.4s
+
+#29 [stage-1  8/11] COPY app/ ./app/
+#29 DONE 0.0s
+
+#30 [stage-1  9/11] COPY scripts/ ./scripts/
+#30 DONE 0.0s
+
+#31 [stage-1 10/11] COPY --from=frontend /frontend/dist ./frontend/dist/
+#31 DONE 0.0s
+
+#32 [stage-1 11/11] RUN useradd --uid 10001 --create-home appuser     && mkdir -p /data/db /data/uploads /data/tmp /data/quarantine     && chown -R appuser:appuser /data
+#32 DONE 0.2s
+
+#33 exporting to image
+#33 exporting layers
+#33 exporting layers 27.9s done
+#33 exporting manifest sha256:f3725056e96508f1489ed72fe24a0c2cc79c4b582a6d10621d3aba30db10c0a1 done
+#33 exporting config sha256:ec04c8211894353a6cc777ff27a1f9df2b43edbf869984a44cea887daa5e9eaa done
+#33 exporting attestation manifest sha256:25ddc875e4f0aa02261557ccab30016cfec18a35975e13396303cf70c11235f9 done
+#33 exporting manifest list sha256:a0bd40d5e1b5de7d705ffb86f3e85e3e2a7ba0d3ef9ea9e5f82f71dfd2f19372 done
+#33 naming to docker.io/library/m6-365334880f4b-app:latest done
+#33 unpacking to docker.io/library/m6-365334880f4b-app:latest
+#33 unpacking to docker.io/library/m6-365334880f4b-app:latest 6.7s done
+#33 DONE 34.6s
+
+#34 resolving provenance for metadata file
+#34 DONE 0.0s
+ Image m6-365334880f4b-app Built 
+
+Exit code: 0; seconds: 270.819

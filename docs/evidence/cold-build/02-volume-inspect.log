@@ -1,0 +1,19 @@
+Command: docker volume inspect m6-365334880f4b_platform_data
+[
+    {
+        "CreatedAt": "2026-10-08T05:30:51Z",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.compose.config-hash": "2b6575bbf595a48a453769d7e7acaa87a959aba677097b2d10ccfc6088d88fad",
+            "com.docker.compose.project": "m6-365334880f4b",
+            "com.docker.compose.version": "5.5.0",
+            "com.docker.compose.volume": "platform_data"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/m6-365334880f4b_platform_data/_data",
+        "Name": "m6-365334880f4b_platform_data",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+
+Exit code: 0; seconds: 0.145

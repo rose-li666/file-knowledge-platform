@@ -1,0 +1,2 @@
+Command: docker exec platform-check-7609c6a112 python scripts/verify_acceptance.py --report /tmp/check-reports/results.json
+{"checks": 4, "seconds": 0.476, "failure": null}

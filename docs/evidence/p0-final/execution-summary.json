@@ -1,0 +1,80 @@
+{
+  "container": "platform-check-7609c6a112",
+  "volume": "platform-check-7609c6a112-data",
+  "port": 18083,
+  "steps": [
+    {
+      "step": "start",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--name",
+        "platform-check-7609c6a112",
+        "-e",
+        "ACCEPTANCE_TEST_RUN=platform-check-7609c6a112",
+        "-p",
+        "127.0.0.1:18083:8000",
+        "--mount",
+        "type=volume,source=platform-check-7609c6a112-data,target=/data",
+        "--mount",
+        "type=bind,source=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\scripts,target=/app/scripts,readonly",
+        "--mount",
+        "type=bind,source=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\frontend\\dist,target=/app/frontend/dist,readonly",
+        "--mount",
+        "type=bind,source=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\app,target=/app/app,readonly",
+        "knowledge-platform-app:latest"
+      ],
+      "exit_code": 0,
+      "seconds": 0.393
+    },
+    {
+      "step": "verify",
+      "command": [
+        "docker",
+        "exec",
+        "platform-check-7609c6a112",
+        "python",
+        "scripts/verify_acceptance.py",
+        "--report",
+        "/tmp/check-reports/results.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.954
+    },
+    {
+      "step": "copy",
+      "command": [
+        "docker",
+        "cp",
+        "platform-check-7609c6a112:/tmp/check-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\acceptance\\20261008T052930Z-platform-check-7609c6a112"
+      ],
+      "exit_code": 0,
+      "seconds": 0.153
+    },
+    {
+      "step": "logs",
+      "command": [
+        "docker",
+        "logs",
+        "platform-check-7609c6a112"
+      ],
+      "exit_code": 0,
+      "seconds": 0.151
+    },
+    {
+      "step": "stop",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "platform-check-7609c6a112"
+      ],
+      "exit_code": 0,
+      "seconds": 0.59
+    }
+  ],
+  "failure": null,
+  "seconds": 12.713
+}
