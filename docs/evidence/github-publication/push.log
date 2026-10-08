@@ -1,0 +1,6 @@
+Command: git -c credential.helper= -c "credential.helper=!gh auth git-credential" push -u origin main
+To https://github.com/rose-li666/file-knowledge-platform.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+Exit code: 0

@@ -1,0 +1,3 @@
+Command: git status --porcelain
+
+Exit code: 0

@@ -13,6 +13,7 @@
 | 页面截图、侧栏修复、窄屏与批量整理 | [ui-optimization.md](ui-optimization.md)、[category-dialog-fix.md](category-dialog-fix.md)、[batch-organization.md](batch-organization.md) |
 | 用户人工确认（与自动化/Agent浏览器分开） | [user-validation.md](user-validation.md)、[manual-check.md](manual-check.md) |
 | 未锁版本、平台原始日志上传条件 | [remaining-acceptance.md](remaining-acceptance.md) |
+| 真实公开仓库发布、匿名访问核对 | [github-publication.md](github-publication.md) |
 
 ## 统一资料的五组查询
 

@@ -4,11 +4,12 @@
 
 本轮已完成候选Git源码独立空卷无缓存部署、最终代码review、完整HTTP/向量/分类/归档/故障恢复/重启重建回归。所有测试使用独立数据，演示26文件/9分类及下载SHA完全保留；无新增阻塞问题，详见[final-candidate-review.md](final-candidate-review.md)。本轮记录提交只更新文档及证据，应用运行源码未修改。
 
+公开仓库[rose-li666/file-knowledge-platform](https://github.com/rose-li666/file-knowledge-platform)已创建并推送main。GitHub核对PUBLIC、main与当时本地候选一致；匿名README访问HTTP200且字节与Git一致，详见[github-publication.md](github-publication.md)。正常发布Git候选不等于考核最终SHA锁定。
+
 剩余交付条件：
 
-1. 用户指定的真实公开仓库[rose-li666/file-knowledge-platform](https://github.com/rose-li666/file-knowledge-platform)已创建；源码与交付材料发布按本轮记录推进，最终版本仍须用户进入锁定阶段后确定。
-2. 用户明确进入最终锁定阶段后，核对最后提交状态并锁定实际SHA；本轮按要求暂不锁定。
-3. 获取考核平台生成的原始日志上传说明，再按说明上传并取得真实材料回执；当前未提供，不提前填通过。
+1. 用户明确进入最终锁定阶段后，核对最后提交状态并锁定实际SHA；本轮按要求暂不锁定。
+2. 获取考核平台生成的原始日志上传说明，再按说明上传并取得真实材料回执；当前未提供，不提前填通过。
 
 若后续修改运行代码，针对修改再验证并更新候选证据。已有无缓存安装/模型下载和Git源码空卷回归不列为未测。
 

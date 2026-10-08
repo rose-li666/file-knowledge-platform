@@ -1,0 +1,4 @@
+Command: gh repo view rose-li666/file-knowledge-platform --json nameWithOwner,url,visibility,defaultBranchRef
+{"defaultBranchRef":{"name":"main"},"nameWithOwner":"rose-li666/file-knowledge-platform","url":"https://github.com/rose-li666/file-knowledge-platform","visibility":"PUBLIC"}
+
+Exit code: 0
