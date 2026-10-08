@@ -1,0 +1,83 @@
+{
+  "container": "platform-check-d88b4a9911",
+  "volume": "platform-check-d88b4a9911-data",
+  "port": 18181,
+  "image": "semantic-window-73cb634",
+  "steps": [
+    {
+      "step": "start",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--name",
+        "platform-check-d88b4a9911",
+        "-e",
+        "ACCEPTANCE_TEST_RUN=platform-check-d88b4a9911",
+        "-p",
+        "127.0.0.1:18181:8000",
+        "--mount",
+        "type=volume,source=platform-check-d88b4a9911-data,target=/data",
+        "--mount",
+        "type=bind,source=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\source\\scripts,target=/app/scripts,readonly",
+        "--mount",
+        "type=bind,source=D:\\__10_.zip,target=/fixtures/documents.zip,readonly",
+        "semantic-window-73cb634"
+      ],
+      "exit_code": 0,
+      "seconds": 0.393
+    },
+    {
+      "step": "comparison",
+      "command": [
+        "docker",
+        "exec",
+        "platform-check-d88b4a9911",
+        "python",
+        "scripts/compare_retrieval.py",
+        "--zip",
+        "/fixtures/documents.zip",
+        "--http-variant",
+        "window_008",
+        "--report",
+        "/tmp/check-reports/retrieval.json"
+      ],
+      "exit_code": 0,
+      "seconds": 14.307
+    },
+    {
+      "step": "copy",
+      "command": [
+        "docker",
+        "cp",
+        "platform-check-d88b4a9911:/tmp/check-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\acceptance\\20261008T121732Z-platform-check-d88b4a9911"
+      ],
+      "exit_code": 0,
+      "seconds": 0.171
+    },
+    {
+      "step": "logs",
+      "command": [
+        "docker",
+        "logs",
+        "platform-check-d88b4a9911"
+      ],
+      "exit_code": 0,
+      "seconds": 0.158
+    },
+    {
+      "step": "stop",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "platform-check-d88b4a9911"
+      ],
+      "exit_code": 0,
+      "seconds": 0.395
+    }
+  ],
+  "failure": null,
+  "seconds": 25.934
+}

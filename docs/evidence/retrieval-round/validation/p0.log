@@ -1,0 +1,68 @@
+Command: C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\work\m1-venv\Scripts\python.exe scripts/run_acceptance_docker.py --image semantic-window-73cb634 --port 18183
+docker run -d --name platform-check-e57e7e91db -e ACCEPTANCE_TEST_RUN=platform-check-e57e7e91db -p 127.0.0.1:18183:8000 --mount type=volume,source=platform-check-e57e7e91db-data,target=/data --mount type=bind,source=C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\semantic-validation-73cb634\source\scripts,target=/app/scripts,readonly semantic-window-73cb634
+6e9402bb70e9b1bca0678b979d27f53e56f8024d8b2964a06828da2686f9f35f
+
+docker exec platform-check-e57e7e91db python scripts/verify_acceptance.py --report /tmp/check-reports/results.json
+{"checks": 4, "seconds": 0.869, "failure": null}
+
+docker cp platform-check-e57e7e91db:/tmp/check-reports/. C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\semantic-validation-73cb634\acceptance\20261008T121814Z-platform-check-e57e7e91db
+
+docker logs platform-check-e57e7e91db
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:52326 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52342 - "GET /api/v1/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52352 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52354 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52360 - "GET /api/v1/documents/574c5e9d-f2d2-4b24-9737-900e9fccd23d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52368 - "GET /api/v1/documents/574c5e9d-f2d2-4b24-9737-900e9fccd23d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52384 - "GET /api/v1/documents/574c5e9d-f2d2-4b24-9737-900e9fccd23d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52392 - "GET /api/v1/documents/574c5e9d-f2d2-4b24-9737-900e9fccd23d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52400 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52406 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52408 - "PATCH /api/v1/categories/06e1a4f5-e6e0-4799-bc52-86381af052d3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52418 - "PATCH /api/v1/documents/574c5e9d-f2d2-4b24-9737-900e9fccd23d/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52434 - "GET /api/v1/documents?archived=false&limit=25&category_id=06e1a4f5-e6e0-4799-bc52-86381af052d3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52440 - "GET /api/v1/documents?archived=false&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52442 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=06e1a4f5-e6e0-4799-bc52-86381af052d3&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52448 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52456 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=06e1a4f5-e6e0-4799-bc52-86381af052d3&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52466 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52482 - "GET /api/v1/documents/574c5e9d-f2d2-4b24-9737-900e9fccd23d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52498 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52502 - "PATCH /api/v1/documents/574c5e9d-f2d2-4b24-9737-900e9fccd23d/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52508 - "GET /api/v1/documents?archived=false&limit=25&category_id=06e1a4f5-e6e0-4799-bc52-86381af052d3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52514 - "GET /api/v1/documents?archived=false&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52522 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=06e1a4f5-e6e0-4799-bc52-86381af052d3&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52536 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52544 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=06e1a4f5-e6e0-4799-bc52-86381af052d3&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52558 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52568 - "POST /api/v1/documents/574c5e9d-f2d2-4b24-9737-900e9fccd23d/archive HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/v1/documents?archived=false&limit=25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52580 - "GET /api/v1/documents?archived=false&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52596 - "GET /api/v1/documents?archived=true&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52598 - "GET /api/v1/search/keyword?archived=false&limit=25&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52608 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52610 - "GET /api/v1/search/keyword?archived=true&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52620 - "GET /api/v1/search/semantic?archived=false&limit=25&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52630 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52642 - "GET /api/v1/search/semantic?archived=true&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52656 - "GET /api/v1/documents/574c5e9d-f2d2-4b24-9737-900e9fccd23d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52658 - "GET /api/v1/documents/574c5e9d-f2d2-4b24-9737-900e9fccd23d/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52672 - "POST /api/v1/documents/574c5e9d-f2d2-4b24-9737-900e9fccd23d/restore HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52686 - "GET /api/v1/documents?archived=false&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52702 - "GET /api/v1/documents?archived=true&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52708 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52714 - "GET /api/v1/search/keyword?archived=true&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52724 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52726 - "GET /api/v1/search/semantic?archived=true&limit=25&category_id=0462e588-a9b3-4b0b-b818-023ef9e82b96&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52734 - "GET /api/v1/documents/574c5e9d-f2d2-4b24-9737-900e9fccd23d/download HTTP/1.1" 200 OK
+
+docker rm -f platform-check-e57e7e91db
+platform-check-e57e7e91db
+
+Evidence: C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\semantic-validation-73cb634\acceptance\20261008T121814Z-platform-check-e57e7e91db
+
+Exit code: 0

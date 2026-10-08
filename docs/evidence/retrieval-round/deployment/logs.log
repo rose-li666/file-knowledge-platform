@@ -1,0 +1,40 @@
+Command: docker compose logs --tail=60 app
+app-1  | INFO:     Started server process [1]
+app-1  | INFO:     Waiting for application startup.
+app-1  | INFO:     Application startup complete.
+app-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+app-1  | INFO:     127.0.0.1:47618 - "GET /api/v1/health HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53274 - "GET /api/v1/documents?limit=100&archived=false HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53276 - "GET /api/v1/documents/43876231-2219-465e-a55f-bb4620ce34a1/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53290 - "GET /api/v1/documents/9f89ed16-c2ee-4daa-afca-42278da6a824/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53306 - "GET /api/v1/documents/11acde90-586d-4267-b43b-ce34cfa535b3/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53322 - "GET /api/v1/documents/e3980ccb-939e-4384-a0db-cd7425d449d5/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53334 - "GET /api/v1/documents/aed23181-707e-4706-930b-1fe38fe77fa9/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53342 - "GET /api/v1/documents/af6d7ec5-6d27-4854-a06c-6e6736238888/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53352 - "GET /api/v1/documents/471df721-eca8-419a-b0a1-42ede9908e47/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53364 - "GET /api/v1/documents/72a5b511-3875-4932-9820-2dc081d02b27/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53376 - "GET /api/v1/documents/4d31158c-cd82-41f7-83a6-8354d3fea7c7/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53380 - "GET /api/v1/documents/1e7ab77f-115a-4e2b-a7ba-a381ef22fbeb/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53390 - "GET /api/v1/documents/81e4a56f-68b1-4d5d-b48a-3ea38444d9eb/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53394 - "GET /api/v1/documents/09f842a5-9892-4efb-9c30-bf98282b79ee/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53410 - "GET /api/v1/documents/97a13fbf-eba6-4d5c-a71d-484d05111888/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53422 - "GET /api/v1/documents/e41bdd78-177b-42ad-85c4-862fa017a562/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53424 - "GET /api/v1/documents/67eff836-fe41-47d9-8c4e-0e00f9470260/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53432 - "GET /api/v1/documents/3a5fe318-7e8f-4481-aaff-7cca6df775c4/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53436 - "GET /api/v1/documents/bef4d836-8636-41de-8eca-789bb2011aac/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53446 - "GET /api/v1/documents/bb86d30f-2a90-4c01-9a01-bbc666c84bca/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53462 - "GET /api/v1/documents/7c9891d4-bb4a-4e5f-abf4-154d0e3be143/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53476 - "GET /api/v1/documents/9f25565b-40df-4dd4-b39c-539b095432cf/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53484 - "GET /api/v1/documents/bac4af28-2f90-4d53-af61-0a2ec7c600b0/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53486 - "GET /api/v1/documents/5d31ceb1-0b87-480f-962c-68cae9f87bf0/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53492 - "GET /api/v1/documents/a1e60c47-6363-4e4c-8d9a-1d5c5cf3a49f/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53504 - "GET /api/v1/documents/e2072d67-369e-4cf8-beb6-b5ac6be4a08e/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53506 - "GET /api/v1/documents/a2c82a7a-a63e-4d39-a13f-7ca3d54ce4c4/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53518 - "GET /api/v1/documents/d03c2ed3-0fd5-4c39-bfd6-4cd62b5d5266/download HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53520 - "GET /api/v1/documents?limit=100&archived=true HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53530 - "GET /api/v1/categories HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53536 - "GET /api/v1/health HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53538 - "GET / HTTP/1.1" 200 OK
+app-1  | INFO:     172.18.0.1:53542 - "GET /api/v1/search/semantic?q=%E5%80%9F%E6%9D%A5%E7%9A%84%E8%AE%BE%E5%A4%87%E5%9D%8F%E4%BA%86%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F HTTP/1.1" 200 OK
+
+Exit code: 0

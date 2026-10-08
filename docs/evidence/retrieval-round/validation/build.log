@@ -1,0 +1,149 @@
+Command: docker build --progress=plain --tag semantic-window-73cb634 .
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.55kB 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#2 ...
+
+#3 [auth] library/node:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [auth] library/python:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#5 ...
+
+#6 [auth] library/node:pull token for registry-1.docker.io
+#6 DONE 0.0s
+
+#7 [auth] library/python:pull token for registry-1.docker.io
+#7 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#2 ...
+
+#5 [internal] load metadata for docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#5 DONE 47.3s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#2 DONE 47.3s
+
+#8 [internal] load .dockerignore
+#8 transferring context: 143B done
+#8 DONE 0.0s
+
+#9 [internal] load build context
+#9 DONE 0.0s
+
+#10 [auth] library/node:pull token for registry-1.docker.io
+#10 DONE 0.0s
+
+#11 [auth] library/python:pull token for registry-1.docker.io
+#11 DONE 0.0s
+
+#12 [frontend 1/7] FROM docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#12 resolve docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#12 ...
+
+#13 [stage-1  1/11] FROM docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#13 resolve docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#13 ...
+
+#14 [auth] library/node:pull token for registry-1.docker.io
+#14 DONE 0.0s
+
+#15 [auth] library/python:pull token for registry-1.docker.io
+#15 DONE 0.0s
+
+#12 [frontend 1/7] FROM docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#12 ...
+
+#13 [stage-1  1/11] FROM docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#13 resolve docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e 42.7s done
+#13 DONE 42.7s
+
+#12 [frontend 1/7] FROM docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#12 resolve docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df 42.7s done
+#12 DONE 42.7s
+
+#9 [internal] load build context
+#9 transferring context: 360.38kB 0.1s done
+#9 DONE 0.1s
+
+#16 [frontend 4/7] COPY frontend/package.json frontend/package-lock.json ./
+#16 CACHED
+
+#17 [frontend 2/7] WORKDIR /frontend
+#17 CACHED
+
+#18 [frontend 3/7] RUN npm install --global npm@11.6.2
+#18 CACHED
+
+#19 [frontend 5/7] RUN npm ci
+#19 CACHED
+
+#20 [stage-1  3/11] COPY requirements.txt requirements.lock.txt ./
+#20 CACHED
+
+#21 [stage-1  6/11] COPY scripts/download_model.py scripts/utf8_logs.py ./scripts/
+#21 CACHED
+
+#22 [stage-1  5/11] COPY model-spec.json ./
+#22 CACHED
+
+#23 [stage-1  4/11] RUN pip install --no-cache-dir torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu     && pip install --no-cache-dir -r requirements.txt -c requirements.lock.txt
+#23 CACHED
+
+#24 [stage-1  2/11] WORKDIR /app
+#24 CACHED
+
+#25 [stage-1  7/11] RUN python scripts/download_model.py --destination /opt/models/bge
+#25 CACHED
+
+#26 [frontend 6/7] COPY frontend/ ./
+#26 DONE 0.0s
+
+#27 [stage-1  8/11] COPY app/ ./app/
+#27 DONE 0.0s
+
+#28 [stage-1  9/11] COPY scripts/ ./scripts/
+#28 DONE 0.0s
+
+#29 [frontend 7/7] RUN npm run build
+#29 0.320 
+#29 0.320 > knowledge-platform-m1@0.1.0 build
+#29 0.320 > tsc --noEmit && vite build
+#29 0.320 
+#29 1.367 vite v7.3.7 building client environment for production...
+#29 1.424 transforming...
+#29 2.353 ✓ 30 modules transformed.
+#29 2.438 rendering chunks...
+#29 2.444 computing gzip size...
+#29 2.450 dist/index.html                   0.37 kB │ gzip:  0.29 kB
+#29 2.450 dist/assets/index-D8KlFT1d.css   15.85 kB │ gzip:  3.97 kB
+#29 2.450 dist/assets/index-C9UeUl5y.js   231.38 kB │ gzip: 72.82 kB
+#29 2.450 ✓ built in 1.06s
+#29 DONE 2.5s
+
+#30 [stage-1 10/11] COPY --from=frontend /frontend/dist ./frontend/dist/
+#30 DONE 0.0s
+
+#31 [stage-1 11/11] RUN useradd --uid 10001 --create-home appuser     && mkdir -p /data/db /data/uploads /data/tmp /data/quarantine     && chown -R appuser:appuser /data
+#31 DONE 0.2s
+
+#32 exporting to image
+#32 exporting layers 0.1s done
+#32 exporting manifest sha256:528c3765c45f7cfe78013f6c8be158e2b477efa0b7b8e55fb84c1bef413c54f6 done
+#32 exporting config sha256:bf98204ab673a0c3ab86328c419d434353220c4e2b4fc4dcac411206d217f762
+#32 exporting config sha256:bf98204ab673a0c3ab86328c419d434353220c4e2b4fc4dcac411206d217f762 done
+#32 exporting attestation manifest sha256:15c78e0a1c2d3f0e86efa44dab06ea10393bc6d44966a0c3ef08b6cfb0021b16 done
+#32 exporting manifest list sha256:61f8c0231ffcbbb017f56b6da50cfd7421f889a4f064a0178b94c45864eb2944 done
+#32 naming to docker.io/library/semantic-window-73cb634:latest done
+#32 unpacking to docker.io/library/semantic-window-73cb634:latest 0.1s done
+#32 DONE 0.2s
+
+Exit code: 0

@@ -31,7 +31,20 @@
 
 旧候选实验13.600秒，正文替代向量准备1.468秒；Docker编排26.423秒，各记录步骤退出0。完整问题、目标排名、实际所有文件/分数/来源原文、代理分级、SHA及逐步命令见[evidence/retrieval-round/before/retrieval.json](evidence/retrieval-round/before/retrieval.json)与[execution-summary.json](evidence/retrieval-round/before/execution-summary.json)。本轮没有用户新增人工浏览器结果，不改写已有人工记录。
 
-应用改变后的真实HTTP、分类和归档回归证据将在同目录after/p0/quality补充，完成前不列通过。复现需要Docker、Python3及另行取得的考核ZIP；正常启动不依赖ZIP：
+## 修改后实际回归
+
+独立运行源码提交73cb634，从Git导出到新目录再构建镜像semantic-window-73cb634；没有宿主机应用/前端挂载，也没有既有数据库。此次构建使用依赖缓存，93.923秒，前端TypeScript/Vite构建通过；不是第二次无缓存安装/模型下载证明，首次完整无缓存记录仍见final-candidate-review.md。总编排145.837秒，所记录命令均退出0，无非预期业务失败。
+
+- 39组新的真实HTTP默认查询（不传窗口覆盖）逐题与.08诊断核对ID、分数、片段序号；全部一致，开发/保留目标13/13和18/18、无关次数15/25、8个无关问题为空。再次生成98片段，14份SHA一致；实验内部13.269秒、编排26.027秒。完整结果见[after/retrieval.json](evidence/retrieval-round/after/retrieval.json)。
+- 既有13正向/3无关及过滤/同名回归重新通过；原五组Top3保留、设备尾部去除、展开可用、移分类后语义过滤、归档/恢复、同名不同ID且保留分类/上传时间，内部8.051秒、编排15.663秒。见[quality/quality.json](evidence/retrieval-round/quality/quality.json)。
+- 分类创建→改名→移动→刷新读取→关键词和语义组合过滤、移动后原分类排除、归档默认列表/两种搜索排除、恢复重现/可下载SHA，共4项真实HTTP通过；内部0.869秒、编排8.498秒。见[p0/results.json](evidence/retrieval-round/p0/results.json)。
+- 测试前后演示资料完全不变。将已测镜像重建当前容器，保持原数据卷；部署14.348秒，页面HTTP可访问、健康正常、默认scoreWindow=.08，26份元数据/下载SHA与9分类再次一致。见[deployment/execution-summary.json](evidence/retrieval-round/deployment/execution-summary.json)。此处是自动HTTP与数据核对，没有新人工浏览器通过声明。
+
+此次最终代码review重点核查API/前端默认窗口一致、展开参数保留、实时分类/归档过滤未改变、索引/模型/数据库无迁移、测试标注未进入运行排序。拒绝策略仍只在实验代码中，没有应用到业务索引。实际退步如漏召回和片段泛化已记录，不把脚本退出0当作所有检索质量通过。片段排序保持现方案。
+
+交付校验辅助脚本曾把HTTPS的`s:/`误识别为Windows盘符，导致README路径断言失败（退出1）。修正盘符匹配边界后重新核查；保留[原失败记录](evidence/retrieval-round/delivery-review-before.json)和[修复后记录](evidence/retrieval-round/delivery-review.json)。这次失败属于校验工具，不是应用或部署失败；历史与当前树密钥模式扫描未输出匹配值，模式扫描不等于完整安全审计。
+
+完整构建、逐步命令/退出码/耗时见[validation/execution-summary.json](evidence/retrieval-round/validation/execution-summary.json)。复现需要Docker、Python3及另行取得的考核ZIP；正常启动不依赖ZIP：
 
 ```sh
 python scripts/run_acceptance_docker.py --image knowledge-platform-app --comparison --zip ./test-documents.zip --port 18081

@@ -1,0 +1,7 @@
+Command: docker compose up -d --no-build --force-recreate
+ Container knowledge-platform-app-1 Recreate 
+ Container knowledge-platform-app-1 Recreated 
+ Container knowledge-platform-app-1 Starting 
+ Container knowledge-platform-app-1 Started 
+
+Exit code: 0

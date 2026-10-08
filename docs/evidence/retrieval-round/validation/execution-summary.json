@@ -1,0 +1,112 @@
+{
+  "sourceCommit": "73cb634439a199eb4325e72d73487b887f7b92b2",
+  "image": "semantic-window-73cb634",
+  "steps": [
+    {
+      "step": "revision",
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform",
+      "exit_code": 0,
+      "seconds": 0.033
+    },
+    {
+      "step": "archive",
+      "command": [
+        "git",
+        "archive",
+        "--format=zip",
+        "--output=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\source.zip",
+        "HEAD"
+      ],
+      "cwd": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform",
+      "exit_code": 0,
+      "seconds": 0.243
+    },
+    {
+      "step": "build",
+      "command": [
+        "docker",
+        "build",
+        "--progress=plain",
+        "--tag",
+        "semantic-window-73cb634",
+        "."
+      ],
+      "cwd": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\source",
+      "exit_code": 0,
+      "seconds": 93.923
+    },
+    {
+      "step": "image-inspect",
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "semantic-window-73cb634"
+      ],
+      "cwd": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform",
+      "exit_code": 0,
+      "seconds": 0.186
+    },
+    {
+      "step": "after",
+      "command": [
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\work\\m1-venv\\Scripts\\python.exe",
+        "scripts/run_acceptance_docker.py",
+        "--image",
+        "semantic-window-73cb634",
+        "--port",
+        "18181",
+        "--comparison",
+        "--zip",
+        "D:\\__10_.zip"
+      ],
+      "cwd": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\source",
+      "exit_code": 0,
+      "seconds": 26.027
+    },
+    {
+      "step": "quality",
+      "command": [
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\work\\m1-venv\\Scripts\\python.exe",
+        "scripts/run_acceptance_docker.py",
+        "--image",
+        "semantic-window-73cb634",
+        "--port",
+        "18182",
+        "--quality",
+        "--zip",
+        "D:\\__10_.zip"
+      ],
+      "cwd": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\source",
+      "exit_code": 0,
+      "seconds": 15.663
+    },
+    {
+      "step": "p0",
+      "command": [
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\work\\m1-venv\\Scripts\\python.exe",
+        "scripts/run_acceptance_docker.py",
+        "--image",
+        "semantic-window-73cb634",
+        "--port",
+        "18183"
+      ],
+      "cwd": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\source",
+      "exit_code": 0,
+      "seconds": 8.498
+    }
+  ],
+  "failure": null,
+  "regressionReports": {
+    "after": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\acceptance\\20261008T121732Z-platform-check-d88b4a9911",
+    "quality": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\acceptance\\20261008T121758Z-platform-check-7dfdd1e845",
+    "p0": "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\acceptance\\20261008T121814Z-platform-check-e57e7e91db"
+  },
+  "demoUnchangedAfterTests": true,
+  "seconds": 145.837
+}

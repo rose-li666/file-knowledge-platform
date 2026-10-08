@@ -1,0 +1,159 @@
+{
+  "steps": [
+    {
+      "step": "compose-image",
+      "command": [
+        "docker",
+        "compose",
+        "config",
+        "--images"
+      ],
+      "exit_code": 0,
+      "seconds": 0.334
+    },
+    {
+      "step": "tag",
+      "command": [
+        "docker",
+        "image",
+        "tag",
+        "semantic-window-73cb634",
+        "knowledge-platform-app"
+      ],
+      "exit_code": 0,
+      "seconds": 0.169
+    },
+    {
+      "step": "deploy",
+      "command": [
+        "docker",
+        "compose",
+        "up",
+        "-d",
+        "--no-build",
+        "--force-recreate"
+      ],
+      "exit_code": 0,
+      "seconds": 1.677
+    },
+    {
+      "step": "inspect",
+      "command": [
+        "docker",
+        "inspect",
+        "knowledge-platform-app-1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.151
+    },
+    {
+      "step": "logs",
+      "command": [
+        "docker",
+        "compose",
+        "logs",
+        "--tail=60",
+        "app"
+      ],
+      "exit_code": 0,
+      "seconds": 0.379
+    }
+  ],
+  "failure": null,
+  "demoMetadataAndDownloadsUnchanged": true,
+  "health": {
+    "milestone": "M5",
+    "indexing": {
+      "concurrency": 1,
+      "workerRunning": true,
+      "recovery": {
+        "requeued": 0,
+        "scheduled": 0
+      }
+    },
+    "uploadRecovery": {
+      "committedIntentsCleared": 0,
+      "quarantined": [],
+      "retainedAnomalies": []
+    },
+    "keywordBackfill": {
+      "ready": 0,
+      "failed": 0,
+      "not_supported": 0,
+      "unconfirmed": 0
+    },
+    "status": "ready",
+    "database": {
+      "status": "ready",
+      "probeCount": 5
+    },
+    "storage": {
+      "startupWriteCheck": "passed"
+    },
+    "model": {
+      "status": "ready",
+      "id": "BAAI/bge-small-zh-v1.5",
+      "revision": "7999e1d3359715c523056ef9478215996d62a620",
+      "dimension": 512,
+      "device": "cpu",
+      "loadSeconds": 0.107
+    },
+    "startupSeconds": 4.507
+  },
+  "pageBytes": 366,
+  "documentCount": 26,
+  "categoryCount": 9,
+  "semantic": {
+    "items": [
+      {
+        "id": "43876231-2219-465e-a55f-bb4620ce34a1",
+        "name": "上传测试_设备借用.txt",
+        "extension": "txt",
+        "mediaType": "text/plain",
+        "sizeBytes": 1399,
+        "sha256": "0df385de253d6227442864fcd6d43eced78e77f8d9d978b167e8e6a48c0dca25",
+        "uploadedAt": "2026-10-08T04:30:46.933003Z",
+        "category": {
+          "id": "da94d962-39af-4070-a3b3-e09fcf46331f",
+          "name": "工程规范"
+        },
+        "archivedAt": null,
+        "textStatus": "ready",
+        "textError": null,
+        "textEncoding": "utf-8",
+        "vectorStatus": "ready",
+        "vectorError": null,
+        "chunkCount": 6,
+        "downloadUrl": "/api/v1/documents/43876231-2219-465e-a55f-bb4620ce34a1/download",
+        "score": 0.640802,
+        "sources": [
+          {
+            "ordinal": 3,
+            "generation": 1,
+            "heading": "三、使用期间出现问题",
+            "text": "发现投影仪无法开机、相机报错或附件损坏时，应停止使用，并记录现象和发现时间，联系设备管理员。不要自行拆机。管理员判断是否需要维修或安排替代设备，借用人补充当时的使用情况。",
+            "score": 0.640802
+          },
+          {
+            "ordinal": 1,
+            "generation": 1,
+            "heading": "一、借用前登记",
+            "text": "团队成员需要借用投影仪、相机或录音设备时，应先登记设备名称、数量、使用目的、领取时间和预计归还时间。设备管理员核对库存后确认预约。同一时间设备已被预约时，需要协商其他时段，不能直接拿走。",
+            "score": 0.630191
+          }
+        ]
+      }
+    ],
+    "total": 1,
+    "offset": 0,
+    "limit": 5,
+    "query": "借来的设备坏了应该怎么办？",
+    "minScore": 0.45,
+    "candidateTotal": 3,
+    "scoreWindow": 0.08,
+    "omittedByWindow": 2,
+    "vectorUnavailableCount": 1,
+    "modelRevision": "7999e1d3359715c523056ef9478215996d62a620"
+  },
+  "seconds": 14.348
+}

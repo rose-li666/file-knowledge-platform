@@ -1,0 +1,3 @@
+Command: git archive --format=zip --output=C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\semantic-validation-73cb634\source.zip HEAD
+
+Exit code: 0

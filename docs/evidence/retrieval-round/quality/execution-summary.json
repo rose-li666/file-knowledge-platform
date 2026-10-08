@@ -1,0 +1,81 @@
+{
+  "container": "platform-check-7dfdd1e845",
+  "volume": "platform-check-7dfdd1e845-data",
+  "port": 18182,
+  "image": "semantic-window-73cb634",
+  "steps": [
+    {
+      "step": "start",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--name",
+        "platform-check-7dfdd1e845",
+        "-e",
+        "ACCEPTANCE_TEST_RUN=platform-check-7dfdd1e845",
+        "-p",
+        "127.0.0.1:18182:8000",
+        "--mount",
+        "type=volume,source=platform-check-7dfdd1e845-data,target=/data",
+        "--mount",
+        "type=bind,source=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\source\\scripts,target=/app/scripts,readonly",
+        "--mount",
+        "type=bind,source=D:\\__10_.zip,target=/fixtures/documents.zip,readonly",
+        "semantic-window-73cb634"
+      ],
+      "exit_code": 0,
+      "seconds": 0.383
+    },
+    {
+      "step": "quality",
+      "command": [
+        "docker",
+        "exec",
+        "platform-check-7dfdd1e845",
+        "python",
+        "scripts/verify_retrieval_quality.py",
+        "--zip",
+        "/fixtures/documents.zip",
+        "--report",
+        "/tmp/check-reports/quality.json"
+      ],
+      "exit_code": 0,
+      "seconds": 8.519
+    },
+    {
+      "step": "copy",
+      "command": [
+        "docker",
+        "cp",
+        "platform-check-7dfdd1e845:/tmp/check-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\acceptance\\20261008T121758Z-platform-check-7dfdd1e845"
+      ],
+      "exit_code": 0,
+      "seconds": 0.164
+    },
+    {
+      "step": "logs",
+      "command": [
+        "docker",
+        "logs",
+        "platform-check-7dfdd1e845"
+      ],
+      "exit_code": 0,
+      "seconds": 0.155
+    },
+    {
+      "step": "stop",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "platform-check-7dfdd1e845"
+      ],
+      "exit_code": 0,
+      "seconds": 0.438
+    }
+  ],
+  "failure": null,
+  "seconds": 15.568
+}

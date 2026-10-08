@@ -1,0 +1,77 @@
+{
+  "container": "platform-check-e57e7e91db",
+  "volume": "platform-check-e57e7e91db-data",
+  "port": 18183,
+  "image": "semantic-window-73cb634",
+  "steps": [
+    {
+      "step": "start",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--name",
+        "platform-check-e57e7e91db",
+        "-e",
+        "ACCEPTANCE_TEST_RUN=platform-check-e57e7e91db",
+        "-p",
+        "127.0.0.1:18183:8000",
+        "--mount",
+        "type=volume,source=platform-check-e57e7e91db-data,target=/data",
+        "--mount",
+        "type=bind,source=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\source\\scripts,target=/app/scripts,readonly",
+        "semantic-window-73cb634"
+      ],
+      "exit_code": 0,
+      "seconds": 0.394
+    },
+    {
+      "step": "verify",
+      "command": [
+        "docker",
+        "exec",
+        "platform-check-e57e7e91db",
+        "python",
+        "scripts/verify_acceptance.py",
+        "--report",
+        "/tmp/check-reports/results.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.324
+    },
+    {
+      "step": "copy",
+      "command": [
+        "docker",
+        "cp",
+        "platform-check-e57e7e91db:/tmp/check-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\semantic-validation-73cb634\\acceptance\\20261008T121814Z-platform-check-e57e7e91db"
+      ],
+      "exit_code": 0,
+      "seconds": 0.16
+    },
+    {
+      "step": "logs",
+      "command": [
+        "docker",
+        "logs",
+        "platform-check-e57e7e91db"
+      ],
+      "exit_code": 0,
+      "seconds": 0.155
+    },
+    {
+      "step": "stop",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "platform-check-e57e7e91db"
+      ],
+      "exit_code": 0,
+      "seconds": 0.461
+    }
+  ],
+  "failure": null,
+  "seconds": 8.405
+}

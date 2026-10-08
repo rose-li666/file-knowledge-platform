@@ -1,0 +1,96 @@
+Command: docker image inspect semantic-window-73cb634
+[
+    {
+        "Id": "sha256:61f8c0231ffcbbb017f56b6da50cfd7421f889a4f064a0178b94c45864eb2944",
+        "RepoTags": [
+            "semantic-window-73cb634:latest"
+        ],
+        "RepoDigests": [
+            "semantic-window-73cb634@sha256:61f8c0231ffcbbb017f56b6da50cfd7421f889a4f064a0178b94c45864eb2944"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-08T12:17:31.831290087Z",
+        "Config": {
+            "User": "appuser",
+            "ExposedPorts": {
+                "8000/tcp": {}
+            },
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.14",
+                "PYTHON_SHA256=5c8462af5790baf43a321a1559dbe0db06d1be4300fb85fb53c40060668e548a",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1",
+                "DATA_DIR=/data",
+                "MODEL_DIR=/opt/models/bge",
+                "MODEL_CPU_THREADS=2",
+                "HF_HUB_OFFLINE=1",
+                "TRANSFORMERS_OFFLINE=1"
+            ],
+            "Cmd": [
+                "uvicorn",
+                "app.main:app",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "8000",
+                "--workers",
+                "1"
+            ],
+            "WorkingDir": "/app",
+            "ArgsEscaped": true,
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health',timeout=4)\""
+                ],
+                "Interval": 20000000000,
+                "Timeout": 5000000000,
+                "StartPeriod": 90000000000,
+                "Retries": 3
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 475839067,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:34467cc93912af891dfee8a3902adf9b4f355a9bca4eaa46f658d1181a21de0d",
+                "sha256:16df0073c13c96653ee2b601b16e514321513eb4af983de156c2d4e17df8a5d9",
+                "sha256:9639007baab8a136bc468bd5d757fdf79cf5d77b6ff2a87889071252e334fab3",
+                "sha256:abca6d63c9dbe51fa3bc42e75e0387da12803ef64430ad151814e468d5e1c203",
+                "sha256:b517fc78b242299690595e777e58681a0ddf7ad69228cd35d0f84bf3a98aca00",
+                "sha256:10a0b8ab5b688bb5151d35393a57d4039274777cf2e8588e7e259053bed95128",
+                "sha256:7f010c2c5ba7f8f55017165f6f18ea64398665e05aef0231d5ac33f038746746",
+                "sha256:54fa6174292729dc9b4e13473018be83b4755304610ae442931e33537b3b3876",
+                "sha256:78e1e09b2c03ae290d93b9d9c7ddc8feeccf97e0f06986deea5d80ae9bf7c69e",
+                "sha256:deeaed4c94b244c5df554a2d7adca3ce9d27b20932ef030d711231aebd9b7c70",
+                "sha256:23667417b23fe3254142d7c7edc3388709a1e9e75acc09ab784bfa93388e1c90",
+                "sha256:afe94b73610cbef2ee638db0bc554597efff4f7811f6e6e41810db502d1f0030",
+                "sha256:ffc4ce43cf70970c01dbcc18acb0a7d5431591d9652495c75b31e19509e4acf9",
+                "sha256:9a90ee062526598df0da4b3d5fd79ffae72b8bc48c13d8362fc654edc567c7c0"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-08T12:17:31.967139134Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:61f8c0231ffcbbb017f56b6da50cfd7421f889a4f064a0178b94c45864eb2944",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "9c4yxz7zaxzxfya4xmvt0c310",
+                    "CreatedAt": "2026-10-08T12:17:32.027714455Z"
+                }
+            ]
+        }
+    }
+]
+
+Exit code: 0

@@ -1,0 +1,2 @@
+Command: docker run -d --name platform-check-e57e7e91db -e ACCEPTANCE_TEST_RUN=platform-check-e57e7e91db -p 127.0.0.1:18183:8000 --mount type=volume,source=platform-check-e57e7e91db-data,target=/data --mount type=bind,source=C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\semantic-validation-73cb634\source\scripts,target=/app/scripts,readonly semantic-window-73cb634
+6e9402bb70e9b1bca0678b979d27f53e56f8024d8b2964a06828da2686f9f35f

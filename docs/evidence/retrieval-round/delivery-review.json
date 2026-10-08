@@ -1,0 +1,16 @@
+{
+  "type": "static source/publication review, pattern scan is not a comprehensive secret audit",
+  "historyTextBlobsScanned": 413,
+  "binaryBlobsSkipped": 32,
+  "secretPatternMatches": [],
+  "currentTreeTextFilesScanned": 338,
+  "currentTreeSecretPatternMatches": [],
+  "trackedExcludedArtifacts": [],
+  "readmeDependsOnDeveloperPath": false,
+  "runtimeFilesComparedWithTestedSource": 23,
+  "runtimeMismatchWith73cb634": [],
+  "productionChanges": "Only API and frontend default document score window .12 -> .08; no model, chunks, DB, upload, path or filter changes",
+  "rejectedSourceStrategies": "Remain evaluation-only; body diagnostic vectors are not persisted in business index",
+  "reviewRunnerExitCode": 0,
+  "seconds": 42.78
+}

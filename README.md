@@ -2,9 +2,13 @@
 
 一个 Docker 服务，提供 React 页面、FastAPI 接口、SQLite 数据库和本地文本向量模型。支持 PDF/TXT/Markdown 上传下载、扁平分类、归档恢复、关键词和语义检索。无需预置文件、数据库或宿主机 Python/Node。
 
+公开源码：[rose-li666/file-knowledge-platform](https://github.com/rose-li666/file-knowledge-platform)。交付导航与五组真实资料查询见 [docs/submission.md](docs/submission.md)。当前为候选版本，最终版本尚未锁定。
+
 ## 启动
 
 需要 Docker Engine / Docker Desktop（Linux 容器）和 Docker Compose v2。下载源码后，在包含 `Dockerfile`、`compose.yaml` 的项目根目录执行：
+
+有 Git 时可先 `git clone https://github.com/rose-li666/file-knowledge-platform.git`，再 `cd file-knowledge-platform`；也可下载源码 ZIP 后进入解压的项目根目录。
 
 ```sh
 docker compose up --build -d

@@ -31,3 +31,5 @@ API 路径均以 `/api/v1` 为前缀。本轮 P0 命令 `python scripts/run_acce
 ## 最新候选收尾结果
 
 用户已另行汇总确认“我已验证完成”，原话与证据来源见[user-validation.md](user-validation.md)，不补造专项动作/尺寸。本轮从候选Git源码无缓存构建、独立空卷部署和完整回归均通过，运行代码无新增修改，演示26文件/9分类及26份下载SHA保留。早期待核对描述对应当时阶段；最新实测、故障恢复、限制及原始日志见[final-candidate-review.md](final-candidate-review.md)，剩余交付条件见[remaining-acceptance.md](remaining-acceptance.md)。按要求暂不锁定最终SHA。
+
+后续独立语义修改73cb634：默认文件窗口0.12→0.08，绝对门槛/来源排序保留。39题预声明对照与新镜像真实HTTP，31目标全命中、8无关为空，按标签无关返回64→40；仍有高分误返回/泛化片段，不标为全部质量通过。已补跑关键词/语义当前分类、归档恢复及下载SHA的4项P0，既有检索/同名回归通过；新镜像部署后26文件/9分类完整保留。详见[retrieval-round.md](retrieval-round.md)。此为自动化证据，无新增人工浏览器确认。
