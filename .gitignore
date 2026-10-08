@@ -8,3 +8,5 @@ models/
 .env
 *.sqlite3*
 reports/
+
+test-documents.zip

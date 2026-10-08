@@ -36,6 +36,8 @@ class Document(DocumentBase):
     vector_status: Mapped[str] = mapped_column(String(20), default="not_started")
     text_error: Mapped[str | None] = mapped_column(String(300))
     text_encoding: Mapped[str | None] = mapped_column(String(32))
+    vector_error: Mapped[str | None] = mapped_column(String(300))
+    chunk_count: Mapped[int] = mapped_column(Integer, default=0, server_default="0")
     category_id: Mapped[str | None] = mapped_column(String(36), ForeignKey("categories.id", ondelete="RESTRICT"))
     category: Mapped[Category | None] = relationship(lazy="selectin")
     archived_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
@@ -46,6 +48,26 @@ class DocumentText(DocumentBase):
     document_id: Mapped[str] = mapped_column(String(36), ForeignKey("documents.id", ondelete="CASCADE"), primary_key=True)
     content: Mapped[str] = mapped_column(Text)
     search_content: Mapped[str] = mapped_column(Text)
+
+
+class IndexJob(DocumentBase):
+    __tablename__ = "index_jobs"
+    document_id: Mapped[str] = mapped_column(String(36), ForeignKey("documents.id", ondelete="CASCADE"), primary_key=True)
+    generation: Mapped[int] = mapped_column(Integer, default=1)
+    state: Mapped[str] = mapped_column(String(20), index=True)
+    attempts: Mapped[int] = mapped_column(Integer, default=0)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+class Chunk(DocumentBase):
+    __tablename__ = "chunks"
+    document_id: Mapped[str] = mapped_column(String(36), ForeignKey("documents.id", ondelete="CASCADE"), primary_key=True)
+    ordinal: Mapped[int] = mapped_column(Integer, primary_key=True)
+    generation: Mapped[int] = mapped_column(Integer)
+    heading: Mapped[str] = mapped_column(Text)
+    text: Mapped[str] = mapped_column(Text)
+    embedding: Mapped[bytes] = mapped_column(LargeBinary)
+    model_revision: Mapped[str] = mapped_column(String(64))
 
 
 class Probe(Base):
@@ -95,7 +117,7 @@ def open_document_database(path: Path):
         with engine.connect() as connection:
             connection.exec_driver_sql("BEGIN IMMEDIATE")
             version = connection.exec_driver_sql("PRAGMA user_version").scalar_one()
-            if version > 2:
+            if version > 3:
                 raise ValueError("Business database schema is newer than this application")
             columns = {row[1] for row in connection.exec_driver_sql("PRAGMA table_info(documents)")}
             if columns:
@@ -108,12 +130,13 @@ def open_document_database(path: Path):
                     connection.exec_driver_sql("ALTER TABLE documents ADD COLUMN category_id VARCHAR(36) REFERENCES categories(id) ON DELETE RESTRICT")
                 if "archived_at" not in columns:
                     connection.exec_driver_sql("ALTER TABLE documents ADD COLUMN archived_at DATETIME")
-                for name, type_name in (("text_error", "VARCHAR(300)"), ("text_encoding", "VARCHAR(32)")):
+                for name, type_name in (("text_error", "VARCHAR(300)"), ("text_encoding", "VARCHAR(32)"),
+                                        ("vector_error", "VARCHAR(300)"), ("chunk_count", "INTEGER NOT NULL DEFAULT 0")):
                     if name not in columns:
                         connection.exec_driver_sql(f"ALTER TABLE documents ADD COLUMN {name} {type_name}")
             DocumentBase.metadata.create_all(connection)
             connection.exec_driver_sql("CREATE INDEX IF NOT EXISTS ix_documents_category_archive ON documents(category_id, archived_at)")
-            connection.exec_driver_sql("PRAGMA user_version=2")
+            connection.exec_driver_sql("PRAGMA user_version=3")
             connection.commit()
     except Exception:
         engine.dispose()

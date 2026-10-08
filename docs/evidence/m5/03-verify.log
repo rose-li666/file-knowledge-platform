@@ -1,0 +1,22 @@
+Command: docker compose run --no-deps --name m5-verification-02421adac696 -v D:\__10_.zip:/fixtures/test-documents.zip:ro app python scripts/verify_m5.py --base-url http://app:8000 --data-dir /data --fault-dir /tmp/m5-faults --zip /fixtures/test-documents.zip --report /tmp/m5-reports/results.json
+ Container m5-verification-02421adac696 Creating 
+ Container m5-verification-02421adac696 Created 
+PASS new business upload 01_代码提交规范_v2.1.md
+PASS new business upload 02_发布检查清单_v1.4.md
+PASS new business upload 03_文件服务接口约定_v1.2.md
+PASS new business upload 04_星桥项目_需求与范围_v1.0.pdf
+PASS new business upload 05_星桥项目_发布检查清单_2026-09-18.txt
+PASS new business upload 06_星桥项目_故障复盘_2026-09-21.md
+PASS new business upload 07_星桥项目_用户访谈纪要_2026-09-12.txt
+PASS new business upload 08_检索技术说明_关键词与语义_v1.0.pdf
+PASS new business upload 09_本地部署故障排查_v1.3.txt
+PASS new business upload 10_文档分类与归档规范_v1.0.pdf
+QUERY rank=1 01_代码提交规范_v2.1.md
+QUERY rank=1 03_文件服务接口约定_v1.2.md
+QUERY rank=2 02_发布检查清单_v1.4.md
+QUERY rank=1 06_星桥项目_故障复盘_2026-09-21.md
+QUERY rank=1 09_本地部署故障排查_v1.3.txt
+Report: /tmp/m5-reports/results.json
+M5 HTTP checks passed. Browser and M6 fresh-volume deployment remain separate.
+
+Exit code: 0; seconds: 37.422

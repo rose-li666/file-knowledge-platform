@@ -1,118 +1,63 @@
 # 文件管理与知识检索平台
 
-M1 已完成 Docker 骨架、页面、健康接口、数据库读写、本地 BGE 模型及五组容器向量查询，实测证据见 `docs/m1-report.md`。M2 增加 PDF、TXT、Markdown 原文件上传、列表、详情和下载；页面显示上传进度、保存状态及错误，下载接口校验原文件完整性。M2 验证状态见 `docs/m2-report.md`。
+一个 Docker 服务，提供 React 页面、FastAPI 接口、SQLite 数据库和本地文本向量模型。支持 PDF/TXT/Markdown 上传下载、扁平分类、归档恢复、关键词和语义检索。无需预置文件、数据库或宿主机 Python/Node。
 
-M3 增加扁平分类的创建、改名、文件移动、分类筛选及归档/恢复；默认列表只显示未归档文件，归档区仍可查看、下载并恢复。分类和归档视图保存在 URL，刷新后按相同条件从数据库重新读取。M3 容器及浏览器刷新/恢复下载已实测，见 `docs/m3-report.md`。M4 增加文件名和 TXT/Markdown 正文的关键词搜索、分类组合筛选及高亮片段；PDF 仅名称搜索。正文提取失败仍保留名称搜索和原文件下载。语义搜索接口尚未实现，vectorStatus 仍为 not_started。任务恢复、去重和故障注入留到 M5。
+## 启动
 
-## Docker 启动
-
-需要 Docker Desktop 的 Linux 引擎已启动。首次构建需要访问镜像仓库、npm/PyPI/PyTorch 及 Hugging Face；测试文档不会发送到外部服务。
+需要 Docker Engine / Docker Desktop（Linux 容器）和 Docker Compose v2。下载源码后，在包含 `Dockerfile`、`compose.yaml` 的项目根目录执行：
 
 ```sh
-docker compose config --quiet
 docker compose up --build -d
+```
+
+打开 http://localhost:8000 。第一次构建需访问 Docker Hub、npm、PyPI、PyTorch CPU 包和 Hugging Face 固定版本模型；模型约 96 MB，下载后写入镜像，运行时离线加载。网络需要代理时，在 Docker Desktop/Engine 中配置可用代理后再构建。构建失败先看错误所在下载步骤，无需清除数据卷。
+
+默认配置可直接启动。可选复制 `.env.example` 为 `.env`，修改 `APP_PORT`（页面端口，默认 8000）和 `MAX_UPLOAD_BYTES`（单文件字节限制，默认 20971520）。无需密钥；新增密钥只从环境变量读取，勿提交 `.env`。
+
+```sh
 docker compose ps
 docker compose logs --tail=100 app
 ```
 
-访问 http://localhost:8000。只有一个 app 容器；Uvicorn 显式 `--workers 1`，关闭 reload。固定 Compose 项目名 `knowledge-platform`，具名卷 `platform_data` 挂载到 `/data`。业务数据库 `/data/db/platform.sqlite3`，M1 诊断库 `/data/db/diagnostics.sqlite3`；上传/临时/隔离目录也位于此卷。模型位于镜像 `/opt/models/bge`，运行时不下载。
+首次 CPU 模型加载期间页面尚未服务；健康检查启动等待窗口为 90 秒。模型加载失败仍提供文件管理/关键词搜索，健康响应标记 degraded，语义接口明确报错。容器中 Uvicorn 固定 `--workers 1`；索引任务单并发，模型推理锁串行。不要增加 worker 或同时启动两个进程共享同一 DATA_DIR，目录所有权锁会拒绝第二个实例。
 
-单文件限额默认 20 MiB（20971520 字节），可通过环境变量 `MAX_UPLOAD_BYTES` 配置；这是项目实现的默认值，非 ZIP 文档中的要求。接口支持 `.pdf`、`.txt`、`.md`、`.markdown`，不依赖浏览器提供的 MIME。原始字节不改写、不转码；文件系统使用随机存储键，展示及下载仍保留原名。
+## 操作
 
-M2 接口及错误约定见 `docs/m2-api.md`。在项目目录运行 `python scripts/run_m2_docker.py --zip 'D:\__10_.zip'`，先使用已成功拉取的固定基础镜像构建/启动，再从一次性验证容器访问主应用，通过真实 HTTP 上传、下载全部 10 份资料并核对 SHA-256。证据保存在项目旁的 `m2-docker/<UTC时间>-<随机后缀>/`。若构建已成功而验证失败，加 `--skip-build` 仅重试验证；不删除已有数据，也不将验证脚本等同于浏览器操作测试。重复验证会再次上传资料，M2 不提供上传去重。
+1. 选择 PDF、TXT、`.md` / `.markdown` 文件并开始上传，查看进度和保存结果。支持多选逐个上传。
+2. 管理分类中创建或修改名称，点击文件名称查看详情、移动到分类、下载。
+3. 选择关键词搜索（名称和 TXT/Markdown 正文，支持中文/编号）或语义搜索（描述需求，返回来源文件、原文片段及相似度），可同时筛选分类。
+4. TXT/Markdown 显示等待索引、处理中、可语义检索或失败。正文已就绪但向量失败时仍可关键词查找和下载，在详情重试索引。
+5. 归档后默认列表和两种搜索排除文件；在归档区可找回和下载，恢复后重新参与检索。筛选/问题保存在页面 URL，刷新保留。
 
-Python 验证/部署脚本启动时调用 `scripts/utf8_logs.py`：将标准输出/错误设为 UTF-8，并为子 Python 进程继承 PYTHONUTF8/PYTHONIOENCODING。Docker 输出按 UTF-8 解码，遇到无效字节保留转义；日志文件按 UTF-8 保存。避免 Windows GBK 管道在 Vite 的 ✓ 字符处抛异常，不修改系统编码或 PowerShell 执行策略。实际 GBK 初始环境及嵌套 Python 回归检查退出码为 0，证据见 docs/evidence/m2/encoding-results.json。
+空数据卷会显示空列表，上传第一份资料即可使用。PDF 本版仅文件名称搜索和原文件下载，不提取正文。文本支持 UTF-8、带 BOM 的 UTF-16、GB18030；失败不损坏原文件。
 
-M3 接口见 `docs/m3-api.md`。启动时在 SQLite 事务中将 M2 业务表增加可空分类外键及归档时间，保留已有 ID、存储键、哈希、上传时间与原文件。M4 再增加正文表与提取错误/编码字段，当前 schema 版本为 2；发现更高版本或不兼容的旧表时拒绝升级。数据库升级是必要操作；上传任务重启恢复仍留到 M5。
+## 持久化与崩溃处理
 
-在项目目录执行 `python scripts/run_m3_docker.py --zip 'D:\__10_.zip'`，构建/启动后以真实容器 HTTP 检查分类操作、默认排除归档、归档区筛选及恢复后 SHA-256。已成功构建时加 `--skip-build` 仅验证。脚本复用名称与 SHA 匹配的现有测试文件，否则上传；这是验证准备策略，产品上传未实现去重。每轮会创建带随机后缀的验收分类，并移动两份资料；验证结束时两份资料均处于未归档状态。证据保存到项目旁 `m3-docker/<UTC时间>-<随机后缀>/`，浏览器刷新需单独核对。
-
-本地 M3 校验：`python scripts/verify_m3.py --zip 'D:\__10_.zip' --data-dir data/m3-check --report reports/m3-local.json`，需 requirements-dev.txt；默认 ASGI，真实 HTTP 可加 `--base-url http://localhost:8000`。用已有 M2 数据库副本执行可核对升级前后 ID/哈希不变；不要把 fresh GET 或本地 ASGI 报告当作容器重建/浏览器验证。
-
-M4 接口及文本编码规则见 `docs/m4-api.md`。新上传的文本在原文件提交后提取；启动为旧 not_started 文件补建正文。正文失败不影响上传成功或下载，详情提供重试。搜索使用字面子串，支持中文及完整编号；默认排除归档，分类条件即时生效，恢复无需重建正文即可搜索。命中片段是规范化文字，原文件字节不改写。
-
-M4 Docker 校验在项目目录执行 `python scripts/run_m4_docker.py --zip 'D:\__10_.zip'`，已有成功构建时加 `--skip-build`。在构建前记录现有应用 HTTP 元数据快照（默认端口 8000），构建/启动一次后校验容器真实 HTTP，最后对比原有文件 ID/哈希/分类/归档与分类名称。若旧应用快照不可用，不标记升级持久化通过。日志与结果位于项目旁 `m4-docker/<UTC时间>-<后缀>/`，浏览器仍需单独核对。脚本复用已存在的真实 ZIP 文件，创建两项随机验收分类，移动/归档/恢复后还原目标文件原分类；另留下一个无效编码的补充测试文件，证明正文失败仍能下载，不使用故障注入开关。
-
-本地 M4 校验：`python scripts/verify_m4.py --zip 'D:\__10_.zip' --data-dir data/m4-check --report reports/m4-local.json`；需 requirements-dev.txt，默认 ASGI，真实 HTTP 可加 `--base-url http://localhost:8000`。旧 M1/M2/M3 报告保留历史 milestone 语义，不将历史脚本的版本等待条件视为当前 M4 检查。
-
-本地验证：`python scripts/verify_m2.py --zip 'D:\__10_.zip' --data-dir data/m2-check --report reports/m2-local.json`，需安装 requirements-dev.txt。默认是应用内 ASGI；加 `--base-url http://localhost:8000` 改用真实 TCP。报告分别记录原文件与下载 SHA-256、各次 HTTP 状态、元数据和异常检查。
+Compose 的 `platform_data` 命名卷挂载 `/data`：`db/platform.sqlite3` 保存业务元数据、正文、索引任务和 512 维 float32 向量；`uploads` 保存原始字节；`tmp` 保存上传中间文件及意图；`quarantine` 保留未提交文件供检查。模型在镜像 `/opt/models/bge`。
 
 ```sh
-curl http://localhost:8000/api/v1/health
-curl -X POST http://localhost:8000/api/v1/m1/probes -H 'Content-Type: application/json' -d '{"value":"M1 database probe"}'
-curl http://localhost:8000/api/v1/m1/probes
+docker compose restart app
+docker compose up -d --force-recreate
 ```
 
-`health.status` 的 ready 才代表数据库和模型均就绪；模型失败时基础健康接口仍可用并显示 degraded。Docker healthy 仅代表基础 HTTP/数据库链路可用，不能单独证明模型或检索通过。M1 probe 接口是临时诊断入口，后续正式交付移除。
+这两个命令保留数据卷。勿对需要保留的资料执行 `docker compose down -v`。停机备份应包含整个数据卷；在线仅复制 sqlite 主文件会遗漏 WAL，不作为备份方案。
 
-重建应用时保留数据卷：`docker compose up -d --force-recreate`。普通 `docker compose down` 保留卷；`down -v` 会删除数据，禁止用于持久化验证。
+上传先 fsync 临时字节和意图，再原子移动到 uploads，最后同一 SQL 事务提交文件记录与索引任务。成功确认前崩溃：已有且哈希一致的数据库记录保留，清理残留意图；正式文件无数据库记录则移入 quarantine，保留字节和意图，不自动导入也不删除；临时文件同样隔离。提交结果不确定返回 503 并提示刷新核对。索引 processing 任务在重启时回到 pending，失败任务保留错误并需手动重试。片段主键是文件 ID+顺序号，代次检查及原子替换防止重试产生重复或半成品索引。
 
-## 本地复现（Docker 不可用时的独立验证）
+## 验证与资料
 
-使用 Python 3.12 与 Node 24，创建虚拟环境后：
+真实考核 ZIP 不随源码提交，正常启动不需要它。将资料置于任意可读路径后，验证脚本通过 `--zip` 指定；日志 UTF-8，无需改变 Windows 执行策略。
+
+M5 验证脚本会新上传全部资料到独立分类，核对下载 SHA-256、分片向量持久化、5 组改写问题排名、过滤；进程故障实验使用独立测试数据目录，不影响主服务数据。使用当前镜像执行（先将测试 ZIP 复制为项目目录 `test-documents.zip`）：
 
 ```sh
-python -m pip install torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu
-python -m pip install -r requirements.txt
-python scripts/download_model.py
-cd frontend
-npm ci
-npm run build
-cd ..
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 1
+docker compose run --rm --no-deps -v ./test-documents.zip:/fixtures/documents.zip:ro app python scripts/verify_m5.py --zip /fixtures/documents.zip --data-dir /tmp/m5-verification --report /tmp/m5-results.json
 ```
 
-本地验证不等于 Docker 验收通过。模型 revision 固定在 `model-spec.json`。下载清单记录权重和配置的 SHA-256；`LocalEmbedder` 使用本地目录与 `local_files_only=True`。
+这条命令启动独立真实 HTTP 服务，记录故障实验和结果到输出；一次性容器报告需另行挂载目录保存，详见 `docs/m5-api.md`。历史各阶段报告在 `docs/m1-report.md` 至 `docs/m5-report.md`（如存在），含实测与未测项；历史本机开发命令仅在 `docs/development-history.md`，不是启动依赖。M6 将验证空数据卷部署、容器重建、普通浏览器与窄屏、完整回归和代码审查，未完成前不标记最终交付。
 
-Docker 基础镜像同时固定 tag 与 registry digest；Python 直接依赖及实际解析的传递依赖固定在 `requirements.txt` 和 `requirements.lock.txt`，前端固定在 `package-lock.json`。M1 已实际完成 Linux 镜像构建、启动、接口及容器查询；证据与限制见 `docs/m1-report.md`。页面和数据库按钮及刷新结果由用户在本机确认。
+## 实现范围与限制
 
-在普通 PowerShell 中执行完整 M1 Docker 检查：
+本人实现文件保存及崩溃对账、分类归档、正文提取、分片任务、向量存储与精确检索、API、React 操作页面和验证脚本。使用开源组件：[FastAPI](https://github.com/fastapi/fastapi)、[React](https://github.com/facebook/react)、[SQLAlchemy](https://github.com/sqlalchemy/sqlalchemy)、[Sentence Transformers](https://github.com/huggingface/sentence-transformers)、[BGE 模型](https://huggingface.co/BAAI/bge-small-zh-v1.5)。包版本锁定在 requirements 和前端 lock 文件；模型版本及查询前缀在 model-spec.json。未复制现成知识库项目。
 
-排查认证网络时，优先使用 `scripts/m1_docker_stage.py`，依次选择 `--stage pull`、`--stage build`、`--stage verify`，每次只运行一个阶段。ZIP 参数统一为 `--zip 'D:\__10_.zip'`。拉取阶段直接读取 Dockerfile 中的两个 digest，分别保存退出码和完整输出；只有两项成功才保存构建准入记录。构建阶段要求该记录与当前 Dockerfile 一致，并确认两份镜像仍在本地；只执行构建及启动。验证阶段复用下面的验证脚本并传入 `--skip-build`，不会重新拉取或构建。
-
-各次执行保存在项目旁 `m1-docker/<UTC时间>-<阶段>-<随机后缀>/`，含逐命令日志与 `execution-summary.json`；失败即停止依赖它的后续步骤，不覆盖历史证据。阶段脚本使用标准 Python，无需额外依赖。构建成功后的浏览器页面及数据库按钮仍须实际验证。
-
-以下完整流程脚本适用于部署链路已确认可用的情况：
-
-```powershell
-.\scripts\run_m1_docker.ps1 -ZipPath 'D:\__10_.zip'
-```
-
-脚本依次记录 Docker 版本、配置、构建、启动、健康接口、数据库读写、前端资源响应和容器内五组向量排名；日志和 JSON 放在项目旁的 `m1-docker` 目录。不会删除数据卷或重置业务数据。浏览器实际渲染与按钮点击需单独确认，脚本不会将其自动标为通过。
-
-如果 PowerShell 禁止执行 `.ps1`，保持执行策略不变，在项目目录直接运行上述 Docker 命令。可用 `docker compose up --build -d 2>&1 | Tee-Object -FilePath '../m1-docker-build.log'` 保存实际构建日志。上传资料原路径为 `D:\__10_.zip`，不要写成 `D:_10.zip`。
-
-也提供不依赖 PowerShell 脚本策略的标准 Python CLI，使用已安装 Python 即可，无需另装依赖：`python scripts/run_m1_docker.py --zip 'D:\__10_.zip'`。已经直接构建成功时加 `--skip-build`，只继续接口、数据库及容器内向量实验。输出同样位于项目旁的 `m1-docker`；不会修改执行策略或安全设置。
-
-若构建在 `auth.docker.io/token` 超时，先检查 Docker Desktop 的 Settings → Resources → Proxies。按本机可用代理配置 HTTP/HTTPS；有独立 Containers proxy 时确认其使用同一可用代理。镜像拉取代理配置见 [Docker 官方说明](https://docs.docker.com/desktop/settings-and-maintenance/settings/#proxies)。本机代理地址属于环境配置，不写入 Compose 或 Dockerfile。PowerShell 对 Docker stderr 显示的红色 `Image … Building` 本身不是构建失败依据，应检查末尾错误与退出码。
-
-应用内契约验证（需 `pip install -r requirements-dev.txt`）：
-
-```sh
-python scripts/verify_m1.py --data-dir data/m1-contract --report reports/contract.json
-```
-
-默认使用 ASGI TestClient，明确不证明 TCP 或浏览器可访问。已有真实服务器时可加 `--base-url http://127.0.0.1:8000`。
-
-## 五组真实资料向量实验
-
-```sh
-python scripts/evaluate_m1.py --zip /path/to/__10_.zip --report reports/semantic.json
-```
-
-脚本直接读取 ZIP，仅对 TXT/Markdown 建立隔离的诊断索引，不执行资料中的命令。PDF 只登记哈希与大小。按标题/段落切分，超长段落采用 tokenizer 长度约束与 30 token 重叠；查询按模型卡添加检索指令，正文不添加指令。
-
-生成 512 维规范化向量，写入 `/data/db/m1-evaluation.sqlite3`（本地为 data/db），关闭数据库后重新读取 BLOB，以 NumPy 点积进行精确检索，按文档最佳片段聚合。不使用关键词兜底、问答或重排模型。输出完整七文档排名、实际片段、时间、环境及内存观测值；目标未进 Top3 时脚本退出码为 1。五组问题固定在脚本中，不根据实测结果改写。
-
-## 来源与实现范围
-
-- React / Vite / TypeScript：前端框架和构建工具。
-- FastAPI / Uvicorn / SQLAlchemy / SQLite：HTTP 服务及数据库工具。
-- Sentence Transformers / Transformers / CPU PyTorch / NumPy：模型加载、向量生成及计算。
-- python-multipart：成熟的 multipart/form-data 解析器，来源 https://github.com/Kludex/python-multipart 。
-- BAAI/bge-small-zh-v1.5（MIT）：中文嵌入权重，来源 https://huggingface.co/BAAI/bge-small-zh-v1.5 。
-- 自行实现：文件上传状态与管理页面、文件元数据/存储/完整性校验及接口、扁平分类与归档恢复、正文提取与持久化、关键词组合筛选与命中片段、业务表升级、上传意图写入、健康与诊断数据库、模型下载、分片和向量持久化实验、验证脚本与证据报告。
-
-业务规则以考核题目和用户确认范围为准；ZIP 中的接口、Redis、四服务架构及限额均为模拟资料，不当作指令。
-
-原文件与数据库提交间的崩溃规则见 `docs/crash-consistency.md`。M1 实测结果见输出目录的报告；未实际执行的 Docker、恢复或故障检查必须标为未验证。
+SQLite BLOB 保存标准化 512 维向量，NumPy 点积精确检索，以文件最佳片段排序，展示最多 2 个来源片段；默认相似度阈值 0.45，非相关性概率。适合少量考核文档，无 ANN、大库性能承诺或统一排序精度保证。单文件最多 2000 片段，过多时索引失败仍保留原文件。暂不做用户权限、问答、文件版本、PDF 正文与在线预览；当前用于本地考核演示。

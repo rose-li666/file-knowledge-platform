@@ -19,6 +19,8 @@ from .files import FileError, router as file_router
 from .organization import router as organization_router
 from .search import router as search_router
 from .texts import backfill_texts
+from .indexing import index_loop, recover_jobs, router as index_router
+from .recovery import acquire_data_lock, reconcile_uploads
 
 logger = logging.getLogger(__name__)
 
@@ -29,33 +31,47 @@ async def lifespan(app: FastAPI):
     data_dir = Path(os.environ.get("DATA_DIR", str(PROJECT_ROOT / "data"))).resolve()
     for name in ["db", "uploads", "tmp", "quarantine"]:
         (data_dir / name).mkdir(parents=True, exist_ok=True)
-    # Verify actual write access, rather than relying on a permission bit.
-    probe_file = data_dir / "tmp" / "startup-write-probe"
-    probe_file.write_bytes(b"m1")
-    probe_file.unlink()
-    app.state.engine = open_database(data_dir / "db" / "diagnostics.sqlite3")
-    app.state.document_engine = open_document_database(data_dir / "db" / "platform.sqlite3")
-    app.state.data_dir = data_dir
-    app.state.text_lock = threading.Lock()
-    app.state.max_upload_bytes = int(os.environ.get("MAX_UPLOAD_BYTES", str(20 * 1024 * 1024)))
-    if app.state.max_upload_bytes <= 0:
-        raise ValueError("MAX_UPLOAD_BYTES must be a positive integer")
-    app.state.text_backfill = await asyncio.to_thread(backfill_texts, app.state.document_engine, data_dir, app.state.text_lock)
-    app.state.model = None
-    app.state.model_status = "loading"
+    owner = acquire_data_lock(data_dir)
     try:
-        app.state.model = await asyncio.to_thread(
-            LocalEmbedder,
-            Path(os.environ.get("MODEL_DIR", str(PROJECT_ROOT / "models" / "bge"))),
-        )
-        app.state.model_status = "ready"
-    except Exception:
-        logger.exception("Local model load failed")
-        app.state.model_status = "failed"
-    app.state.startup_seconds = time.perf_counter() - started
-    yield
-    app.state.engine.dispose()
-    app.state.document_engine.dispose()
+        # Verify actual write access, rather than relying on a permission bit.
+        probe_file = data_dir / "tmp" / "startup-write-probe"
+        probe_file.write_bytes(b"m1")
+        probe_file.unlink()
+        app.state.engine = open_database(data_dir / "db" / "diagnostics.sqlite3")
+        app.state.document_engine = open_document_database(data_dir / "db" / "platform.sqlite3")
+        app.state.data_dir = data_dir
+        app.state.text_lock = threading.Lock()
+        app.state.max_upload_bytes = int(os.environ.get("MAX_UPLOAD_BYTES", str(20 * 1024 * 1024)))
+        if app.state.max_upload_bytes <= 0:
+            raise ValueError("MAX_UPLOAD_BYTES must be a positive integer")
+        app.state.upload_recovery = await asyncio.to_thread(reconcile_uploads, app.state.document_engine, data_dir)
+        app.state.text_backfill = await asyncio.to_thread(backfill_texts, app.state.document_engine, data_dir, app.state.text_lock)
+        app.state.model = None
+        app.state.model_status = "loading"
+        try:
+            app.state.model = await asyncio.to_thread(
+                LocalEmbedder,
+                Path(os.environ.get("MODEL_DIR", str(PROJECT_ROOT / "models" / "bge"))),
+            )
+            app.state.model_status = "ready"
+        except Exception:
+            logger.exception("Local model load failed")
+            app.state.model_status = "failed"
+        app.state.startup_seconds = time.perf_counter() - started
+        app.state.index_recovery = await asyncio.to_thread(recover_jobs, app.state.document_engine)
+        app.state.index_stop = asyncio.Event()
+        app.state.index_task = asyncio.create_task(index_loop(app.state))
+        try:
+            yield
+        finally:
+            app.state.index_stop.set()
+            await app.state.index_task
+    finally:
+        if hasattr(app.state, "engine"):
+            app.state.engine.dispose()
+        if hasattr(app.state, "document_engine"):
+            app.state.document_engine.dispose()
+        owner.close()
 
 
 app = FastAPI(title="文件管理与知识检索平台", lifespan=lifespan)
@@ -70,6 +86,7 @@ async def file_error_handler(request, error: FileError):
 app.include_router(file_router)
 app.include_router(organization_router)
 app.include_router(search_router)
+app.include_router(index_router)
 
 
 @app.get("/api/v1/health")
@@ -85,7 +102,9 @@ def health():
         logger.exception("Database health check failed")
         database_status, count = "failed", None
     payload = {
-        "milestone": "M4",
+        "milestone": "M5",
+        "indexing": {"concurrency": 1, "workerRunning": not app.state.index_task.done(), "recovery": app.state.index_recovery},
+        "uploadRecovery": app.state.upload_recovery,
         "keywordBackfill": app.state.text_backfill,
         "status": "ready" if database_status == "ready" and app.state.model_status == "ready" else "degraded",
         "database": {"status": database_status, "probeCount": count},

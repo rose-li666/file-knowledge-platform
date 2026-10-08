@@ -21,6 +21,7 @@ from starlette.requests import ClientDisconnect
 
 from .database import Category, Document
 from .texts import extract_document
+from .indexing import queue_document
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api/v1")
@@ -54,6 +55,8 @@ class DocumentResponse(BaseModel):
     textError: str | None = None
     textEncoding: str | None = None
     vectorStatus: str
+    vectorError: str | None = None
+    chunkCount: int = 0
     downloadUrl: str
 
 
@@ -72,6 +75,7 @@ def serialize(row: Document):
         category=CategoryBrief(id=row.category.id, name=row.category.name) if row.category else None,
         archivedAt=row.archived_at.replace(tzinfo=timezone.utc) if row.archived_at else None,
         textStatus=row.text_status, textError=row.text_error, textEncoding=row.text_encoding, vectorStatus=row.vector_status,
+        vectorError=row.vector_error, chunkCount=row.chunk_count or 0,
         downloadUrl=f"/api/v1/documents/{row.id}/download",
     )
 
@@ -132,6 +136,8 @@ def save_file(upload: UploadFile, request: Request, extension: str):
                            storage_key=storage_key, uploaded_at=uploaded_at,
                            text_status="not_started", vector_status="not_started")
             session.add(row)
+            session.flush()
+            queue_document(session, row)
             session.commit()
             result = serialize(row)
         try:

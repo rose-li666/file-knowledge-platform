@@ -1,0 +1,96 @@
+{
+  "steps": [
+    {
+      "step": "01-build",
+      "command": [
+        "docker",
+        "compose",
+        "--progress",
+        "plain",
+        "build"
+      ],
+      "exit_code": 0,
+      "seconds": 90.458
+    },
+    {
+      "step": "02-start",
+      "command": [
+        "docker",
+        "compose",
+        "up",
+        "-d",
+        "--no-build",
+        "--wait",
+        "--wait-timeout",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 7.206
+    },
+    {
+      "step": "03-verify",
+      "command": [
+        "docker",
+        "compose",
+        "run",
+        "--no-deps",
+        "--name",
+        "m5-verification-02421adac696",
+        "-v",
+        "D:\\__10_.zip:/fixtures/test-documents.zip:ro",
+        "app",
+        "python",
+        "scripts/verify_m5.py",
+        "--base-url",
+        "http://app:8000",
+        "--data-dir",
+        "/data",
+        "--fault-dir",
+        "/tmp/m5-faults",
+        "--zip",
+        "/fixtures/test-documents.zip",
+        "--report",
+        "/tmp/m5-reports/results.json"
+      ],
+      "exit_code": 0,
+      "seconds": 37.422
+    },
+    {
+      "step": "04-copy-evidence",
+      "command": [
+        "docker",
+        "cp",
+        "m5-verification-02421adac696:/tmp/m5-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m5-docker\\20261008T034005Z-8fc0af"
+      ],
+      "exit_code": 0,
+      "seconds": 0.159
+    },
+    {
+      "step": "05-app-logs",
+      "command": [
+        "docker",
+        "compose",
+        "logs",
+        "--tail=150",
+        "app"
+      ],
+      "exit_code": 0,
+      "seconds": 0.36
+    },
+    {
+      "step": "06-clean-test-container",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "m5-verification-02421adac696"
+      ],
+      "exit_code": 0,
+      "seconds": 0.158
+    }
+  ],
+  "failure": null,
+  "browser": "not verified by this runner",
+  "totalSeconds": 135.764
+}

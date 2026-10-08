@@ -4,11 +4,12 @@ import re
 import uuid
 
 from fastapi import APIRouter, Query, Request
-from sqlalchemy import func, or_, select
+from sqlalchemy import func, or_, select, text
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 
-from .database import Document, DocumentText
+from .database import Chunk, Document, DocumentText, IndexJob
+from .embedding import SPEC
 from .files import FileError, document_filters, find_document, serialize
 from .text_normalization import search_key
 from .texts import extract_document
@@ -68,7 +69,61 @@ def retry_text(request: Request, document_id: uuid.UUID):
     try:
         with request.app.state.text_lock:
             extract_document(request.app.state.document_engine, request.app.state.data_dir, str(document_id))
+        from .indexing import queue_document
+        with Session(request.app.state.document_engine) as session:
+            session.execute(text("BEGIN IMMEDIATE"))
+            queue_document(session, session.get(Document, str(document_id)))
+            session.commit()
         return serialize(find_document(request, document_id))
     except SQLAlchemyError as error:
         logger.exception("Text retry could not commit: %s", document_id)
         raise FileError(503, "TEXT_EXTRACTION_UNAVAILABLE", "正文处理未能确认完成；原文件仍已保存，请刷新核对后重试。", retryable=True) from error
+
+
+@router.get("/search/semantic")
+async def semantic_search(request: Request, q: str = Query(min_length=1, max_length=200),
+                          category_id: str | None = None, archived: bool = False,
+                          limit: int = Query(10, ge=1, le=25), offset: int = Query(0, ge=0),
+                          min_score: float = Query(0.45, ge=0, le=1)):
+    import asyncio
+    import numpy as np
+    if not q.strip() or re.search(r"[\x00-\x1f\x7f]", q):
+        raise FileError(422, "INVALID_QUERY", "请输入 1–200 字的自然语言问题。")
+    if request.app.state.model is None:
+        raise FileError(503, "MODEL_UNAVAILABLE", "本地模型未就绪，请检查服务状态；关键词搜索和原文件下载仍可用。", retryable=True)
+    try:
+        vector = await asyncio.to_thread(request.app.state.model.encode, [q.strip()], query=True)
+        def retrieve():
+            with Session(request.app.state.document_engine) as session:
+                filters = document_filters(session, archived, category_id)
+                rows = session.execute(select(Document, Chunk).join(Chunk, Chunk.document_id == Document.id)
+                    .join(IndexJob, IndexJob.document_id == Document.id)
+                    .where(*filters, Document.vector_status == "ready", IndexJob.state == "ready",
+                           Chunk.generation == IndexJob.generation, Chunk.model_revision == SPEC["revision"])).all()
+                unavailable = session.scalar(select(func.count()).select_from(Document).where(
+                    *filters, Document.extension != "pdf", Document.vector_status != "ready"))
+                best = {}
+                for row, chunk in rows:
+                    embedding = np.frombuffer(chunk.embedding, dtype="<f4")
+                    if embedding.shape != (SPEC["dimension"],) or not np.isfinite(embedding).all():
+                        raise ValueError("Persisted embedding is invalid")
+                    score = float(embedding @ vector[0])
+                    if score < min_score:
+                        continue
+                    result = best.setdefault(row.id, {**serialize(row).model_dump(mode="json"), "score": score, "sources": []})
+                    result["score"] = max(result["score"], score)
+                    result["sources"].append({"ordinal": chunk.ordinal, "generation": chunk.generation,
+                        "heading": chunk.heading, "text": chunk.text, "score": round(score, 6)})
+                ordered = sorted(best.values(), key=lambda value: (-value["score"], value["id"]))
+                for result in ordered:
+                    result["score"] = round(result["score"], 6)
+                    result["sources"] = sorted(result["sources"], key=lambda value: (-value["score"], value["ordinal"]))[:2]
+                return {"items": ordered[offset:offset+limit], "total": len(ordered), "offset": offset,
+                        "limit": limit, "query": q.strip(), "minScore": min_score,
+                        "vectorUnavailableCount": unavailable, "modelRevision": SPEC["revision"]}
+        return await asyncio.to_thread(retrieve)
+    except FileError:
+        raise
+    except Exception as error:
+        logger.exception("Semantic search failed")
+        raise FileError(503, "SEMANTIC_SEARCH_UNAVAILABLE", "向量检索暂不可用，请重试；关键词搜索和下载仍可用。", retryable=True) from error

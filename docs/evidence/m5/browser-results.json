@@ -1,0 +1,24 @@
+{
+  "browser": "Codex in-app browser; Chrome pending human verification",
+  "narrowWidth": 390,
+  "narrowHeight": 844,
+  "actualInnerWidth": 390,
+  "actualDocumentScrollWidth": 375,
+  "desktopWidth": 1280,
+  "desktopHeight": 900,
+  "newFiles": [
+    {
+      "name": "M5浏览器-代码提交规范.md",
+      "chunks": 11
+    },
+    {
+      "name": "M5浏览器-本地部署故障排查.txt",
+      "chunks": 11,
+      "downloadSHA256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f"
+    }
+  ],
+  "cssFixBuildExitCode": 0,
+  "cssFixStartupExitCode": 0,
+  "cssFixStartupSeconds": 7.545,
+  "notes": "Initial screenshot unavailable while hidden; visibility enabled then captured. First downloaded file not yet observed; download-event path subsequently confirmed and SHA checked."
+}

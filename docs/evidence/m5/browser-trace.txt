@@ -1,0 +1,1205 @@
+Browser tab: 1, Title: "知识文件库", URL: "http://127.0.0.1:8000/?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&mode=semantic&category=72389023-8c62-46e7-b576-1704165ca9f1".
+1 AXWebArea 知识文件库, URL: 127.0.0.1:8000/?q=%E4%BA%A4%E7%BB%99%E5%90%8C%E4%BA%8B%E5%AE%A1%E9%98%85%E4%BF%AE%E6%94%B9%E4%B9%8B%E5%89%8D%EF%BC%8C%E5%BA%94%E8%AF%A5%E6%80%8E%E6%A0%B7%E8%87%AA%E6%9F%A5%E5%B9%B6%E6%8F%8F%E8%BF%B0%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%EF%BC%9F&mode=semantic&category=72389023-8c62-46e7-b576-1704165ca9f1
+	2 container
+		3 text K
+		4 text 知识文件库
+		5 text 文件管理
+		6 text YOUR DOCUMENTS, IN ONE PLACE
+		7 heading 让资料有处可寻。, Value: 1
+			8 text 让资料有处可寻。
+		9 text 保存原始文件，查看资料信息，随时下载复用。
+		10 container 上传文件
+			11 text 收集资料
+			12 heading 上传文件, Value: 2, ID: upload-title
+				13 text 上传文件
+			14 container
+				15 text PDF、TXT、Markdown ·  单个文件不超过 20.0 MB
+			16 button Description: 选择上传文件, ID: file-input
+			17 button (disabled) 开始上传
+		18 button (collapsed) 管理分类 7, Secondary Actions: Expand
+			19 text 管理分类
+			20 text 7
+		21 container 知识检索
+			22 text 检索方式
+			23 pop up button (collapsed, settable) 检索方式, Value: 语义搜索, ID: search-mode, Secondary Actions: Expand
+				24 menu
+					25 关键词搜索
+					26 (selected) 语义搜索
+			27 container
+				28 text 用自然语言描述你要找的内容
+				29 text field (settable) 用自然语言描述你要找的内容, Value: 交给同事审阅修改之前，应该怎样自查并描述测试结果？, ID: keyword-input
+				30 button 搜索
+				31 button 清除搜索
+			32 container
+				33 text 根据 TXT / Markdown 正文向量查找相关文件，展示来源片段；相似度不是正确概率。 可结合下方分类筛选。
+		34 checkbox 文件库, Value: 1
+		35 checkbox 归档区, Value: 0
+		36 text 分类筛选
+		37 pop up button (collapsed, settable) Description: 分类筛选, Value: M5新上传-fc7aa50f · 10, Secondary Actions: Expand
+			38 menu
+				39 (disabled) 全部分类
+				40 (disabled) 未分类 · 11
+				41 (disabled) M3浏览器验收-已改名 · 1
+				42 (disabled) M3验收-B-f9164ae7 · 0
+				43 (disabled) M3验收-规范-f9164ae7 · 0
+				44 (disabled) M4检索-A-5d0b97f6 · 0
+				45 (disabled) M4检索-B-5d0b97f6 · 0
+				46 (disabled) M5新上传-fc7aa50f · 10
+				47 (disabled) M5空范围-fc7aa50f · 0
+		48 container 搜索结果 7
+			49 heading 搜索结果 7, Value: 2, ID: library-title
+				50 text 搜索结果 7
+			51 text 问题「交给同事审阅修改之前，应该怎样自查并描述测试结果？」 · 已归档资料不在此显示
+			52 button 刷新列表
+			103 table
+				104 row
+					105 cell
+						106 text 名称 / 命中内容
+					107 cell
+						108 text 分类
+					109 cell
+						110 text 大小 / 上传时间
+					111 cell
+						112 text 操作
+				113 row
+					114 cell
+						115 text MD
+						116 button 01_代码提交规范_v2.1.md
+						117 container
+							118 text 3. 交给审阅者之前  · 片段 # 7  · 相似度  0.643 若某项检查未执行，应写出具体原因和未验证范围。不能把“代码看起来没有问题”填写成测试通过。
+						119 container
+							120 text 3. 交给审阅者之前  · 片段 # 5  · 相似度  0.630 依次完成格式检查、静态检查、受影响模块的自动化测试和本地构建。涉及上传、权限、索引或数据库时，至少覆盖一个成功案例和一个失败案例。不要只证明按钮能点击，要确认接口返回值与数据库最终状态一致。
+						121 text 可语义检索
+					122 cell
+						123 text M5新上传-fc7aa50f
+					124 cell
+						125 text 3.1 KB
+						126 text 2026/10/8 11:41:43
+					127 cell
+						128 button 下载 01_代码提交规范_v2.1.md
+						129 button 归档 01_代码提交规范_v2.1.md
+				130 row
+					131 cell
+						132 text MD
+						133 button 02_发布检查清单_v1.4.md
+						134 container
+							135 text 4. 观察与停止条件  · 片段 # 9  · 相似度  0.577 在数据结构兼容且恢复方案已确认的前提下，可切回上一版本应用。恢复后再次执行上传、下载和检索检查。若无法直接回退，则停止进一步变更，记录故障并执行已审查的修复方案。
+						136 container
+							137 text 3. 启动后的业务检查  · 片段 # 7  · 相似度  0.564 测试材料需要明确标为验证用途，不使用真实用户材料做删除或覆盖测试。验证结束后按记录清理测试数据。
+						138 text 可语义检索
+					139 cell
+						140 text M5新上传-fc7aa50f
+					141 cell
+						142 text 2.9 KB
+						143 text 2026/10/8 11:41:44
+					144 cell
+						145 button 下载 02_发布检查清单_v1.4.md
+						146 button 归档 02_发布检查清单_v1.4.md
+				147 row
+					148 cell
+						149 text TXT
+						150 button 07_星桥项目_用户访谈纪要_2026-09-12.txt
+						151 container
+							152 text 一、最近一次找不到文件的经历  · 片段 # 4  · 相似度  0.574 测试角色：知道自己要找“同样的请求重发会不会多建一份文件”，但不知道资料里把这件事叫作“幂等”。直接输入自己的问题比猜术语更自然。找到结果后仍然需要看到原文依据，不能只有一个相关性分数。
+						153 container
+							154 text 二、分类的使用习惯  · 片段 # 6  · 相似度  0.557 测试角色提出，自己正在项目内找材料时，不希望搜索结果突然混入其他项目。全局搜索和当前分类搜索应有明显区别，并能方便地清除筛选条件。
+						155 text 可语义检索
+					156 cell
+						157 text M5新上传-fc7aa50f
+					158 cell
+						159 text 2.8 KB
+						160 text 2026/10/8 11:41:47
+					161 cell
+						162 button 下载 07_星桥项目_用户访谈纪要_2026-09-12.txt
+						163 button 归档 07_星桥项目_用户访谈纪要_2026-09-12.txt
+				164 row
+					165 cell
+						166 text TXT
+						167 button 05_星桥项目_发布检查清单_2026-09-18.txt
+						168 container
+							169 text 五、后续行动  · 片段 # 6  · 相似度  0.532 发布值班岗在下次发布前核对 API 与消费者的队列地址、数据库编号和队列名称。
+文件服务组增加“写入任务后是否被消费”的业务检查，不能只检查进程在线。
+研发效能组把“上传成功但正文查不到”加入回归用例。
+						170 container
+							171 text 一、这次准备发布什么  · 片段 # 2  · 相似度  0.522 1.4.0 增加分类筛选、索引失败重试入口和上传状态提示。数据库迁移仅新增 document_index_jobs 表，不删除旧字段。旧版 1.3.2 不读取此表，因此应用回退后可以保留新增表。
+						172 text 可语义检索
+					173 cell
+						174 text M5新上传-fc7aa50f
+					175 cell
+						176 text 2.4 KB
+						177 text 2026/10/8 11:41:46
+					178 cell
+						179 button 下载 05_星桥项目_发布检查清单_2026-09-18.txt
+						180 button 归档 05_星桥项目_发布检查清单_2026-09-18.txt
+				181 row
+					182 cell
+						183 text TXT
+						184 button 09_本地部署故障排查_v1.3.txt
+						185 container
+							186 text 六、交付前复核  · 片段 # 11  · 相似度  0.530 完成一次上传和下载，在正常保留数据卷的前提下重新创建应用容器，再核对原有文件、分类与检索结果。记录验证方式。仅提供一张启动成功截图，不能证明数据可以持久保存。
+						187 container
+							188 text 一、先确认失败发生在哪一层  · 片段 # 2  · 相似度  0.476 不要在看到网页打不开后立即重建数据库。先检查容器状态和最近日志，再判断是端口、环境配置、服务依赖还是业务接口的问题。记录出现问题的操作与时间，不把数据库密码或访问令牌粘贴到问题描述中。
+						189 text 可语义检索
+					190 cell
+						191 text M5新上传-fc7aa50f
+					192 cell
+						193 text 2.9 KB
+						194 text 2026/10/8 11:41:48
+					195 cell
+						196 button 下载 09_本地部署故障排查_v1.3.txt
+						197 button 归档 09_本地部署故障排查_v1.3.txt
+				198 row
+					199 cell
+						200 text MD
+						201 button 06_星桥项目_故障复盘_2026-09-21.md
+						202 container
+							203 text 5. 恢复时的注意事项  · 片段 # 7  · 相似度  0.528 恢复验证使用三种操作：按文件名定位、按正文关键词定位、用不同措辞描述同一问题。每次命中后核对来源文件和内容片段，并下载原文件确认内容没有改变。仅检查任务状态变成 ready 不足以宣布恢复。
+						204 container
+							205 text 5. 恢复时的注意事项  · 片段 # 6  · 相似度  0.523 重试依据 documentId 和内容版本去重。写入新分片前先核对当前索引版本，避免同一文档在搜索结果里重复出现。已归档文件即使重新生成索引，也不能进入默认搜索结果。
+						206 text 可语义检索
+					207 cell
+						208 text M5新上传-fc7aa50f
+					209 cell
+						210 text 3.0 KB
+						211 text 2026/10/8 11:41:46
+					212 cell
+						213 button 下载 06_星桥项目_故障复盘_2026-09-21.md
+						214 button 归档 06_星桥项目_故障复盘_2026-09-21.md
+				215 row
+					216 cell
+						217 text MD
+						218 button 03_文件服务接口约定_v1.2.md
+						219 container
+							220 text 4. 索引重试  · 片段 # 12  · 相似度  0.495 原文件丢失、暂时无法连接模型服务和不支持文件格式应给出不同原因。对暂时性失败设置有限次数的自动重试，超出后交给人工重试，避免无限消耗资源。
+						221 container
+							222 text 4. 索引重试  · 片段 # 11  · 相似度  0.485 POST /api/v1/documents/{id}/index-retry 为 failed 文档重新排队。已在 pending 或 processing 的任务不重复创建，返回当前任务状态。重复执行同一任务不得产生重复片段，索引写入使用文档与内容版本作为关联标识。
+						223 text 可语义检索
+					224 cell
+						225 text M5新上传-fc7aa50f
+					226 cell
+						227 text 2.9 KB
+						228 text 2026/10/8 11:41:45
+					229 cell
+						230 button 下载 03_文件服务接口约定_v1.2.md
+						231 button 归档 03_文件服务接口约定_v1.2.md
+		95 container 文件详情
+			96 text 资料信息
+			97 heading 文件详情, Value: 2, ID: detail-title
+				98 text 文件详情
+			99 text 点击文件名称，查看详情、调整分类或归档。
+		100 button (collapsed) 服务状态, Secondary Actions: Expand
+			101 text 服务状态
+		102 text 知识文件库 · 原文件保存在持久化存储中
+
+The focused UI element is 37 pop up button (collapsed, settable) Description: 分类筛选, Value: M5新上传-fc7aa50f · 10, Secondary Actions: Expand
+NEW_UPLOAD
+Browser tab: 1, Title: "知识文件库", URL: "http://127.0.0.1:8000/?mode=semantic".
+1 AXWebArea 知识文件库, URL: 127.0.0.1:8000/?mode=semantic
+	2 container
+		3 text K
+		4 text 知识文件库
+		5 text 文件管理
+		6 text YOUR DOCUMENTS, IN ONE PLACE
+		7 heading 让资料有处可寻。, Value: 1
+			8 text 让资料有处可寻。
+		9 text 保存原始文件，查看资料信息，随时下载复用。
+		183 text 已保存 2 个文件。
+		10 container 上传文件
+			11 text 收集资料
+			12 heading 上传文件, Value: 2, ID: upload-title
+				13 text 上传文件
+			14 container
+				15 text PDF、TXT、Markdown ·  单个文件不超过 20.0 MB
+			16 button Description: 选择上传文件, ID: file-input
+			17 button (disabled) 开始上传
+			181 container
+				182 text M5浏览器-代码提交规范.md 3.1 KB 已保存，可下载 M5浏览器-本地部署故障排查.txt 2.9 KB 已保存，可下载
+				184 button 清空选择
+		18 button (collapsed) 管理分类 7, Secondary Actions: Expand
+			19 text 管理分类
+			20 text 7
+		21 container 知识检索
+			22 text 检索方式
+			23 pop up button (collapsed, settable) 检索方式, Value: 语义搜索, ID: search-mode, Secondary Actions: Expand
+				24 menu
+					25 关键词搜索
+					26 (selected) 语义搜索
+			27 container
+				28 text 用自然语言描述你要找的内容
+				29 text field (settable) 用自然语言描述你要找的内容, ID: keyword-input
+				30 button 搜索
+				31 button (disabled) 清除搜索
+			32 container
+				33 text 根据 TXT / Markdown 正文向量查找相关文件，展示来源片段；相似度不是正确概率。 可结合下方分类筛选。
+		34 checkbox 文件库, Value: 1
+		35 checkbox 归档区, Value: 0
+		36 text 分类筛选
+		37 pop up button (collapsed, settable) Description: 分类筛选, Value: 全部分类, Secondary Actions: Expand
+			38 menu
+				39 (disabled) 全部分类
+				40 (disabled) 未分类 · 13
+				41 (disabled) M3浏览器验收-已改名 · 1
+				42 (disabled) M3验收-B-f9164ae7 · 0
+				43 (disabled) M3验收-规范-f9164ae7 · 0
+				44 (disabled) M4检索-A-5d0b97f6 · 0
+				45 (disabled) M4检索-B-5d0b97f6 · 0
+				46 (disabled) M5新上传-fc7aa50f · 10
+				47 (disabled) M5空范围-fc7aa50f · 0
+		48 container 全部文件 24
+			49 heading 全部文件 24, Value: 2, ID: library-title
+				50 text 全部文件 24
+			51 text 按上传时间排列 · 已归档资料不在此显示
+			52 button 刷新列表
+			185 table
+				186 row
+					187 cell
+						188 text TXT
+						189 button M5浏览器-本地部署故障排查.txt
+						190 text 等待索引
+					191 cell
+						192 text 未分类
+					193 cell
+						194 text 2.9 KB
+						195 text 2026/10/8 11:54:23
+					196 cell
+						197 button 下载 M5浏览器-本地部署故障排查.txt
+						198 button 归档 M5浏览器-本地部署故障排查.txt
+				199 row
+					200 cell
+						201 text MD
+						202 button M5浏览器-代码提交规范.md
+						203 text 等待索引
+					204 cell
+						205 text 未分类
+					206 cell
+						207 text 3.1 KB
+						208 text 2026/10/8 11:54:23
+					209 cell
+						210 button 下载 M5浏览器-代码提交规范.md
+						211 button 归档 M5浏览器-代码提交规范.md
+				212 row
+					213 cell
+						214 text PDF
+						215 button 10_文档分类与归档规范_v1.0.pdf
+						216 text PDF 暂不支持语义检索
+					217 cell
+						218 text M5新上传-fc7aa50f
+					219 cell
+						220 text 166.1 KB
+						221 text 2026/10/8 11:41:49
+					222 cell
+						223 button 下载 10_文档分类与归档规范_v1.0.pdf
+						224 button 归档 10_文档分类与归档规范_v1.0.pdf
+				225 row
+					226 cell
+						227 text TXT
+						228 button 09_本地部署故障排查_v1.3.txt
+						229 text 可语义检索
+					230 cell
+						231 text M5新上传-fc7aa50f
+					232 cell
+						233 text 2.9 KB
+						234 text 2026/10/8 11:41:48
+					235 cell
+						236 button 下载 09_本地部署故障排查_v1.3.txt
+						237 button 归档 09_本地部署故障排查_v1.3.txt
+				238 row
+					239 cell
+						240 text PDF
+						241 button 08_检索技术说明_关键词与语义_v1.0.pdf
+						242 text PDF 暂不支持语义检索
+					243 cell
+						244 text M5新上传-fc7aa50f
+					245 cell
+						246 text 183.3 KB
+						247 text 2026/10/8 11:41:48
+					248 cell
+						249 button 下载 08_检索技术说明_关键词与语义_v1.0.pdf
+						250 button 归档 08_检索技术说明_关键词与语义_v1.0.pdf
+				251 row
+					252 cell
+						253 text TXT
+						254 button 07_星桥项目_用户访谈纪要_2026-09-12.txt
+						255 text 可语义检索
+					256 cell
+						257 text M5新上传-fc7aa50f
+					258 cell
+						259 text 2.8 KB
+						260 text 2026/10/8 11:41:47
+					261 cell
+						262 button 下载 07_星桥项目_用户访谈纪要_2026-09-12.txt
+						263 button 归档 07_星桥项目_用户访谈纪要_2026-09-12.txt
+				264 row
+					265 cell
+						266 text MD
+						267 button 06_星桥项目_故障复盘_2026-09-21.md
+						268 text 可语义检索
+					269 cell
+						270 text M5新上传-fc7aa50f
+					271 cell
+						272 text 3.0 KB
+						273 text 2026/10/8 11:41:46
+					274 cell
+						275 button 下载 06_星桥项目_故障复盘_2026-09-21.md
+						276 button 归档 06_星桥项目_故障复盘_2026-09-21.md
+				277 row
+					278 cell
+						279 text TXT
+						280 button 05_星桥项目_发布检查清单_2026-09-18.txt
+						281 text 可语义检索
+					282 cell
+						283 text M5新上传-fc7aa50f
+					284 cell
+						285 text 2.4 KB
+						286 text 2026/10/8 11:41:46
+					287 cell
+						288 button 下载 05_星桥项目_发布检查清单_2026-09-18.txt
+						289 button 归档 05_星桥项目_发布检查清单_2026-09-18.txt
+				290 row
+					291 cell
+						292 text PDF
+						293 button 04_星桥项目_需求与范围_v1.0.pdf
+						294 text PDF 暂不支持语义检索
+					295 cell
+						296 text M5新上传-fc7aa50f
+					297 cell
+						298 text 182.5 KB
+						299 text 2026/10/8 11:41:46
+					300 cell
+						301 button 下载 04_星桥项目_需求与范围_v1.0.pdf
+						302 button 归档 04_星桥项目_需求与范围_v1.0.pdf
+				303 row
+					304 cell
+						305 text MD
+						306 button 03_文件服务接口约定_v1.2.md
+						307 text 可语义检索
+					308 cell
+						309 text M5新上传-fc7aa50f
+					310 cell
+						311 text 2.9 KB
+						312 text 2026/10/8 11:41:45
+					313 cell
+						314 button 下载 03_文件服务接口约定_v1.2.md
+						315 button 归档 03_文件服务接口约定_v1.2.md
+				316 row
+					317 cell
+						318 text MD
+						319 button 02_发布检查清单_v1.4.md
+						320 text 可语义检索
+					321 cell
+						322 text M5新上传-fc7aa50f
+					323 cell
+						324 text 2.9 KB
+						325 text 2026/10/8 11:41:44
+					326 cell
+						327 button 下载 02_发布检查清单_v1.4.md
+						328 button 归档 02_发布检查清单_v1.4.md
+				329 row
+					330 cell
+						331 text MD
+						332 button 01_代码提交规范_v2.1.md
+						333 text 可语义检索
+					334 cell
+						335 text M5新上传-fc7aa50f
+					336 cell
+						337 text 3.1 KB
+						338 text 2026/10/8 11:41:43
+					339 cell
+						340 button 下载 01_代码提交规范_v2.1.md
+						341 button 归档 01_代码提交规范_v2.1.md
+				342 row
+					343 cell
+						344 text TXT
+						345 button M4-正文失败-5d0b97f6.txt
+						346 text 索引失败
+						347 text 正文提取失败 · 原文件可下载
+					348 cell
+						349 text 未分类
+					350 cell
+						351 text 3 B
+						352 text 2026/10/8 10:26:40
+					353 cell
+						354 button 下载 M4-正文失败-5d0b97f6.txt
+						355 button 归档 M4-正文失败-5d0b97f6.txt
+				356 row
+					357 cell
+						358 text PDF
+						359 button 1-电荷的量子化 电荷守恒定律 库仑定律.pdf
+						360 text PDF 暂不支持语义检索
+					361 cell
+						362 text 未分类
+					363 cell
+						364 text 2.2 MB
+						365 text 2026/10/7 21:47:26
+					366 cell
+						367 button 下载 1-电荷的量子化 电荷守恒定律 库仑定律.pdf
+						368 button 归档 1-电荷的量子化 电荷守恒定律 库仑定律.pdf
+				369 row
+					370 cell
+						371 text PDF
+						372 button 10_文档分类与归档规范_v1.0.pdf
+						373 text PDF 暂不支持语义检索
+					374 cell
+						375 text 未分类
+					376 cell
+						377 text 166.1 KB
+						378 text 2026/10/7 21:42:20
+					379 cell
+						380 button 下载 10_文档分类与归档规范_v1.0.pdf
+						381 button 归档 10_文档分类与归档规范_v1.0.pdf
+				382 row
+					383 cell
+						384 text TXT
+						385 button 09_本地部署故障排查_v1.3.txt
+						386 text 可语义检索
+					387 cell
+						388 text 未分类
+					389 cell
+						390 text 2.9 KB
+						391 text 2026/10/7 21:42:20
+					392 cell
+						393 button 下载 09_本地部署故障排查_v1.3.txt
+						394 button 归档 09_本地部署故障排查_v1.3.txt
+				395 row
+					396 cell
+						397 text PDF
+						398 button 08_检索技术说明_关键词与语义_v1.0.pdf
+						399 text PDF 暂不支持语义检索
+					400 cell
+						401 text 未分类
+					402 cell
+						403 text 183.3 KB
+						404 text 2026/10/7 21:42:20
+					405 cell
+						406 button 下载 08_检索技术说明_关键词与语义_v1.0.pdf
+						407 button 归档 08_检索技术说明_关键词与语义_v1.0.pdf
+				408 row
+					409 cell
+						410 text TXT
+						411 button 07_星桥项目_用户访谈纪要_2026-09-12.txt
+						412 text 可语义检索
+					413 cell
+						414 text 未分类
+					415 cell
+						416 text 2.8 KB
+						417 text 2026/10/7 21:42:20
+					418 cell
+						419 button 下载 07_星桥项目_用户访谈纪要_2026-09-12.txt
+						420 button 归档 07_星桥项目_用户访谈纪要_2026-09-12.txt
+				421 row
+					422 cell
+						423 text MD
+						424 button 06_星桥项目_故障复盘_2026-09-21.md
+						425 text 可语义检索
+					426 cell
+						427 text 未分类
+					428 cell
+						429 text 3.0 KB
+						430 text 2026/10/7 21:42:20
+					431 cell
+						432 button 下载 06_星桥项目_故障复盘_2026-09-21.md
+						433 button 归档 06_星桥项目_故障复盘_2026-09-21.md
+				434 row
+					435 cell
+						436 text TXT
+						437 button 05_星桥项目_发布检查清单_2026-09-18.txt
+						438 text 可语义检索
+					439 cell
+						440 text 未分类
+					441 cell
+						442 text 2.4 KB
+						443 text 2026/10/7 21:42:20
+					444 cell
+						445 button 下载 05_星桥项目_发布检查清单_2026-09-18.txt
+						446 button 归档 05_星桥项目_发布检查清单_2026-09-18.txt
+				447 row
+					448 cell
+						449 text PDF
+						450 button 04_星桥项目_需求与范围_v1.0.pdf
+						451 text PDF 暂不支持语义检索
+					452 cell
+						453 text M3浏览器验收-已改名
+					454 cell
+						455 text 182.5 KB
+						456 text 2026/10/7 21:42:20
+					457 cell
+						458 button 下载 04_星桥项目_需求与范围_v1.0.pdf
+						459 button 归档 04_星桥项目_需求与范围_v1.0.pdf
+				460 row
+					461 cell
+						462 text MD
+						463 button 03_文件服务接口约定_v1.2.md
+						464 text 可语义检索
+					465 cell
+						466 text 未分类
+					467 cell
+						468 text 2.9 KB
+						469 text 2026/10/7 21:42:20
+					470 cell
+						471 button 下载 03_文件服务接口约定_v1.2.md
+						472 button 归档 03_文件服务接口约定_v1.2.md
+				473 row
+					474 cell
+						475 text MD
+						476 button 02_发布检查清单_v1.4.md
+						477 text 可语义检索
+					478 cell
+						479 text 未分类
+					480 cell
+						481 text 2.9 KB
+						482 text 2026/10/7 21:42:20
+					483 cell
+						484 button 下载 02_发布检查清单_v1.4.md
+						485 button 归档 02_发布检查清单_v1.4.md
+				486 row
+					487 cell
+						488 text MD
+						489 button 01_代码提交规范_v2.1.md
+						490 text 可语义检索
+					491 cell
+						492 text 未分类
+					493 cell
+						494 text 3.1 KB
+						495 text 2026/10/7 21:42:20
+					496 cell
+						497 button 下载 01_代码提交规范_v2.1.md
+						498 button 归档 01_代码提交规范_v2.1.md
+		173 container 文件详情
+			174 text 资料信息
+			175 heading 文件详情, Value: 2, ID: detail-title
+				176 text 文件详情
+			177 text 点击文件名称，查看详情、调整分类或归档。
+		178 button (collapsed) 服务状态, Secondary Actions: Expand
+			179 text 服务状态
+		180 text 知识文件库 · 原文件保存在持久化存储中
+
+The focused UI element is 1 AXWebArea 知识文件库, URL: 127.0.0.1:8000/?mode=semantic
+MD_READY_MOVE
+Browser tab: 1, Title: "知识文件库", URL: "http://127.0.0.1:8000/?mode=semantic".
+1 AXWebArea 知识文件库, URL: 127.0.0.1:8000/?mode=semantic
+	2 container
+		3 text K
+		4 text 知识文件库
+		5 text 文件管理
+		6 text YOUR DOCUMENTS, IN ONE PLACE
+		7 heading 让资料有处可寻。, Value: 1
+			8 text 让资料有处可寻。
+		9 text 保存原始文件，查看资料信息，随时下载复用。
+		568 text 已将「M5浏览器-代码提交规范.md」移至「M5浏览器新资料」。
+		10 container 上传文件
+			11 text 收集资料
+			12 heading 上传文件, Value: 2, ID: upload-title
+				13 text 上传文件
+			14 container
+				15 text PDF、TXT、Markdown ·  单个文件不超过 20.0 MB
+			16 button Description: 选择上传文件, ID: file-input
+			17 button (disabled) 开始上传
+			181 container
+				182 text M5浏览器-代码提交规范.md 3.1 KB 已保存，可下载 M5浏览器-本地部署故障排查.txt 2.9 KB 已保存，可下载
+				184 button 清空选择
+		18 button (expanded) 管理分类 8, Secondary Actions: Collapse
+			19 text 管理分类
+			20 text 8
+		185 container
+			186 text 新分类名称
+			187 text field (settable) 新分类名称, ID: new-category
+			188 button 创建分类
+		189 container
+			190 text 要修改的分类
+			191 pop up button (collapsed, settable) 要修改的分类, Value: 请选择分类, ID: rename-category, Secondary Actions: Expand
+				192 menu
+					193 (selected) 请选择分类
+					194 M3浏览器验收-已改名
+					195 M3验收-B-f9164ae7
+					196 M3验收-规范-f9164ae7
+					197 M4检索-A-5d0b97f6
+					198 M4检索-B-5d0b97f6
+					199 M5新上传-fc7aa50f
+					204 M5浏览器新资料
+					200 M5空范围-fc7aa50f
+			201 text 修改后的名称
+			202 text field (disabled) 修改后的名称, ID: rename-name
+			203 button (disabled) 保存名称
+		205 text 已创建分类「M5浏览器新资料」。
+		21 container 知识检索
+			22 text 检索方式
+			23 pop up button (collapsed, settable) 检索方式, Value: 语义搜索, ID: search-mode, Secondary Actions: Expand
+				24 menu
+					25 关键词搜索
+					26 (selected) 语义搜索
+			27 container
+				28 text 用自然语言描述你要找的内容
+				29 text field (settable) 用自然语言描述你要找的内容, ID: keyword-input
+				30 button 搜索
+				31 button (disabled) 清除搜索
+			32 container
+				33 text 根据 TXT / Markdown 正文向量查找相关文件，展示来源片段；相似度不是正确概率。 可结合下方分类筛选。
+		34 checkbox 文件库, Value: 1
+		35 checkbox 归档区, Value: 0
+		36 text 分类筛选
+		37 pop up button (collapsed, settable) Description: 分类筛选, Value: 全部分类, Secondary Actions: Expand
+			38 menu
+				39 (disabled) 全部分类
+				40 (disabled) 未分类 · 12
+				41 (disabled) M3浏览器验收-已改名 · 1
+				42 (disabled) M3验收-B-f9164ae7 · 0
+				43 (disabled) M3验收-规范-f9164ae7 · 0
+				44 (disabled) M4检索-A-5d0b97f6 · 0
+				45 (disabled) M4检索-B-5d0b97f6 · 0
+				46 (disabled) M5新上传-fc7aa50f · 10
+				206 (disabled) M5浏览器新资料 · 1
+				47 (disabled) M5空范围-fc7aa50f · 0
+		48 container 全部文件 24
+			49 heading 全部文件 24, Value: 2, ID: library-title
+				50 text 全部文件 24
+			51 text 按上传时间排列 · 已归档资料不在此显示
+			52 button 刷新列表
+			569 table
+				570 row
+					571 cell
+						572 text TXT
+						573 button M5浏览器-本地部署故障排查.txt
+						574 text 可语义检索
+					575 cell
+						576 text 未分类
+					577 cell
+						578 text 2.9 KB
+						579 text 2026/10/8 11:54:23
+					580 cell
+						581 button 下载 M5浏览器-本地部署故障排查.txt
+						582 button 归档 M5浏览器-本地部署故障排查.txt
+				583 row
+					584 cell
+						585 text MD
+						586 button M5浏览器-代码提交规范.md
+						587 text 可语义检索
+					588 cell
+						589 text M5浏览器新资料
+					590 cell
+						591 text 3.1 KB
+						592 text 2026/10/8 11:54:23
+					593 cell
+						594 button 下载 M5浏览器-代码提交规范.md
+						595 button 归档 M5浏览器-代码提交规范.md
+				596 row
+					597 cell
+						598 text PDF
+						599 button 10_文档分类与归档规范_v1.0.pdf
+						600 text PDF 暂不支持语义检索
+					601 cell
+						602 text M5新上传-fc7aa50f
+					603 cell
+						604 text 166.1 KB
+						605 text 2026/10/8 11:41:49
+					606 cell
+						607 button 下载 10_文档分类与归档规范_v1.0.pdf
+						608 button 归档 10_文档分类与归档规范_v1.0.pdf
+				609 row
+					610 cell
+						611 text TXT
+						612 button 09_本地部署故障排查_v1.3.txt
+						613 text 可语义检索
+					614 cell
+						615 text M5新上传-fc7aa50f
+					616 cell
+						617 text 2.9 KB
+						618 text 2026/10/8 11:41:48
+					619 cell
+						620 button 下载 09_本地部署故障排查_v1.3.txt
+						621 button 归档 09_本地部署故障排查_v1.3.txt
+				622 row
+					623 cell
+						624 text PDF
+						625 button 08_检索技术说明_关键词与语义_v1.0.pdf
+						626 text PDF 暂不支持语义检索
+					627 cell
+						628 text M5新上传-fc7aa50f
+					629 cell
+						630 text 183.3 KB
+						631 text 2026/10/8 11:41:48
+					632 cell
+						633 button 下载 08_检索技术说明_关键词与语义_v1.0.pdf
+						634 button 归档 08_检索技术说明_关键词与语义_v1.0.pdf
+				635 row
+					636 cell
+						637 text TXT
+						638 button 07_星桥项目_用户访谈纪要_2026-09-12.txt
+						639 text 可语义检索
+					640 cell
+						641 text M5新上传-fc7aa50f
+					642 cell
+						643 text 2.8 KB
+						644 text 2026/10/8 11:41:47
+					645 cell
+						646 button 下载 07_星桥项目_用户访谈纪要_2026-09-12.txt
+						647 button 归档 07_星桥项目_用户访谈纪要_2026-09-12.txt
+				648 row
+					649 cell
+						650 text MD
+						651 button 06_星桥项目_故障复盘_2026-09-21.md
+						652 text 可语义检索
+					653 cell
+						654 text M5新上传-fc7aa50f
+					655 cell
+						656 text 3.0 KB
+						657 text 2026/10/8 11:41:46
+					658 cell
+						659 button 下载 06_星桥项目_故障复盘_2026-09-21.md
+						660 button 归档 06_星桥项目_故障复盘_2026-09-21.md
+				661 row
+					662 cell
+						663 text TXT
+						664 button 05_星桥项目_发布检查清单_2026-09-18.txt
+						665 text 可语义检索
+					666 cell
+						667 text M5新上传-fc7aa50f
+					668 cell
+						669 text 2.4 KB
+						670 text 2026/10/8 11:41:46
+					671 cell
+						672 button 下载 05_星桥项目_发布检查清单_2026-09-18.txt
+						673 button 归档 05_星桥项目_发布检查清单_2026-09-18.txt
+				674 row
+					675 cell
+						676 text PDF
+						677 button 04_星桥项目_需求与范围_v1.0.pdf
+						678 text PDF 暂不支持语义检索
+					679 cell
+						680 text M5新上传-fc7aa50f
+					681 cell
+						682 text 182.5 KB
+						683 text 2026/10/8 11:41:46
+					684 cell
+						685 button 下载 04_星桥项目_需求与范围_v1.0.pdf
+						686 button 归档 04_星桥项目_需求与范围_v1.0.pdf
+				687 row
+					688 cell
+						689 text MD
+						690 button 03_文件服务接口约定_v1.2.md
+						691 text 可语义检索
+					692 cell
+						693 text M5新上传-fc7aa50f
+					694 cell
+						695 text 2.9 KB
+						696 text 2026/10/8 11:41:45
+					697 cell
+						698 button 下载 03_文件服务接口约定_v1.2.md
+						699 button 归档 03_文件服务接口约定_v1.2.md
+				700 row
+					701 cell
+						702 text MD
+						703 button 02_发布检查清单_v1.4.md
+						704 text 可语义检索
+					705 cell
+						706 text M5新上传-fc7aa50f
+					707 cell
+						708 text 2.9 KB
+						709 text 2026/10/8 11:41:44
+					710 cell
+						711 button 下载 02_发布检查清单_v1.4.md
+						712 button 归档 02_发布检查清单_v1.4.md
+				713 row
+					714 cell
+						715 text MD
+						716 button 01_代码提交规范_v2.1.md
+						717 text 可语义检索
+					718 cell
+						719 text M5新上传-fc7aa50f
+					720 cell
+						721 text 3.1 KB
+						722 text 2026/10/8 11:41:43
+					723 cell
+						724 button 下载 01_代码提交规范_v2.1.md
+						725 button 归档 01_代码提交规范_v2.1.md
+				726 row
+					727 cell
+						728 text TXT
+						729 button M4-正文失败-5d0b97f6.txt
+						730 text 索引失败
+						731 text 正文提取失败 · 原文件可下载
+					732 cell
+						733 text 未分类
+					734 cell
+						735 text 3 B
+						736 text 2026/10/8 10:26:40
+					737 cell
+						738 button 下载 M4-正文失败-5d0b97f6.txt
+						739 button 归档 M4-正文失败-5d0b97f6.txt
+				740 row
+					741 cell
+						742 text PDF
+						743 button 1-电荷的量子化 电荷守恒定律 库仑定律.pdf
+						744 text PDF 暂不支持语义检索
+					745 cell
+						746 text 未分类
+					747 cell
+						748 text 2.2 MB
+						749 text 2026/10/7 21:47:26
+					750 cell
+						751 button 下载 1-电荷的量子化 电荷守恒定律 库仑定律.pdf
+						752 button 归档 1-电荷的量子化 电荷守恒定律 库仑定律.pdf
+				753 row
+					754 cell
+						755 text PDF
+						756 button 10_文档分类与归档规范_v1.0.pdf
+						757 text PDF 暂不支持语义检索
+					758 cell
+						759 text 未分类
+					760 cell
+						761 text 166.1 KB
+						762 text 2026/10/7 21:42:20
+					763 cell
+						764 button 下载 10_文档分类与归档规范_v1.0.pdf
+						765 button 归档 10_文档分类与归档规范_v1.0.pdf
+				766 row
+					767 cell
+						768 text TXT
+						769 button 09_本地部署故障排查_v1.3.txt
+						770 text 可语义检索
+					771 cell
+						772 text 未分类
+					773 cell
+						774 text 2.9 KB
+						775 text 2026/10/7 21:42:20
+					776 cell
+						777 button 下载 09_本地部署故障排查_v1.3.txt
+						778 button 归档 09_本地部署故障排查_v1.3.txt
+				779 row
+					780 cell
+						781 text PDF
+						782 button 08_检索技术说明_关键词与语义_v1.0.pdf
+						783 text PDF 暂不支持语义检索
+					784 cell
+						785 text 未分类
+					786 cell
+						787 text 183.3 KB
+						788 text 2026/10/7 21:42:20
+					789 cell
+						790 button 下载 08_检索技术说明_关键词与语义_v1.0.pdf
+						791 button 归档 08_检索技术说明_关键词与语义_v1.0.pdf
+				792 row
+					793 cell
+						794 text TXT
+						795 button 07_星桥项目_用户访谈纪要_2026-09-12.txt
+						796 text 可语义检索
+					797 cell
+						798 text 未分类
+					799 cell
+						800 text 2.8 KB
+						801 text 2026/10/7 21:42:20
+					802 cell
+						803 button 下载 07_星桥项目_用户访谈纪要_2026-09-12.txt
+						804 button 归档 07_星桥项目_用户访谈纪要_2026-09-12.txt
+				805 row
+					806 cell
+						807 text MD
+						808 button 06_星桥项目_故障复盘_2026-09-21.md
+						809 text 可语义检索
+					810 cell
+						811 text 未分类
+					812 cell
+						813 text 3.0 KB
+						814 text 2026/10/7 21:42:20
+					815 cell
+						816 button 下载 06_星桥项目_故障复盘_2026-09-21.md
+						817 button 归档 06_星桥项目_故障复盘_2026-09-21.md
+				818 row
+					819 cell
+						820 text TXT
+						821 button 05_星桥项目_发布检查清单_2026-09-18.txt
+						822 text 可语义检索
+					823 cell
+						824 text 未分类
+					825 cell
+						826 text 2.4 KB
+						827 text 2026/10/7 21:42:20
+					828 cell
+						829 button 下载 05_星桥项目_发布检查清单_2026-09-18.txt
+						830 button 归档 05_星桥项目_发布检查清单_2026-09-18.txt
+				831 row
+					832 cell
+						833 text PDF
+						834 button 04_星桥项目_需求与范围_v1.0.pdf
+						835 text PDF 暂不支持语义检索
+					836 cell
+						837 text M3浏览器验收-已改名
+					838 cell
+						839 text 182.5 KB
+						840 text 2026/10/7 21:42:20
+					841 cell
+						842 button 下载 04_星桥项目_需求与范围_v1.0.pdf
+						843 button 归档 04_星桥项目_需求与范围_v1.0.pdf
+				844 row
+					845 cell
+						846 text MD
+						847 button 03_文件服务接口约定_v1.2.md
+						848 text 可语义检索
+					849 cell
+						850 text 未分类
+					851 cell
+						852 text 2.9 KB
+						853 text 2026/10/7 21:42:20
+					854 cell
+						855 button 下载 03_文件服务接口约定_v1.2.md
+						856 button 归档 03_文件服务接口约定_v1.2.md
+				857 row
+					858 cell
+						859 text MD
+						860 button 02_发布检查清单_v1.4.md
+						861 text 可语义检索
+					862 cell
+						863 text 未分类
+					864 cell
+						865 text 2.9 KB
+						866 text 2026/10/7 21:42:20
+					867 cell
+						868 button 下载 02_发布检查清单_v1.4.md
+						869 button 归档 02_发布检查清单_v1.4.md
+				870 row
+					871 cell
+						872 text MD
+						873 button 01_代码提交规范_v2.1.md
+						874 text 可语义检索
+					875 cell
+						876 text 未分类
+					877 cell
+						878 text 3.1 KB
+						879 text 2026/10/7 21:42:20
+					880 cell
+						881 button 下载 01_代码提交规范_v2.1.md
+						882 button 归档 01_代码提交规范_v2.1.md
+		173 container 文件详情
+			174 text 资料信息
+			175 heading 文件详情, Value: 2, ID: detail-title
+				176 text 文件详情
+			521 heading M5浏览器-代码提交规范.md, Value: 3
+				522 text M5浏览器-代码提交规范.md
+			523 definition list
+				524 container 文件类型
+					525 text 文件类型
+				526 text MD
+				527 container 分类
+					528 text 分类
+				529 text M5浏览器新资料
+				530 container 状态
+					531 text 状态
+				532 text 文件库
+				533 container 正文检索
+					534 text 正文检索
+				535 container
+					536 text 可正文搜索 utf-8
+				537 container 语义索引
+					538 text 语义索引
+				539 container
+					540 text 可语义检索 11  个片段
+				541 container 大小
+					542 text 大小
+				543 container
+					544 text 3.1 KB 3,131  字节
+				545 container 上传时间
+					546 text 上传时间
+				547 text 2026/10/8 11:54:23
+				548 container SHA-256
+					549 text SHA-256
+				550 text 4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599
+			551 button 重新建立索引
+			552 text 调整文件归属
+			553 pop up button (collapsed, settable) 调整文件归属, Value: M5浏览器新资料, ID: move-category, Secondary Actions: Expand
+				554 menu
+					555 未分类
+					556 M3浏览器验收-已改名
+					557 M3验收-B-f9164ae7
+					558 M3验收-规范-f9164ae7
+					559 M4检索-A-5d0b97f6
+					560 M4检索-B-5d0b97f6
+					561 M5新上传-fc7aa50f
+					562 (selected) M5浏览器新资料
+					563 M5空范围-fc7aa50f
+			564 button (disabled) 移动文件
+			565 text 原文件已保存，可下载。
+			566 button 下载原文件
+			567 button 归档文件
+		178 button (collapsed) 服务状态, Secondary Actions: Expand
+			179 text 服务状态
+		180 text 知识文件库 · 原文件保存在持久化存储中
+
+The focused UI element is 1 AXWebArea 知识文件库, URL: 127.0.0.1:8000/?mode=semantic
+NEW_TXT_QUERY
+Browser tab: 1, Title: "知识文件库", URL: "http://127.0.0.1:8000/?mode=semantic&category=9b481794-264c-4875-9bde-64d84259e060&q=%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E9%87%8D%E6%96%B0%E5%BB%BA%E7%AB%8B%E5%90%8E%E6%97%A7%E8%B5%84%E6%96%99%E4%B8%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E8%AF%A5%E5%85%88%E6%8E%92%E6%9F%A5%E4%BB%80%E4%B9%88%E6%89%8D%E8%83%BD%E4%BF%9D%E4%BD%8F%E6%95%B0%E6%8D%AE%EF%BC%9F".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 883-929, 937-1244
+~1 AXWebArea 知识文件库, URL: 127.0.0.1:8000/?mode=semantic&category=9b481794-264c-4875-9bde-64d84259e060&q=%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E9%87%8D%E6%96%B0%E5%BB%BA%E7%AB%8B%E5%90%8E%E6%97%A7%E8%B5%84%E6%96%99%E4%B8%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E8%AF%A5%E5%85%88%E6%8E%92%E6%9F%A5%E4%BB%80%E4%B9%88%E6%89%8D%E8%83%BD%E4%BF%9D%E4%BD%8F%E6%95%B0%E6%8D%AE%EF%BC%9F
+~				29 text field (settable) 用自然语言描述你要找的内容, Value: 运行环境重新建立后旧资料不见了，该先排查什么才能保住数据？, ID: keyword-input
+~				31 button 清除搜索
+~		37 pop up button (collapsed, settable) Description: 分类筛选, Value: M5浏览器新资料 · 2, Secondary Actions: Expand
+~		48 container 搜索结果 2
+~			49 heading 搜索结果 2, Value: 2, ID: library-title
+~				50 text 搜索结果
+~			51 text 问题「运行环境重新建立后旧资料不见了，该先排查什么才能保住数据？」 · 已归档资料不在此显示
+~						936 container
++							937 text 三、容器重建后资料不见了  · 片段 # 7  · 相似度  0.669 不要立即运行带 -v 的清理命令，也不要删除旧卷。先记录 docker volume ls 的结果，确认旧数据所在位置，再按原项目名称和卷映射恢复连接。删除数据卷会同时删除其中的数据，重建镜像无法恢复这些内容。
++						938 container
++							939 text 三、容器重建后资料不见了  · 片段 # 6  · 相似度  0.662 先核对数据库和上传目录是否挂载了具名卷或明确的宿主机目录。没有挂载的容器可写层不能承担持久化资料存储。还要检查是否更改了 Compose 项目名称，导致应用连接了另一组新数据卷。
++						940 text 可语义检索
++					941 cell
++						942 text M5浏览器新资料
++					943 cell
++						944 text 2.9 KB
++						945 text 2026/10/8 11:54:23
++					946 cell
++						947 button 下载 M5浏览器-本地部署故障排查.txt
++						948 button 归档 M5浏览器-本地部署故障排查.txt
++				949 row
++					950 cell
++						951 text MD
++						952 button M5浏览器-代码提交规范.md
++						953 container
++							954 text 3. 交给审阅者之前  · 片段 # 6  · 相似度  0.595 前端改动附上桌面和窄屏截图。后台任务改动说明重复执行是否安全、失败后如何重试。修改数据库结构时同时提交迁移脚本，说明已有数据如何保留、旧版本能否继续运行；破坏性变更不得假设所有服务会同时升级。
++						955 container
++							956 text 5. 文件与敏感配置  · 片段 # 10  · 相似度  0.535 数据库密码、对象存储密钥、访问令牌和真实用户资料不得进入仓库。提交前检查新增文件清单，尤其是 .env、日志、临时导出和截图。示例配置只写字段名或无效示例值。需要大文件时使用约定的资料位置，在仓库中记录引用和用途。
++						957 text 可语义检索
++					958 cell
++						959 text M5浏览器新资料
++					960 cell
++						961 text 3.1 KB
++						962 text 2026/10/8 11:54:23
++					963 cell
++						964 button 下载 M5浏览器-代码提交规范.md
++						965 button 归档 M5浏览器-代码提交规范.md
++			966 text 点击文件名称，查看详情、调整分类或归档。
+The focused UI element is 30 button 搜索
+DOWNLOAD
+Browser tab: 1, Title: "知识文件库", URL: "http://127.0.0.1:8000/?mode=semantic&category=9b481794-264c-4875-9bde-64d84259e060&q=%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E9%87%8D%E6%96%B0%E5%BB%BA%E7%AB%8B%E5%90%8E%E6%97%A7%E8%B5%84%E6%96%99%E4%B8%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E8%AF%A5%E5%85%88%E6%8E%92%E6%9F%A5%E4%BB%80%E4%B9%88%E6%89%8D%E8%83%BD%E4%BF%9D%E4%BD%8F%E6%95%B0%E6%8D%AE%EF%BC%9F".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 930
++		967 text 已接收「M5浏览器-本地部署故障排查.txt」，浏览器将保存文件。
+The focused UI element is 1 AXWebArea 知识文件库, URL: 127.0.0.1:8000/?mode=semantic&category=9b481794-264c-4875-9bde-64d84259e060&q=%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E9%87%8D%E6%96%B0%E5%BB%BA%E7%AB%8B%E5%90%8E%E6%97%A7%E8%B5%84%E6%96%99%E4%B8%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E8%AF%A5%E5%85%88%E6%8E%92%E6%9F%A5%E4%BB%80%E4%B9%88%E6%89%8D%E8%83%BD%E4%BF%9D%E4%BD%8F%E6%95%B0%E6%8D%AE%EF%BC%9F
+SEMANTIC_ARCHIVE
+Browser tab: 1, Title: "知识文件库", URL: "http://127.0.0.1:8000/?mode=semantic&category=9b481794-264c-4875-9bde-64d84259e060&q=%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E9%87%8D%E6%96%B0%E5%BB%BA%E7%AB%8B%E5%90%8E%E6%97%A7%E8%B5%84%E6%96%99%E4%B8%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E8%AF%A5%E5%85%88%E6%8E%92%E6%9F%A5%E4%BB%80%E4%B9%88%E6%89%8D%E8%83%BD%E4%BF%9D%E4%BD%8F%E6%95%B0%E6%8D%AE%EF%BC%9F".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 931-965
+~		967 text 已归档「M5浏览器-本地部署故障排查.txt」，可在归档区找到并恢复。
+~		37 pop up button (collapsed, settable) Description: 分类筛选, Value: M5浏览器新资料 · 1, Secondary Actions: Expand
+~				206 (disabled) M5浏览器新资料 · 1
+~		48 container 搜索结果 1
+~			49 heading 搜索结果 1, Value: 2, ID: library-title
+~				50 text 搜索结果 1
++			968 table
++				969 row
++					970 cell
++						971 text MD
++						972 button M5浏览器-代码提交规范.md
++						973 container
++							974 text 3. 交给审阅者之前  · 片段 # 6  · 相似度  0.595 前端改动附上桌面和窄屏截图。后台任务改动说明重复执行是否安全、失败后如何重试。修改数据库结构时同时提交迁移脚本，说明已有数据如何保留、旧版本能否继续运行；破坏性变更不得假设所有服务会同时升级。
++						975 container
++							976 text 5. 文件与敏感配置  · 片段 # 10  · 相似度  0.535 数据库密码、对象存储密钥、访问令牌和真实用户资料不得进入仓库。提交前检查新增文件清单，尤其是 .env、日志、临时导出和截图。示例配置只写字段名或无效示例值。需要大文件时使用约定的资料位置，在仓库中记录引用和用途。
++						977 text 可语义检索
++					978 cell
++						979 text M5浏览器新资料
++					980 cell
++						981 text 3.1 KB
++						982 text 2026/10/8 11:54:23
++					983 cell
++						984 button 下载 M5浏览器-代码提交规范.md
++						985 button 归档 M5浏览器-代码提交规范.md
+The focused UI element is 1 AXWebArea 知识文件库, URL: 127.0.0.1:8000/?mode=semantic&category=9b481794-264c-4875-9bde-64d84259e060&q=%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E9%87%8D%E6%96%B0%E5%BB%BA%E7%AB%8B%E5%90%8E%E6%97%A7%E8%B5%84%E6%96%99%E4%B8%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E8%AF%A5%E5%85%88%E6%8E%92%E6%9F%A5%E4%BB%80%E4%B9%88%E6%89%8D%E8%83%BD%E4%BF%9D%E4%BD%8F%E6%95%B0%E6%8D%AE%EF%BC%9F
+RESTORE_REFRESH
+Browser tab: 1, Title: "知识文件库", URL: "http://127.0.0.1:8000/?mode=semantic&category=9b481794-264c-4875-9bde-64d84259e060&q=%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E9%87%8D%E6%96%B0%E5%BB%BA%E7%AB%8B%E5%90%8E%E6%97%A7%E8%B5%84%E6%96%99%E4%B8%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E8%AF%A5%E5%85%88%E6%8E%92%E6%9F%A5%E4%BB%80%E4%B9%88%E6%89%8D%E8%83%BD%E4%BF%9D%E4%BD%8F%E6%95%B0%E6%8D%AE%EF%BC%9F".
+1 AXWebArea 知识文件库, URL: 127.0.0.1:8000/?mode=semantic&category=9b481794-264c-4875-9bde-64d84259e060&q=%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E9%87%8D%E6%96%B0%E5%BB%BA%E7%AB%8B%E5%90%8E%E6%97%A7%E8%B5%84%E6%96%99%E4%B8%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E8%AF%A5%E5%85%88%E6%8E%92%E6%9F%A5%E4%BB%80%E4%B9%88%E6%89%8D%E8%83%BD%E4%BF%9D%E4%BD%8F%E6%95%B0%E6%8D%AE%EF%BC%9F
+	2 container
+		3 text K
+		4 text 知识文件库
+		5 text 文件管理
+		6 text YOUR DOCUMENTS, IN ONE PLACE
+		7 heading 让资料有处可寻。, Value: 1
+			8 text 让资料有处可寻。
+		9 text 保存原始文件，查看资料信息，随时下载复用。
+		10 container 上传文件
+			11 text 收集资料
+			12 heading 上传文件, Value: 2, ID: upload-title
+				13 text 上传文件
+			14 container
+				15 text PDF、TXT、Markdown ·  单个文件不超过 20.0 MB
+			16 button Description: 选择上传文件, ID: file-input
+			17 button (disabled) 开始上传
+		18 button (collapsed) 管理分类 8, Secondary Actions: Expand
+			19 text 管理分类
+			20 text 8
+		21 container 知识检索
+			22 text 检索方式
+			23 pop up button (collapsed, settable) 检索方式, Value: 语义搜索, ID: search-mode, Secondary Actions: Expand
+				24 menu
+					25 关键词搜索
+					26 (selected) 语义搜索
+			27 container
+				28 text 用自然语言描述你要找的内容
+				29 text field (settable) 用自然语言描述你要找的内容, Value: 运行环境重新建立后旧资料不见了，该先排查什么才能保住数据？, ID: keyword-input
+				30 button 搜索
+				31 button 清除搜索
+			32 container
+				33 text 根据 TXT / Markdown 正文向量查找相关文件，展示来源片段；相似度不是正确概率。 可结合下方分类筛选。
+		34 checkbox 文件库, Value: 1
+		35 checkbox 归档区, Value: 0
+		36 text 分类筛选
+		37 pop up button (collapsed, settable) Description: 分类筛选, Value: M5浏览器新资料 · 2, Secondary Actions: Expand
+			38 menu
+				39 (disabled) 全部分类
+				40 (disabled) 未分类 · 11
+				41 (disabled) M3浏览器验收-已改名 · 1
+				42 (disabled) M3验收-B-f9164ae7 · 0
+				43 (disabled) M3验收-规范-f9164ae7 · 0
+				44 (disabled) M4检索-A-5d0b97f6 · 0
+				45 (disabled) M4检索-B-5d0b97f6 · 0
+				46 (disabled) M5新上传-fc7aa50f · 10
+				47 (disabled) M5浏览器新资料 · 2
+				48 (disabled) M5空范围-fc7aa50f · 0
+		49 container 搜索结果 2
+			50 heading 搜索结果 2, Value: 2, ID: library-title
+				51 text 搜索结果
+			52 text 问题「运行环境重新建立后旧资料不见了，该先排查什么才能保住数据？」 · 已归档资料不在此显示
+			53 button 刷新列表
+			54 table
+				55 row
+					56 cell
+						57 text TXT
+						58 button M5浏览器-本地部署故障排查.txt
+						59 container
+							60 text 三、容器重建后资料不见了  · 片段 # 7  · 相似度  0.669 不要立即运行带 -v 的清理命令，也不要删除旧卷。先记录 docker volume ls 的结果，确认旧数据所在位置，再按原项目名称和卷映射恢复连接。删除数据卷会同时删除其中的数据，重建镜像无法恢复这些内容。
+						61 container
+							62 text 三、容器重建后资料不见了  · 片段 # 6  · 相似度  0.662 先核对数据库和上传目录是否挂载了具名卷或明确的宿主机目录。没有挂载的容器可写层不能承担持久化资料存储。还要检查是否更改了 Compose 项目名称，导致应用连接了另一组新数据卷。
+						63 text 可语义检索
+					64 cell
+						65 text M5浏览器新资料
+					66 cell
+						67 text 2.9 KB
+						68 text 2026/10/8 11:54:23
+					69 cell
+						70 button 下载 M5浏览器-本地部署故障排查.txt
+						71 button 归档 M5浏览器-本地部署故障排查.txt
+				72 row
+					73 cell
+						74 text MD
+						75 button M5浏览器-代码提交规范.md
+						76 container
+							77 text 3. 交给审阅者之前  · 片段 # 6  · 相似度  0.595 前端改动附上桌面和窄屏截图。后台任务改动说明重复执行是否安全、失败后如何重试。修改数据库结构时同时提交迁移脚本，说明已有数据如何保留、旧版本能否继续运行；破坏性变更不得假设所有服务会同时升级。
+						78 container
+							79 text 5. 文件与敏感配置  · 片段 # 10  · 相似度  0.535 数据库密码、对象存储密钥、访问令牌和真实用户资料不得进入仓库。提交前检查新增文件清单，尤其是 .env、日志、临时导出和截图。示例配置只写字段名或无效示例值。需要大文件时使用约定的资料位置，在仓库中记录引用和用途。
+						80 text 可语义检索
+					81 cell
+						82 text M5浏览器新资料
+					83 cell
+						84 text 3.1 KB
+						85 text 2026/10/8 11:54:23
+					86 cell
+						87 button 下载 M5浏览器-代码提交规范.md
+						88 button 归档 M5浏览器-代码提交规范.md
+		89 container 文件详情
+			90 text 资料信息
+			91 heading 文件详情, Value: 2, ID: detail-title
+				92 text 文件详情
+			93 text 点击文件名称，查看详情、调整分类或归档。
+		94 button (collapsed) 服务状态, Secondary Actions: Expand
+			95 text 服务状态
+		96 text 知识文件库 · 原文件保存在持久化存储中
+
+The focused UI element is 1 AXWebArea 知识文件库, URL: 127.0.0.1:8000/?mode=semantic&category=9b481794-264c-4875-9bde-64d84259e060&q=%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E9%87%8D%E6%96%B0%E5%BB%BA%E7%AB%8B%E5%90%8E%E6%97%A7%E8%B5%84%E6%96%99%E4%B8%8D%E8%A7%81%E4%BA%86%EF%BC%8C%E8%AF%A5%E5%85%88%E6%8E%92%E6%9F%A5%E4%BB%80%E4%B9%88%E6%89%8D%E8%83%BD%E4%BF%9D%E4%BD%8F%E6%95%B0%E6%8D%AE%EF%BC%9F
