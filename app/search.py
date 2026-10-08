@@ -84,8 +84,10 @@ def retry_text(request: Request, document_id: uuid.UUID):
 @router.get("/search/semantic")
 async def semantic_search(request: Request, q: str = Query(min_length=1, max_length=200),
                           category_id: str | None = None, archived: bool = False,
-                          limit: int = Query(10, ge=1, le=25), offset: int = Query(0, ge=0),
-                          min_score: float = Query(0.45, ge=0, le=1)):
+                          limit: int = Query(5, ge=1, le=25), offset: int = Query(0, ge=0),
+                          min_score: float = Query(0.45, ge=0, le=1),
+                          score_window: float = Query(0.12, ge=0, le=1),
+                          source_window: float = Query(0.08, ge=0, le=1)):
     import asyncio
     import numpy as np
     if not q.strip() or re.search(r"[\x00-\x1f\x7f]", q):
@@ -105,6 +107,9 @@ async def semantic_search(request: Request, q: str = Query(min_length=1, max_len
                     *filters, Document.extension != "pdf", Document.vector_status != "ready"))
                 best = {}
                 for row, chunk in rows:
+                    # A repeated heading alone is not a useful source when body chunks exist.
+                    if row.chunk_count > 1 and search_key(chunk.text).strip() == search_key(chunk.heading).strip():
+                        continue
                     embedding = np.frombuffer(chunk.embedding, dtype="<f4")
                     if embedding.shape != (SPEC["dimension"],) or not np.isfinite(embedding).all():
                         raise ValueError("Persisted embedding is invalid")
@@ -116,11 +121,19 @@ async def semantic_search(request: Request, q: str = Query(min_length=1, max_len
                     result["sources"].append({"ordinal": chunk.ordinal, "generation": chunk.generation,
                         "heading": chunk.heading, "text": chunk.text, "score": round(score, 6)})
                 ordered = sorted(best.values(), key=lambda value: (-value["score"], value["id"]))
+                candidate_total = len(ordered)
+                if ordered:
+                    floor = max(min_score, ordered[0]["score"] - score_window)
+                    ordered = [result for result in ordered if result["score"] >= floor]
                 for result in ordered:
                     result["score"] = round(result["score"], 6)
-                    result["sources"] = sorted(result["sources"], key=lambda value: (-value["score"], value["ordinal"]))[:2]
+                    sources = sorted(result["sources"], key=lambda value: (-value["score"], value["ordinal"]))
+                    result["sources"] = [source for source in sources
+                                         if source["score"] >= result["score"] - source_window][:2]
                 return {"items": ordered[offset:offset+limit], "total": len(ordered), "offset": offset,
                         "limit": limit, "query": q.strip(), "minScore": min_score,
+                        "candidateTotal": candidate_total, "scoreWindow": score_window,
+                        "omittedByWindow": candidate_total - len(ordered),
                         "vectorUnavailableCount": unavailable, "modelRevision": SPEC["revision"]}
         return await asyncio.to_thread(retrieve)
     except FileError:

@@ -1,0 +1,124 @@
+Browser tab: 1, Title: "知识文件库", URL: "http://localhost:18081/?mode=semantic&q=%E5%80%9F%E6%9D%A5%E7%9A%84%E8%AE%BE%E5%A4%87%E5%9D%8F%E4%BA%86%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F&breadth=all".
+1 AXWebArea 知识文件库, URL: localhost:18081/?mode=semantic&q=%E5%80%9F%E6%9D%A5%E7%9A%84%E8%AE%BE%E5%A4%87%E5%9D%8F%E4%BA%86%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F&breadth=all
+	2 container
+		3 text K
+		4 text 知识文件库
+		5 text 文件管理与检索
+		6 container 分类导航
+			7 button (collapsed) 管理分类 2, Secondary Actions: Expand
+				8 text 管理分类 
+				9 text 2
+		10 container 知识检索
+			11 container 检索方式
+				12 checkbox 关键词, Value: 0
+				13 checkbox 自然语言, Value: 1
+			14 container
+				15 text 自然语言问题
+				16 text field (settable) 自然语言问题, Value: 借来的设备坏了应该怎么办？, ID: keyword-input
+				17 button 搜索
+				18 button 清除搜索
+			19 container
+				20 text 按含义查找 TXT / Markdown，显示来源原文；相似度不是正确概率。 搜索全部分类。
+		21 container 上传文件
+			22 heading 上传文件, Value: 2, ID: upload-title
+				23 text 上传文件
+			24 container
+				25 text PDF / TXT / Markdown ·  单个文件不超过 20.0 MB
+			26 button Description: 选择上传文件, ID: file-input
+			27 button (disabled) 开始上传
+		28 checkbox 文件库, Value: 1
+		29 checkbox 归档区, Value: 0
+		30 text 分类筛选
+		31 pop up button (collapsed, settable) Description: 分类筛选, Value: 全部分类 · 14, Secondary Actions: Expand
+			32 menu
+				33 (disabled) 全部分类 · 14
+				34 (disabled) 未分类 · 2
+				35 (disabled) 检索评估-统一资料 · 11
+				36 (disabled) 检索评估-补充资料 · 1
+		37 container 搜索结果 4
+			38 heading 搜索结果 4, Value: 2, ID: library-title
+				39 text 搜索结果 4
+			40 text 问题「借来的设备坏了应该怎么办？」 · 已归档资料不在此显示
+			41 button 刷新列表
+			42 text 已展开更多候选；请结合来源判断相关性。
+			43 button 收起更多结果
+			105 table
+				106 row
+					107 cell
+						108 text TXT
+						109 button 同名设备资料.txt
+						110 container
+							111 text 三、使用期间出现问题  · 片段 # 4  · 相似度  0.641 发现投影仪无法开机、相机报错或附件损坏时，应停止使用，并记录现象和发现时间，联系设备管理员。不要自行拆机。管理员判断是否需要维修或安排替代设备，借用人补充当时的使用情况。
+						112 container
+							113 text 一、借用前登记  · 片段 # 2  · 相似度  0.630 团队成员需要借用投影仪、相机或录音设备时，应先登记设备名称、数量、使用目的、领取时间和预计归还时间。设备管理员核对库存后确认预约。同一时间设备已被预约时，需要协商其他时段，不能直接拿走。
+						114 container
+							115 text 文件 ID ·  0c2dd8b7
+						116 text 可语义检索
+					117 cell
+						118 text 未分类
+					119 cell
+						120 text 1.4 KB
+						121 text 2026/10/8 13:20:20
+					122 cell
+						123 button 下载 同名设备资料.txt
+						124 button 归档 同名设备资料.txt
+				125 row
+					126 cell
+						127 text TXT
+						128 button 同名设备资料.txt
+						129 container
+							130 text 三、使用期间出现问题  · 片段 # 4  · 相似度  0.641 发现投影仪无法开机、相机报错或附件损坏时，应停止使用，并记录现象和发现时间，联系设备管理员。不要自行拆机。管理员判断是否需要维修或安排替代设备，借用人补充当时的使用情况。
+						131 container
+							132 text 一、借用前登记  · 片段 # 2  · 相似度  0.630 团队成员需要借用投影仪、相机或录音设备时，应先登记设备名称、数量、使用目的、领取时间和预计归还时间。设备管理员核对库存后确认预约。同一时间设备已被预约时，需要协商其他时段，不能直接拿走。
+						133 container
+							134 text 文件 ID ·  5aa3df24
+						135 text 可语义检索
+					136 cell
+						137 text 未分类
+					138 cell
+						139 text 1.4 KB
+						140 text 2026/10/8 13:20:19
+					141 cell
+						142 button 下载 同名设备资料.txt
+						143 button 归档 同名设备资料.txt
+				144 row
+					145 cell
+						146 text TXT
+						147 button 上传测试_设备借用.txt
+						148 container
+							149 text 三、使用期间出现问题  · 片段 # 4  · 相似度  0.641 发现投影仪无法开机、相机报错或附件损坏时，应停止使用，并记录现象和发现时间，联系设备管理员。不要自行拆机。管理员判断是否需要维修或安排替代设备，借用人补充当时的使用情况。
+						150 container
+							151 text 一、借用前登记  · 片段 # 2  · 相似度  0.630 团队成员需要借用投影仪、相机或录音设备时，应先登记设备名称、数量、使用目的、领取时间和预计归还时间。设备管理员核对库存后确认预约。同一时间设备已被预约时，需要协商其他时段，不能直接拿走。
+						152 container
+							153 text 文件 ID ·  797e7593
+						154 text 可语义检索
+					155 cell
+						156 text 检索评估-统一资料
+					157 cell
+						158 text 1.4 KB
+						159 text 2026/10/8 13:20:17
+					160 cell
+						161 button 下载 上传测试_设备借用.txt
+						162 button 归档 上传测试_设备借用.txt
+				163 row
+					164 cell
+						165 text MD
+						166 button 02_发布检查清单_v1.4.md
+						167 container
+							168 text 2. 数据与回退准备  · 片段 # 4  · 相似度  0.484 涉及数据库迁移时，在发布前生成备份并验证备份可读取。说明迁移是否向前兼容：新增表或可空字段与删除旧字段的风险不同。不能因为有备份，就默认恢复时没有数据损失。
+						169 container
+							170 text 文件 ID ·  9ddc4572
+						171 text 可语义检索
+					172 cell
+						173 text 检索评估-统一资料
+					174 cell
+						175 text 2.9 KB
+						176 text 2026/10/8 13:20:13
+					177 cell
+						178 button 下载 02_发布检查清单_v1.4.md
+						179 button 归档 02_发布检查清单_v1.4.md
+		102 button (collapsed) 服务状态 , Secondary Actions: Expand
+			103 text 服务状态 
+		104 text 原文件持久化保存 · PDF 仅名称检索
+
+The focused UI element is 43 button 收起更多结果

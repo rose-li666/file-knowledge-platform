@@ -13,7 +13,7 @@ type Document = {
   score?: number; sources?: { ordinal: number; heading: string; text: string; score: number }[];
   hit?: { fields: string[]; text: string; highlightStart: number; highlightEnd: number };
 };
-type Page = { items: Document[]; total: number; limit: number; offset: number; bodyUnavailableCount?: number; vectorUnavailableCount?: number };
+type Page = { items: Document[]; total: number; limit: number; offset: number; bodyUnavailableCount?: number; vectorUnavailableCount?: number; candidateTotal?: number; omittedByWindow?: number };
 type Upload = { key: string; file: File; state: 'waiting' | 'uploading' | 'saving' | 'done' | 'error';
   percent: number; message: string; retryable: boolean; documentId?: string };
 class ApiError extends Error {
@@ -84,6 +84,7 @@ function App() {
   const [query, setQuery] = useState(() => new URLSearchParams(window.location.search).get('q') ?? '');
   const [searchMode, setSearchMode] = useState(() => new URLSearchParams(window.location.search).get('mode') === 'semantic' ? 'semantic' : 'keyword');
   const [indexBusy, setIndexBusy] = useState(false);
+  const [wideResults, setWideResults] = useState(() => new URLSearchParams(window.location.search).get('breadth') === 'all');
   const [keyword, setKeyword] = useState(query);
   const [keywordError, setKeywordError] = useState('');
   const [textBusy, setTextBusy] = useState(false);
@@ -138,7 +139,9 @@ function App() {
     if (!background) setLoading(true);
     setListError('');
     try {
-      const parameters = new URLSearchParams({ limit: '25', offset: String(offset), archived: String(archivedView) });
+      const semantic = !!query && searchMode === 'semantic';
+      const parameters = new URLSearchParams({ limit: semantic && !wideResults ? '5' : '25', offset: String(offset), archived: String(archivedView) });
+      if (semantic) parameters.set('score_window', wideResults ? '1' : '0.12');
       if (categoryFilter) parameters.set('category_id', categoryFilter);
       if (query) parameters.set('q', query);
       const result = await json<Page>(`${query ? `/api/v1/search/${searchMode}` : '/api/v1/documents'}?${parameters}`);
@@ -156,11 +159,12 @@ function App() {
     if (archivedView) url.searchParams.set('archived', 'true'); else url.searchParams.delete('archived');
     if (query) url.searchParams.set('q', query); else url.searchParams.delete('q');
     if (searchMode === 'semantic') url.searchParams.set('mode', 'semantic'); else url.searchParams.delete('mode');
+    if (wideResults) url.searchParams.set('breadth', 'all'); else url.searchParams.delete('breadth');
     window.history.replaceState(null, '', url);
     detailRequest.current++; setDetailOpen(false); setDetail(null); setDetailError(''); setDetailLoading(false);
     setPage({ items: [], total: 0, limit: 25, offset: 0 });
     void refresh(0);
-  }, [categoryFilter, archivedView, query, searchMode]);
+  }, [categoryFilter, archivedView, query, searchMode, wideResults]);
   useEffect(() => {
     const queued = (row: Document) => ['pending', 'processing', 'not_started'].includes(row.vectorStatus);
     if (!page.items.some(queued) && !(detail && queued(detail))) return;
@@ -175,7 +179,7 @@ function App() {
       void refresh(page.offset, true);
     }, 2000);
     return () => window.clearInterval(timer);
-  }, [page, detail, categoryFilter, archivedView, query, searchMode]);
+  }, [page, detail, categoryFilter, archivedView, query, searchMode, wideResults]);
   async function retryIndex(document: Document) {
     if (indexBusy) return;
     setIndexBusy(true);
@@ -366,13 +370,14 @@ function App() {
       <div className="section-heading"><div><h2 id="library-title">{query ? '搜索结果' : archivedView ? '归档文件' : categoryFilter === 'unclassified' ? '未分类文件' : categoryFilter ? categories.items.find(row => row.id === categoryFilter)?.name ?? '分类文件' : '全部文件'} <span className="count">{page.total}</span></h2><small>{query ? `${searchMode === 'semantic' ? '问题' : '关键词'}「${query}」 · ${archivedView ? '仅归档资料' : '已归档资料不在此显示'}` : archivedView ? '归档资料仍可下载，也可恢复至文件库' : '按上传时间排列 · 已归档资料不在此显示'}</small></div><button className="secondary" disabled={loading} onClick={() => { void refresh(page.offset); void loadCategories(); }}>刷新列表</button></div>
       {!!query && !!page.bodyUnavailableCount && <p className="search-warning" role="status">当前范围有 {page.bodyUnavailableCount} 份文件正文未就绪，仍可按名称查找和下载；详情中可重试正文提取。</p>}
       {!!query && !!page.vectorUnavailableCount && <p className="search-warning" role="status">当前范围有 {page.vectorUnavailableCount} 份文本索引尚未就绪，不参与语义结果；详情可查看状态、下载或重试。</p>}
+      {!!query && searchMode === 'semantic' && <div className="result-options"><span>{wideResults ? '已展开更多候选；请结合来源判断相关性。' : '优先展示与首位相近的文件。'}</span><button className="text-button" onClick={() => setWideResults(!wideResults)}>{wideResults ? '收起更多结果' : `展开更多结果${page.omittedByWindow ? `（${page.omittedByWindow}）` : ''}`}</button></div>}
       {listError && <div className="error notice" role="alert">{listError}<button className="text-button" onClick={() => void refresh(page.offset)}>重试</button></div>}
       {loading ? <div className="empty" role="status">{query ? '正在搜索…' : '正在加载文件…'}</div> : listError && page.items.length === 0 ? <div className="empty">暂时无法显示文件，请重试。</div> : page.items.length === 0 ? <div className="empty"><span className="empty-icon">{query ? '⌕' : archivedView ? '◇' : '＋'}</span><h3>{query ? '没有找到匹配的文件' : archivedView ? '没有符合筛选的归档文件' : categoryFilter ? '该分类还没有文件' : '这里还没有文件'}</h3><p>{query ? '请尝试其他关键词、完整编号或切换分类。' : archivedView ? '归档的文件会出现在这里，可随时恢复。' : categoryFilter ? '切换分类，或在文件详情中调整归属。' : '选择上方的文件，开始保存第一份资料。'}</p></div> : <div className="table-wrap"><table><thead><tr><th>名称 / 命中内容</th><th>分类</th><th>大小 / 上传时间</th><th>操作</th></tr></thead><tbody>{page.items.map(row => <tr key={row.id} className={detail?.id === row.id ? 'selected' : ''} data-document-id={row.id}>
         <td><div className="file-name"><span className={`file-badge ${row.extension}`}>{row.extension === 'markdown' ? 'MD' : row.extension.toUpperCase()}</span><button className="name-button" title={row.name} onClick={() => void openDetail(row.id)}>{row.name}</button></div>{row.hit && <Hit hit={row.hit}/>}{row.sources?.map(source => <blockquote className="source-snippet" key={source.ordinal}><small>{source.heading} · 片段 #{source.ordinal + 1} · 相似度 {source.score.toFixed(3)}</small><p>{source.text}</p></blockquote>)}<small className="document-id">文件 ID · {row.id.slice(0, 8)}</small><small className={row.vectorStatus === 'failed' ? 'error' : 'index-state'}>{vectorStatus(row.vectorStatus)}</small> {row.textStatus === 'failed' && <small className="error">正文提取失败 · 原文件可下载</small>}</td>
         <td><span className="category" title={row.category?.name ?? '未分类'}>{row.category?.name ?? '未分类'}</span></td><td><span>{size(row.sizeBytes)}</span><small>{date(row.uploadedAt)}</small></td>
         <td><button className="text-button" aria-label={`下载 ${row.name}`} disabled={!!downloadId} onClick={() => void download(row)}>{downloadId === row.id ? '下载中…' : '下载'}</button><button className="text-button archive-button" disabled={actionBusy} aria-label={`${row.archivedAt ? '恢复' : '归档'} ${row.name}`} onClick={() => void organize(row, row.archivedAt ? 'restore' : 'archive')}>{row.archivedAt ? '恢复' : '归档'}</button></td>
       </tr>)}</tbody></table></div>}
-      {page.total > 25 && <div className="pagination"><button className="secondary" disabled={loading || page.offset === 0} onClick={() => void refresh(Math.max(0, page.offset - 25))}>上一页</button><span>{Math.floor(page.offset / 25) + 1} / {Math.ceil(page.total / 25)}</span><button className="secondary" disabled={loading || page.offset + 25 >= page.total} onClick={() => void refresh(page.offset + 25)}>下一页</button></div>}
+      {page.total > page.limit && <div className="pagination"><button className="secondary" disabled={loading || page.offset === 0} onClick={() => void refresh(Math.max(0, page.offset - page.limit))}>上一页</button><span>{Math.floor(page.offset / page.limit) + 1} / {Math.ceil(page.total / page.limit)}</span><button className="secondary" disabled={loading || page.offset + page.limit >= page.total} onClick={() => void refresh(page.offset + page.limit)}>下一页</button></div>}
     </section>
     <details className="diagnostics"><summary>服务状态 <span className={`dot ${health?.database.status === 'ready' ? 'ok' : ''}`}/></summary><div><p>数据库：{health?.database.status ?? '未能确认'} · 本地模型：{health?.model.status ?? '未能确认'} · 验证记录：{health?.database.probeCount ?? '—'}</p><button className="secondary" disabled={probeBusy} onClick={() => void probe()}>{probeBusy ? '正在核对…' : '验证数据库读写'}</button><p role="status">{probeMessage}</p></div></details>
     </div></div>

@@ -62,7 +62,7 @@ def download_equal(client, row, raw):
 
 
 def semantic(client, question, category=None, archived=False):
-    params = {"q": question, "limit": 25, "min_score": 0, "archived": str(archived).lower()}
+    params = {"q": question, "limit": 25, "min_score": 0, "score_window": 1, "archived": str(archived).lower()}
     if category:
         params["category_id"] = category
     return api(client, "GET", "/api/v1/search/semantic?" + urllib.parse.urlencode(params))

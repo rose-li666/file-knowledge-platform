@@ -95,6 +95,8 @@ mark { background: #f6e9a9; color: #45442c; border-radius: 2px; }
 .source-snippet p { white-space: pre-wrap; margin: 4px 0 0; font-size: 12px; max-height: 18rem; overflow: auto; }
 .source-snippet small { white-space: normal; font-size: 10px; }
 .search-warning { padding: 10px 18px; background: #fff6e5; color: #856b35; margin: 0; font-size: 12px; }
+.result-options { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: 8px; padding: 9px 18px; font-size: 11px; color: #778970; background: #f6f8f3; }
+.result-options button { font-size: 11px; }
 .empty { text-align: center; padding: 36px 18px 40px; color: #7a8b79; }
 .empty-icon { font-size: 26px; color: #9ab391; }
 .empty h3 { font-weight: 500; color: #55724e; }

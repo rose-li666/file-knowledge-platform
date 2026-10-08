@@ -1,0 +1,73 @@
+{
+  "container": "platform-check-b62a1f3ed7",
+  "volume": "platform-check-b62a1f3ed7-data",
+  "port": 18081,
+  "steps": [
+    {
+      "step": "start",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--name",
+        "platform-check-b62a1f3ed7",
+        "-e",
+        "ACCEPTANCE_TEST_RUN=platform-check-b62a1f3ed7",
+        "-p",
+        "127.0.0.1:18081:8000",
+        "--mount",
+        "type=volume,source=platform-check-b62a1f3ed7-data,target=/data",
+        "--mount",
+        "type=bind,source=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\scripts,target=/app/scripts,readonly",
+        "--mount",
+        "type=bind,source=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\frontend\\dist,target=/app/frontend/dist,readonly",
+        "--mount",
+        "type=bind,source=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\app,target=/app/app,readonly",
+        "--mount",
+        "type=bind,source=D:\\__10_.zip,target=/fixtures/documents.zip,readonly",
+        "knowledge-platform-app:latest"
+      ],
+      "exit_code": 0,
+      "seconds": 0.377
+    },
+    {
+      "step": "quality",
+      "command": [
+        "docker",
+        "exec",
+        "platform-check-b62a1f3ed7",
+        "python",
+        "scripts/verify_retrieval_quality.py",
+        "--zip",
+        "/fixtures/documents.zip",
+        "--report",
+        "/tmp/check-reports/quality.json"
+      ],
+      "exit_code": 0,
+      "seconds": 9.199
+    },
+    {
+      "step": "copy",
+      "command": [
+        "docker",
+        "cp",
+        "platform-check-b62a1f3ed7:/tmp/check-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\acceptance\\20261008T052001Z-platform-check-b62a1f3ed7"
+      ],
+      "exit_code": 0,
+      "seconds": 0.166
+    },
+    {
+      "step": "logs",
+      "command": [
+        "docker",
+        "logs",
+        "platform-check-b62a1f3ed7"
+      ],
+      "exit_code": 0,
+      "seconds": 0.162
+    }
+  ],
+  "failure": null,
+  "seconds": 20.4
+}

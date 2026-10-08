@@ -15,7 +15,10 @@ def main():
     p.add_argument('--image',default='knowledge-platform-app:latest')
     p.add_argument('--port',type=int,default=18080)
     p.add_argument('--keep-running',action='store_true')
-    p.add_argument('--frontend-dir',type=Path);args=p.parse_args()
+    p.add_argument('--frontend-dir',type=Path)
+    p.add_argument('--app-dir',type=Path)
+    p.add_argument('--zip',type=Path)
+    p.add_argument('--quality',action='store_true');args=p.parse_args()
     identity='platform-check-'+uuid.uuid4().hex[:10]
     reports=ROOT.parent/'acceptance'/(datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+identity)
     reports.mkdir(parents=True)
@@ -37,6 +40,14 @@ def main():
             front=args.frontend_dir.resolve(strict=True)
             assert (front/'index.html').is_file()
             mounts=['--mount',f'type=bind,source={front},target=/app/frontend/dist,readonly']
+        if args.app_dir:
+            app_dir=args.app_dir.resolve(strict=True)
+            assert (app_dir/'main.py').is_file()
+            mounts+=['--mount',f'type=bind,source={app_dir},target=/app/app,readonly']
+        if args.quality:
+            assert args.zip,'--quality requires --zip'
+            fixture=args.zip.resolve(strict=True)
+            mounts+=['--mount',f'type=bind,source={fixture},target=/fixtures/documents.zip,readonly']
         run('start',['docker','run','-d','--name',identity,'-e','ACCEPTANCE_TEST_RUN='+identity,
             '-p',f'127.0.0.1:{args.port}:8000','--mount',f'type=volume,source={identity}-data,target=/data',
             '--mount',f'type=bind,source={ROOT / "scripts"},target=/app/scripts,readonly',*mounts,args.image])
@@ -46,7 +57,11 @@ def main():
             if health.returncode == 0 and health.stdout.strip() == b'healthy':break
             time.sleep(1)
         else:raise RuntimeError('Isolated service health timeout')
-        run('verify',['docker','exec',identity,'python','scripts/verify_acceptance.py','--report','/tmp/check-reports/results.json'])
+        if not args.quality:
+            run('verify',['docker','exec',identity,'python','scripts/verify_acceptance.py','--report','/tmp/check-reports/results.json'])
+        if args.quality:
+            run('quality',['docker','exec',identity,'python','scripts/verify_retrieval_quality.py',
+                '--zip','/fixtures/documents.zip','--report','/tmp/check-reports/quality.json'])
     except Exception as error:summary['failure']=repr(error)
     finally:
         run('copy',['docker','cp',identity+':/tmp/check-reports/.',str(reports)],False)
