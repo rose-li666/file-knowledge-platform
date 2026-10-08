@@ -1,0 +1,217 @@
+INFO:     127.0.0.1:56972 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:56982 - "GET /api/v1/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56992 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57006 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:57018 - "GET /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57026 - "GET /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57042 - "GET /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57046 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:57058 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:57062 - "PATCH /api/v1/categories/99143559-bef0-4990-9dfc-32ba35bb4f55 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57078 - "PATCH /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57080 - "GET /api/v1/documents?archived=false&limit=25&category_id=99143559-bef0-4990-9dfc-32ba35bb4f55 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57082 - "GET /api/v1/documents?archived=false&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57098 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=99143559-bef0-4990-9dfc-32ba35bb4f55&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57102 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57112 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=99143559-bef0-4990-9dfc-32ba35bb4f55&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57114 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57116 - "GET /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57118 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57120 - "PATCH /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57132 - "GET /api/v1/documents?archived=false&limit=25&category_id=99143559-bef0-4990-9dfc-32ba35bb4f55 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57146 - "GET /api/v1/documents?archived=false&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57160 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=99143559-bef0-4990-9dfc-32ba35bb4f55&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57174 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57190 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=99143559-bef0-4990-9dfc-32ba35bb4f55&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57194 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57202 - "POST /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc/archive HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57204 - "GET /api/v1/documents?archived=false&limit=25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57218 - "GET /api/v1/documents?archived=false&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57234 - "GET /api/v1/documents?archived=true&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57250 - "GET /api/v1/search/keyword?archived=false&limit=25&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57262 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57278 - "GET /api/v1/search/keyword?archived=true&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57286 - "GET /api/v1/search/semantic?archived=false&limit=25&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57296 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57310 - "GET /api/v1/search/semantic?archived=true&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57322 - "GET /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57338 - "GET /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57348 - "POST /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc/restore HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57354 - "GET /api/v1/documents?archived=false&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57368 - "GET /api/v1/documents?archived=true&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57374 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57390 - "GET /api/v1/search/keyword?archived=true&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57400 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57416 - "GET /api/v1/search/semantic?archived=true&limit=25&category_id=adf126c9-564e-4d5a-ab72-44623888ef50&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57424 - "GET /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40578 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34686 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48030 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53540 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38250 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46328 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58594 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42046 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55520 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49690 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49690 - "GET /assets/index-DF5S0Nc_.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49694 - "GET /assets/index-U9ymxnpO.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49694 - "GET /api/v1/config HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49690 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49710 - "GET /api/v1/documents?limit=25&offset=0&archived=false HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49716 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:49716 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37506 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36594 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36604 - "GET /api/v1/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36612 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36622 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36636 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36644 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36650 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36664 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36672 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36680 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36696 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36700 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36716 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36726 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36730 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36736 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36744 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36748 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36756 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36758 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36764 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36776 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36784 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36796 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36806 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36816 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36820 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36826 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36832 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36846 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36848 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36852 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36860 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36866 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36876 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36892 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36908 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36920 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36926 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36936 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36952 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36954 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36964 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:36978 - "PATCH /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc/category HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41828 - "GET / HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:41828 - "GET /assets/index-DF5S0Nc_.js HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:41844 - "GET /assets/index-U9ymxnpO.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:41844 - "GET /api/v1/config HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41828 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41874 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41858 - "GET /api/v1/documents?limit=25&offset=0&archived=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42506 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46980 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:44656 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36882 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57554 - "PATCH /api/v1/categories/86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57554 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:57554 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33198 - "GET /?category=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33210 - "GET /assets/index-U9ymxnpO.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:33198 - "GET /assets/index-DF5S0Nc_.js HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:33198 - "GET /api/v1/config HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33210 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33224 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:33232 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33556 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49068 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42114 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59678 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39524 - "GET /?category=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39532 - "GET /assets/index-U9ymxnpO.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39524 - "GET /assets/index-DdpbQ4_u.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39524 - "GET /api/v1/config HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39532 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39524 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39536 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59822 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59790 - "GET /?category=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:59790 - "GET /assets/index-DdpbQ4_u.js HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:59792 - "GET /assets/index-U9ymxnpO.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:59792 - "GET /api/v1/config HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59790 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59808 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59792 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:53554 - "PATCH /api/v1/categories/86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 409 Conflict
+INFO:     127.0.0.1:51918 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34470 - "PATCH /api/v1/categories/86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34470 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:34470 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36034 - "GET /?category=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:36034 - "GET /assets/index-DdpbQ4_u.js HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:36036 - "GET /assets/index-U9ymxnpO.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:36036 - "GET /api/v1/config HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36046 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36034 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36062 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37474 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54988 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     172.17.0.1:54988 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:54988 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52576 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59790 - "PATCH /api/v1/categories/86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59790 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59790 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40214 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40606 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46616 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35896 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56898 - "GET /api/v1/documents?limit=100 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56914 - "GET /api/v1/documents?archived=true&limit=100 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56920 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56922 - "GET /api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc/download HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56934 - "GET /api/v1/documents?category_id=86fadb79-c309-4420-9a5c-96070a422fdd&archived=false HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56950 - "GET /api/v1/documents?category_id=adf126c9-564e-4d5a-ab72-44623888ef50&archived=false HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56956 - "GET /api/v1/search/keyword?category_id=86fadb79-c309-4420-9a5c-96070a422fdd&archived=false&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56958 - "GET /api/v1/search/keyword?category_id=adf126c9-564e-4d5a-ab72-44623888ef50&archived=false&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56970 - "GET /api/v1/search/semantic?category_id=86fadb79-c309-4420-9a5c-96070a422fdd&archived=false&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56984 - "GET /api/v1/search/semantic?category_id=adf126c9-564e-4d5a-ab72-44623888ef50&archived=false&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60024 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56334 - "GET /?category=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:56346 - "GET /assets/index-U9ymxnpO.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:56334 - "GET /assets/index-DdpbQ4_u.js HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:56334 - "GET /api/v1/config HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56346 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56360 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56364 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56364 - "GET /api/v1/documents?limit=25&offset=0&archived=false HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56364 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56360 - "GET /?category=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:56360 - "GET /api/v1/config HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56346 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56364 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56334 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54258 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35316 - "GET /?category=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:35324 - "GET /assets/index-U9ymxnpO.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:35316 - "GET /assets/index-DdpbQ4_u.js HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:35316 - "GET /api/v1/config HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35324 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35328 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:35330 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=86fadb79-c309-4420-9a5c-96070a422fdd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58386 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52850 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56784 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50602 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38298 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35674 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53876 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58772 - "GET /api/v1/health HTTP/1.1" 200 OK

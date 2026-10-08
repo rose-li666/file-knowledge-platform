@@ -1,0 +1,13 @@
+
+> knowledge-platform-m1@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 29 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.36 kB │ gzip:  0.29 kB
+dist/assets/index-U9ymxnpO.css   12.94 kB │ gzip:  3.47 kB
+dist/assets/index-DdpbQ4_u.js   221.99 kB │ gzip: 70.12 kB
+✓ built in 1.37s

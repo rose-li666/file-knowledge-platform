@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "seconds": 12.6130271,
+  "command": "docker compose up -d --no-build --force-recreate --wait"
+}

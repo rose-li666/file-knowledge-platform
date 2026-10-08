@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
+import { CategoryManagerDialog } from './CategoryManagerDialog';
 
 type Health = { status: string; database: { status: string; probeCount: number }; model: { status: string } };
 type Config = { maxUploadBytes: number; allowedExtensions: string[] };
@@ -89,12 +90,7 @@ function App() {
   const [keywordError, setKeywordError] = useState('');
   const [textBusy, setTextBusy] = useState(false);
   const textLock = useRef(false);
-  const [newCategoryName, setNewCategoryName] = useState('');
-  const [renameId, setRenameId] = useState('');
-  const [renameName, setRenameName] = useState('');
-  const [categoryBusy, setCategoryBusy] = useState(false);
-  const [categoryMessage, setCategoryMessage] = useState('');
-  const categoryLock = useRef(false);
+  const [categoryManagerOpen, setCategoryManagerOpen] = useState(false);
   const [moveCategory, setMoveCategory] = useState('');
   const [actionBusy, setActionBusy] = useState(false);
   const actionLock = useRef(false);
@@ -216,23 +212,12 @@ function App() {
     } catch (error) { setNotice(message(error)); }
     finally { textLock.current = false; setTextBusy(false); }
   }
-  async function saveCategory(renaming: boolean) {
-    if (categoryLock.current) return;
-    const name = (renaming ? renameName : newCategoryName).trim();
-    if (!name || name.length > 80) { setCategoryMessage('分类名称不能为空且最多为 80 字。'); return; }
-    if (renaming && !renameId) { setCategoryMessage('请先选择要修改的分类。'); return; }
-    categoryLock.current = true; setCategoryBusy(true); setCategoryMessage('');
-    try {
-      const saved = await json<Category>(renaming ? `/api/v1/categories/${renameId}` : '/api/v1/categories', {
-        method: renaming ? 'PATCH' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name }),
-      });
-      if (!renaming) setNewCategoryName('');
-      else setRenameName(saved.name);
-      setCategoryMessage(`已${renaming ? '修改' : '创建'}分类「${saved.name}」。`);
-      await loadCategories(); await refresh(page.offset);
-      if (detail) await openDetail(detail.id);
-    } catch (error) { setCategoryMessage(message(error)); }
-    finally { categoryLock.current = false; setCategoryBusy(false); }
+  async function saveCategory(categoryId: string | null, name: string) {
+    const saved = await json<Category>(categoryId ? `/api/v1/categories/${categoryId}` : '/api/v1/categories', {
+      method: categoryId ? 'PATCH' : 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name }),
+    });
+    setNotice(`已${categoryId ? '修改' : '创建'}分类「${saved.name}」。`);
+    await loadCategories(); await refresh(page.offset);
   }
   async function organize(document: Document, action: 'category' | 'archive' | 'restore') {
     if (actionLock.current) return;
@@ -345,16 +330,19 @@ function App() {
     <div className="app-layout">
       <aside className="category-sidebar" aria-label="分类导航">
         <div className="sidebar-heading"><h2>分类</h2><span>{allCount} 份资料</span></div>
-        <nav aria-label="文件分类">
+        <nav aria-label="文件分类" tabIndex={0} onKeyDown={event => {
+          if (event.target !== event.currentTarget) return;
+          const list = event.currentTarget;
+          const delta = { ArrowDown: 50, ArrowUp: -50, PageDown: list.clientHeight, PageUp: -list.clientHeight }[event.key];
+          if (delta === undefined && event.key !== 'Home' && event.key !== 'End') return;
+          event.preventDefault();
+          list.scrollTop = event.key === 'Home' ? 0 : event.key === 'End' ? list.scrollHeight : list.scrollTop + (delta ?? 0);
+        }}>
           <button aria-label="分类：全部分类" aria-pressed={!categoryFilter} onClick={() => setCategoryFilter('')}><span>全部分类</span><b>{allCount}</b></button>
           <button aria-label="分类：未分类" aria-pressed={categoryFilter === 'unclassified'} onClick={() => setCategoryFilter('unclassified')}><span>未分类</span><b>{unclassifiedCount}</b></button>
-          {categories.items.map(row => <button key={row.id} aria-label={`分类：${row.name}`} aria-pressed={categoryFilter === row.id} onClick={() => setCategoryFilter(row.id)}><span>{row.name}</span><b>{categoryCount(row)}</b></button>)}
+          {categories.items.map(row => <button key={row.id} title={row.name} aria-label={`分类：${row.name}`} aria-pressed={categoryFilter === row.id} onClick={() => setCategoryFilter(row.id)}><span>{row.name}</span><b>{categoryCount(row)}</b></button>)}
         </nav>
-    <details className="category-manager"><summary>管理分类 <span className="count">{categories.items.length}</span></summary>
-      <div className="category-forms"><details><summary>创建分类</summary><form onSubmit={event => { event.preventDefault(); void saveCategory(false); }}><label htmlFor="new-category">新分类名称</label><div><input id="new-category" maxLength={80} value={newCategoryName} disabled={categoryBusy} onChange={event => setNewCategoryName(event.target.value)} placeholder="例如：工程规范"/><button disabled={categoryBusy}>创建分类</button></div></form></details>
-        <details><summary>修改分类名称</summary><form onSubmit={event => { event.preventDefault(); void saveCategory(true); }}><label htmlFor="rename-category">要修改的分类</label><select id="rename-category" value={renameId} disabled={categoryBusy || categoryLoading} onChange={event => { setRenameId(event.target.value); setRenameName(categories.items.find(row => row.id === event.target.value)?.name ?? ''); }}><option value="">请选择分类</option>{categories.items.map(row => <option key={row.id} value={row.id}>{row.name}</option>)}</select><label htmlFor="rename-name">修改后的名称</label><div><input id="rename-name" maxLength={80} value={renameName} disabled={categoryBusy || !renameId} onChange={event => setRenameName(event.target.value)}/><button disabled={categoryBusy || !renameId}>保存名称</button></div></form></details></div>
-      {categoryMessage && <p role="status">{categoryMessage}</p>}
-    </details>
+        <button className="manage-categories" onClick={() => setCategoryManagerOpen(true)}>管理分类 <span className="count">{categories.items.length}</span></button>
       </aside>
       <div className="workspace">
         <section className="keyword-search" aria-label="知识检索">
@@ -384,7 +372,7 @@ function App() {
     </section>
     {categoryError && <div className="error notice" role="alert">分类读取失败：{categoryError}<button className="text-button" onClick={() => void loadCategories()}>重试读取分类</button></div>}
     {notice && <div className="notice" role="status" aria-live="polite">{notice}</div>}
-    <div className="view-controls"><div className="view-tabs"><button aria-pressed={!archivedView} onClick={() => setArchivedView(false)}>文件库</button><button aria-pressed={archivedView} onClick={() => setArchivedView(true)}>归档区</button></div><label className="mobile-category">分类筛选 <select aria-label="分类筛选" value={categoryFilter} disabled={categoryLoading} onChange={event => setCategoryFilter(event.target.value)}><option value="">全部分类 · {allCount}</option><option value="unclassified">未分类 · {unclassifiedCount}</option>{categories.items.map(row => <option key={row.id} value={row.id}>{row.name} · {categoryCount(row)}</option>)}</select></label></div>
+    <div className="view-controls"><div className="view-tabs"><button aria-pressed={!archivedView} onClick={() => setArchivedView(false)}>文件库</button><button aria-pressed={archivedView} onClick={() => setArchivedView(true)}>归档区</button></div><label className="mobile-category">分类筛选 <select aria-label="分类筛选" title={categories.items.find(row => row.id === categoryFilter)?.name ?? (categoryFilter === "unclassified" ? "未分类" : "全部分类")} value={categoryFilter} disabled={categoryLoading} onChange={event => setCategoryFilter(event.target.value)}><option value="">全部分类 · {allCount}</option><option value="unclassified">未分类 · {unclassifiedCount}</option>{categories.items.map(row => <option key={row.id} value={row.id}>{row.name} · {categoryCount(row)}</option>)}</select></label></div>
     <section className="library" aria-labelledby="library-title">
       <div className="section-heading"><div><h2 id="library-title">{query ? '搜索结果' : archivedView ? '归档文件' : categoryFilter === 'unclassified' ? '未分类文件' : categoryFilter ? categories.items.find(row => row.id === categoryFilter)?.name ?? '分类文件' : '全部文件'} <span className="count">{page.total}</span></h2><small>{query ? `${searchMode === 'semantic' ? '问题' : '关键词'}「${query}」 · ${archivedView ? '仅归档资料' : '已归档资料不在此显示'}` : archivedView ? '归档资料仍可下载，也可恢复至文件库' : '按上传时间排列 · 已归档资料不在此显示'}</small></div><button className="secondary" disabled={loading} onClick={() => { void refresh(page.offset); void loadCategories(); }}>刷新列表</button></div>
       {!!query && !!page.bodyUnavailableCount && <p className="search-warning" role="status">当前范围有 {page.bodyUnavailableCount} 份文件正文未就绪，仍可按名称查找和下载；详情中可重试正文提取。</p>}
@@ -400,6 +388,8 @@ function App() {
     </section>
     <details className="diagnostics"><summary>服务状态 <span className={`dot ${health?.database.status === 'ready' ? 'ok' : ''}`}/></summary><div><p>数据库：{health?.database.status ?? '未能确认'} · 本地模型：{health?.model.status ?? '未能确认'} · 验证记录：{health?.database.probeCount ?? '—'}</p><button className="secondary" disabled={probeBusy} onClick={() => void probe()}>{probeBusy ? '正在核对…' : '验证数据库读写'}</button><p role="status">{probeMessage}</p></div></details>
     </div></div>
+    <CategoryManagerDialog open={categoryManagerOpen} categories={categories.items} initialCategoryId={categoryFilter}
+      loading={categoryLoading} onClose={() => setCategoryManagerOpen(false)} onSave={saveCategory} />
     <dialog ref={drawer} className="detail-drawer" aria-labelledby="detail-title" onCancel={closeDetail} onClose={() => setDetailOpen(false)}><div className="drawer-heading"><button className="secondary" aria-label="关闭文件详情" onClick={closeDetail}>关闭</button><span className="label">资料信息</span><h2 id="detail-title">文件详情</h2></div><div className="drawer-body">
       {detailLoading ? <p role="status">正在加载详情…</p> : detailError ? <p className="error" role="alert">{detailError}</p> : detail ? <><h3 className="detail-name">{detail.name}</h3>{detail.extension === 'pdf' && <div className="pdf-preview"><button className="secondary" disabled={previewBusy} onClick={() => void preview(detail)}>{previewBusy ? '读取预览中…' : previewUrl ? '重新加载预览' : '在线预览 PDF'}</button><p>使用浏览器 PDF 阅读器；若当前浏览器无法显示，请下载原文件查看。PDF 暂不参与正文或语义检索。</p>{previewError && <p className="error" role="alert">{previewError}</p>}{previewUrl && <iframe title={`PDF 预览 ${detail.name}`} src={previewUrl} />}</div>}<dl><dt>文件 ID</dt><dd className="hash">{detail.id}</dd><dt>文件类型</dt><dd>{detail.extension.toUpperCase()}</dd><dt>分类</dt><dd>{detail.category?.name ?? '未分类'}</dd><dt>状态</dt><dd>{detail.archivedAt ? `已归档 · ${date(detail.archivedAt)}` : '文件库'}</dd><dt>正文检索</dt><dd>{textStatus(detail.textStatus)}{detail.textEncoding && <small>{detail.textEncoding}</small>}</dd><dt>语义索引</dt><dd>{vectorStatus(detail.vectorStatus)}{detail.vectorStatus === 'ready' && <small>{detail.chunkCount} 个片段</small>}</dd><dt>大小</dt><dd>{size(detail.sizeBytes)} <small>{detail.sizeBytes.toLocaleString()} 字节</small></dd><dt>上传时间</dt><dd>{date(detail.uploadedAt)}</dd><dt>SHA-256</dt><dd className="hash">{detail.sha256}</dd></dl>{detail.vectorError && <p className="error" role="alert">{detail.vectorError} 原文件仍可下载。</p>}{!['not_supported', 'pending', 'processing'].includes(detail.vectorStatus) && <button className="secondary" disabled={indexBusy} onClick={() => void retryIndex(detail)}>{indexBusy ? '正在提交…' : detail.vectorStatus === 'ready' ? '重新建立索引' : '重试索引'}</button>}{detail.textError && <p className="error" role="alert">{detail.textError}</p>}{['failed', 'not_started'].includes(detail.textStatus) && <button className="secondary" disabled={textBusy} onClick={() => void retryText(detail)}>{textBusy ? '正在提取正文…' : '重试正文提取'}</button>}<label className="move-label" htmlFor="move-category">调整文件归属</label><select id="move-category" value={moveCategory} disabled={actionBusy || categoryLoading || !!categoryError} onChange={event => setMoveCategory(event.target.value)}><option value="">未分类</option>{categories.items.map(row => <option key={row.id} value={row.id}>{row.name}</option>)}</select><button className="secondary" disabled={actionBusy || categoryLoading || !!categoryError || moveCategory === (detail.category?.id ?? '')} onClick={() => void organize(detail, 'category')}>移动文件</button><p className="saved-note">{detail.archivedAt ? '归档保留原文件，可随时恢复和下载。' : '原文件已保存，可下载。'}</p><button disabled={!!downloadId} onClick={() => void download(detail)}>{downloadId === detail.id ? '下载中…' : '下载原文件'}</button><button className="secondary" disabled={actionBusy} onClick={() => void organize(detail, detail.archivedAt ? 'restore' : 'archive')}>{actionBusy ? '正在保存…' : detail.archivedAt ? '恢复文件' : '归档文件'}</button></> : <p className="detail-placeholder">点击文件名称，查看详情、调整分类或归档。</p>}
     </div></dialog>

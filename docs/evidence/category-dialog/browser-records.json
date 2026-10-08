@@ -1,0 +1,167 @@
+{
+  "type": "Agent in-app browser; does not replace user Chrome verification",
+  "records": [
+    {
+      "check": "desktop_keyboard_rename_filter_refresh",
+      "dialogOpen": false,
+      "files": [
+        "TXT分类归档链路.txt"
+      ],
+      "heading": "布局验收-40-键盘已改名 1",
+      "height": 480,
+      "selected": "布局验收-40-键盘已改名1",
+      "url": "http://localhost:18084/?category=86fadb79-c309-4420-9a5c-96070a422fdd",
+      "width": 1280
+    },
+    {
+      "check": "keyboardPageDownIndependent",
+      "before": {
+        "navTop": 0,
+        "windowY": 13.600000381469728
+      },
+      "after": {
+        "navTop": 270.3999938964844,
+        "windowY": 13.600000381469728
+      }
+    },
+    {
+      "check": "390x480DuplicateError",
+      "error": "分类名称已存在，请使用其他名称。",
+      "height": 480,
+      "open": true,
+      "rects": [
+        {
+          "bottom": 325.0999946594238,
+          "label": "category-name",
+          "top": 283.8999938964844
+        },
+        {
+          "bottom": 404.8000183105469,
+          "label": "取消",
+          "top": 367.3000183105469
+        },
+        {
+          "bottom": 404.8000183105469,
+          "label": "保存名称",
+          "top": 367.3000183105469
+        }
+      ],
+      "width": 390
+    },
+    {
+      "category": "86fadb79-c309-4420-9a5c-96070a422fdd",
+      "check": "390x480MouseRenameFilterRefresh",
+      "clientWidth": 375,
+      "files": [
+        "分类归档链路.txt"
+      ],
+      "heading": "布局验收-40-窄屏已改名 1",
+      "open": false,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "390x300LongName",
+      "height": 300,
+      "rects": [
+        {
+          "bottom": 287.80000591278076,
+          "label": "DIALOG",
+          "top": 12.199999809265137
+        },
+        {
+          "bottom": 226.70000076293945,
+          "label": "category-name",
+          "top": 185.5
+        },
+        {
+          "bottom": 279,
+          "label": "BUTTON",
+          "top": 241.5
+        },
+        {
+          "bottom": 279,
+          "label": "BUTTON",
+          "top": 241.5
+        }
+      ],
+      "scrollWidth": 375,
+      "selection": {
+        "height": 61,
+        "scrollHeight": 105
+      },
+      "width": 390
+    },
+    {
+      "check": "modalCreate",
+      "created": true,
+      "manager": [
+        "管理分类 43"
+      ],
+      "open": false
+    },
+    {
+      "check": "narrowRefreshInitialLoadingSnapshot",
+      "files": [],
+      "heading": "布局验收-40-键盘窄屏最终名称 0",
+      "height": 480,
+      "selected": "布局验收-40-键盘窄屏最终名称 · 1",
+      "width": 390
+    },
+    {
+      "check": "switchAllFilter",
+      "heading": "全部文件 1",
+      "selected": ""
+    },
+    {
+      "check": "desktopNormal",
+      "height": 900,
+      "name": "布局验收-40-键盘窄屏最终名称",
+      "rects": [
+        {
+          "bottom": 555.8000373840332,
+          "name": "category-name",
+          "top": 514.6000366210938
+        },
+        {
+          "bottom": 618.1000366210938,
+          "name": "取消",
+          "top": 580.6000366210938
+        },
+        {
+          "bottom": 618.1000366210938,
+          "name": "保存名称",
+          "top": 580.6000366210938
+        }
+      ],
+      "width": 1280
+    },
+    {
+      "category": "86fadb79-c309-4420-9a5c-96070a422fdd",
+      "check": "narrowKeyboardRenameRefreshLoaded",
+      "clientWidth": 375,
+      "files": [
+        "分类归档链路.txt"
+      ],
+      "heading": "布局验收-40-键盘窄屏最终名称 1",
+      "height": 480,
+      "scrollWidth": 375,
+      "selected": "布局验收-40-键盘窄屏最终名称 · 1",
+      "width": 390
+    }
+  ],
+  "mouseScrollObserved": {
+    "viewport": [
+      1280,
+      480
+    ],
+    "navBefore": 0,
+    "navAfter": 3154.39990234375,
+    "windowBefore": 0,
+    "windowAfter": 0
+  },
+  "chrome": {
+    "status": "tool stopped; user retest pending",
+    "reason": "Unable to determine current browser URL on Windows confidently"
+  }
+}

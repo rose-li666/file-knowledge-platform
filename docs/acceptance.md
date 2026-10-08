@@ -21,4 +21,6 @@ API 路径均以 `/api/v1` 为前缀。本轮 P0 命令 `python scripts/run_acce
 
 本轮后续缺口与计划见 optimization-plan.md；普通浏览器只依据实际结果更新。
 
+**最新人工反馈：普通 Chrome 分类管理验收不通过。** 用户报告旧侧栏改名控件越过视口、无法滚动操作。已改为弹窗和独立列表滚动并部署；本次独立 Docker 分类/搜索/归档链路4项、Agent内置浏览器1280×480及390×480/300改名和刷新均通过，原26文件/8分类及下载SHA保留。普通Chrome复验尚待用户实际结果，不能将上述自动化替代人工状态；完整证据及截图见 [category-dialog-fix.md](category-dialog-fix.md)。
+
 最终检索策略下P0独立空卷再次验证4项通过，内部0.476秒、退出0，见evidence/p0-final。用户补充确认只涵盖内置浏览器TXT/MD上传及设备来源，其余人工步骤在manual-check.md待执行。

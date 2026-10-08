@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "seconds": 90.8088992,
+  "command": "docker compose build"
+}

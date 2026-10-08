@@ -1,0 +1,453 @@
+{
+  "passed": true,
+  "seconds": 0.17494609999994282,
+  "type": "real TCP HTTP after Agent IAB actions",
+  "snapshot": {
+    "active": {
+      "items": [
+        {
+          "id": "27f18fb7-1673-4ef3-9679-107c05afdedc",
+          "name": "分类归档链路.txt",
+          "extension": "txt",
+          "mediaType": "text/plain",
+          "sizeBytes": 164,
+          "sha256": "93ec7d84b08f99b7ade7ea43f1020a682dde81a8679de40a075bba1885ee165b",
+          "uploadedAt": "2026-10-08T09:12:23.818977Z",
+          "category": {
+            "id": "86fadb79-c309-4420-9a5c-96070a422fdd",
+            "name": "布局验收-40-键盘窄屏最终名称"
+          },
+          "archivedAt": null,
+          "textStatus": "ready",
+          "textError": null,
+          "textEncoding": "utf-8",
+          "vectorStatus": "ready",
+          "vectorError": null,
+          "chunkCount": 2,
+          "downloadUrl": "/api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc/download"
+        }
+      ],
+      "total": 1,
+      "limit": 100,
+      "offset": 0
+    },
+    "archived": {
+      "items": [],
+      "total": 0,
+      "limit": 100,
+      "offset": 0
+    },
+    "categories": {
+      "items": [
+        {
+          "id": "adf126c9-564e-4d5a-ab72-44623888ef50",
+          "name": "其他分类",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "01dfc5d9-3032-4106-bbda-0ff3d329d0ca",
+          "name": "布局弹窗创建验收",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "d581526e-077a-4974-834b-55ff9a35b8b0",
+          "name": "布局验收-01-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "e92ca853-229b-4a7b-8b99-a47dcf1e8f96",
+          "name": "布局验收-02-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "46542c24-c33c-434a-9405-b50af8ec7a79",
+          "name": "布局验收-03-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "c1f0c217-c0ba-4e53-9484-f5f872d93c9b",
+          "name": "布局验收-04-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "b200b611-ecd1-4ee8-bed9-473746c56f3b",
+          "name": "布局验收-05-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "e99e4fc7-75b6-4295-8a90-1aa606b9fd2c",
+          "name": "布局验收-06-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "faec7be5-74bd-4fa2-91e9-2bdcaddb7164",
+          "name": "布局验收-07-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "32d46aba-464f-44e8-89d6-47f26e6fb033",
+          "name": "布局验收-08-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "6fc43fe2-d50c-451f-b00f-0e2aa1e45f69",
+          "name": "布局验收-09-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "542588b4-3099-459b-8512-95160fe2172d",
+          "name": "布局验收-10-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "91cf4fc5-fa60-4032-913a-6d51f1e59b88",
+          "name": "布局验收-11-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "a6d141fb-c9c0-47ae-85a2-d0af395acbe8",
+          "name": "布局验收-12-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "1e4b209e-abe6-4465-a192-90265f35b046",
+          "name": "布局验收-13-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "6389d2a0-c5ad-479b-92d8-9fd20ba40cd7",
+          "name": "布局验收-14-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "4e66c123-622c-491a-9018-d0ff88a5b971",
+          "name": "布局验收-15-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "f445e36d-738e-4396-b6fb-e04403692f85",
+          "name": "布局验收-16-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "6e9219ce-a9e6-48eb-b9ce-9077166a238a",
+          "name": "布局验收-17-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "7516894c-0309-47ab-8167-678ba92f1caf",
+          "name": "布局验收-18-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "6815597c-6c67-434d-8a15-8c3bf2529308",
+          "name": "布局验收-19-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "31d47cd7-9159-40f0-a09b-800df362d688",
+          "name": "布局验收-20-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "f15b53fe-d70b-4444-b6d2-b5f772dda64a",
+          "name": "布局验收-21-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "38eaf6fa-a16e-4ddd-b8f9-3a7a01b3a84e",
+          "name": "布局验收-22-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "76cede36-ef80-4d01-bdda-56bd2ffff9e2",
+          "name": "布局验收-23-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "e1671b59-0403-422e-8026-1aa03924d3d9",
+          "name": "布局验收-24-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "950efb71-8daa-4da6-bd13-8ed3f82d3fe4",
+          "name": "布局验收-25-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "11c23663-6525-4e2b-86a6-59901f777562",
+          "name": "布局验收-26-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "6d99f5bd-42ac-4a6b-84a5-2dcec7d1881c",
+          "name": "布局验收-27-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "1cc6d08d-e88b-4c17-989b-a3c57d8dd7d2",
+          "name": "布局验收-28-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "f74e7d69-50bd-4e5f-be31-c88aa7ea21a0",
+          "name": "布局验收-29-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "db7d2266-7976-4172-8c2f-d61fd70067ef",
+          "name": "布局验收-30-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "1b48f795-a070-446e-a5d6-2b6fb1760648",
+          "name": "布局验收-31-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "1e4c380d-8df3-46e3-ad2f-e6e233caa636",
+          "name": "布局验收-32-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "96e719b4-e7b5-4b97-af06-23d9a3887290",
+          "name": "布局验收-33-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "88e1e1f1-1ac3-4d73-a138-0d8ad092dee7",
+          "name": "布局验收-34-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "c8bc4c90-8397-45a8-a04d-6287e510c075",
+          "name": "布局验收-35-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "5518cb0f-3954-4f8c-bfa9-80bb8a7b3c72",
+          "name": "布局验收-36-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "21c4eafc-58b3-491e-8cdd-592965c270ac",
+          "name": "布局验收-37-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "a1753f9f-86d7-4786-9903-f048e11f833a",
+          "name": "布局验收-38-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "d13e8b40-7226-4837-b3a1-fd129396d59a",
+          "name": "布局验收-39-长名称完整展示与键盘滚动检查的分类资料",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "86fadb79-c309-4420-9a5c-96070a422fdd",
+          "name": "布局验收-40-键盘窄屏最终名称",
+          "activeCount": 1,
+          "archivedCount": 0
+        },
+        {
+          "id": "99143559-bef0-4990-9dfc-32ba35bb4f55",
+          "name": "验收分类-已改名",
+          "activeCount": 0,
+          "archivedCount": 0
+        }
+      ],
+      "unclassified": {
+        "activeCount": 0,
+        "archivedCount": 0
+      }
+    },
+    "downloads": [
+      {
+        "id": "27f18fb7-1673-4ef3-9679-107c05afdedc",
+        "sha256": "93ec7d84b08f99b7ade7ea43f1020a682dde81a8679de40a075bba1885ee165b"
+      }
+    ]
+  },
+  "queries": {
+    "list_selected": {
+      "items": [
+        {
+          "id": "27f18fb7-1673-4ef3-9679-107c05afdedc",
+          "name": "分类归档链路.txt",
+          "extension": "txt",
+          "mediaType": "text/plain",
+          "sizeBytes": 164,
+          "sha256": "93ec7d84b08f99b7ade7ea43f1020a682dde81a8679de40a075bba1885ee165b",
+          "uploadedAt": "2026-10-08T09:12:23.818977Z",
+          "category": {
+            "id": "86fadb79-c309-4420-9a5c-96070a422fdd",
+            "name": "布局验收-40-键盘窄屏最终名称"
+          },
+          "archivedAt": null,
+          "textStatus": "ready",
+          "textError": null,
+          "textEncoding": "utf-8",
+          "vectorStatus": "ready",
+          "vectorError": null,
+          "chunkCount": 2,
+          "downloadUrl": "/api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc/download"
+        }
+      ],
+      "total": 1,
+      "limit": 50,
+      "offset": 0
+    },
+    "list_different": {
+      "items": [],
+      "total": 0,
+      "limit": 50,
+      "offset": 0
+    },
+    "keyword_selected": {
+      "items": [
+        {
+          "id": "27f18fb7-1673-4ef3-9679-107c05afdedc",
+          "name": "分类归档链路.txt",
+          "extension": "txt",
+          "mediaType": "text/plain",
+          "sizeBytes": 164,
+          "sha256": "93ec7d84b08f99b7ade7ea43f1020a682dde81a8679de40a075bba1885ee165b",
+          "uploadedAt": "2026-10-08T09:12:23.818977Z",
+          "category": {
+            "id": "86fadb79-c309-4420-9a5c-96070a422fdd",
+            "name": "布局验收-40-键盘窄屏最终名称"
+          },
+          "archivedAt": null,
+          "textStatus": "ready",
+          "textError": null,
+          "textEncoding": "utf-8",
+          "vectorStatus": "ready",
+          "vectorError": null,
+          "chunkCount": 2,
+          "downloadUrl": "/api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc/download",
+          "hit": {
+            "fields": [
+              "body"
+            ],
+            "text": "设备借用流程\n\n设备故障时停止使用,记录现象和发现时间,联系设备管理员,不要自行拆机。管理员安排维修或替代设备。",
+            "highlightStart": 8,
+            "highlightEnd": 12
+          }
+        }
+      ],
+      "total": 1,
+      "limit": 25,
+      "offset": 0,
+      "query": "设备故障",
+      "bodyUnavailableCount": 0
+    },
+    "keyword_different": {
+      "items": [],
+      "total": 0,
+      "limit": 25,
+      "offset": 0,
+      "query": "设备故障",
+      "bodyUnavailableCount": 0
+    },
+    "semantic_selected": {
+      "items": [
+        {
+          "id": "27f18fb7-1673-4ef3-9679-107c05afdedc",
+          "name": "分类归档链路.txt",
+          "extension": "txt",
+          "mediaType": "text/plain",
+          "sizeBytes": 164,
+          "sha256": "93ec7d84b08f99b7ade7ea43f1020a682dde81a8679de40a075bba1885ee165b",
+          "uploadedAt": "2026-10-08T09:12:23.818977Z",
+          "category": {
+            "id": "86fadb79-c309-4420-9a5c-96070a422fdd",
+            "name": "布局验收-40-键盘窄屏最终名称"
+          },
+          "archivedAt": null,
+          "textStatus": "ready",
+          "textError": null,
+          "textEncoding": "utf-8",
+          "vectorStatus": "ready",
+          "vectorError": null,
+          "chunkCount": 2,
+          "downloadUrl": "/api/v1/documents/27f18fb7-1673-4ef3-9679-107c05afdedc/download",
+          "score": 0.581879,
+          "sources": [
+            {
+              "ordinal": 1,
+              "generation": 1,
+              "heading": "设备借用流程",
+              "text": "设备故障时停止使用，记录现象和发现时间，联系设备管理员，不要自行拆机。管理员安排维修或替代设备。",
+              "score": 0.581879
+            }
+          ]
+        }
+      ],
+      "total": 1,
+      "offset": 0,
+      "limit": 5,
+      "query": "借用的器材坏了需要怎样处理？",
+      "minScore": 0.45,
+      "candidateTotal": 1,
+      "scoreWindow": 0.12,
+      "omittedByWindow": 0,
+      "vectorUnavailableCount": 0,
+      "modelRevision": "7999e1d3359715c523056ef9478215996d62a620"
+    },
+    "semantic_different": {
+      "items": [],
+      "total": 0,
+      "offset": 0,
+      "limit": 5,
+      "query": "借用的器材坏了需要怎样处理？",
+      "minScore": 0.45,
+      "candidateTotal": 0,
+      "scoreWindow": 0.12,
+      "omittedByWindow": 0,
+      "vectorUnavailableCount": 0,
+      "modelRevision": "7999e1d3359715c523056ef9478215996d62a620"
+    }
+  }
+}
