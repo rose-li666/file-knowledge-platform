@@ -34,3 +34,8 @@ P2：`search.retry_text` 原先先提取正文，再使用对 pending/processing
 冷构建npm ci实际提示1个高危Vite依赖。npm audit退出1确认旧7.1.12受影响；[维护方公告](https://github.com/vitejs/vite/security/advisories/GHSA-fx2h-pf6j-xcff)说明Windows开发服务器路径访问问题。应用Docker只提供静态构建，不运行Vite开发服务器；仍升级并精确锁定7.3.7，未使用audit fix --force。升级后TypeScript/Vite构建退出0（5.803秒），npm audit退出0、0已知审计项。前后JSON见evidence/review。审计只覆盖当前npm已知项目，不当作全面安全保证。
 
 最后补查M1 staged助手只构建独立随机项目，不启动演示服务；实际Compose参数/config退出0、缺ZIP verify入口在调用Docker前拒绝（预期退出2）。最终应用21个运行源码/锁文件与已测69944d3按规范化LF字节逐一一致，证据runtime-source-match.json；后续差异仅报告及历史隔离助手。
+# 批量整理追加检查
+
+本轮 Agent 自查新增路径：批量接口有 UUID/1–100 数量校验、完整 ID 去重，静态 batch 路由在动态 UUID 路由前注册；目标错误不更新任何文件，缺失文件逐项反馈，SQL失败回滚整个事务，响应丢失后同目标重试不重复计数。请求只写 category_id，不改变路径、原字节、归档、正文、索引和密钥配置。名称筛选是参数化字面子串，不使用 SQL 通配符。
+
+页面检查：两入口统一批量提交，成功移除选择、失败保留姓名/ID/原因；分类刷新不清空弹窗草稿；旧请求通过代次与 AbortController 丢弃，选择跨分页保留；明确目标且提示原归属会被替换。补正末页移空后的分页偏移，以及部分失败后再选择新文件时的按钮文案。窄屏可滚动内容与固定操作区分开。真实HTTP、故障、最终镜像及浏览器证据见 [batch-organization.md](batch-organization.md)。普通Chrome用户人工仍待明确结果，不作通过推断。

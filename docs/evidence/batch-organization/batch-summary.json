@@ -1,0 +1,5 @@
+{
+  "seconds": 2.6387263,
+  "command": "docker exec platform-check-429e373851 python scripts/verify_batch_organization.py --report /tmp/check-reports/batch.json",
+  "exit_code": 0
+}

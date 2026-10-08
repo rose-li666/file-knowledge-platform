@@ -1,0 +1,505 @@
+{
+  "type": "Docker actual HTTP after IAB; controlled SQL fault for rollback",
+  "checks": [
+    {
+      "check": "browser_moves_refresh_counts_keyword_semantic_current_category",
+      "passed": true
+    },
+    {
+      "check": "real_database_failure_atomic_rollback_and_retry",
+      "passed": true
+    },
+    {
+      "check": "fault_restored_metadata_vectors_original_download_sha",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "kind": "list",
+      "category": "26fea3d4-583c-4332-8a16-98434de61bb1",
+      "response": {
+        "items": [],
+        "total": 0,
+        "limit": 50,
+        "offset": 0
+      }
+    },
+    {
+      "kind": "list",
+      "category": "9a5b6677-9704-447a-8837-60d0eb9e76ef",
+      "response": {
+        "items": [
+          {
+            "id": "7be7ecd0-9308-46c7-afcd-6a6a14acce8e",
+            "name": "设备整理-同名.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 169,
+            "sha256": "ef6269ab94e5e0a535697fecc03ab8889c1a8c8dbabe2d445b66327ecc363244",
+            "uploadedAt": "2026-10-08T09:57:41.448695Z",
+            "category": {
+              "id": "9a5b6677-9704-447a-8837-60d0eb9e76ef",
+              "name": "批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/7be7ecd0-9308-46c7-afcd-6a6a14acce8e/download"
+          },
+          {
+            "id": "96a541b0-d6d4-4f02-ac43-3e0e72126f51",
+            "name": "设备整理-同名.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 169,
+            "sha256": "47a355fca7c159f435f27ccc67420a56f546594ca93dead1ef1f9cc92164ec27",
+            "uploadedAt": "2026-10-08T09:57:41.226871Z",
+            "category": {
+              "id": "9a5b6677-9704-447a-8837-60d0eb9e76ef",
+              "name": "批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/96a541b0-d6d4-4f02-ac43-3e0e72126f51/download"
+          }
+        ],
+        "total": 2,
+        "limit": 50,
+        "offset": 0
+      }
+    },
+    {
+      "kind": "list",
+      "category": "193c4d68-9732-4086-9071-c038494fc32c",
+      "response": {
+        "items": [
+          {
+            "id": "6bc9b2c2-7057-49df-a3ef-d1b94e5885ee",
+            "name": "设备整理-联系.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 169,
+            "sha256": "bfea950e15925909f4e1019035348949be65c4fe9a139fcac99d68d56e780bd2",
+            "uploadedAt": "2026-10-08T09:57:42.499785Z",
+            "category": {
+              "id": "193c4d68-9732-4086-9071-c038494fc32c",
+              "name": "浏览器批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee/download"
+          },
+          {
+            "id": "430507c8-da4c-41f9-9c34-21a7eaa411d8",
+            "name": "设备整理-操作.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 169,
+            "sha256": "96e8ce39096ec95a37ba02be10214cf02966b76b6ff6386b3c79db8df152a6e3",
+            "uploadedAt": "2026-10-08T09:57:41.872900Z",
+            "category": {
+              "id": "193c4d68-9732-4086-9071-c038494fc32c",
+              "name": "浏览器批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/430507c8-da4c-41f9-9c34-21a7eaa411d8/download"
+          }
+        ],
+        "total": 2,
+        "limit": 50,
+        "offset": 0
+      }
+    },
+    {
+      "kind": "keyword",
+      "category": "26fea3d4-583c-4332-8a16-98434de61bb1",
+      "response": {
+        "items": [],
+        "total": 0,
+        "limit": 25,
+        "offset": 0,
+        "query": "设备管理员",
+        "bodyUnavailableCount": 0
+      }
+    },
+    {
+      "kind": "keyword",
+      "category": "9a5b6677-9704-447a-8837-60d0eb9e76ef",
+      "response": {
+        "items": [
+          {
+            "id": "7be7ecd0-9308-46c7-afcd-6a6a14acce8e",
+            "name": "设备整理-同名.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 169,
+            "sha256": "ef6269ab94e5e0a535697fecc03ab8889c1a8c8dbabe2d445b66327ecc363244",
+            "uploadedAt": "2026-10-08T09:57:41.448695Z",
+            "category": {
+              "id": "9a5b6677-9704-447a-8837-60d0eb9e76ef",
+              "name": "批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/7be7ecd0-9308-46c7-afcd-6a6a14acce8e/download",
+            "hit": {
+              "fields": [
+                "body"
+              ],
+              "text": "# 设备故障处理 1\n\n借用设备出现故障时停止使用,记录现象和发现时间,联系设备管理员安排维修或替代设备,不要自行拆机。\n",
+              "highlightStart": 38,
+              "highlightEnd": 43
+            }
+          },
+          {
+            "id": "96a541b0-d6d4-4f02-ac43-3e0e72126f51",
+            "name": "设备整理-同名.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 169,
+            "sha256": "47a355fca7c159f435f27ccc67420a56f546594ca93dead1ef1f9cc92164ec27",
+            "uploadedAt": "2026-10-08T09:57:41.226871Z",
+            "category": {
+              "id": "9a5b6677-9704-447a-8837-60d0eb9e76ef",
+              "name": "批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/96a541b0-d6d4-4f02-ac43-3e0e72126f51/download",
+            "hit": {
+              "fields": [
+                "body"
+              ],
+              "text": "# 设备故障处理 0\n\n借用设备出现故障时停止使用,记录现象和发现时间,联系设备管理员安排维修或替代设备,不要自行拆机。\n",
+              "highlightStart": 38,
+              "highlightEnd": 43
+            }
+          }
+        ],
+        "total": 2,
+        "limit": 25,
+        "offset": 0,
+        "query": "设备管理员",
+        "bodyUnavailableCount": 0
+      }
+    },
+    {
+      "kind": "keyword",
+      "category": "193c4d68-9732-4086-9071-c038494fc32c",
+      "response": {
+        "items": [
+          {
+            "id": "6bc9b2c2-7057-49df-a3ef-d1b94e5885ee",
+            "name": "设备整理-联系.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 169,
+            "sha256": "bfea950e15925909f4e1019035348949be65c4fe9a139fcac99d68d56e780bd2",
+            "uploadedAt": "2026-10-08T09:57:42.499785Z",
+            "category": {
+              "id": "193c4d68-9732-4086-9071-c038494fc32c",
+              "name": "浏览器批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee/download",
+            "hit": {
+              "fields": [
+                "body"
+              ],
+              "text": "# 设备故障处理 3\n\n借用设备出现故障时停止使用,记录现象和发现时间,联系设备管理员安排维修或替代设备,不要自行拆机。\n",
+              "highlightStart": 38,
+              "highlightEnd": 43
+            }
+          },
+          {
+            "id": "430507c8-da4c-41f9-9c34-21a7eaa411d8",
+            "name": "设备整理-操作.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 169,
+            "sha256": "96e8ce39096ec95a37ba02be10214cf02966b76b6ff6386b3c79db8df152a6e3",
+            "uploadedAt": "2026-10-08T09:57:41.872900Z",
+            "category": {
+              "id": "193c4d68-9732-4086-9071-c038494fc32c",
+              "name": "浏览器批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/430507c8-da4c-41f9-9c34-21a7eaa411d8/download",
+            "hit": {
+              "fields": [
+                "body"
+              ],
+              "text": "# 设备故障处理 2\n\n借用设备出现故障时停止使用,记录现象和发现时间,联系设备管理员安排维修或替代设备,不要自行拆机。\n",
+              "highlightStart": 38,
+              "highlightEnd": 43
+            }
+          }
+        ],
+        "total": 2,
+        "limit": 25,
+        "offset": 0,
+        "query": "设备管理员",
+        "bodyUnavailableCount": 0
+      }
+    },
+    {
+      "kind": "semantic",
+      "category": "26fea3d4-583c-4332-8a16-98434de61bb1",
+      "response": {
+        "items": [],
+        "total": 0,
+        "offset": 0,
+        "limit": 5,
+        "query": "借用的器材坏了需要怎样处理？",
+        "minScore": 0.45,
+        "candidateTotal": 0,
+        "scoreWindow": 1.0,
+        "omittedByWindow": 0,
+        "vectorUnavailableCount": 0,
+        "modelRevision": "7999e1d3359715c523056ef9478215996d62a620"
+      }
+    },
+    {
+      "kind": "semantic",
+      "category": "9a5b6677-9704-447a-8837-60d0eb9e76ef",
+      "response": {
+        "items": [
+          {
+            "id": "7be7ecd0-9308-46c7-afcd-6a6a14acce8e",
+            "name": "设备整理-同名.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 169,
+            "sha256": "ef6269ab94e5e0a535697fecc03ab8889c1a8c8dbabe2d445b66327ecc363244",
+            "uploadedAt": "2026-10-08T09:57:41.448695Z",
+            "category": {
+              "id": "9a5b6677-9704-447a-8837-60d0eb9e76ef",
+              "name": "批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/7be7ecd0-9308-46c7-afcd-6a6a14acce8e/download",
+            "score": 0.530475,
+            "sources": [
+              {
+                "ordinal": 0,
+                "generation": 1,
+                "heading": "设备故障处理 1",
+                "text": "借用设备出现故障时停止使用，记录现象和发现时间，联系设备管理员安排维修或替代设备，不要自行拆机。",
+                "score": 0.530475
+              }
+            ]
+          },
+          {
+            "id": "96a541b0-d6d4-4f02-ac43-3e0e72126f51",
+            "name": "设备整理-同名.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 169,
+            "sha256": "47a355fca7c159f435f27ccc67420a56f546594ca93dead1ef1f9cc92164ec27",
+            "uploadedAt": "2026-10-08T09:57:41.226871Z",
+            "category": {
+              "id": "9a5b6677-9704-447a-8837-60d0eb9e76ef",
+              "name": "批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/96a541b0-d6d4-4f02-ac43-3e0e72126f51/download",
+            "score": 0.525304,
+            "sources": [
+              {
+                "ordinal": 0,
+                "generation": 1,
+                "heading": "设备故障处理 0",
+                "text": "借用设备出现故障时停止使用，记录现象和发现时间，联系设备管理员安排维修或替代设备，不要自行拆机。",
+                "score": 0.525304
+              }
+            ]
+          }
+        ],
+        "total": 2,
+        "offset": 0,
+        "limit": 5,
+        "query": "借用的器材坏了需要怎样处理？",
+        "minScore": 0.45,
+        "candidateTotal": 2,
+        "scoreWindow": 1.0,
+        "omittedByWindow": 0,
+        "vectorUnavailableCount": 0,
+        "modelRevision": "7999e1d3359715c523056ef9478215996d62a620"
+      }
+    },
+    {
+      "kind": "semantic",
+      "category": "193c4d68-9732-4086-9071-c038494fc32c",
+      "response": {
+        "items": [
+          {
+            "id": "6bc9b2c2-7057-49df-a3ef-d1b94e5885ee",
+            "name": "设备整理-联系.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 169,
+            "sha256": "bfea950e15925909f4e1019035348949be65c4fe9a139fcac99d68d56e780bd2",
+            "uploadedAt": "2026-10-08T09:57:42.499785Z",
+            "category": {
+              "id": "193c4d68-9732-4086-9071-c038494fc32c",
+              "name": "浏览器批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee/download",
+            "score": 0.541025,
+            "sources": [
+              {
+                "ordinal": 0,
+                "generation": 1,
+                "heading": "设备故障处理 3",
+                "text": "借用设备出现故障时停止使用，记录现象和发现时间，联系设备管理员安排维修或替代设备，不要自行拆机。",
+                "score": 0.541025
+              }
+            ]
+          },
+          {
+            "id": "430507c8-da4c-41f9-9c34-21a7eaa411d8",
+            "name": "设备整理-操作.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 169,
+            "sha256": "96e8ce39096ec95a37ba02be10214cf02966b76b6ff6386b3c79db8df152a6e3",
+            "uploadedAt": "2026-10-08T09:57:41.872900Z",
+            "category": {
+              "id": "193c4d68-9732-4086-9071-c038494fc32c",
+              "name": "浏览器批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/430507c8-da4c-41f9-9c34-21a7eaa411d8/download",
+            "score": 0.53558,
+            "sources": [
+              {
+                "ordinal": 0,
+                "generation": 1,
+                "heading": "设备故障处理 2",
+                "text": "借用设备出现故障时停止使用，记录现象和发现时间，联系设备管理员安排维修或替代设备，不要自行拆机。",
+                "score": 0.53558
+              }
+            ]
+          }
+        ],
+        "total": 2,
+        "offset": 0,
+        "limit": 5,
+        "query": "借用的器材坏了需要怎样处理？",
+        "minScore": 0.45,
+        "candidateTotal": 2,
+        "scoreWindow": 1.0,
+        "omittedByWindow": 0,
+        "vectorUnavailableCount": 0,
+        "modelRevision": "7999e1d3359715c523056ef9478215996d62a620"
+      }
+    },
+    {
+      "http": 503,
+      "response": {
+        "error": {
+          "code": "DATABASE_UNAVAILABLE",
+          "message": "操作未能确认完成，请刷新核对后重试。",
+          "retryable": true
+        }
+      }
+    },
+    {
+      "id": "96a541b0-d6d4-4f02-ac43-3e0e72126f51",
+      "originalSha256": "47a355fca7c159f435f27ccc67420a56f546594ca93dead1ef1f9cc92164ec27",
+      "downloadSha256": "47a355fca7c159f435f27ccc67420a56f546594ca93dead1ef1f9cc92164ec27",
+      "vectorStatus": "ready",
+      "chunkCount": 1
+    },
+    {
+      "id": "7be7ecd0-9308-46c7-afcd-6a6a14acce8e",
+      "originalSha256": "ef6269ab94e5e0a535697fecc03ab8889c1a8c8dbabe2d445b66327ecc363244",
+      "downloadSha256": "ef6269ab94e5e0a535697fecc03ab8889c1a8c8dbabe2d445b66327ecc363244",
+      "vectorStatus": "ready",
+      "chunkCount": 1
+    },
+    {
+      "id": "430507c8-da4c-41f9-9c34-21a7eaa411d8",
+      "originalSha256": "96e8ce39096ec95a37ba02be10214cf02966b76b6ff6386b3c79db8df152a6e3",
+      "downloadSha256": "96e8ce39096ec95a37ba02be10214cf02966b76b6ff6386b3c79db8df152a6e3",
+      "vectorStatus": "ready",
+      "chunkCount": 1
+    },
+    {
+      "id": "6bc9b2c2-7057-49df-a3ef-d1b94e5885ee",
+      "originalSha256": "bfea950e15925909f4e1019035348949be65c4fe9a139fcac99d68d56e780bd2",
+      "downloadSha256": "bfea950e15925909f4e1019035348949be65c4fe9a139fcac99d68d56e780bd2",
+      "vectorStatus": "ready",
+      "chunkCount": 1
+    }
+  ],
+  "seconds": 0.103
+}

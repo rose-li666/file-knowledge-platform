@@ -1,0 +1,69 @@
+{
+  "container": "platform-check-429e373851",
+  "volume": "platform-check-429e373851-data",
+  "port": 18086,
+  "steps": [
+    {
+      "step": "start",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--name",
+        "platform-check-429e373851",
+        "-e",
+        "ACCEPTANCE_TEST_RUN=platform-check-429e373851",
+        "-p",
+        "127.0.0.1:18086:8000",
+        "--mount",
+        "type=volume,source=platform-check-429e373851-data,target=/data",
+        "--mount",
+        "type=bind,source=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\scripts,target=/app/scripts,readonly",
+        "--mount",
+        "type=bind,source=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\frontend\\dist,target=/app/frontend/dist,readonly",
+        "--mount",
+        "type=bind,source=C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\app,target=/app/app,readonly",
+        "knowledge-platform-app:latest"
+      ],
+      "exit_code": 0,
+      "seconds": 0.407
+    },
+    {
+      "step": "verify",
+      "command": [
+        "docker",
+        "exec",
+        "platform-check-429e373851",
+        "python",
+        "scripts/verify_acceptance.py",
+        "--report",
+        "/tmp/check-reports/results.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.537
+    },
+    {
+      "step": "copy",
+      "command": [
+        "docker",
+        "cp",
+        "platform-check-429e373851:/tmp/check-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\acceptance\\20261008T095641Z-platform-check-429e373851"
+      ],
+      "exit_code": 0,
+      "seconds": 0.167
+    },
+    {
+      "step": "logs",
+      "command": [
+        "docker",
+        "logs",
+        "platform-check-429e373851"
+      ],
+      "exit_code": 0,
+      "seconds": 0.158
+    }
+  ],
+  "failure": null,
+  "seconds": 12.778
+}

@@ -172,3 +172,45 @@ footer { padding-top: 16px; color: #97a292; font-size: 10px; }
 
 .pdf-preview p { color:#65776b; font-size:12px; line-height:1.6; }
 .pdf-preview iframe { width:100%; height:480px; border:1px solid #d6e0d8; border-radius:8px; }
+
+.category-created { padding: 16px 18px; overflow-y: auto; }
+.section-actions { display: flex; flex-wrap: wrap; gap: 7px; flex-shrink: 0; }
+.bulk-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 14px; border-top: 1px solid #e0e7dc; background: #f6f8f4; font-size: 12px; }
+.bulk-toolbar label { display: flex; align-items: center; gap: 6px; }
+.file-choice { display: flex; align-items: center; gap: 7px; }
+input[type=checkbox] { width: 16px; height: 16px; padding: 0; flex-shrink: 0; accent-color: #245f4b; }
+.organizer-dialog { width: min(700px, calc(100vw - 24px)); max-width: calc(100vw - 24px); max-height: calc(100dvh - 24px); padding: 0; border: 1px solid #d2dfd4; border-radius: 12px; overflow: hidden; color: #284333; }
+.organizer-dialog::backdrop { background: #153c3355; }
+.organizer-frame { display: flex; flex-direction: column; max-height: calc(100dvh - 26px); }
+.organizer-heading { padding: 13px 16px; flex-shrink: 0; background: #edf4e9; }
+.organizer-heading h2 { font-size: 17px; margin: 0; overflow-wrap: anywhere; }
+.organizer-body { overflow-y: auto; min-height: 0; padding: 12px 16px; overscroll-behavior-y: contain; }
+.ownership-warning { background: #fff6e5; color: #7b6540; border-radius: 6px; padding: 8px 10px; }
+.organizer-target, .organizer-filter, .organizer-search label { display: block; font-size: 12px; min-width: 0; }
+.organizer-target select, .organizer-filter select, .organizer-search input { display: block; margin-top: 6px; width: 100%; }
+.organizer-search { display: flex; align-items: end; gap: 8px; margin: 12px 0; }
+.organizer-search label { flex: 1; }
+.organizer-search button { flex-shrink: 0; }
+.organizer-files { margin-top: 12px; }
+.organizer-file { display: flex; align-items: start; gap: 10px; padding: 11px 2px; border-bottom: 1px solid #e3e9df; cursor: pointer; }
+.organizer-file span, .chosen-files span { min-width: 0; overflow-wrap: anywhere; }
+.organizer-file strong { font-size: 13px; font-weight: 600; }
+.organizer-file:has(input:checked) { background: #eef6ed; }
+.organizer-pagination { display: flex; justify-content: space-between; align-items: center; gap: 6px; margin-top: 12px; font-size: 12px; }
+.chosen-files { margin-top: 12px; }
+.chosen-files > div { display: flex; justify-content: space-between; align-items: start; gap: 8px; padding: 8px 0; border-bottom: 1px solid #e5eadf; font-size: 12px; }
+.chosen-files button { flex-shrink: 0; }
+.batch-result { border: 1px solid #d0e2d4; padding: 8px 10px; background: #edf6ee; border-radius: 7px; }
+.batch-result ul { padding-left: 20px; font-size: 12px; overflow-wrap: anywhere; }
+.organizer-actions { flex-shrink: 0; padding: 10px 16px; background: #f6f8f4; border-top: 1px solid #dfe7df; }
+.organizer-actions p { margin: 0 0 7px; font-size: 12px; max-height: 3.4em; overflow: auto; }
+.organizer-actions > div { display: flex; justify-content: end; gap: 8px; }
+@media (max-width: 760px) {
+  .section-heading { flex-wrap: wrap; }
+  .section-actions { width: 100%; justify-content: end; }
+  .section-actions button, .bulk-toolbar button { padding: 7px 10px; font-size: 12px; }
+  .organizer-heading { padding: 10px 12px; }
+  .organizer-heading h2 { font-size: 15px; max-height: 3em; overflow: auto; }
+  .organizer-body { padding: 10px 12px; }
+  .organizer-actions { padding: 9px 12px; }
+}

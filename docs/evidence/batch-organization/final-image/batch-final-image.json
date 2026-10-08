@@ -1,0 +1,1001 @@
+{
+  "type": "automated Docker real TCP HTTP",
+  "checks": [
+    {
+      "check": "partial_missing_file_dedup_same_names_counts",
+      "passed": true
+    },
+    {
+      "check": "idempotent_repeat_failure_only_retry_no_duplicate_count",
+      "passed": true
+    },
+    {
+      "check": "invalid_target_empty_oversize_bad_ids_no_changes",
+      "passed": true
+    },
+    {
+      "check": "refresh_metadata_name_only_query_paging_keyword_semantic_category_filters",
+      "passed": true
+    },
+    {
+      "check": "archived_file_move_to_unclassified_retains_archive",
+      "passed": true
+    },
+    {
+      "check": "all_original_download_bytes_and_sha_unchanged",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "ids": [
+        "47869d0f-23ee-48ea-a20b-947a97c6d7fb",
+        "f33fed0e-d71e-4e1d-90a7-bb35657efe0b",
+        "47869d0f-23ee-48ea-a20b-947a97c6d7fb",
+        "71ac9d3b-a793-41e6-a16b-a30c1b292355"
+      ],
+      "target": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+      "http": 200,
+      "response": {
+        "categoryId": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+        "items": [
+          {
+            "documentId": "47869d0f-23ee-48ea-a20b-947a97c6d7fb",
+            "name": "设备整理-同名.md",
+            "success": true,
+            "changed": true
+          },
+          {
+            "documentId": "f33fed0e-d71e-4e1d-90a7-bb35657efe0b",
+            "name": "设备整理-同名.md",
+            "success": true,
+            "changed": true
+          },
+          {
+            "documentId": "71ac9d3b-a793-41e6-a16b-a30c1b292355",
+            "name": null,
+            "success": false,
+            "error": {
+              "code": "DOCUMENT_NOT_FOUND",
+              "message": "文件不存在，请刷新列表核对。",
+              "retryable": false
+            }
+          }
+        ],
+        "succeededCount": 2,
+        "failedCount": 1
+      }
+    },
+    {
+      "ids": [
+        "47869d0f-23ee-48ea-a20b-947a97c6d7fb",
+        "f33fed0e-d71e-4e1d-90a7-bb35657efe0b"
+      ],
+      "target": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+      "http": 200,
+      "response": {
+        "categoryId": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+        "items": [
+          {
+            "documentId": "47869d0f-23ee-48ea-a20b-947a97c6d7fb",
+            "name": "设备整理-同名.md",
+            "success": true,
+            "changed": false
+          },
+          {
+            "documentId": "f33fed0e-d71e-4e1d-90a7-bb35657efe0b",
+            "name": "设备整理-同名.md",
+            "success": true,
+            "changed": false
+          }
+        ],
+        "succeededCount": 2,
+        "failedCount": 0
+      }
+    },
+    {
+      "ids": [
+        "71ac9d3b-a793-41e6-a16b-a30c1b292355"
+      ],
+      "target": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+      "http": 200,
+      "response": {
+        "categoryId": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+        "items": [
+          {
+            "documentId": "71ac9d3b-a793-41e6-a16b-a30c1b292355",
+            "name": null,
+            "success": false,
+            "error": {
+              "code": "DOCUMENT_NOT_FOUND",
+              "message": "文件不存在，请刷新列表核对。",
+              "retryable": false
+            }
+          }
+        ],
+        "succeededCount": 0,
+        "failedCount": 1
+      }
+    },
+    {
+      "ids": [
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "64e2d188-d5c9-456d-9634-ead324f3721c"
+      ],
+      "target": "8bb41699-c0e6-46c2-9f76-20c9091ec9e3",
+      "http": 404,
+      "response": {
+        "error": {
+          "code": "CATEGORY_NOT_FOUND",
+          "message": "目标分类不存在，请刷新分类列表。",
+          "retryable": false
+        }
+      }
+    },
+    {
+      "ids": [],
+      "target": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+      "http": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "too_short",
+            "loc": [
+              "body",
+              "documentIds"
+            ],
+            "msg": "List should have at least 1 item after validation, not 0",
+            "input": [],
+            "ctx": {
+              "field_type": "List",
+              "min_length": 1,
+              "actual_length": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ids": [
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e"
+      ],
+      "target": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+      "http": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "too_long",
+            "loc": [
+              "body",
+              "documentIds"
+            ],
+            "msg": "List should have at most 100 items after validation, not 101",
+            "input": [
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+              "5ecf3cf3-203b-437c-af87-7772bb8fae7e"
+            ],
+            "ctx": {
+              "field_type": "List",
+              "max_length": 100,
+              "actual_length": 101
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ids": [
+        "invalid-id"
+      ],
+      "target": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+      "http": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "uuid_parsing",
+            "loc": [
+              "body",
+              "documentIds",
+              0
+            ],
+            "msg": "Input should be a valid UUID, invalid character: found `i` at 1",
+            "input": "invalid-id",
+            "ctx": {
+              "error": "invalid character: found `i` at 1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "list",
+      "category": "97455ac6-80c0-4ac8-a2bd-e2fa688ca078",
+      "response": {
+        "items": [
+          {
+            "id": "64e2d188-d5c9-456d-9634-ead324f3721c",
+            "name": "设备整理-联系.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 169,
+            "sha256": "bfea950e15925909f4e1019035348949be65c4fe9a139fcac99d68d56e780bd2",
+            "uploadedAt": "2026-10-08T10:09:41.651768Z",
+            "category": {
+              "id": "97455ac6-80c0-4ac8-a2bd-e2fa688ca078",
+              "name": "批量来源"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/64e2d188-d5c9-456d-9634-ead324f3721c/download"
+          },
+          {
+            "id": "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+            "name": "设备整理-操作.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 169,
+            "sha256": "96e8ce39096ec95a37ba02be10214cf02966b76b6ff6386b3c79db8df152a6e3",
+            "uploadedAt": "2026-10-08T10:09:41.024762Z",
+            "category": {
+              "id": "97455ac6-80c0-4ac8-a2bd-e2fa688ca078",
+              "name": "批量来源"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/5ecf3cf3-203b-437c-af87-7772bb8fae7e/download"
+          }
+        ],
+        "total": 2,
+        "limit": 25,
+        "offset": 0
+      }
+    },
+    {
+      "kind": "list",
+      "category": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+      "response": {
+        "items": [
+          {
+            "id": "f33fed0e-d71e-4e1d-90a7-bb35657efe0b",
+            "name": "设备整理-同名.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 169,
+            "sha256": "ef6269ab94e5e0a535697fecc03ab8889c1a8c8dbabe2d445b66327ecc363244",
+            "uploadedAt": "2026-10-08T10:09:40.600868Z",
+            "category": {
+              "id": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+              "name": "批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/f33fed0e-d71e-4e1d-90a7-bb35657efe0b/download"
+          },
+          {
+            "id": "47869d0f-23ee-48ea-a20b-947a97c6d7fb",
+            "name": "设备整理-同名.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 169,
+            "sha256": "47a355fca7c159f435f27ccc67420a56f546594ca93dead1ef1f9cc92164ec27",
+            "uploadedAt": "2026-10-08T10:09:40.175574Z",
+            "category": {
+              "id": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+              "name": "批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/47869d0f-23ee-48ea-a20b-947a97c6d7fb/download"
+          }
+        ],
+        "total": 2,
+        "limit": 25,
+        "offset": 0
+      }
+    },
+    {
+      "kind": "keyword",
+      "category": "97455ac6-80c0-4ac8-a2bd-e2fa688ca078",
+      "response": {
+        "items": [
+          {
+            "id": "64e2d188-d5c9-456d-9634-ead324f3721c",
+            "name": "设备整理-联系.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 169,
+            "sha256": "bfea950e15925909f4e1019035348949be65c4fe9a139fcac99d68d56e780bd2",
+            "uploadedAt": "2026-10-08T10:09:41.651768Z",
+            "category": {
+              "id": "97455ac6-80c0-4ac8-a2bd-e2fa688ca078",
+              "name": "批量来源"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/64e2d188-d5c9-456d-9634-ead324f3721c/download",
+            "hit": {
+              "fields": [
+                "body"
+              ],
+              "text": "# 设备故障处理 3\n\n借用设备出现故障时停止使用,记录现象和发现时间,联系设备管理员安排维修或替代设备,不要自行拆机。\n",
+              "highlightStart": 38,
+              "highlightEnd": 43
+            }
+          },
+          {
+            "id": "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+            "name": "设备整理-操作.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 169,
+            "sha256": "96e8ce39096ec95a37ba02be10214cf02966b76b6ff6386b3c79db8df152a6e3",
+            "uploadedAt": "2026-10-08T10:09:41.024762Z",
+            "category": {
+              "id": "97455ac6-80c0-4ac8-a2bd-e2fa688ca078",
+              "name": "批量来源"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/5ecf3cf3-203b-437c-af87-7772bb8fae7e/download",
+            "hit": {
+              "fields": [
+                "body"
+              ],
+              "text": "# 设备故障处理 2\n\n借用设备出现故障时停止使用,记录现象和发现时间,联系设备管理员安排维修或替代设备,不要自行拆机。\n",
+              "highlightStart": 38,
+              "highlightEnd": 43
+            }
+          }
+        ],
+        "total": 2,
+        "limit": 25,
+        "offset": 0,
+        "query": "设备管理员",
+        "bodyUnavailableCount": 0
+      }
+    },
+    {
+      "kind": "keyword",
+      "category": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+      "response": {
+        "items": [
+          {
+            "id": "f33fed0e-d71e-4e1d-90a7-bb35657efe0b",
+            "name": "设备整理-同名.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 169,
+            "sha256": "ef6269ab94e5e0a535697fecc03ab8889c1a8c8dbabe2d445b66327ecc363244",
+            "uploadedAt": "2026-10-08T10:09:40.600868Z",
+            "category": {
+              "id": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+              "name": "批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/f33fed0e-d71e-4e1d-90a7-bb35657efe0b/download",
+            "hit": {
+              "fields": [
+                "body"
+              ],
+              "text": "# 设备故障处理 1\n\n借用设备出现故障时停止使用,记录现象和发现时间,联系设备管理员安排维修或替代设备,不要自行拆机。\n",
+              "highlightStart": 38,
+              "highlightEnd": 43
+            }
+          },
+          {
+            "id": "47869d0f-23ee-48ea-a20b-947a97c6d7fb",
+            "name": "设备整理-同名.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 169,
+            "sha256": "47a355fca7c159f435f27ccc67420a56f546594ca93dead1ef1f9cc92164ec27",
+            "uploadedAt": "2026-10-08T10:09:40.175574Z",
+            "category": {
+              "id": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+              "name": "批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/47869d0f-23ee-48ea-a20b-947a97c6d7fb/download",
+            "hit": {
+              "fields": [
+                "body"
+              ],
+              "text": "# 设备故障处理 0\n\n借用设备出现故障时停止使用,记录现象和发现时间,联系设备管理员安排维修或替代设备,不要自行拆机。\n",
+              "highlightStart": 38,
+              "highlightEnd": 43
+            }
+          }
+        ],
+        "total": 2,
+        "limit": 25,
+        "offset": 0,
+        "query": "设备管理员",
+        "bodyUnavailableCount": 0
+      }
+    },
+    {
+      "kind": "semantic",
+      "category": "97455ac6-80c0-4ac8-a2bd-e2fa688ca078",
+      "response": {
+        "items": [
+          {
+            "id": "64e2d188-d5c9-456d-9634-ead324f3721c",
+            "name": "设备整理-联系.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 169,
+            "sha256": "bfea950e15925909f4e1019035348949be65c4fe9a139fcac99d68d56e780bd2",
+            "uploadedAt": "2026-10-08T10:09:41.651768Z",
+            "category": {
+              "id": "97455ac6-80c0-4ac8-a2bd-e2fa688ca078",
+              "name": "批量来源"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/64e2d188-d5c9-456d-9634-ead324f3721c/download",
+            "score": 0.541025,
+            "sources": [
+              {
+                "ordinal": 0,
+                "generation": 1,
+                "heading": "设备故障处理 3",
+                "text": "借用设备出现故障时停止使用，记录现象和发现时间，联系设备管理员安排维修或替代设备，不要自行拆机。",
+                "score": 0.541025
+              }
+            ]
+          },
+          {
+            "id": "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+            "name": "设备整理-操作.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 169,
+            "sha256": "96e8ce39096ec95a37ba02be10214cf02966b76b6ff6386b3c79db8df152a6e3",
+            "uploadedAt": "2026-10-08T10:09:41.024762Z",
+            "category": {
+              "id": "97455ac6-80c0-4ac8-a2bd-e2fa688ca078",
+              "name": "批量来源"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/5ecf3cf3-203b-437c-af87-7772bb8fae7e/download",
+            "score": 0.53558,
+            "sources": [
+              {
+                "ordinal": 0,
+                "generation": 1,
+                "heading": "设备故障处理 2",
+                "text": "借用设备出现故障时停止使用，记录现象和发现时间，联系设备管理员安排维修或替代设备，不要自行拆机。",
+                "score": 0.53558
+              }
+            ]
+          }
+        ],
+        "total": 2,
+        "offset": 0,
+        "limit": 25,
+        "query": "借用的器材坏了需要怎样处理？",
+        "minScore": 0.45,
+        "candidateTotal": 2,
+        "scoreWindow": 1.0,
+        "omittedByWindow": 0,
+        "vectorUnavailableCount": 0,
+        "modelRevision": "7999e1d3359715c523056ef9478215996d62a620"
+      }
+    },
+    {
+      "kind": "semantic",
+      "category": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+      "response": {
+        "items": [
+          {
+            "id": "f33fed0e-d71e-4e1d-90a7-bb35657efe0b",
+            "name": "设备整理-同名.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 169,
+            "sha256": "ef6269ab94e5e0a535697fecc03ab8889c1a8c8dbabe2d445b66327ecc363244",
+            "uploadedAt": "2026-10-08T10:09:40.600868Z",
+            "category": {
+              "id": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+              "name": "批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/f33fed0e-d71e-4e1d-90a7-bb35657efe0b/download",
+            "score": 0.530475,
+            "sources": [
+              {
+                "ordinal": 0,
+                "generation": 1,
+                "heading": "设备故障处理 1",
+                "text": "借用设备出现故障时停止使用，记录现象和发现时间，联系设备管理员安排维修或替代设备，不要自行拆机。",
+                "score": 0.530475
+              }
+            ]
+          },
+          {
+            "id": "47869d0f-23ee-48ea-a20b-947a97c6d7fb",
+            "name": "设备整理-同名.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 169,
+            "sha256": "47a355fca7c159f435f27ccc67420a56f546594ca93dead1ef1f9cc92164ec27",
+            "uploadedAt": "2026-10-08T10:09:40.175574Z",
+            "category": {
+              "id": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+              "name": "批量目标"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 1,
+            "downloadUrl": "/api/v1/documents/47869d0f-23ee-48ea-a20b-947a97c6d7fb/download",
+            "score": 0.525304,
+            "sources": [
+              {
+                "ordinal": 0,
+                "generation": 1,
+                "heading": "设备故障处理 0",
+                "text": "借用设备出现故障时停止使用，记录现象和发现时间，联系设备管理员安排维修或替代设备，不要自行拆机。",
+                "score": 0.525304
+              }
+            ]
+          }
+        ],
+        "total": 2,
+        "offset": 0,
+        "limit": 25,
+        "query": "借用的器材坏了需要怎样处理？",
+        "minScore": 0.45,
+        "candidateTotal": 2,
+        "scoreWindow": 1.0,
+        "omittedByWindow": 0,
+        "vectorUnavailableCount": 0,
+        "modelRevision": "7999e1d3359715c523056ef9478215996d62a620"
+      }
+    },
+    {
+      "ids": [
+        "64e2d188-d5c9-456d-9634-ead324f3721c"
+      ],
+      "target": null,
+      "http": 200,
+      "response": {
+        "categoryId": null,
+        "items": [
+          {
+            "documentId": "64e2d188-d5c9-456d-9634-ead324f3721c",
+            "name": "设备整理-联系.txt",
+            "success": true,
+            "changed": true
+          }
+        ],
+        "succeededCount": 1,
+        "failedCount": 0
+      }
+    },
+    {
+      "ids": [
+        "47869d0f-23ee-48ea-a20b-947a97c6d7fb",
+        "f33fed0e-d71e-4e1d-90a7-bb35657efe0b",
+        "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "64e2d188-d5c9-456d-9634-ead324f3721c"
+      ],
+      "target": "97455ac6-80c0-4ac8-a2bd-e2fa688ca078",
+      "http": 200,
+      "response": {
+        "categoryId": "97455ac6-80c0-4ac8-a2bd-e2fa688ca078",
+        "items": [
+          {
+            "documentId": "47869d0f-23ee-48ea-a20b-947a97c6d7fb",
+            "name": "设备整理-同名.md",
+            "success": true,
+            "changed": true
+          },
+          {
+            "documentId": "f33fed0e-d71e-4e1d-90a7-bb35657efe0b",
+            "name": "设备整理-同名.md",
+            "success": true,
+            "changed": true
+          },
+          {
+            "documentId": "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+            "name": "设备整理-操作.txt",
+            "success": true,
+            "changed": false
+          },
+          {
+            "documentId": "64e2d188-d5c9-456d-9634-ead324f3721c",
+            "name": "设备整理-联系.txt",
+            "success": true,
+            "changed": true
+          }
+        ],
+        "succeededCount": 4,
+        "failedCount": 0
+      }
+    },
+    {
+      "id": "47869d0f-23ee-48ea-a20b-947a97c6d7fb",
+      "download": {
+        "http": 200,
+        "originalSha256": "47a355fca7c159f435f27ccc67420a56f546594ca93dead1ef1f9cc92164ec27",
+        "downloadSha256": "47a355fca7c159f435f27ccc67420a56f546594ca93dead1ef1f9cc92164ec27"
+      }
+    },
+    {
+      "id": "f33fed0e-d71e-4e1d-90a7-bb35657efe0b",
+      "download": {
+        "http": 200,
+        "originalSha256": "ef6269ab94e5e0a535697fecc03ab8889c1a8c8dbabe2d445b66327ecc363244",
+        "downloadSha256": "ef6269ab94e5e0a535697fecc03ab8889c1a8c8dbabe2d445b66327ecc363244"
+      }
+    },
+    {
+      "id": "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+      "download": {
+        "http": 200,
+        "originalSha256": "96e8ce39096ec95a37ba02be10214cf02966b76b6ff6386b3c79db8df152a6e3",
+        "downloadSha256": "96e8ce39096ec95a37ba02be10214cf02966b76b6ff6386b3c79db8df152a6e3"
+      }
+    },
+    {
+      "id": "64e2d188-d5c9-456d-9634-ead324f3721c",
+      "download": {
+        "http": 200,
+        "originalSha256": "bfea950e15925909f4e1019035348949be65c4fe9a139fcac99d68d56e780bd2",
+        "downloadSha256": "bfea950e15925909f4e1019035348949be65c4fe9a139fcac99d68d56e780bd2"
+      }
+    }
+  ],
+  "failure": null,
+  "browserFixture": {
+    "source": {
+      "id": "97455ac6-80c0-4ac8-a2bd-e2fa688ca078",
+      "name": "批量来源",
+      "activeCount": 0,
+      "archivedCount": 0
+    },
+    "target": {
+      "id": "f431e38d-5f53-4f93-ad08-9bdc6a07ce3c",
+      "name": "批量目标",
+      "activeCount": 0,
+      "archivedCount": 0
+    },
+    "documents": [
+      {
+        "id": "47869d0f-23ee-48ea-a20b-947a97c6d7fb",
+        "name": "设备整理-同名.md",
+        "extension": "md",
+        "mediaType": "text/markdown",
+        "sizeBytes": 169,
+        "sha256": "47a355fca7c159f435f27ccc67420a56f546594ca93dead1ef1f9cc92164ec27",
+        "uploadedAt": "2026-10-08T10:09:40.175574Z",
+        "category": null,
+        "archivedAt": null,
+        "textStatus": "ready",
+        "textError": null,
+        "textEncoding": "utf-8",
+        "vectorStatus": "ready",
+        "vectorError": null,
+        "chunkCount": 1,
+        "downloadUrl": "/api/v1/documents/47869d0f-23ee-48ea-a20b-947a97c6d7fb/download"
+      },
+      {
+        "id": "f33fed0e-d71e-4e1d-90a7-bb35657efe0b",
+        "name": "设备整理-同名.md",
+        "extension": "md",
+        "mediaType": "text/markdown",
+        "sizeBytes": 169,
+        "sha256": "ef6269ab94e5e0a535697fecc03ab8889c1a8c8dbabe2d445b66327ecc363244",
+        "uploadedAt": "2026-10-08T10:09:40.600868Z",
+        "category": null,
+        "archivedAt": null,
+        "textStatus": "ready",
+        "textError": null,
+        "textEncoding": "utf-8",
+        "vectorStatus": "ready",
+        "vectorError": null,
+        "chunkCount": 1,
+        "downloadUrl": "/api/v1/documents/f33fed0e-d71e-4e1d-90a7-bb35657efe0b/download"
+      },
+      {
+        "id": "5ecf3cf3-203b-437c-af87-7772bb8fae7e",
+        "name": "设备整理-操作.txt",
+        "extension": "txt",
+        "mediaType": "text/plain",
+        "sizeBytes": 169,
+        "sha256": "96e8ce39096ec95a37ba02be10214cf02966b76b6ff6386b3c79db8df152a6e3",
+        "uploadedAt": "2026-10-08T10:09:41.024762Z",
+        "category": null,
+        "archivedAt": null,
+        "textStatus": "ready",
+        "textError": null,
+        "textEncoding": "utf-8",
+        "vectorStatus": "ready",
+        "vectorError": null,
+        "chunkCount": 1,
+        "downloadUrl": "/api/v1/documents/5ecf3cf3-203b-437c-af87-7772bb8fae7e/download"
+      },
+      {
+        "id": "64e2d188-d5c9-456d-9634-ead324f3721c",
+        "name": "设备整理-联系.txt",
+        "extension": "txt",
+        "mediaType": "text/plain",
+        "sizeBytes": 169,
+        "sha256": "bfea950e15925909f4e1019035348949be65c4fe9a139fcac99d68d56e780bd2",
+        "uploadedAt": "2026-10-08T10:09:41.651768Z",
+        "category": null,
+        "archivedAt": null,
+        "textStatus": "ready",
+        "textError": null,
+        "textEncoding": "utf-8",
+        "vectorStatus": "ready",
+        "vectorError": null,
+        "chunkCount": 1,
+        "downloadUrl": "/api/v1/documents/64e2d188-d5c9-456d-9634-ead324f3721c/download"
+      }
+    ]
+  },
+  "seconds": 2.25
+}

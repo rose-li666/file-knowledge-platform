@@ -1,0 +1,167 @@
+{
+  "type": "Agent in-app browser, separate from user manual Chrome",
+  "records": [
+    {
+      "check": "create_then_add_entry",
+      "text": "管理分类\n5 个分类\n\n已创建分类「浏览器批量目标」。\n\n接下来选择已有文件，加入这个分类。\n\n完成\n添加文件"
+    },
+    {
+      "check": "cross_page_selection",
+      "text": "已选 2 个 · 目标：浏览器批量目标\n\n取消\n移入此分类"
+    },
+    {
+      "check": "name_filter_selection_preserved_twins",
+      "checked": [
+        "选择文件 设备整理-同名.md ID 7be7ecd0",
+        "选择文件 设备整理-同名.md ID 96a541b0"
+      ],
+      "files": [
+        "设备整理-联系.txt当前分类：批量来源 · ID 6bc9b2c2",
+        "设备整理-操作.txt当前分类：批量来源 · ID 430507c8",
+        "设备整理-同名.md当前分类：批量来源 · ID 7be7ecd0",
+        "设备整理-同名.md当前分类：批量来源 · ID 96a541b0"
+      ],
+      "selected": "已选 2 个 · 目标：浏览器批量目标取消移入此分类"
+    },
+    {
+      "check": "desktop_batch_success",
+      "text": "添加文件到「浏览器批量目标」\n\n每个文件只有一个主分类。“移入此分类”会改变所选文件的原归属，归档状态保持不变。\n\n已成功移入 2 个文件。\n\n按文件名搜索\n查找文件\n现有分类\n全部分类\n未分类\n其他分类\n批量来源\n批量目标\n浏览器批量目标\n验收分类-已改名\n从未归档文件中选择；选择在搜索、分类筛选和分页时保留。同名文件按 ID 区分。\n设备整理-联系.txt\n当前分类：批量来源 · ID 6bc9b2c2\n设备整理-操作.txt\n当前分类：批量来源 · ID 430507c8\n\n已选 0 个 · 目标：浏览器批量目标\n\n完成\n移入此分类"
+    },
+    {
+      "check": "desktop_refresh_counts",
+      "files": [
+        "7be7ecd0-9308-46c7-afcd-6a6a14acce8e",
+        "96a541b0-d6d4-4f02-ac43-3e0e72126f51"
+      ],
+      "heading": "浏览器批量目标 2",
+      "source": "批量来源2",
+      "target": "浏览器批量目标2",
+      "url": "http://localhost:18086/?category=193c4d68-9732-4086-9071-c038494fc32c"
+    },
+    {
+      "check": "narrow_list_batch_dialog",
+      "clientWidth": 375,
+      "height": 480,
+      "rects": [
+        {
+          "bottom": 441.75,
+          "name": "取消",
+          "top": 404.25
+        },
+        {
+          "bottom": 441.75,
+          "name": "移入此分类",
+          "top": 404.25
+        }
+      ],
+      "scrollWidth": 375,
+      "selected": "已选 2 个 · 目标：批量目标取消移入此分类",
+      "warning": "每个文件只有一个主分类。“移入此分类”会改变所选文件的原归属，归档状态保持不变。",
+      "width": 390
+    },
+    {
+      "check": "narrow_list_move_success",
+      "text": "移动分类\n目标分类\n请选择目标分类\n未分类\n其他分类\n批量来源\n批量目标\n浏览器批量目标\n验收分类-已改名\n\n每个文件只有一个主分类。“移入此分类”会改变所选文件的原归属，归档状态保持不变。\n\n已成功移入 2 个文件。\n\n已选 0 个 · 目标：批量目标\n\n完成\n移入此分类"
+    },
+    {
+      "check": "real_partial_failure",
+      "text": "添加文件到「浏览器批量目标」\n\n每个文件只有一个主分类。“移入此分类”会改变所选文件的原归属，归档状态保持不变。\n\n已成功移入 1 个文件，1 个失败，选择仅保留失败项。\n\n设备整理-联系.txt（ID 6bc9b2c2）：文件不存在，请刷新列表核对。\n按文件名搜索\n查找文件\n现有分类\n全部分类\n未分类\n其他分类\n批量来源\n批量目标\n浏览器批量目标\n验收分类-已改名\n从未归档文件中选择；选择在搜索、分类筛选和分页时保留。同名文件按 ID 区分。\n\n没有符合条件的文件，请调整搜索或分类。\n\n查看已选文件（1）\n\n已选 1 个 · 目标：浏览器批量目标\n\n取消\n重试失败项"
+    },
+    {
+      "check": "real_failed_item_retry_success",
+      "text": "添加文件到「浏览器批量目标」\n\n每个文件只有一个主分类。“移入此分类”会改变所选文件的原归属，归档状态保持不变。\n\n已成功移入 1 个文件。\n\n按文件名搜索\n查找文件\n现有分类\n全部分类\n未分类\n其他分类\n批量来源\n批量目标\n浏览器批量目标\n验收分类-已改名\n从未归档文件中选择；选择在搜索、分类筛选和分页时保留。同名文件按 ID 区分。\n\n没有符合条件的文件，请调整搜索或分类。\n\n已选 0 个 · 目标：浏览器批量目标\n\n完成\n移入此分类"
+    },
+    {
+      "categories": [
+        "全部分类 · 26",
+        "未分类 · 21",
+        "其他分类 · 1",
+        "批量来源 · 0",
+        "批量目标 · 2",
+        "浏览器批量目标 · 2",
+        "验收分类-已改名 · 0"
+      ],
+      "check": "narrow_refresh_after_retry",
+      "clientWidth": 375,
+      "files": [
+        "6bc9b2c2-7057-49df-a3ef-d1b94e5885ee",
+        "430507c8-da4c-41f9-9c34-21a7eaa411d8"
+      ],
+      "heading": "浏览器批量目标 2",
+      "height": 480,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "keyword_target_category",
+      "files": [
+        "6bc9b2c2-7057-49df-a3ef-d1b94e5885ee",
+        "430507c8-da4c-41f9-9c34-21a7eaa411d8"
+      ],
+      "hits": [
+        "正文命中 # 设备故障处理 3\n\n借用设备出现故障时停止使用,记录现象和发现时间,联系设备管理员安排维修或替代设备,不要自行拆机。\n",
+        "正文命中 # 设备故障处理 2\n\n借用设备出现故障时停止使用,记录现象和发现时间,联系设备管理员安排维修或替代设备,不要自行拆机。\n"
+      ],
+      "url": "http://localhost:18086/?category=193c4d68-9732-4086-9071-c038494fc32c&q=%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%91%98"
+    },
+    {
+      "check": "semantic_target_category",
+      "files": [
+        "6bc9b2c2-7057-49df-a3ef-d1b94e5885ee",
+        "430507c8-da4c-41f9-9c34-21a7eaa411d8"
+      ],
+      "sources": [
+        "设备故障处理 3 · 片段 #1 · 相似度 0.541借用设备出现故障时停止使用，记录现象和发现时间，联系设备管理员安排维修或替代设备，不要自行拆机。",
+        "设备故障处理 2 · 片段 #1 · 相似度 0.536借用设备出现故障时停止使用，记录现象和发现时间，联系设备管理员安排维修或替代设备，不要自行拆机。"
+      ],
+      "url": "http://localhost:18086/?category=193c4d68-9732-4086-9071-c038494fc32c&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F&mode=semantic"
+    },
+    {
+      "check": "semantic_original_category_empty",
+      "url": "http://localhost:18086/?category=26fea3d4-583c-4332-8a16-98434de61bb1&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F&mode=semantic",
+      "text": "⌕\n没有找到匹配的文件\n\n请尝试其他关键词、完整编号或切换分类。"
+    },
+    {
+      "check": "keyword_original_category_empty",
+      "url": "http://localhost:18086/?category=26fea3d4-583c-4332-8a16-98434de61bb1&q=%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%91%98",
+      "text": "⌕\n没有找到匹配的文件\n\n请尝试其他关键词、完整编号或切换分类。"
+    },
+    {
+      "body": {
+        "height": 150,
+        "scrollHeight": 302,
+        "scrollTop": 0
+      },
+      "check": "390x300_picker_controls",
+      "clientWidth": 375,
+      "height": 300,
+      "rects": [
+        {
+          "bottom": 278,
+          "name": "取消",
+          "top": 240.5
+        },
+        {
+          "bottom": 278,
+          "name": "移入此分类",
+          "top": 240.5
+        }
+      ],
+      "scrollWidth": 375,
+      "width": 390
+    },
+    {
+      "check": "picker_mouse_scroll",
+      "footerBottom": 287.00000762939453,
+      "height": 300,
+      "scrollTop": 0
+    },
+    {
+      "bodyScrollHeight": 1589,
+      "bodyScrollTop": 300,
+      "check": "loaded_picker_mouse_scroll_390x300",
+      "footerBottom": 287.00000762939453,
+      "height": 300
+    }
+  ]
+}

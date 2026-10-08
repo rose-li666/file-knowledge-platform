@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 
 from fastapi import APIRouter, Request
 from pydantic import BaseModel, Field
-from sqlalchemy import func, select
+from sqlalchemy import func, select, text
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 from sqlalchemy.orm import Session
 
@@ -31,6 +31,10 @@ class CategoryResponse(BaseModel):
 
 class MoveRequest(BaseModel):
     categoryId: uuid.UUID | None
+
+
+class BatchMoveRequest(MoveRequest):
+    documentIds: list[uuid.UUID] = Field(min_length=1, max_length=100)
 
 
 def normalized_name(value: str):
@@ -129,6 +133,40 @@ def change_document(request, document_id, action, category_id=None):
                 row.archived_at = None
             session.commit()
             return serialize(row)
+    except SQLAlchemyError as error:
+        raise database_error(error) from error
+
+
+@router.patch("/documents/batch/category")
+def batch_move_documents(request: Request, body: BatchMoveRequest):
+    """One transaction for existing files; missing IDs yield per-file failures.
+
+    Assigning the same category again is safe if an earlier response was lost.
+    Database/commit errors abort the transaction and return an unconfirmed 503.
+    Register before the UUID route so 'batch' is not parsed as a document ID.
+    """
+    identities = list(dict.fromkeys(str(value) for value in body.documentIds))
+    target = str(body.categoryId) if body.categoryId else None
+    try:
+        with Session(request.app.state.document_engine) as session:
+            session.execute(text("BEGIN IMMEDIATE"))
+            if target is not None and session.get(Category, target) is None:
+                raise FileError(404, "CATEGORY_NOT_FOUND", "目标分类不存在，请刷新分类列表。")
+            rows = {row.id: row for row in session.scalars(select(Document).where(Document.id.in_(identities)))}
+            items = []
+            for identity in identities:
+                row = rows.get(identity)
+                if row is None:
+                    items.append({"documentId": identity, "name": None, "success": False,
+                                  "error": {"code": "DOCUMENT_NOT_FOUND", "message": "文件不存在，请刷新列表核对。", "retryable": False}})
+                else:
+                    changed = row.category_id != target
+                    row.category_id = target
+                    items.append({"documentId": identity, "name": row.name, "success": True, "changed": changed})
+            session.commit()
+            return {"categoryId": target, "items": items,
+                    "succeededCount": sum(item['success'] for item in items),
+                    "failedCount": sum(not item['success'] for item in items)}
     except SQLAlchemyError as error:
         raise database_error(error) from error
 

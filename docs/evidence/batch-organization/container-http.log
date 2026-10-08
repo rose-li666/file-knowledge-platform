@@ -1,0 +1,303 @@
+INFO:     127.0.0.1:35728 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:35748 - "GET /api/v1/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35750 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35752 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:35768 - "GET /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35784 - "GET /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35794 - "GET /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35796 - "GET /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35812 - "GET /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35828 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:35838 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:35848 - "PATCH /api/v1/categories/e45d6a37-92c5-40c9-876e-53ddd5777499 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35862 - "PATCH /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35870 - "GET /api/v1/documents?archived=false&limit=25&category_id=e45d6a37-92c5-40c9-876e-53ddd5777499 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35882 - "GET /api/v1/documents?archived=false&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35888 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=e45d6a37-92c5-40c9-876e-53ddd5777499&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35894 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35904 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=e45d6a37-92c5-40c9-876e-53ddd5777499&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35906 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35912 - "GET /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35920 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35922 - "PATCH /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35928 - "GET /api/v1/documents?archived=false&limit=25&category_id=e45d6a37-92c5-40c9-876e-53ddd5777499 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35938 - "GET /api/v1/documents?archived=false&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35954 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=e45d6a37-92c5-40c9-876e-53ddd5777499&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35962 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35972 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=e45d6a37-92c5-40c9-876e-53ddd5777499&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35974 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35990 - "POST /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066/archive HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36002 - "GET /api/v1/documents?archived=false&limit=25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36016 - "GET /api/v1/documents?archived=false&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36018 - "GET /api/v1/documents?archived=true&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36034 - "GET /api/v1/search/keyword?archived=false&limit=25&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36050 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36052 - "GET /api/v1/search/keyword?archived=true&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36068 - "GET /api/v1/search/semantic?archived=false&limit=25&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36080 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36088 - "GET /api/v1/search/semantic?archived=true&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36090 - "GET /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36094 - "GET /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36106 - "POST /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066/restore HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36112 - "GET /api/v1/documents?archived=false&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36128 - "GET /api/v1/documents?archived=true&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36142 - "GET /api/v1/search/keyword?archived=false&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36154 - "GET /api/v1/search/keyword?archived=true&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1&q=%E8%AE%BE%E5%A4%87%E6%95%85%E9%9A%9C HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36164 - "GET /api/v1/search/semantic?archived=false&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36176 - "GET /api/v1/search/semantic?archived=true&limit=25&category_id=989541af-47a7-479f-b3bb-9c6b3e9444f1&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36188 - "GET /api/v1/documents/a5a9d7a1-3314-4c73-a7af-7650621e5066/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40220 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41132 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52776 - "GET /api/v1/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52778 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52786 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52796 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52800 - "GET /api/v1/documents/96a541b0-d6d4-4f02-ac43-3e0e72126f51 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52814 - "GET /api/v1/documents/96a541b0-d6d4-4f02-ac43-3e0e72126f51 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52822 - "PATCH /api/v1/documents/96a541b0-d6d4-4f02-ac43-3e0e72126f51/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52828 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52836 - "GET /api/v1/documents/7be7ecd0-9308-46c7-afcd-6a6a14acce8e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52848 - "GET /api/v1/documents/7be7ecd0-9308-46c7-afcd-6a6a14acce8e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52856 - "GET /api/v1/documents/7be7ecd0-9308-46c7-afcd-6a6a14acce8e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52872 - "PATCH /api/v1/documents/7be7ecd0-9308-46c7-afcd-6a6a14acce8e/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52886 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52900 - "GET /api/v1/documents/430507c8-da4c-41f9-9c34-21a7eaa411d8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52912 - "GET /api/v1/documents/430507c8-da4c-41f9-9c34-21a7eaa411d8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52918 - "GET /api/v1/documents/430507c8-da4c-41f9-9c34-21a7eaa411d8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52924 - "GET /api/v1/documents/430507c8-da4c-41f9-9c34-21a7eaa411d8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52926 - "PATCH /api/v1/documents/430507c8-da4c-41f9-9c34-21a7eaa411d8/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52940 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52944 - "GET /api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52946 - "GET /api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52958 - "GET /api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52974 - "PATCH /api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52978 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52988 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53000 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53010 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53018 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53050 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53058 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53070 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53082 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:53086 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:53088 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 422 Unprocessable Entity
+INFO:     127.0.0.1:53090 - "GET /api/v1/documents?category_id=26fea3d4-583c-4332-8a16-98434de61bb1&limit=25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53100 - "GET /api/v1/documents?category_id=9a5b6677-9704-447a-8837-60d0eb9e76ef&limit=25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53102 - "GET /api/v1/search/keyword?category_id=26fea3d4-583c-4332-8a16-98434de61bb1&limit=25&q=%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%91%98 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53104 - "GET /api/v1/search/keyword?category_id=9a5b6677-9704-447a-8837-60d0eb9e76ef&limit=25&q=%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%91%98 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53106 - "GET /api/v1/search/semantic?category_id=26fea3d4-583c-4332-8a16-98434de61bb1&limit=25&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F&score_window=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53120 - "GET /api/v1/search/semantic?category_id=9a5b6677-9704-447a-8837-60d0eb9e76ef&limit=25&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F&score_window=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53136 - "GET /api/v1/documents?name_query=%E5%90%8C%E5%90%8D&category_id=9a5b6677-9704-447a-8837-60d0eb9e76ef&limit=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53148 - "GET /api/v1/documents?name_query=%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%91%98 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53154 - "GET /api/v1/documents?name_query=%25 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53170 - "POST /api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee/archive HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53174 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53186 - "GET /api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53198 - "POST /api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee/restore HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53210 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53220 - "GET /api/v1/documents/96a541b0-d6d4-4f02-ac43-3e0e72126f51 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53228 - "GET /api/v1/documents/96a541b0-d6d4-4f02-ac43-3e0e72126f51/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53244 - "GET /api/v1/documents/7be7ecd0-9308-46c7-afcd-6a6a14acce8e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53260 - "GET /api/v1/documents/7be7ecd0-9308-46c7-afcd-6a6a14acce8e/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53262 - "GET /api/v1/documents/430507c8-da4c-41f9-9c34-21a7eaa411d8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53278 - "GET /api/v1/documents/430507c8-da4c-41f9-9c34-21a7eaa411d8/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53282 - "GET /api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53296 - "GET /api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53298 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53304 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53318 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53334 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53344 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53356 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53364 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53376 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53386 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53402 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53406 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53408 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53410 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53418 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53420 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53422 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53434 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53446 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53448 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53452 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53468 - "POST /api/v1/documents HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52912 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52776 - "GET / HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52780 - "GET /assets/index-D8KlFT1d.css HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52776 - "GET /assets/index-D_LVmHD-.js HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52776 - "GET /api/v1/config HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52780 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52794 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52804 - "GET /api/v1/documents?limit=25&offset=0&archived=false HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52804 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.17.0.1:52804 - "POST /api/v1/categories HTTP/1.1" 201 Created
+INFO:     172.17.0.1:52804 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52804 - "GET /api/v1/documents?limit=25&offset=0&archived=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53024 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46158 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=193c4d68-9732-4086-9071-c038494fc32c HTTP/1.1" 200 OK
+INFO:     172.17.0.1:46168 - "GET /api/v1/documents?limit=20&offset=0&archived=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53606 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41622 - "GET /api/v1/documents?limit=20&offset=20&archived=false HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41622 - "GET /api/v1/documents?limit=20&offset=0&archived=false&name_query=%E8%AE%BE%E5%A4%87%E6%95%B4%E7%90%86 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41622 - "GET /api/v1/documents?limit=20&offset=0&archived=false&name_query=%E8%AE%BE%E5%A4%87%E6%95%B4%E7%90%86&category_id=26fea3d4-583c-4332-8a16-98434de61bb1 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42398 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42398 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42398 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=193c4d68-9732-4086-9071-c038494fc32c HTTP/1.1" 200 OK
+INFO:     172.17.0.1:42398 - "GET /api/v1/documents?limit=20&offset=0&archived=false&name_query=%E8%AE%BE%E5%A4%87%E6%95%B4%E7%90%86&category_id=26fea3d4-583c-4332-8a16-98434de61bb1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59720 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52556 - "GET /?category=193c4d68-9732-4086-9071-c038494fc32c HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52556 - "GET /assets/index-D_LVmHD-.js HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:52562 - "GET /assets/index-D8KlFT1d.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:52562 - "GET /api/v1/config HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52556 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52576 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:52588 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=193c4d68-9732-4086-9071-c038494fc32c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56928 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55482 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32958 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51358 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51358 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51358 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=193c4d68-9732-4086-9071-c038494fc32c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51716 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39218 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51440 - "GET /api/v1/documents?limit=20&offset=0&archived=false HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51448 - "GET /api/v1/documents?limit=20&offset=0&archived=false HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51448 - "GET /api/v1/documents?limit=20&offset=0&archived=false&name_query=%E8%AE%BE%E5%A4%87%E6%95%B4%E7%90%86 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51448 - "GET /api/v1/documents?limit=20&offset=0&archived=false&name_query=%E8%AE%BE%E5%A4%87%E6%95%B4%E7%90%86&category_id=26fea3d4-583c-4332-8a16-98434de61bb1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56316 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39366 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39366 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39366 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=193c4d68-9732-4086-9071-c038494fc32c HTTP/1.1" 200 OK
+INFO:     172.17.0.1:39366 - "GET /api/v1/documents?limit=20&offset=0&archived=false&name_query=%E8%AE%BE%E5%A4%87%E6%95%B4%E7%90%86&category_id=26fea3d4-583c-4332-8a16-98434de61bb1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53704 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41742 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41742 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41742 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=193c4d68-9732-4086-9071-c038494fc32c HTTP/1.1" 200 OK
+INFO:     172.17.0.1:41742 - "GET /api/v1/documents?limit=20&offset=0&archived=false&name_query=%E8%AE%BE%E5%A4%87%E6%95%B4%E7%90%86&category_id=26fea3d4-583c-4332-8a16-98434de61bb1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38396 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56514 - "GET /?category=193c4d68-9732-4086-9071-c038494fc32c HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:56514 - "GET /assets/index-D_LVmHD-.js HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:56528 - "GET /assets/index-D8KlFT1d.css HTTP/1.1" 304 Not Modified
+INFO:     172.17.0.1:56528 - "GET /api/v1/config HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56514 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56540 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56544 - "GET /api/v1/documents?limit=25&offset=0&archived=false&category_id=193c4d68-9732-4086-9071-c038494fc32c HTTP/1.1" 200 OK
+INFO:     172.17.0.1:56544 - "GET /api/v1/search/keyword?limit=25&offset=0&archived=false&category_id=193c4d68-9732-4086-9071-c038494fc32c&q=%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%91%98 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50002 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36744 - "GET /api/v1/search/semantic?limit=5&offset=0&archived=false&score_window=0.12&category_id=193c4d68-9732-4086-9071-c038494fc32c&q=%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%91%98 HTTP/1.1" 200 OK
+INFO:     172.17.0.1:36744 - "GET /api/v1/search/semantic?limit=5&offset=0&archived=false&score_window=0.12&category_id=193c4d68-9732-4086-9071-c038494fc32c&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51466 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58322 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34256 - "GET /api/v1/categories HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34268 - "GET /api/v1/documents?category_id=26fea3d4-583c-4332-8a16-98434de61bb1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34274 - "GET /api/v1/documents?category_id=9a5b6677-9704-447a-8837-60d0eb9e76ef HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34290 - "GET /api/v1/documents?category_id=193c4d68-9732-4086-9071-c038494fc32c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34300 - "GET /api/v1/search/keyword?category_id=26fea3d4-583c-4332-8a16-98434de61bb1&q=%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%91%98 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34306 - "GET /api/v1/search/keyword?category_id=9a5b6677-9704-447a-8837-60d0eb9e76ef&q=%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%91%98 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34322 - "GET /api/v1/search/keyword?category_id=193c4d68-9732-4086-9071-c038494fc32c&q=%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%91%98 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34336 - "GET /api/v1/search/semantic?category_id=26fea3d4-583c-4332-8a16-98434de61bb1&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F&score_window=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34350 - "GET /api/v1/search/semantic?category_id=9a5b6677-9704-447a-8837-60d0eb9e76ef&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F&score_window=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34356 - "GET /api/v1/search/semantic?category_id=193c4d68-9732-4086-9071-c038494fc32c&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F&score_window=1 HTTP/1.1" 200 OK
+Organization database operation failed
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1936, in _exec_single_context
+    self.dialect.do_executemany(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 948, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlite3.IntegrityError: isolated batch write fault
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/app/app/organization.py", line 166, in batch_move_documents
+    session.commit()
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1936, in _exec_single_context
+    self.dialect.do_executemany(
+  File "/usr/local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 948, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) isolated batch write fault
+[SQL: UPDATE documents SET category_id=? WHERE documents.id = ?]
+[parameters: [('26fea3d4-583c-4332-8a16-98434de61bb1', '7be7ecd0-9308-46c7-afcd-6a6a14acce8e'), ('26fea3d4-583c-4332-8a16-98434de61bb1', '96a541b0-d6d4-4f02-ac43-3e0e72126f51')]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+INFO:     127.0.0.1:34358 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:34362 - "GET /api/v1/documents?category_id=9a5b6677-9704-447a-8837-60d0eb9e76ef HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34376 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34382 - "PATCH /api/v1/documents/batch/category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34392 - "GET /api/v1/documents/96a541b0-d6d4-4f02-ac43-3e0e72126f51 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34408 - "GET /api/v1/documents/96a541b0-d6d4-4f02-ac43-3e0e72126f51/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34418 - "GET /api/v1/documents/7be7ecd0-9308-46c7-afcd-6a6a14acce8e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34434 - "GET /api/v1/documents/7be7ecd0-9308-46c7-afcd-6a6a14acce8e/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34442 - "GET /api/v1/documents/430507c8-da4c-41f9-9c34-21a7eaa411d8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34444 - "GET /api/v1/documents/430507c8-da4c-41f9-9c34-21a7eaa411d8/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34460 - "GET /api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34468 - "GET /api/v1/documents/6bc9b2c2-7057-49df-a3ef-d1b94e5885ee/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53842 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40364 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50244 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59790 - "GET /api/v1/search/semantic?limit=5&offset=0&archived=false&score_window=0.12&category_id=26fea3d4-583c-4332-8a16-98434de61bb1&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59790 - "GET /api/v1/search/keyword?limit=25&offset=0&archived=false&category_id=26fea3d4-583c-4332-8a16-98434de61bb1&q=%E5%80%9F%E7%94%A8%E7%9A%84%E5%99%A8%E6%9D%90%E5%9D%8F%E4%BA%86%E9%9C%80%E8%A6%81%E6%80%8E%E6%A0%B7%E5%A4%84%E7%90%86%EF%BC%9F HTTP/1.1" 200 OK
+INFO:     172.17.0.1:59790 - "GET /api/v1/search/keyword?limit=25&offset=0&archived=false&category_id=26fea3d4-583c-4332-8a16-98434de61bb1&q=%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%91%98 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39252 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49104 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38596 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47946 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49426 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38874 - "GET /api/v1/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45446 - "GET /api/v1/health HTTP/1.1" 200 OK

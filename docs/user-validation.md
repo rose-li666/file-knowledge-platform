@@ -16,3 +16,5 @@
 新布局完成后，普通Chrome主要流程、约390px窄屏及分类完整链路仍需实际操作结果。状态未确认前不锁定最终交付版本。
 
 本次已修复为分类弹窗并部署，Agent 内置浏览器低高度/窄屏和独立 Docker HTTP 已验证，记录在 [category-dialog-fix.md](category-dialog-fix.md)。它们不属于“用户手动验证”。当前 Chrome 原生控制因无法可靠确认 URL 停止；修复后的用户复验请求已发出，尚未收到结果，原“不通过”记录保留。
+
+后续用户提出“创建分类→选择文件→加入分类”的批量整理请求，此消息是功能要求，没有包含人工通过结论。本轮实现和Agent验证见 [batch-organization.md](batch-organization.md)，普通Chrome用户复验继续待确认。

@@ -2,10 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 
 type Props = {
   open: boolean; categories: { id: string; name: string }[]; initialCategoryId: string;
-  loading: boolean; onClose: () => void; onSave: (id: string | null, name: string) => Promise<void>;
+  loading: boolean; onClose: () => void; onSave: (id: string | null, name: string) => Promise<{ id: string; name: string }>;
+  onAddFiles: (category: { id: string; name: string }) => void;
 };
 
-export function CategoryManagerDialog({ open, categories, initialCategoryId, loading, onClose, onSave }: Props) {
+export function CategoryManagerDialog({ open, categories, initialCategoryId, loading, onClose, onSave, onAddFiles }: Props) {
   const dialog = useRef<HTMLDialogElement>(null);
   const input = useRef<HTMLInputElement>(null);
   const saving = useRef(false);
@@ -14,13 +15,14 @@ export function CategoryManagerDialog({ open, categories, initialCategoryId, loa
   const [name, setName] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
+  const [created, setCreated] = useState<{ id: string; name: string } | null>(null);
   const selected = categories.find(row => row.id === selectedId);
 
   useEffect(() => {
     if (open) {
       const current = categories.find(row => row.id === initialCategoryId);
       setMode(current ? 'rename' : 'create'); setSelectedId(current?.id ?? '');
-      setName(current?.name ?? ''); setError('');
+      setName(current?.name ?? ''); setError(''); setCreated(null);
       if (!dialog.current?.open) dialog.current?.showModal();
       input.current?.focus(); input.current?.select();
     } else if (dialog.current?.open) dialog.current.close();
@@ -41,7 +43,10 @@ export function CategoryManagerDialog({ open, categories, initialCategoryId, loa
     if (!value || Array.from(value).length > 80) { setError('分类名称不能为空且最多为 80 字。'); input.current?.focus(); return; }
     if (mode === 'rename' && !selected) { setError('请选择要修改的分类。'); return; }
     saving.current = true; setBusy(true); setError('');
-    try { await onSave(mode === 'rename' ? selectedId : null, value); onClose(); }
+    try {
+      const saved = await onSave(mode === 'rename' ? selectedId : null, value);
+      if (mode === 'create') setCreated(saved); else onClose();
+    }
     catch (failure) {
       setError(failure instanceof TypeError ? '无法连接服务器，请稍后重试。'
         : failure instanceof Error ? failure.message : '保存失败，请稍后重试。');
@@ -52,6 +57,7 @@ export function CategoryManagerDialog({ open, categories, initialCategoryId, loa
     onCancel={event => { if (saving.current) event.preventDefault(); else close(); }} onClose={onClose}>
     <form className="category-dialog-form" onSubmit={event => { event.preventDefault(); void submit(); }}>
       <header className="category-dialog-heading"><h2 id="category-dialog-title">管理分类</h2><small>{categories.length} 个分类</small></header>
+      {created ? <div className="category-created" role="status"><p>已创建分类「{created.name}」。</p><p>接下来选择已有文件，加入这个分类。</p></div> : <>
       <div className="category-dialog-modes" role="group" aria-label="分类管理方式">
         <button type="button" aria-pressed={mode === 'create'} disabled={busy} onClick={() => changeMode('create')}>创建分类</button>
         <button type="button" aria-pressed={mode === 'rename'} disabled={busy || loading || !categories.length} onClick={() => changeMode('rename')}>修改分类名称</button>
@@ -63,7 +69,7 @@ export function CategoryManagerDialog({ open, categories, initialCategoryId, loa
               setSelectedId(row?.id ?? ''); setName(row?.name ?? ''); setError(''); }}>
             <option value="">请选择分类</option>{categories.map(row => <option key={row.id} value={row.id}>{row.name}</option>)}
           </select><p className="selected-category-name">{selected?.name ?? '选择分类后会自动填入原名称。'}</p></>
-          : <p>新分类保存后可在文件详情中调整文件归属。</p>}
+          : <p>创建成功后可直接选择多个文件加入分类。</p>}
       </div>
       <div className="category-dialog-editor">
         <label htmlFor="category-name">{mode === 'rename' ? '修改后的名称' : '新分类名称'}</label>
@@ -71,10 +77,11 @@ export function CategoryManagerDialog({ open, categories, initialCategoryId, loa
           disabled={busy || (mode === 'rename' && !selected)} placeholder="例如：工程规范"
           onChange={event => setName(event.target.value)} aria-invalid={!!error} aria-describedby={error ? 'category-save-error' : undefined} />
         {error && <p id="category-save-error" className="error" role="alert">{error}</p>}
-      </div>
+      </div></>}
       <footer className="category-dialog-actions">
-        <button type="button" className="secondary" disabled={busy} onClick={close}>取消</button>
-        <button type="submit" disabled={busy || (mode === 'rename' && !selected)}>{busy ? '正在保存…' : mode === 'rename' ? '保存名称' : '保存新分类'}</button>
+        <button type="button" className="secondary" disabled={busy} onClick={close}>{created ? '完成' : '取消'}</button>
+        {created ? <button type="button" onClick={() => onAddFiles(created)}>添加文件</button>
+          : <button type="submit" disabled={busy || (mode === 'rename' && !selected)}>{busy ? '正在保存…' : mode === 'rename' ? '保存名称' : '保存新分类'}</button>}
       </footer>
     </form>
   </dialog>;

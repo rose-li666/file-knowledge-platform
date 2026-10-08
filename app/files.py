@@ -234,10 +234,18 @@ async def upload_document(request: Request):
 
 @router.get("/documents", response_model=DocumentList)
 def list_documents(request: Request, limit: int = Query(50, ge=1, le=100), offset: int = Query(0, ge=0),
-                   archived: bool = False, category_id: str | None = None):
+                   archived: bool = False, category_id: str | None = None,
+                   name_query: str | None = Query(None, max_length=200)):
     try:
         with Session(request.app.state.document_engine) as session:
             filters = document_filters(session, archived, category_id)
+            if name_query is not None:
+                from .text_normalization import search_key
+                term = search_key(name_query).strip()
+                if re.search(r"[\x00-\x1f\x7f]", term):
+                    raise FileError(422, "INVALID_KEYWORD", "文件名搜索不能包含控制字符。")
+                if term:
+                    filters.append(func.instr(func.search_key(Document.name), term) > 0)
             total = session.scalar(select(func.count()).select_from(Document).where(*filters))
             rows = session.scalars(select(Document).where(*filters).order_by(Document.uploaded_at.desc(), Document.id.desc())
                                    .offset(offset).limit(limit)).all()

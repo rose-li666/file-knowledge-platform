@@ -1,0 +1,6 @@
+{
+  "command": "docker rm -f platform-check-429e373851 platform-check-c3cf8800ee",
+  "seconds": 0.7068962,
+  "demo_untouched": true,
+  "exit_code": 0
+}
