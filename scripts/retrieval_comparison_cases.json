@@ -1,0 +1,680 @@
+{
+  "candidate": "62647c4",
+  "annotationPolicy": "Predeclared conservative relevant file labels and exact source evidence anchors used only for evaluation; 2=direct support, 1=partial support, 0=no anchor. This proxy requires human inspection and is not an answer generator.",
+  "decisionGate": "No lost baseline targets in either split; original five remain Top3; no newly nonempty negatives; irrelevant count decreases >=20% to change filtering, or source grade improves without any baseline source grade decrease to change source ordering. No question/name/anchor logic enters production.",
+  "variants": [
+    "baseline(.45/.12)",
+    "floor_050(.50/.12)",
+    "window_008(.45/.08)",
+    "window_005(.45/.05)",
+    "short_source_penalty(max .04 below 80 chars; file rank unchanged)",
+    "body_source_rerank(eligible original score window .08; file rank unchanged)"
+  ],
+  "fixtures": [
+    {
+      "group": "device",
+      "path": "device-borrowing.txt",
+      "uploadName": "上传测试_设备借用.txt"
+    },
+    {
+      "group": "meeting",
+      "path": "meeting-actions.md",
+      "uploadName": "上传测试_会议行动项.md"
+    },
+    {
+      "group": "expense",
+      "path": "expense-claims.txt",
+      "uploadName": "上传测试_差旅报销.txt"
+    },
+    {
+      "group": "room",
+      "path": "room-booking.md",
+      "uploadName": "上传测试_会议室预约.md"
+    }
+  ],
+  "cases": [
+    {
+      "id": "original-1-core",
+      "group": "original",
+      "split": "development",
+      "question": "交给同事审阅修改之前，应该怎样自查并描述测试结果？",
+      "target": "01_代码提交规范_v2.1.md",
+      "scope": "core",
+      "relevantNames": [
+        "01_代码提交规范_v2.1.md",
+        "02_发布检查清单_v1.4.md",
+        "05_星桥项目_发布检查清单_2026-09-18.txt"
+      ],
+      "strongAnchors": [
+        "依次完成格式检查"
+      ],
+      "weakAnchors": [
+        "若某项检查未执行",
+        "自动化测试"
+      ]
+    },
+    {
+      "id": "original-1-all",
+      "group": "original_global",
+      "split": "holdout",
+      "question": "交给同事审阅修改之前，应该怎样自查并描述测试结果？",
+      "target": "01_代码提交规范_v2.1.md",
+      "scope": "all",
+      "relevantNames": [
+        "01_代码提交规范_v2.1.md",
+        "02_发布检查清单_v1.4.md",
+        "05_星桥项目_发布检查清单_2026-09-18.txt"
+      ],
+      "strongAnchors": [
+        "依次完成格式检查"
+      ],
+      "weakAnchors": [
+        "若某项检查未执行",
+        "自动化测试"
+      ]
+    },
+    {
+      "id": "original-2-core",
+      "group": "original",
+      "split": "development",
+      "question": "网络断了又提交同一份上传请求，服务怎样防止保存两次？",
+      "target": "03_文件服务接口约定_v1.2.md",
+      "scope": "core",
+      "relevantNames": [
+        "03_文件服务接口约定_v1.2.md",
+        "06_星桥项目_故障复盘_2026-09-21.md",
+        "07_星桥项目_用户访谈纪要_2026-09-12.txt"
+      ],
+      "strongAnchors": [
+        "Idempotency-Key",
+        "相同键"
+      ],
+      "weakAnchors": [
+        "不重复创建",
+        "重复执行"
+      ]
+    },
+    {
+      "id": "original-2-all",
+      "group": "original_global",
+      "split": "holdout",
+      "question": "网络断了又提交同一份上传请求，服务怎样防止保存两次？",
+      "target": "03_文件服务接口约定_v1.2.md",
+      "scope": "all",
+      "relevantNames": [
+        "03_文件服务接口约定_v1.2.md",
+        "06_星桥项目_故障复盘_2026-09-21.md",
+        "07_星桥项目_用户访谈纪要_2026-09-12.txt"
+      ],
+      "strongAnchors": [
+        "Idempotency-Key",
+        "相同键"
+      ],
+      "weakAnchors": [
+        "不重复创建",
+        "重复执行"
+      ]
+    },
+    {
+      "id": "original-3-core",
+      "group": "original",
+      "split": "development",
+      "question": "上线刚启动，新版本要验证哪些用户操作才能放心交付？",
+      "target": "02_发布检查清单_v1.4.md",
+      "scope": "core",
+      "relevantNames": [
+        "02_发布检查清单_v1.4.md",
+        "01_代码提交规范_v2.1.md",
+        "05_星桥项目_发布检查清单_2026-09-18.txt"
+      ],
+      "strongAnchors": [
+        "上传一份专用验证文档",
+        "等待该文档显示可检索"
+      ],
+      "weakAnchors": [
+        "至少观察十分钟",
+        "上传、下载和检索检查"
+      ]
+    },
+    {
+      "id": "original-3-all",
+      "group": "original_global",
+      "split": "holdout",
+      "question": "上线刚启动，新版本要验证哪些用户操作才能放心交付？",
+      "target": "02_发布检查清单_v1.4.md",
+      "scope": "all",
+      "relevantNames": [
+        "02_发布检查清单_v1.4.md",
+        "01_代码提交规范_v2.1.md",
+        "05_星桥项目_发布检查清单_2026-09-18.txt"
+      ],
+      "strongAnchors": [
+        "上传一份专用验证文档",
+        "等待该文档显示可检索"
+      ],
+      "weakAnchors": [
+        "至少观察十分钟",
+        "上传、下载和检索检查"
+      ]
+    },
+    {
+      "id": "original-4-core",
+      "group": "original",
+      "split": "development",
+      "question": "文档上传成功却查不到正文，数据换了嵌套结构，怎么补救而不用重传？",
+      "target": "06_星桥项目_故障复盘_2026-09-21.md",
+      "scope": "core",
+      "relevantNames": [
+        "06_星桥项目_故障复盘_2026-09-21.md",
+        "03_文件服务接口约定_v1.2.md",
+        "09_本地部署故障排查_v1.3.txt"
+      ],
+      "strongAnchors": [
+        "result.text",
+        "按文档标识重新排队"
+      ],
+      "weakAnchors": [
+        "不要让用户",
+        "重试依据"
+      ]
+    },
+    {
+      "id": "original-4-all",
+      "group": "original_global",
+      "split": "holdout",
+      "question": "文档上传成功却查不到正文，数据换了嵌套结构，怎么补救而不用重传？",
+      "target": "06_星桥项目_故障复盘_2026-09-21.md",
+      "scope": "all",
+      "relevantNames": [
+        "06_星桥项目_故障复盘_2026-09-21.md",
+        "03_文件服务接口约定_v1.2.md",
+        "09_本地部署故障排查_v1.3.txt"
+      ],
+      "strongAnchors": [
+        "result.text",
+        "按文档标识重新排队"
+      ],
+      "weakAnchors": [
+        "不要让用户",
+        "重试依据"
+      ]
+    },
+    {
+      "id": "original-5-core",
+      "group": "original",
+      "split": "development",
+      "question": "重建运行环境后以前的资料丢了，该怎样排查挂载和保住原有数据？",
+      "target": "09_本地部署故障排查_v1.3.txt",
+      "scope": "core",
+      "relevantNames": [
+        "09_本地部署故障排查_v1.3.txt",
+        "02_发布检查清单_v1.4.md"
+      ],
+      "strongAnchors": [
+        "具名卷",
+        "旧卷"
+      ],
+      "weakAnchors": [
+        "重新创建应用容器"
+      ]
+    },
+    {
+      "id": "original-5-all",
+      "group": "original_global",
+      "split": "holdout",
+      "question": "重建运行环境后以前的资料丢了，该怎样排查挂载和保住原有数据？",
+      "target": "09_本地部署故障排查_v1.3.txt",
+      "scope": "all",
+      "relevantNames": [
+        "09_本地部署故障排查_v1.3.txt",
+        "02_发布检查清单_v1.4.md"
+      ],
+      "strongAnchors": [
+        "具名卷",
+        "旧卷"
+      ],
+      "weakAnchors": [
+        "重新创建应用容器"
+      ]
+    },
+    {
+      "id": "synonym-1",
+      "group": "synonym",
+      "split": "holdout",
+      "question": "准备把代码交给评审的人时，哪些质量门槛必须满足？",
+      "target": "01_代码提交规范_v2.1.md",
+      "scope": "core",
+      "relevantNames": [
+        "01_代码提交规范_v2.1.md",
+        "02_发布检查清单_v1.4.md",
+        "05_星桥项目_发布检查清单_2026-09-18.txt"
+      ],
+      "strongAnchors": [
+        "依次完成格式检查"
+      ],
+      "weakAnchors": [
+        "若某项检查未执行",
+        "自动化测试"
+      ]
+    },
+    {
+      "id": "synonym-2",
+      "group": "synonym",
+      "split": "holdout",
+      "question": "同一个文件因客户端重发到达服务两次，接口如何识别这是一笔操作？",
+      "target": "03_文件服务接口约定_v1.2.md",
+      "scope": "core",
+      "relevantNames": [
+        "03_文件服务接口约定_v1.2.md",
+        "06_星桥项目_故障复盘_2026-09-21.md",
+        "07_星桥项目_用户访谈纪要_2026-09-12.txt"
+      ],
+      "strongAnchors": [
+        "Idempotency-Key",
+        "相同键"
+      ],
+      "weakAnchors": [
+        "不重复创建",
+        "重复执行"
+      ]
+    },
+    {
+      "id": "synonym-3",
+      "group": "synonym",
+      "split": "holdout",
+      "question": "新版本正式交付前，怎么验证上传到查找和取回资料的流程？",
+      "target": "02_发布检查清单_v1.4.md",
+      "scope": "core",
+      "relevantNames": [
+        "02_发布检查清单_v1.4.md",
+        "01_代码提交规范_v2.1.md",
+        "05_星桥项目_发布检查清单_2026-09-18.txt"
+      ],
+      "strongAnchors": [
+        "上传一份专用验证文档",
+        "等待该文档显示可检索"
+      ],
+      "weakAnchors": [
+        "至少观察十分钟",
+        "上传、下载和检索检查"
+      ]
+    },
+    {
+      "id": "synonym-4",
+      "group": "synonym",
+      "split": "holdout",
+      "question": "正文索引处理报错后，如何补处理旧资料而不让大家重新上传？",
+      "target": "06_星桥项目_故障复盘_2026-09-21.md",
+      "scope": "core",
+      "relevantNames": [
+        "06_星桥项目_故障复盘_2026-09-21.md",
+        "03_文件服务接口约定_v1.2.md",
+        "09_本地部署故障排查_v1.3.txt"
+      ],
+      "strongAnchors": [
+        "result.text",
+        "按文档标识重新排队"
+      ],
+      "weakAnchors": [
+        "不要让用户",
+        "重试依据"
+      ]
+    },
+    {
+      "id": "synonym-5",
+      "group": "synonym",
+      "split": "holdout",
+      "question": "容器换掉以后资料为什么消失，要检查什么才能防止再丢？",
+      "target": "09_本地部署故障排查_v1.3.txt",
+      "scope": "core",
+      "relevantNames": [
+        "09_本地部署故障排查_v1.3.txt",
+        "02_发布检查清单_v1.4.md"
+      ],
+      "strongAnchors": [
+        "具名卷",
+        "旧卷"
+      ],
+      "weakAnchors": [
+        "重新创建应用容器"
+      ]
+    },
+    {
+      "id": "device-1",
+      "group": "new_device",
+      "split": "development",
+      "question": "借来的设备坏了应该怎么办？",
+      "target": "上传测试_设备借用.txt",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_设备借用.txt"
+      ],
+      "strongAnchors": [
+        "停止使用"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "device-2",
+      "group": "new_device",
+      "split": "development",
+      "question": "借用的器材发生故障，该向谁报告并怎样处理？",
+      "target": "上传测试_设备借用.txt",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_设备借用.txt"
+      ],
+      "strongAnchors": [
+        "停止使用"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "device-3",
+      "group": "new_device",
+      "split": "holdout",
+      "question": "镜头报错以后要自己拆开试着修，还是先找人处理？",
+      "target": "上传测试_设备借用.txt",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_设备借用.txt"
+      ],
+      "strongAnchors": [
+        "不要自行拆机"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "device-4",
+      "group": "new_device",
+      "split": "holdout",
+      "question": "还回录音设备时少了一根线，能把借用登记直接结清吗？",
+      "target": "上传测试_设备借用.txt",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_设备借用.txt"
+      ],
+      "strongAnchors": [
+        "未归还的附件"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "meeting-1",
+      "group": "new_meeting",
+      "split": "development",
+      "question": "散会以后谁来负责下一步，怎样知道任务真正完成了？",
+      "target": "上传测试_会议行动项.md",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_会议行动项.md"
+      ],
+      "strongAnchors": [
+        "唯一负责人",
+        "验收人"
+      ],
+      "weakAnchors": [
+        "下一步由谁完成"
+      ]
+    },
+    {
+      "id": "meeting-2",
+      "group": "new_meeting",
+      "split": "development",
+      "question": "会议任务只说大家一起做，怎样才能落实到人和交付日期？",
+      "target": "上传测试_会议行动项.md",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_会议行动项.md"
+      ],
+      "strongAnchors": [
+        "唯一负责人",
+        "截止时间"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "meeting-3",
+      "group": "new_meeting",
+      "split": "holdout",
+      "question": "任务负责人说已处理，拿什么证明这件事确实完成了？",
+      "target": "上传测试_会议行动项.md",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_会议行动项.md"
+      ],
+      "strongAnchors": [
+        "验收人",
+        "交付物位置"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "meeting-4",
+      "group": "new_meeting",
+      "split": "holdout",
+      "question": "会后的工作依赖别人给材料，延期应该怎么记录和重新安排？",
+      "target": "上传测试_会议行动项.md",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_会议行动项.md"
+      ],
+      "strongAnchors": [
+        "任务延期",
+        "最晚提供时间"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "expense-1",
+      "group": "new_expense",
+      "split": "development",
+      "question": "出差花的钱想申请返还，应准备哪些证明？",
+      "target": "上传测试_差旅报销.txt",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_差旅报销.txt"
+      ],
+      "strongAnchors": [
+        "住宿发票",
+        "行程单"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "expense-2",
+      "group": "new_expense",
+      "split": "development",
+      "question": "行程取消拿到了退款，还能按原来的费用报销吗？",
+      "target": "上传测试_差旅报销.txt",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_差旅报销.txt"
+      ],
+      "strongAnchors": [
+        "扣除退款",
+        "办理冲销"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "expense-3",
+      "group": "new_expense",
+      "split": "holdout",
+      "question": "票据不符合要求找哪个部门？",
+      "target": "上传测试_差旅报销.txt",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_差旅报销.txt"
+      ],
+      "strongAnchors": [
+        "票据问题联系财务"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "expense-4",
+      "group": "new_expense",
+      "split": "holdout",
+      "question": "审核结束很久还没收到钱，需要重新申请还是查询原单？",
+      "target": "上传测试_差旅报销.txt",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_差旅报销.txt"
+      ],
+      "strongAnchors": [
+        "长时间停在待付款",
+        "按报销编号"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "room-1",
+      "group": "new_room",
+      "split": "development",
+      "question": "会开不了了，什么时候撤销才能让别人预约这个房间？",
+      "target": "上传测试_会议室预约.md",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_会议室预约.md"
+      ],
+      "strongAnchors": [
+        "开始前十分钟"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "room-2",
+      "group": "new_room",
+      "split": "development",
+      "question": "会议室时间冲突，我能覆盖另一个人的预订吗？",
+      "target": "上传测试_会议室预约.md",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_会议室预约.md"
+      ],
+      "strongAnchors": [
+        "不要覆盖他人"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "room-3",
+      "group": "new_room",
+      "split": "holdout",
+      "question": "取消会议后场地什么时候恢复可订？",
+      "target": "上传测试_会议室预约.md",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_会议室预约.md"
+      ],
+      "strongAnchors": [
+        "系统随后释放时段"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "room-4",
+      "group": "new_room",
+      "split": "holdout",
+      "question": "讨论超时还有下一场会议，能直接延长房间使用时间吗？",
+      "target": "上传测试_会议室预约.md",
+      "scope": "all",
+      "relevantNames": [
+        "上传测试_会议室预约.md"
+      ],
+      "strongAnchors": [
+        "已有下一场预约"
+      ],
+      "weakAnchors": []
+    },
+    {
+      "id": "negative-1",
+      "group": "negative",
+      "split": "development",
+      "question": "土星的光环由什么构成？",
+      "target": null,
+      "scope": "all",
+      "relevantNames": [],
+      "strongAnchors": [],
+      "weakAnchors": []
+    },
+    {
+      "id": "negative-2",
+      "group": "negative",
+      "split": "development",
+      "question": "早餐如何烤出松软面包？",
+      "target": null,
+      "scope": "all",
+      "relevantNames": [],
+      "strongAnchors": [],
+      "weakAnchors": []
+    },
+    {
+      "id": "negative-3",
+      "group": "negative",
+      "split": "development",
+      "question": "该怎样给番茄苗施肥？",
+      "target": null,
+      "scope": "all",
+      "relevantNames": [],
+      "strongAnchors": [],
+      "weakAnchors": []
+    },
+    {
+      "id": "negative-4",
+      "group": "negative",
+      "split": "development",
+      "question": "海豚怎样在水中辨别方向？",
+      "target": null,
+      "scope": "all",
+      "relevantNames": [],
+      "strongAnchors": [],
+      "weakAnchors": []
+    },
+    {
+      "id": "negative-5",
+      "group": "negative",
+      "split": "holdout",
+      "question": "员工股票期权的定价公式是什么？",
+      "target": null,
+      "scope": "all",
+      "relevantNames": [],
+      "strongAnchors": [],
+      "weakAnchors": []
+    },
+    {
+      "id": "negative-6",
+      "group": "negative",
+      "split": "holdout",
+      "question": "年终奖金按照哪个比例计算？",
+      "target": null,
+      "scope": "all",
+      "relevantNames": [],
+      "strongAnchors": [],
+      "weakAnchors": []
+    },
+    {
+      "id": "negative-7",
+      "group": "negative",
+      "split": "holdout",
+      "question": "无人驾驶汽车如何识别红绿灯？",
+      "target": null,
+      "scope": "all",
+      "relevantNames": [],
+      "strongAnchors": [],
+      "weakAnchors": []
+    },
+    {
+      "id": "negative-8",
+      "group": "negative",
+      "split": "holdout",
+      "question": "哪些步骤可以制作陶瓷茶杯？",
+      "target": null,
+      "scope": "all",
+      "relevantNames": [],
+      "strongAnchors": [],
+      "weakAnchors": []
+    }
+  ]
+}
