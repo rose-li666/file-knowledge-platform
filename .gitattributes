@@ -1,2 +1,3 @@
 # Preserve raw tool logs, including Docker's trailing spaces.
 docs/evidence/**/*.log -whitespace
+docs/evidence/**/*-trace.txt -whitespace

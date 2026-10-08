@@ -14,7 +14,8 @@ def main():
     configure_utf8_io();p=argparse.ArgumentParser()
     p.add_argument('--image',default='knowledge-platform-app:latest')
     p.add_argument('--port',type=int,default=18080)
-    p.add_argument('--keep-running',action='store_true');args=p.parse_args()
+    p.add_argument('--keep-running',action='store_true')
+    p.add_argument('--frontend-dir',type=Path);args=p.parse_args()
     identity='platform-check-'+uuid.uuid4().hex[:10]
     reports=ROOT.parent/'acceptance'/(datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'-'+identity)
     reports.mkdir(parents=True)
@@ -31,9 +32,14 @@ def main():
         return output
     started=time.perf_counter()
     try:
+        mounts=[]
+        if args.frontend_dir:
+            front=args.frontend_dir.resolve(strict=True)
+            assert (front/'index.html').is_file()
+            mounts=['--mount',f'type=bind,source={front},target=/app/frontend/dist,readonly']
         run('start',['docker','run','-d','--name',identity,'-e','ACCEPTANCE_TEST_RUN='+identity,
             '-p',f'127.0.0.1:{args.port}:8000','--mount',f'type=volume,source={identity}-data,target=/data',
-            '--mount',f'type=bind,source={ROOT / "scripts"},target=/app/scripts,readonly',args.image])
+            '--mount',f'type=bind,source={ROOT / "scripts"},target=/app/scripts,readonly',*mounts,args.image])
         deadline=time.monotonic()+120
         while time.monotonic()<deadline:
             health=subprocess.run(['docker','inspect','--format','{{.State.Health.Status}}',identity],capture_output=True)

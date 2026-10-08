@@ -1,0 +1,28 @@
+{
+  "beforeDesktop": {
+    "width": 1280,
+    "height": 900,
+    "listTop": 853.7,
+    "searchTop": 526.65
+  },
+  "beforeNarrow": {
+    "width": 390,
+    "height": 844,
+    "listTop": 1049.95,
+    "searchTop": 599.45
+  },
+  "afterDesktop": {
+    "width": 1280,
+    "height": 900,
+    "listTop": 392.7,
+    "searchTop": 86.8
+  },
+  "afterNarrow": {
+    "height": 844,
+    "listTop": 404.3999938964844,
+    "scrollWidth": 390,
+    "searchTop": 108.8000030517578,
+    "uploadTop": 273.1000061035156,
+    "viewport": 390
+  }
+}
