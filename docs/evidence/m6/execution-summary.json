@@ -1,0 +1,341 @@
+{
+  "project": "m6-3abc52dc4a32",
+  "port": 51596,
+  "steps": [
+    {
+      "step": "01-fresh-build-start",
+      "command": [
+        "docker",
+        "compose",
+        "-p",
+        "m6-3abc52dc4a32",
+        "-f",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\compose.yaml",
+        "up",
+        "--build",
+        "-d",
+        "--wait",
+        "--wait-timeout",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 93.022
+    },
+    {
+      "step": "02-volume-inspect",
+      "command": [
+        "docker",
+        "volume",
+        "inspect",
+        "m6-3abc52dc4a32_platform_data"
+      ],
+      "exit_code": 0,
+      "seconds": 0.149
+    },
+    {
+      "step": "03-container-inspect",
+      "command": [
+        "docker",
+        "inspect",
+        "m6-3abc52dc4a32-app-1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.15
+    },
+    {
+      "step": "03-review-after",
+      "command": [
+        "docker",
+        "compose",
+        "-p",
+        "m6-3abc52dc4a32",
+        "-f",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\compose.yaml",
+        "run",
+        "--no-deps",
+        "--name",
+        "m6-3abc52dc4a32-review",
+        "app",
+        "python",
+        "scripts/verify_m6_review.py",
+        "--data-dir",
+        "/tmp/m6-review",
+        "--model-dir",
+        "/opt/models/bge",
+        "--report",
+        "/tmp/m6-review-reports/03-review-after.json"
+      ],
+      "exit_code": 0,
+      "seconds": 14.529
+    },
+    {
+      "step": "03-review-copy",
+      "command": [
+        "docker",
+        "cp",
+        "m6-3abc52dc4a32-review:/tmp/m6-review-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m6-docker\\20261008T041154Z-m6-3abc52dc4a32"
+      ],
+      "exit_code": 0,
+      "seconds": 0.159
+    },
+    {
+      "step": "03-review-clean",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "m6-3abc52dc4a32-review"
+      ],
+      "exit_code": 0,
+      "seconds": 0.16
+    },
+    {
+      "step": "04-prepare",
+      "command": [
+        "docker",
+        "compose",
+        "-p",
+        "m6-3abc52dc4a32",
+        "-f",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\compose.yaml",
+        "run",
+        "--no-deps",
+        "--name",
+        "m6-3abc52dc4a32-verify-394bb7",
+        "-v",
+        "D:\\__10_.zip:/fixtures/documents.zip:ro",
+        "app",
+        "python",
+        "scripts/verify_m6.py",
+        "--phase",
+        "prepare",
+        "--zip",
+        "/fixtures/documents.zip",
+        "--report",
+        "/tmp/m6-reports/04-prepare.json"
+      ],
+      "exit_code": 0,
+      "seconds": 7.583
+    },
+    {
+      "step": "04-prepare-copy",
+      "command": [
+        "docker",
+        "cp",
+        "m6-3abc52dc4a32-verify-394bb7:/tmp/m6-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m6-docker\\20261008T041154Z-m6-3abc52dc4a32"
+      ],
+      "exit_code": 0,
+      "seconds": 0.155
+    },
+    {
+      "step": "04-prepare-clean",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "m6-3abc52dc4a32-verify-394bb7"
+      ],
+      "exit_code": 0,
+      "seconds": 0.159
+    },
+    {
+      "step": "05-restart",
+      "command": [
+        "docker",
+        "compose",
+        "-p",
+        "m6-3abc52dc4a32",
+        "-f",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\compose.yaml",
+        "restart",
+        "app"
+      ],
+      "exit_code": 0,
+      "seconds": 1.363
+    },
+    {
+      "step": "06-restart-ready",
+      "command": [
+        "docker",
+        "compose",
+        "-p",
+        "m6-3abc52dc4a32",
+        "-f",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\compose.yaml",
+        "up",
+        "-d",
+        "--no-build",
+        "--wait",
+        "--wait-timeout",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 5.394
+    },
+    {
+      "step": "07-after-restart",
+      "command": [
+        "docker",
+        "compose",
+        "-p",
+        "m6-3abc52dc4a32",
+        "-f",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\compose.yaml",
+        "run",
+        "--no-deps",
+        "--name",
+        "m6-3abc52dc4a32-verify-1dd21d",
+        "-v",
+        "D:\\__10_.zip:/fixtures/documents.zip:ro",
+        "-v",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m6-docker\\20261008T041154Z-m6-3abc52dc4a32\\04-prepare.json:/fixtures/before.json:ro",
+        "app",
+        "python",
+        "scripts/verify_m6.py",
+        "--phase",
+        "after",
+        "--zip",
+        "/fixtures/documents.zip",
+        "--report",
+        "/tmp/m6-reports/07-after-restart.json",
+        "--before",
+        "/fixtures/before.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.075
+    },
+    {
+      "step": "07-after-restart-copy",
+      "command": [
+        "docker",
+        "cp",
+        "m6-3abc52dc4a32-verify-1dd21d:/tmp/m6-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m6-docker\\20261008T041154Z-m6-3abc52dc4a32"
+      ],
+      "exit_code": 0,
+      "seconds": 0.168
+    },
+    {
+      "step": "07-after-restart-clean",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "m6-3abc52dc4a32-verify-1dd21d"
+      ],
+      "exit_code": 0,
+      "seconds": 0.162
+    },
+    {
+      "step": "08-force-recreate",
+      "command": [
+        "docker",
+        "compose",
+        "-p",
+        "m6-3abc52dc4a32",
+        "-f",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\compose.yaml",
+        "up",
+        "-d",
+        "--no-build",
+        "--force-recreate",
+        "--wait",
+        "--wait-timeout",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 6.992
+    },
+    {
+      "step": "09-after-recreate",
+      "command": [
+        "docker",
+        "compose",
+        "-p",
+        "m6-3abc52dc4a32",
+        "-f",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\compose.yaml",
+        "run",
+        "--no-deps",
+        "--name",
+        "m6-3abc52dc4a32-verify-53d735",
+        "-v",
+        "D:\\__10_.zip:/fixtures/documents.zip:ro",
+        "-v",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m6-docker\\20261008T041154Z-m6-3abc52dc4a32\\04-prepare.json:/fixtures/before.json:ro",
+        "app",
+        "python",
+        "scripts/verify_m6.py",
+        "--phase",
+        "after",
+        "--zip",
+        "/fixtures/documents.zip",
+        "--report",
+        "/tmp/m6-reports/09-after-recreate.json",
+        "--before",
+        "/fixtures/before.json",
+        "--restore"
+      ],
+      "exit_code": 0,
+      "seconds": 1.134
+    },
+    {
+      "step": "09-after-recreate-copy",
+      "command": [
+        "docker",
+        "cp",
+        "m6-3abc52dc4a32-verify-53d735:/tmp/m6-reports/.",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\m6-docker\\20261008T041154Z-m6-3abc52dc4a32"
+      ],
+      "exit_code": 0,
+      "seconds": 0.171
+    },
+    {
+      "step": "09-after-recreate-clean",
+      "command": [
+        "docker",
+        "rm",
+        "-f",
+        "m6-3abc52dc4a32-verify-53d735"
+      ],
+      "exit_code": 0,
+      "seconds": 0.165
+    },
+    {
+      "step": "10-app-logs",
+      "command": [
+        "docker",
+        "compose",
+        "-p",
+        "m6-3abc52dc4a32",
+        "-f",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\compose.yaml",
+        "logs",
+        "--tail=200",
+        "app"
+      ],
+      "exit_code": 0,
+      "seconds": 0.397
+    },
+    {
+      "step": "11-stop-test-project",
+      "command": [
+        "docker",
+        "compose",
+        "-p",
+        "m6-3abc52dc4a32",
+        "-f",
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\outputs\\platform\\compose.yaml",
+        "down"
+      ],
+      "exit_code": 0,
+      "seconds": 1.535
+    }
+  ],
+  "failure": null,
+  "volumeRetained": "m6-3abc52dc4a32_platform_data",
+  "scope": "new independent volume; user knowledge-platform volume untouched",
+  "seconds": 134.633
+}

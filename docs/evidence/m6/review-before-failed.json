@@ -1,0 +1,28 @@
+{
+  "checks": [],
+  "failure": "AssertionError('Text retry did not invalidate the processing generation')",
+  "transport": "real TCP HTTP isolated processes",
+  "raceObservation": {
+    "generationAfterTextRetry": 1,
+    "jobState": "processing",
+    "document": {
+      "id": "2a1df973-2bb1-44e3-9f7d-c81a8a2ec5c0",
+      "name": "M6正文重试竞态.md",
+      "extension": "md",
+      "mediaType": "text/markdown",
+      "sizeBytes": 90,
+      "sha256": "395aecf3cced27d5603f5c9fcee33e27fb095a7b8a4fd449ae61dee7af50035e",
+      "uploadedAt": "2026-10-08T04:08:20.836715Z",
+      "category": null,
+      "archivedAt": null,
+      "textStatus": "ready",
+      "textError": null,
+      "textEncoding": "utf-8",
+      "vectorStatus": "processing",
+      "vectorError": null,
+      "chunkCount": 0,
+      "downloadUrl": "/api/v1/documents/2a1df973-2bb1-44e3-9f7d-c81a8a2ec5c0/download"
+    }
+  },
+  "seconds": 5.878
+}

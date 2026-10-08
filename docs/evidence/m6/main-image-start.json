@@ -1,0 +1,40 @@
+[
+  {
+    "command": [
+      "docker",
+      "tag",
+      "m6-3abc52dc4a32-app:latest",
+      "knowledge-platform-app:latest"
+    ],
+    "exit_code": 0,
+    "seconds": 0.167
+  },
+  {
+    "command": [
+      "docker",
+      "compose",
+      "up",
+      "-d",
+      "--no-build",
+      "--wait",
+      "--wait-timeout",
+      "180"
+    ],
+    "exit_code": 0,
+    "seconds": 7.118
+  },
+  {
+    "command": [
+      "docker",
+      "compose",
+      "exec",
+      "-T",
+      "app",
+      "python",
+      "-c",
+      "import urllib.request;print(urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health').read().decode())"
+    ],
+    "exit_code": 0,
+    "seconds": 0.545
+  }
+]

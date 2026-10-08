@@ -51,10 +51,12 @@ docker compose up -d --force-recreate
 M5 验证脚本会新上传全部资料到独立分类，核对下载 SHA-256、分片向量持久化、5 组改写问题排名、过滤；进程故障实验使用独立测试数据目录，不影响主服务数据。使用当前镜像执行（先将测试 ZIP 复制为项目目录 `test-documents.zip`）：
 
 ```sh
-docker compose run --rm --no-deps -v ./test-documents.zip:/fixtures/documents.zip:ro app python scripts/verify_m5.py --zip /fixtures/documents.zip --data-dir /tmp/m5-verification --report /tmp/m5-results.json
+docker compose run --no-deps --name platform-m5-check -v ./test-documents.zip:/fixtures/documents.zip:ro app python scripts/verify_m5.py --zip /fixtures/documents.zip --data-dir /tmp/m5-verification --report /tmp/m5-reports/results.json
+docker cp platform-m5-check:/tmp/m5-reports ./reports-m5
+docker rm platform-m5-check
 ```
 
-这条命令启动独立真实 HTTP 服务，记录故障实验和结果到输出；一次性容器报告需另行挂载目录保存，详见 `docs/m5-api.md`。历史各阶段报告在 `docs/m1-report.md` 至 `docs/m5-report.md`（如存在），含实测与未测项；历史本机开发命令仅在 `docs/development-history.md`，不是启动依赖。M6 将验证空数据卷部署、容器重建、普通浏览器与窄屏、完整回归和代码审查，未完成前不标记最终交付。
+这些命令启动独立真实 HTTP 服务并复制完整报告后清理验证容器；再次运行需换容器名或先清理已完成的验证容器，详见 `docs/m5-api.md`。历史各阶段报告在 `docs/m1-report.md` 至 `docs/m6-report.md`，含实测与未测项；历史本机开发命令仅在 `docs/development-history.md`，不是启动依赖。M6 空数据卷部署、重启/重建、错误回归和审查证据见 `docs/m6-report.md`；浏览器验收状态同样在报告中记录。
 
 ## 实现范围与限制
 

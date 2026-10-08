@@ -1,0 +1,2412 @@
+{
+  "checks": [
+    {
+      "check": "new_empty_volume_0_files_0_categories_page_and_semantic_empty",
+      "passed": true
+    },
+    {
+      "check": "upload_reject_EMPTY_FILE",
+      "passed": true,
+      "http": 400
+    },
+    {
+      "check": "upload_reject_UNSUPPORTED_FILE_TYPE",
+      "passed": true,
+      "http": 415
+    },
+    {
+      "check": "upload_reject_INVALID_PDF",
+      "passed": true,
+      "http": 415
+    },
+    {
+      "check": "upload_reject_INVALID_FILENAME",
+      "passed": true,
+      "http": 400
+    },
+    {
+      "check": "upload_reject_FILE_TOO_LARGE",
+      "passed": true,
+      "http": 413
+    },
+    {
+      "check": "category_rename_duplicate_validation_parameter_errors_and_database_rw",
+      "passed": true
+    },
+    {
+      "check": "all_5_targets_pass_default_0_45_threshold",
+      "passed": true
+    }
+  ],
+  "failure": null,
+  "phase": "prepare",
+  "transport": "real Docker TCP HTTP",
+  "browser": "separate verification",
+  "health": {
+    "milestone": "M5",
+    "indexing": {
+      "concurrency": 1,
+      "workerRunning": true,
+      "recovery": {
+        "requeued": 0,
+        "scheduled": 0
+      }
+    },
+    "uploadRecovery": {
+      "committedIntentsCleared": 0,
+      "quarantined": [],
+      "retainedAnomalies": []
+    },
+    "keywordBackfill": {
+      "ready": 0,
+      "failed": 0,
+      "not_supported": 0,
+      "unconfirmed": 0
+    },
+    "status": "ready",
+    "database": {
+      "status": "ready",
+      "probeCount": 0
+    },
+    "storage": {
+      "startupWriteCheck": "passed"
+    },
+    "model": {
+      "status": "ready",
+      "id": "BAAI/bge-small-zh-v1.5",
+      "revision": "7999e1d3359715c523056ef9478215996d62a620",
+      "dimension": 512,
+      "device": "cpu",
+      "loadSeconds": 0.063
+    },
+    "startupSeconds": 4.215
+  },
+  "business": {
+    "uploads": [
+      {
+        "id": "b2574187-bda5-478c-9904-51448bda2822",
+        "name": "01_代码提交规范_v2.1.md",
+        "textStatus": "ready",
+        "vectorStatus": "ready",
+        "chunkCount": 11,
+        "seconds": 0.436,
+        "http": 200,
+        "originalSha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+        "downloadSha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599"
+      },
+      {
+        "id": "67c81e0b-829b-425d-b77f-c54935959af8",
+        "name": "02_发布检查清单_v1.4.md",
+        "textStatus": "ready",
+        "vectorStatus": "ready",
+        "chunkCount": 11,
+        "seconds": 0.838,
+        "http": 200,
+        "originalSha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+        "downloadSha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19"
+      },
+      {
+        "id": "1aacb1dc-f7ef-4395-a4aa-926ba4775a60",
+        "name": "03_文件服务接口约定_v1.2.md",
+        "textStatus": "ready",
+        "vectorStatus": "ready",
+        "chunkCount": 14,
+        "seconds": 0.635,
+        "http": 200,
+        "originalSha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+        "downloadSha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b"
+      },
+      {
+        "id": "4842b9c9-989e-4534-b49a-2b7361693028",
+        "name": "04_星桥项目_需求与范围_v1.0.pdf",
+        "textStatus": "not_supported",
+        "vectorStatus": "not_supported",
+        "chunkCount": 0,
+        "seconds": 0.021,
+        "http": 200,
+        "originalSha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+        "downloadSha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7"
+      },
+      {
+        "id": "4e80f363-211d-4a10-9aa4-bf708ee6660d",
+        "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+        "textStatus": "ready",
+        "vectorStatus": "ready",
+        "chunkCount": 7,
+        "seconds": 0.836,
+        "http": 200,
+        "originalSha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+        "downloadSha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1"
+      },
+      {
+        "id": "462f76a8-4da5-45fb-90e1-11099211d750",
+        "name": "06_星桥项目_故障复盘_2026-09-21.md",
+        "textStatus": "ready",
+        "vectorStatus": "ready",
+        "chunkCount": 9,
+        "seconds": 1.038,
+        "http": 200,
+        "originalSha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+        "downloadSha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527"
+      },
+      {
+        "id": "63190f8d-e579-449e-815d-b25e520741d4",
+        "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+        "textStatus": "ready",
+        "vectorStatus": "ready",
+        "chunkCount": 11,
+        "seconds": 0.636,
+        "http": 200,
+        "originalSha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+        "downloadSha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b"
+      },
+      {
+        "id": "7f9fd007-d803-48d3-b589-b71d5966a527",
+        "name": "08_检索技术说明_关键词与语义_v1.0.pdf",
+        "textStatus": "not_supported",
+        "vectorStatus": "not_supported",
+        "chunkCount": 0,
+        "seconds": 0.021,
+        "http": 200,
+        "originalSha256": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+        "downloadSha256": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368"
+      },
+      {
+        "id": "26097312-cc9b-492f-90b5-dcd00671f04c",
+        "name": "09_本地部署故障排查_v1.3.txt",
+        "textStatus": "ready",
+        "vectorStatus": "ready",
+        "chunkCount": 11,
+        "seconds": 0.633,
+        "http": 200,
+        "originalSha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+        "downloadSha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f"
+      },
+      {
+        "id": "b4347b53-890b-4cbc-9946-6ccde7ad95bd",
+        "name": "10_文档分类与归档规范_v1.0.pdf",
+        "textStatus": "not_supported",
+        "vectorStatus": "not_supported",
+        "chunkCount": 0,
+        "seconds": 0.021,
+        "http": 200,
+        "originalSha256": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+        "downloadSha256": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695"
+      }
+    ],
+    "queries": [
+      {
+        "question": "交给同事审阅修改之前，应该怎样自查并描述测试结果？",
+        "expected": "01_代码提交规范_v2.1.md",
+        "actualRank": 1,
+        "targetInTop3": true,
+        "seconds": 0.018,
+        "rankings": [
+          {
+            "id": "b2574187-bda5-478c-9904-51448bda2822",
+            "name": "01_代码提交规范_v2.1.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 3131,
+            "sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+            "uploadedAt": "2026-10-08T04:13:43.145560Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/b2574187-bda5-478c-9904-51448bda2822/download",
+            "score": 0.643228,
+            "sources": [
+              {
+                "ordinal": 6,
+                "generation": 1,
+                "heading": "3. 交给审阅者之前",
+                "text": "若某项检查未执行，应写出具体原因和未验证范围。不能把“代码看起来没有问题”填写成测试通过。",
+                "score": 0.643228
+              },
+              {
+                "ordinal": 4,
+                "generation": 1,
+                "heading": "3. 交给审阅者之前",
+                "text": "依次完成格式检查、静态检查、受影响模块的自动化测试和本地构建。涉及上传、权限、索引或数据库时，至少覆盖一个成功案例和一个失败案例。不要只证明按钮能点击，要确认接口返回值与数据库最终状态一致。",
+                "score": 0.630209
+              }
+            ]
+          },
+          {
+            "id": "67c81e0b-829b-425d-b77f-c54935959af8",
+            "name": "02_发布检查清单_v1.4.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 2963,
+            "sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+            "uploadedAt": "2026-10-08T04:13:43.581048Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/67c81e0b-829b-425d-b77f-c54935959af8/download",
+            "score": 0.577183,
+            "sources": [
+              {
+                "ordinal": 8,
+                "generation": 1,
+                "heading": "4. 观察与停止条件",
+                "text": "在数据结构兼容且恢复方案已确认的前提下，可切回上一版本应用。恢复后再次执行上传、下载和检索检查。若无法直接回退，则停止进一步变更，记录故障并执行已审查的修复方案。",
+                "score": 0.577183
+              },
+              {
+                "ordinal": 6,
+                "generation": 1,
+                "heading": "3. 启动后的业务检查",
+                "text": "测试材料需要明确标为验证用途，不使用真实用户材料做删除或覆盖测试。验证结束后按记录清理测试数据。",
+                "score": 0.564241
+              }
+            ]
+          },
+          {
+            "id": "63190f8d-e579-449e-815d-b25e520741d4",
+            "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 2908,
+            "sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+            "uploadedAt": "2026-10-08T04:13:46.954429Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/63190f8d-e579-449e-815d-b25e520741d4/download",
+            "score": 0.57369,
+            "sources": [
+              {
+                "ordinal": 3,
+                "generation": 1,
+                "heading": "一、最近一次找不到文件的经历",
+                "text": "测试角色：知道自己要找“同样的请求重发会不会多建一份文件”，但不知道资料里把这件事叫作“幂等”。直接输入自己的问题比猜术语更自然。找到结果后仍然需要看到原文依据，不能只有一个相关性分数。",
+                "score": 0.57369
+              },
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "二、分类的使用习惯",
+                "text": "测试角色提出，自己正在项目内找材料时，不希望搜索结果突然混入其他项目。全局搜索和当前分类搜索应有明显区别，并能方便地清除筛选条件。",
+                "score": 0.556993
+              }
+            ]
+          },
+          {
+            "id": "4e80f363-211d-4a10-9aa4-bf708ee6660d",
+            "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 2483,
+            "sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+            "uploadedAt": "2026-10-08T04:13:45.079045Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 7,
+            "downloadUrl": "/api/v1/documents/4e80f363-211d-4a10-9aa4-bf708ee6660d/download",
+            "score": 0.53241,
+            "sources": [
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "五、后续行动",
+                "text": "发布值班岗在下次发布前核对 API 与消费者的队列地址、数据库编号和队列名称。\n文件服务组增加“写入任务后是否被消费”的业务检查，不能只检查进程在线。\n研发效能组把“上传成功但正文查不到”加入回归用例。",
+                "score": 0.53241
+              },
+              {
+                "ordinal": 1,
+                "generation": 1,
+                "heading": "一、这次准备发布什么",
+                "text": "1.4.0 增加分类筛选、索引失败重试入口和上传状态提示。数据库迁移仅新增 document_index_jobs 表，不删除旧字段。旧版 1.3.2 不读取此表，因此应用回退后可以保留新增表。",
+                "score": 0.52198
+              }
+            ]
+          },
+          {
+            "id": "26097312-cc9b-492f-90b5-dcd00671f04c",
+            "name": "09_本地部署故障排查_v1.3.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 3017,
+            "sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+            "uploadedAt": "2026-10-08T04:13:47.612447Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/26097312-cc9b-492f-90b5-dcd00671f04c/download",
+            "score": 0.530357,
+            "sources": [
+              {
+                "ordinal": 10,
+                "generation": 1,
+                "heading": "六、交付前复核",
+                "text": "完成一次上传和下载，在正常保留数据卷的前提下重新创建应用容器，再核对原有文件、分类与检索结果。记录验证方式。仅提供一张启动成功截图，不能证明数据可以持久保存。",
+                "score": 0.530357
+              },
+              {
+                "ordinal": 1,
+                "generation": 1,
+                "heading": "一、先确认失败发生在哪一层",
+                "text": "不要在看到网页打不开后立即重建数据库。先检查容器状态和最近日志，再判断是端口、环境配置、服务依赖还是业务接口的问题。记录出现问题的操作与时间，不把数据库密码或访问令牌粘贴到问题描述中。",
+                "score": 0.476057
+              }
+            ]
+          },
+          {
+            "id": "462f76a8-4da5-45fb-90e1-11099211d750",
+            "name": "06_星桥项目_故障复盘_2026-09-21.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 3092,
+            "sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+            "uploadedAt": "2026-10-08T04:13:45.914724Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 9,
+            "downloadUrl": "/api/v1/documents/462f76a8-4da5-45fb-90e1-11099211d750/download",
+            "score": 0.5282,
+            "sources": [
+              {
+                "ordinal": 6,
+                "generation": 1,
+                "heading": "5. 恢复时的注意事项",
+                "text": "恢复验证使用三种操作：按文件名定位、按正文关键词定位、用不同措辞描述同一问题。每次命中后核对来源文件和内容片段，并下载原文件确认内容没有改变。仅检查任务状态变成 ready 不足以宣布恢复。",
+                "score": 0.5282
+              },
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "5. 恢复时的注意事项",
+                "text": "重试依据 documentId 和内容版本去重。写入新分片前先核对当前索引版本，避免同一文档在搜索结果里重复出现。已归档文件即使重新生成索引，也不能进入默认搜索结果。",
+                "score": 0.522562
+              }
+            ]
+          },
+          {
+            "id": "1aacb1dc-f7ef-4395-a4aa-926ba4775a60",
+            "name": "03_文件服务接口约定_v1.2.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 2984,
+            "sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+            "uploadedAt": "2026-10-08T04:13:44.421729Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 14,
+            "downloadUrl": "/api/v1/documents/1aacb1dc-f7ef-4395-a4aa-926ba4775a60/download",
+            "score": 0.495266,
+            "sources": [
+              {
+                "ordinal": 11,
+                "generation": 1,
+                "heading": "4. 索引重试",
+                "text": "原文件丢失、暂时无法连接模型服务和不支持文件格式应给出不同原因。对暂时性失败设置有限次数的自动重试，超出后交给人工重试，避免无限消耗资源。",
+                "score": 0.495266
+              },
+              {
+                "ordinal": 10,
+                "generation": 1,
+                "heading": "4. 索引重试",
+                "text": "POST /api/v1/documents/{id}/index-retry 为 failed 文档重新排队。已在 pending 或 processing 的任务不重复创建，返回当前任务状态。重复执行同一任务不得产生重复片段，索引写入使用文档与内容版本作为关联标识。",
+                "score": 0.484948
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "网络断了又提交同一份上传请求，服务怎样防止保存两次？",
+        "expected": "03_文件服务接口约定_v1.2.md",
+        "actualRank": 1,
+        "targetInTop3": true,
+        "seconds": 0.016,
+        "rankings": [
+          {
+            "id": "1aacb1dc-f7ef-4395-a4aa-926ba4775a60",
+            "name": "03_文件服务接口约定_v1.2.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 2984,
+            "sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+            "uploadedAt": "2026-10-08T04:13:44.421729Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 14,
+            "downloadUrl": "/api/v1/documents/1aacb1dc-f7ef-4395-a4aa-926ba4775a60/download",
+            "score": 0.658537,
+            "sources": [
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "2. 创建上传",
+                "text": "成功保存后返回 201，响应示例：",
+                "score": 0.658537
+              },
+              {
+                "ordinal": 4,
+                "generation": 1,
+                "heading": "2. 创建上传",
+                "text": "客户端为一次上传生成 Idempotency-Key。服务端在同一用户范围内记住该键与上传请求摘要：相同键、相同内容返回同一文档；相同键、不同内容返回 409，提示生成新请求。网络失败后重试应复用原键，主动再上传一个新版本则使用新键。",
+                "score": 0.638264
+              }
+            ]
+          },
+          {
+            "id": "462f76a8-4da5-45fb-90e1-11099211d750",
+            "name": "06_星桥项目_故障复盘_2026-09-21.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 3092,
+            "sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+            "uploadedAt": "2026-10-08T04:13:45.914724Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 9,
+            "downloadUrl": "/api/v1/documents/462f76a8-4da5-45fb-90e1-11099211d750/download",
+            "score": 0.647216,
+            "sources": [
+              {
+                "ordinal": 8,
+                "generation": 1,
+                "heading": "6. 后续改进",
+                "text": "对用户的说明应准确：文件已经保存，索引处理失败，正在恢复检索。不要让用户为了恢复搜索而反复上传同一份文件。",
+                "score": 0.647216
+              },
+              {
+                "ordinal": 4,
+                "generation": 1,
+                "heading": "4. 为什么成功提示会误导用户",
+                "text": "旧界面只显示上传是否成功，没有展示索引是否完成。保存原文件与生成搜索索引是两个独立阶段，用户却把绿色成功提示理解为所有能力都已就绪。后台有失败原因，但用户页面没有重试入口。",
+                "score": 0.597294
+              }
+            ]
+          },
+          {
+            "id": "26097312-cc9b-492f-90b5-dcd00671f04c",
+            "name": "09_本地部署故障排查_v1.3.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 3017,
+            "sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+            "uploadedAt": "2026-10-08T04:13:47.612447Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/26097312-cc9b-492f-90b5-dcd00671f04c/download",
+            "score": 0.631834,
+            "sources": [
+              {
+                "ordinal": 10,
+                "generation": 1,
+                "heading": "六、交付前复核",
+                "text": "完成一次上传和下载，在正常保留数据卷的前提下重新创建应用容器，再核对原有文件、分类与检索结果。记录验证方式。仅提供一张启动成功截图，不能证明数据可以持久保存。",
+                "score": 0.631834
+              },
+              {
+                "ordinal": 8,
+                "generation": 1,
+                "heading": "五、文件保存成功但一直不能搜索",
+                "text": "检查 worker 是否启动、是否连接了与 API 相同的队列，以及索引任务的状态和失败原因。若使用外部向量服务，检查地址、网络和配置，不在日志中打印密钥。定位到索引故障后优先重新处理已有文档，避免让用户重复上传。",
+                "score": 0.553802
+              }
+            ]
+          },
+          {
+            "id": "67c81e0b-829b-425d-b77f-c54935959af8",
+            "name": "02_发布检查清单_v1.4.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 2963,
+            "sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+            "uploadedAt": "2026-10-08T04:13:43.581048Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/67c81e0b-829b-425d-b77f-c54935959af8/download",
+            "score": 0.602437,
+            "sources": [
+              {
+                "ordinal": 7,
+                "generation": 1,
+                "heading": "4. 观察与停止条件",
+                "text": "本项目发布后至少观察十分钟。若新版本导致持续的服务端错误、上传文件无法下载，或索引任务完全停止消费，应暂停继续发布。排查配置问题时也要记录影响范围，不能反复重启来掩盖故障。",
+                "score": 0.602437
+              },
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "3. 启动后的业务检查",
+                "text": "- 检查 API、数据库和后台索引服务，不以“容器处于 running”作为全部通过。\n- 上传一份专用验证文档，核对文件详情，再下载并比对内容。\n- 等待该文档显示可检索后，用文件名和正文各搜索一次。\n- 将验证文档归档，确认默认列表与默认搜索不再出现；恢复后再次确认可用。\n- 检查错误日志、请求失败率和待处理任务是否持续积压。",
+                "score": 0.579905
+              }
+            ]
+          },
+          {
+            "id": "b2574187-bda5-478c-9904-51448bda2822",
+            "name": "01_代码提交规范_v2.1.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 3131,
+            "sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+            "uploadedAt": "2026-10-08T04:13:43.145560Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/b2574187-bda5-478c-9904-51448bda2822/download",
+            "score": 0.572205,
+            "sources": [
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "3. 交给审阅者之前",
+                "text": "前端改动附上桌面和窄屏截图。后台任务改动说明重复执行是否安全、失败后如何重试。修改数据库结构时同时提交迁移脚本，说明已有数据如何保留、旧版本能否继续运行；破坏性变更不得假设所有服务会同时升级。",
+                "score": 0.572205
+              },
+              {
+                "ordinal": 2,
+                "generation": 1,
+                "heading": "2. 从任务到分支",
+                "text": "每项修改关联一个任务编号，例如 DOC-238。分支名称使用 feat/DOC-238-search-filter、fix/DOC-241-upload-retry 等形式。一个合并请求只解决一个清晰的问题，避免把格式整理、依赖升级和业务修复混在一起。开始前确认目标分支以及与其他同事的文件分工，禁止覆盖他人尚未提交的修改。",
+                "score": 0.529791
+              }
+            ]
+          },
+          {
+            "id": "63190f8d-e579-449e-815d-b25e520741d4",
+            "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 2908,
+            "sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+            "uploadedAt": "2026-10-08T04:13:46.954429Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/63190f8d-e579-449e-815d-b25e520741d4/download",
+            "score": 0.565638,
+            "sources": [
+              {
+                "ordinal": 6,
+                "generation": 1,
+                "heading": "三、上传与归档",
+                "text": "上传大一点的资料时，如果页面没有任何变化，用户会多点几次按钮。显示上传进度、处理中状态以及失败原因，能帮助用户决定等待还是重试。",
+                "score": 0.565638
+              },
+              {
+                "ordinal": 7,
+                "generation": 1,
+                "heading": "三、上传与归档",
+                "text": "旧项目结束后，资料仍有参考价值，但不希望每天都在默认列表中看到。用户更倾向于归档后在专门区域查找，必要时恢复。归档不应被理解为已经永久删除。",
+                "score": 0.497842
+              }
+            ]
+          },
+          {
+            "id": "4e80f363-211d-4a10-9aa4-bf708ee6660d",
+            "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 2483,
+            "sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+            "uploadedAt": "2026-10-08T04:13:45.079045Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 7,
+            "downloadUrl": "/api/v1/documents/4e80f363-211d-4a10-9aa4-bf708ee6660d/download",
+            "score": 0.533259,
+            "sources": [
+              {
+                "ordinal": 2,
+                "generation": 1,
+                "heading": "二、发布前核对",
+                "text": "[通过] 18:32 核对前端、API 与索引任务服务的发布清单，版本一致。\n[通过] 18:38 数据库备份完成，归档目录可读取；恢复演练使用隔离副本，不覆盖正式数据。\n[通过] 18:43 保留 1.3.2 镜像和部署配置，确认文件数据卷挂载未改变。\n[通过] 18:48 配置差异审阅完成，计划仅增加索引任务消费进程。",
+                "score": 0.533259
+              },
+              {
+                "ordinal": 1,
+                "generation": 1,
+                "heading": "一、这次准备发布什么",
+                "text": "1.4.0 增加分类筛选、索引失败重试入口和上传状态提示。数据库迁移仅新增 document_index_jobs 表，不删除旧字段。旧版 1.3.2 不读取此表，因此应用回退后可以保留新增表。",
+                "score": 0.515498
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "上线刚启动，新版本要验证哪些用户操作才能放心交付？",
+        "expected": "02_发布检查清单_v1.4.md",
+        "actualRank": 2,
+        "targetInTop3": true,
+        "seconds": 0.016,
+        "rankings": [
+          {
+            "id": "b2574187-bda5-478c-9904-51448bda2822",
+            "name": "01_代码提交规范_v2.1.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 3131,
+            "sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+            "uploadedAt": "2026-10-08T04:13:43.145560Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/b2574187-bda5-478c-9904-51448bda2822/download",
+            "score": 0.592312,
+            "sources": [
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "3. 交给审阅者之前",
+                "text": "前端改动附上桌面和窄屏截图。后台任务改动说明重复执行是否安全、失败后如何重试。修改数据库结构时同时提交迁移脚本，说明已有数据如何保留、旧版本能否继续运行；破坏性变更不得假设所有服务会同时升级。",
+                "score": 0.592312
+              },
+              {
+                "ordinal": 10,
+                "generation": 1,
+                "heading": "6. 一次容易混淆的操作",
+                "text": "某同事通过了所有本地测试，将修复合并到 main。此时状态应是“等待发布”，并非“生产已生效”。执行部署、检查服务健康和验证实际业务属于发布步骤，详见文档 OPS-021。",
+                "score": 0.554852
+              }
+            ]
+          },
+          {
+            "id": "67c81e0b-829b-425d-b77f-c54935959af8",
+            "name": "02_发布检查清单_v1.4.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 2963,
+            "sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+            "uploadedAt": "2026-10-08T04:13:43.581048Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/67c81e0b-829b-425d-b77f-c54935959af8/download",
+            "score": 0.587539,
+            "sources": [
+              {
+                "ordinal": 7,
+                "generation": 1,
+                "heading": "4. 观察与停止条件",
+                "text": "本项目发布后至少观察十分钟。若新版本导致持续的服务端错误、上传文件无法下载，或索引任务完全停止消费，应暂停继续发布。排查配置问题时也要记录影响范围，不能反复重启来掩盖故障。",
+                "score": 0.587539
+              },
+              {
+                "ordinal": 6,
+                "generation": 1,
+                "heading": "3. 启动后的业务检查",
+                "text": "测试材料需要明确标为验证用途，不使用真实用户材料做删除或覆盖测试。验证结束后按记录清理测试数据。",
+                "score": 0.579393
+              }
+            ]
+          },
+          {
+            "id": "26097312-cc9b-492f-90b5-dcd00671f04c",
+            "name": "09_本地部署故障排查_v1.3.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 3017,
+            "sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+            "uploadedAt": "2026-10-08T04:13:47.612447Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/26097312-cc9b-492f-90b5-dcd00671f04c/download",
+            "score": 0.581733,
+            "sources": [
+              {
+                "ordinal": 10,
+                "generation": 1,
+                "heading": "六、交付前复核",
+                "text": "完成一次上传和下载，在正常保留数据卷的前提下重新创建应用容器，再核对原有文件、分类与检索结果。记录验证方式。仅提供一张启动成功截图，不能证明数据可以持久保存。",
+                "score": 0.581733
+              },
+              {
+                "ordinal": 7,
+                "generation": 1,
+                "heading": "四、数据库健康但 API 仍连接失败",
+                "text": "核对 API 使用的是 Compose 网络内的数据库服务名、数据库名和配置字段。首次初始化数据库时设置的账号配置，通常不会因为修改应用环境文件就自动同步到已有数据库。需要检查实际连接错误，不要反复重置数据目录。",
+                "score": 0.532617
+              }
+            ]
+          },
+          {
+            "id": "1aacb1dc-f7ef-4395-a4aa-926ba4775a60",
+            "name": "03_文件服务接口约定_v1.2.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 2984,
+            "sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+            "uploadedAt": "2026-10-08T04:13:44.421729Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 14,
+            "downloadUrl": "/api/v1/documents/1aacb1dc-f7ef-4395-a4aa-926ba4775a60/download",
+            "score": 0.569544,
+            "sources": [
+              {
+                "ordinal": 4,
+                "generation": 1,
+                "heading": "2. 创建上传",
+                "text": "客户端为一次上传生成 Idempotency-Key。服务端在同一用户范围内记住该键与上传请求摘要：相同键、相同内容返回同一文档；相同键、不同内容返回 409，提示生成新请求。网络失败后重试应复用原键，主动再上传一个新版本则使用新键。",
+                "score": 0.569544
+              },
+              {
+                "ordinal": 7,
+                "generation": 1,
+                "heading": "2. 创建上传",
+                "text": "上述标识仅用于说明格式。生产中的下载地址必须由服务端根据记录生成，不接受客户端传入任意磁盘路径。",
+                "score": 0.518596
+              }
+            ]
+          },
+          {
+            "id": "462f76a8-4da5-45fb-90e1-11099211d750",
+            "name": "06_星桥项目_故障复盘_2026-09-21.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 3092,
+            "sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+            "uploadedAt": "2026-10-08T04:13:45.914724Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 9,
+            "downloadUrl": "/api/v1/documents/462f76a8-4da5-45fb-90e1-11099211d750/download",
+            "score": 0.554951,
+            "sources": [
+              {
+                "ordinal": 8,
+                "generation": 1,
+                "heading": "6. 后续改进",
+                "text": "对用户的说明应准确：文件已经保存，索引处理失败，正在恢复检索。不要让用户为了恢复搜索而反复上传同一份文件。",
+                "score": 0.554951
+              },
+              {
+                "ordinal": 4,
+                "generation": 1,
+                "heading": "4. 为什么成功提示会误导用户",
+                "text": "旧界面只显示上传是否成功，没有展示索引是否完成。保存原文件与生成搜索索引是两个独立阶段，用户却把绿色成功提示理解为所有能力都已就绪。后台有失败原因，但用户页面没有重试入口。",
+                "score": 0.554499
+              }
+            ]
+          },
+          {
+            "id": "4e80f363-211d-4a10-9aa4-bf708ee6660d",
+            "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 2483,
+            "sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+            "uploadedAt": "2026-10-08T04:13:45.079045Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 7,
+            "downloadUrl": "/api/v1/documents/4e80f363-211d-4a10-9aa4-bf708ee6660d/download",
+            "score": 0.541539,
+            "sources": [
+              {
+                "ordinal": 2,
+                "generation": 1,
+                "heading": "二、发布前核对",
+                "text": "[通过] 18:32 核对前端、API 与索引任务服务的发布清单，版本一致。\n[通过] 18:38 数据库备份完成，归档目录可读取；恢复演练使用隔离副本，不覆盖正式数据。\n[通过] 18:43 保留 1.3.2 镜像和部署配置，确认文件数据卷挂载未改变。\n[通过] 18:48 配置差异审阅完成，计划仅增加索引任务消费进程。",
+                "score": 0.541539
+              },
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "五、后续行动",
+                "text": "发布值班岗在下次发布前核对 API 与消费者的队列地址、数据库编号和队列名称。\n文件服务组增加“写入任务后是否被消费”的业务检查，不能只检查进程在线。\n研发效能组把“上传成功但正文查不到”加入回归用例。",
+                "score": 0.537236
+              }
+            ]
+          },
+          {
+            "id": "63190f8d-e579-449e-815d-b25e520741d4",
+            "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 2908,
+            "sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+            "uploadedAt": "2026-10-08T04:13:46.954429Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/63190f8d-e579-449e-815d-b25e520741d4/download",
+            "score": 0.533952,
+            "sources": [
+              {
+                "ordinal": 6,
+                "generation": 1,
+                "heading": "三、上传与归档",
+                "text": "上传大一点的资料时，如果页面没有任何变化，用户会多点几次按钮。显示上传进度、处理中状态以及失败原因，能帮助用户决定等待还是重试。",
+                "score": 0.533952
+              },
+              {
+                "ordinal": 10,
+                "generation": 1,
+                "heading": "五、需要验证的设计假设",
+                "text": "这些是假设，需要通过后续原型操作和真实使用验证。本次三人访谈不能用于推断所有用户的使用比例。",
+                "score": 0.520907
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "文档上传成功却查不到正文，数据换了嵌套结构，怎么补救而不用重传？",
+        "expected": "06_星桥项目_故障复盘_2026-09-21.md",
+        "actualRank": 1,
+        "targetInTop3": true,
+        "seconds": 0.018,
+        "rankings": [
+          {
+            "id": "462f76a8-4da5-45fb-90e1-11099211d750",
+            "name": "06_星桥项目_故障复盘_2026-09-21.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 3092,
+            "sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+            "uploadedAt": "2026-10-08T04:13:45.914724Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 9,
+            "downloadUrl": "/api/v1/documents/462f76a8-4da5-45fb-90e1-11099211d750/download",
+            "score": 0.736753,
+            "sources": [
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "5. 恢复时的注意事项",
+                "text": "重试依据 documentId 和内容版本去重。写入新分片前先核对当前索引版本，避免同一文档在搜索结果里重复出现。已归档文件即使重新生成索引，也不能进入默认搜索结果。",
+                "score": 0.736753
+              },
+              {
+                "ordinal": 8,
+                "generation": 1,
+                "heading": "6. 后续改进",
+                "text": "对用户的说明应准确：文件已经保存，索引处理失败，正在恢复检索。不要让用户为了恢复搜索而反复上传同一份文件。",
+                "score": 0.727887
+              }
+            ]
+          },
+          {
+            "id": "63190f8d-e579-449e-815d-b25e520741d4",
+            "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 2908,
+            "sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+            "uploadedAt": "2026-10-08T04:13:46.954429Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/63190f8d-e579-449e-815d-b25e520741d4/download",
+            "score": 0.671502,
+            "sources": [
+              {
+                "ordinal": 6,
+                "generation": 1,
+                "heading": "三、上传与归档",
+                "text": "上传大一点的资料时，如果页面没有任何变化，用户会多点几次按钮。显示上传进度、处理中状态以及失败原因，能帮助用户决定等待还是重试。",
+                "score": 0.671502
+              },
+              {
+                "ordinal": 7,
+                "generation": 1,
+                "heading": "三、上传与归档",
+                "text": "旧项目结束后，资料仍有参考价值，但不希望每天都在默认列表中看到。用户更倾向于归档后在专门区域查找，必要时恢复。归档不应被理解为已经永久删除。",
+                "score": 0.589067
+              }
+            ]
+          },
+          {
+            "id": "26097312-cc9b-492f-90b5-dcd00671f04c",
+            "name": "09_本地部署故障排查_v1.3.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 3017,
+            "sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+            "uploadedAt": "2026-10-08T04:13:47.612447Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/26097312-cc9b-492f-90b5-dcd00671f04c/download",
+            "score": 0.665691,
+            "sources": [
+              {
+                "ordinal": 10,
+                "generation": 1,
+                "heading": "六、交付前复核",
+                "text": "完成一次上传和下载，在正常保留数据卷的前提下重新创建应用容器，再核对原有文件、分类与检索结果。记录验证方式。仅提供一张启动成功截图，不能证明数据可以持久保存。",
+                "score": 0.665691
+              },
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "三、容器重建后资料不见了",
+                "text": "先核对数据库和上传目录是否挂载了具名卷或明确的宿主机目录。没有挂载的容器可写层不能承担持久化资料存储。还要检查是否更改了 Compose 项目名称，导致应用连接了另一组新数据卷。",
+                "score": 0.644428
+              }
+            ]
+          },
+          {
+            "id": "1aacb1dc-f7ef-4395-a4aa-926ba4775a60",
+            "name": "03_文件服务接口约定_v1.2.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 2984,
+            "sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+            "uploadedAt": "2026-10-08T04:13:44.421729Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 14,
+            "downloadUrl": "/api/v1/documents/1aacb1dc-f7ef-4395-a4aa-926ba4775a60/download",
+            "score": 0.633346,
+            "sources": [
+              {
+                "ordinal": 4,
+                "generation": 1,
+                "heading": "2. 创建上传",
+                "text": "客户端为一次上传生成 Idempotency-Key。服务端在同一用户范围内记住该键与上传请求摘要：相同键、相同内容返回同一文档；相同键、不同内容返回 409，提示生成新请求。网络失败后重试应复用原键，主动再上传一个新版本则使用新键。",
+                "score": 0.633346
+              },
+              {
+                "ordinal": 11,
+                "generation": 1,
+                "heading": "4. 索引重试",
+                "text": "原文件丢失、暂时无法连接模型服务和不支持文件格式应给出不同原因。对暂时性失败设置有限次数的自动重试，超出后交给人工重试，避免无限消耗资源。",
+                "score": 0.624471
+              }
+            ]
+          },
+          {
+            "id": "67c81e0b-829b-425d-b77f-c54935959af8",
+            "name": "02_发布检查清单_v1.4.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 2963,
+            "sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+            "uploadedAt": "2026-10-08T04:13:43.581048Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/67c81e0b-829b-425d-b77f-c54935959af8/download",
+            "score": 0.628102,
+            "sources": [
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "3. 启动后的业务检查",
+                "text": "- 检查 API、数据库和后台索引服务，不以“容器处于 running”作为全部通过。\n- 上传一份专用验证文档，核对文件详情，再下载并比对内容。\n- 等待该文档显示可检索后，用文件名和正文各搜索一次。\n- 将验证文档归档，确认默认列表与默认搜索不再出现；恢复后再次确认可用。\n- 检查错误日志、请求失败率和待处理任务是否持续积压。",
+                "score": 0.628102
+              },
+              {
+                "ordinal": 8,
+                "generation": 1,
+                "heading": "4. 观察与停止条件",
+                "text": "在数据结构兼容且恢复方案已确认的前提下，可切回上一版本应用。恢复后再次执行上传、下载和检索检查。若无法直接回退，则停止进一步变更，记录故障并执行已审查的修复方案。",
+                "score": 0.625436
+              }
+            ]
+          },
+          {
+            "id": "4e80f363-211d-4a10-9aa4-bf708ee6660d",
+            "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 2483,
+            "sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+            "uploadedAt": "2026-10-08T04:13:45.079045Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 7,
+            "downloadUrl": "/api/v1/documents/4e80f363-211d-4a10-9aa4-bf708ee6660d/download",
+            "score": 0.586889,
+            "sources": [
+              {
+                "ordinal": 1,
+                "generation": 1,
+                "heading": "一、这次准备发布什么",
+                "text": "1.4.0 增加分类筛选、索引失败重试入口和上传状态提示。数据库迁移仅新增 document_index_jobs 表，不删除旧字段。旧版 1.3.2 不读取此表，因此应用回退后可以保留新增表。",
+                "score": 0.586889
+              },
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "五、后续行动",
+                "text": "发布值班岗在下次发布前核对 API 与消费者的队列地址、数据库编号和队列名称。\n文件服务组增加“写入任务后是否被消费”的业务检查，不能只检查进程在线。\n研发效能组把“上传成功但正文查不到”加入回归用例。",
+                "score": 0.578102
+              }
+            ]
+          },
+          {
+            "id": "b2574187-bda5-478c-9904-51448bda2822",
+            "name": "01_代码提交规范_v2.1.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 3131,
+            "sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+            "uploadedAt": "2026-10-08T04:13:43.145560Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/b2574187-bda5-478c-9904-51448bda2822/download",
+            "score": 0.577766,
+            "sources": [
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "3. 交给审阅者之前",
+                "text": "前端改动附上桌面和窄屏截图。后台任务改动说明重复执行是否安全、失败后如何重试。修改数据库结构时同时提交迁移脚本，说明已有数据如何保留、旧版本能否继续运行；破坏性变更不得假设所有服务会同时升级。",
+                "score": 0.577766
+              },
+              {
+                "ordinal": 8,
+                "generation": 1,
+                "heading": "4. 合并请求应包含的内容",
+                "text": "提交说明采用 feat:、fix:、docs: 等简短前缀，正文解释原因，不堆砌文件名。最终合并前同步目标分支，解决冲突后重新运行受影响的检查。由至少一名非作者完成审阅后合并；作者仍对最终结果负责。",
+                "score": 0.549223
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "question": "重建运行环境后以前的资料丢了，该怎样排查挂载和保住原有数据？",
+        "expected": "09_本地部署故障排查_v1.3.txt",
+        "actualRank": 1,
+        "targetInTop3": true,
+        "seconds": 0.017,
+        "rankings": [
+          {
+            "id": "26097312-cc9b-492f-90b5-dcd00671f04c",
+            "name": "09_本地部署故障排查_v1.3.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 3017,
+            "sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+            "uploadedAt": "2026-10-08T04:13:47.612447Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/26097312-cc9b-492f-90b5-dcd00671f04c/download",
+            "score": 0.685913,
+            "sources": [
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "三、容器重建后资料不见了",
+                "text": "先核对数据库和上传目录是否挂载了具名卷或明确的宿主机目录。没有挂载的容器可写层不能承担持久化资料存储。还要检查是否更改了 Compose 项目名称，导致应用连接了另一组新数据卷。",
+                "score": 0.685913
+              },
+              {
+                "ordinal": 10,
+                "generation": 1,
+                "heading": "六、交付前复核",
+                "text": "完成一次上传和下载，在正常保留数据卷的前提下重新创建应用容器，再核对原有文件、分类与检索结果。记录验证方式。仅提供一张启动成功截图，不能证明数据可以持久保存。",
+                "score": 0.684014
+              }
+            ]
+          },
+          {
+            "id": "67c81e0b-829b-425d-b77f-c54935959af8",
+            "name": "02_发布检查清单_v1.4.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 2963,
+            "sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+            "uploadedAt": "2026-10-08T04:13:43.581048Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/67c81e0b-829b-425d-b77f-c54935959af8/download",
+            "score": 0.648802,
+            "sources": [
+              {
+                "ordinal": 3,
+                "generation": 1,
+                "heading": "2. 数据与回退准备",
+                "text": "涉及数据库迁移时，在发布前生成备份并验证备份可读取。说明迁移是否向前兼容：新增表或可空字段与删除旧字段的风险不同。不能因为有备份，就默认恢复时没有数据损失。",
+                "score": 0.648802
+              },
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "3. 启动后的业务检查",
+                "text": "- 检查 API、数据库和后台索引服务，不以“容器处于 running”作为全部通过。\n- 上传一份专用验证文档，核对文件详情，再下载并比对内容。\n- 等待该文档显示可检索后，用文件名和正文各搜索一次。\n- 将验证文档归档，确认默认列表与默认搜索不再出现；恢复后再次确认可用。\n- 检查错误日志、请求失败率和待处理任务是否持续积压。",
+                "score": 0.639761
+              }
+            ]
+          },
+          {
+            "id": "4e80f363-211d-4a10-9aa4-bf708ee6660d",
+            "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 2483,
+            "sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+            "uploadedAt": "2026-10-08T04:13:45.079045Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 7,
+            "downloadUrl": "/api/v1/documents/4e80f363-211d-4a10-9aa4-bf708ee6660d/download",
+            "score": 0.631752,
+            "sources": [
+              {
+                "ordinal": 1,
+                "generation": 1,
+                "heading": "一、这次准备发布什么",
+                "text": "1.4.0 增加分类筛选、索引失败重试入口和上传状态提示。数据库迁移仅新增 document_index_jobs 表，不删除旧字段。旧版 1.3.2 不读取此表，因此应用回退后可以保留新增表。",
+                "score": 0.631752
+              },
+              {
+                "ordinal": 2,
+                "generation": 1,
+                "heading": "二、发布前核对",
+                "text": "[通过] 18:32 核对前端、API 与索引任务服务的发布清单，版本一致。\n[通过] 18:38 数据库备份完成，归档目录可读取；恢复演练使用隔离副本，不覆盖正式数据。\n[通过] 18:43 保留 1.3.2 镜像和部署配置，确认文件数据卷挂载未改变。\n[通过] 18:48 配置差异审阅完成，计划仅增加索引任务消费进程。",
+                "score": 0.619935
+              }
+            ]
+          },
+          {
+            "id": "462f76a8-4da5-45fb-90e1-11099211d750",
+            "name": "06_星桥项目_故障复盘_2026-09-21.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 3092,
+            "sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+            "uploadedAt": "2026-10-08T04:13:45.914724Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 9,
+            "downloadUrl": "/api/v1/documents/462f76a8-4da5-45fb-90e1-11099211d750/download",
+            "score": 0.620528,
+            "sources": [
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "5. 恢复时的注意事项",
+                "text": "重试依据 documentId 和内容版本去重。写入新分片前先核对当前索引版本，避免同一文档在搜索结果里重复出现。已归档文件即使重新生成索引，也不能进入默认搜索结果。",
+                "score": 0.620528
+              },
+              {
+                "ordinal": 8,
+                "generation": 1,
+                "heading": "6. 后续改进",
+                "text": "对用户的说明应准确：文件已经保存，索引处理失败，正在恢复检索。不要让用户为了恢复搜索而反复上传同一份文件。",
+                "score": 0.607278
+              }
+            ]
+          },
+          {
+            "id": "63190f8d-e579-449e-815d-b25e520741d4",
+            "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+            "extension": "txt",
+            "mediaType": "text/plain",
+            "sizeBytes": 2908,
+            "sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+            "uploadedAt": "2026-10-08T04:13:46.954429Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/63190f8d-e579-449e-815d-b25e520741d4/download",
+            "score": 0.619939,
+            "sources": [
+              {
+                "ordinal": 7,
+                "generation": 1,
+                "heading": "三、上传与归档",
+                "text": "旧项目结束后，资料仍有参考价值，但不希望每天都在默认列表中看到。用户更倾向于归档后在专门区域查找，必要时恢复。归档不应被理解为已经永久删除。",
+                "score": 0.619939
+              },
+              {
+                "ordinal": 6,
+                "generation": 1,
+                "heading": "三、上传与归档",
+                "text": "上传大一点的资料时，如果页面没有任何变化，用户会多点几次按钮。显示上传进度、处理中状态以及失败原因，能帮助用户决定等待还是重试。",
+                "score": 0.602198
+              }
+            ]
+          },
+          {
+            "id": "b2574187-bda5-478c-9904-51448bda2822",
+            "name": "01_代码提交规范_v2.1.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 3131,
+            "sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+            "uploadedAt": "2026-10-08T04:13:43.145560Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 11,
+            "downloadUrl": "/api/v1/documents/b2574187-bda5-478c-9904-51448bda2822/download",
+            "score": 0.587008,
+            "sources": [
+              {
+                "ordinal": 5,
+                "generation": 1,
+                "heading": "3. 交给审阅者之前",
+                "text": "前端改动附上桌面和窄屏截图。后台任务改动说明重复执行是否安全、失败后如何重试。修改数据库结构时同时提交迁移脚本，说明已有数据如何保留、旧版本能否继续运行；破坏性变更不得假设所有服务会同时升级。",
+                "score": 0.587008
+              },
+              {
+                "ordinal": 10,
+                "generation": 1,
+                "heading": "6. 一次容易混淆的操作",
+                "text": "某同事通过了所有本地测试，将修复合并到 main。此时状态应是“等待发布”，并非“生产已生效”。执行部署、检查服务健康和验证实际业务属于发布步骤，详见文档 OPS-021。",
+                "score": 0.526809
+              }
+            ]
+          },
+          {
+            "id": "1aacb1dc-f7ef-4395-a4aa-926ba4775a60",
+            "name": "03_文件服务接口约定_v1.2.md",
+            "extension": "md",
+            "mediaType": "text/markdown",
+            "sizeBytes": 2984,
+            "sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+            "uploadedAt": "2026-10-08T04:13:44.421729Z",
+            "category": {
+              "id": "64dc0030-1088-4008-b174-129fe432c839",
+              "name": "M5新上传-a8814d69"
+            },
+            "archivedAt": null,
+            "textStatus": "ready",
+            "textError": null,
+            "textEncoding": "utf-8",
+            "vectorStatus": "ready",
+            "vectorError": null,
+            "chunkCount": 14,
+            "downloadUrl": "/api/v1/documents/1aacb1dc-f7ef-4395-a4aa-926ba4775a60/download",
+            "score": 0.561736,
+            "sources": [
+              {
+                "ordinal": 11,
+                "generation": 1,
+                "heading": "4. 索引重试",
+                "text": "原文件丢失、暂时无法连接模型服务和不支持文件格式应给出不同原因。对暂时性失败设置有限次数的自动重试，超出后交给人工重试，避免无限消耗资源。",
+                "score": 0.561736
+              },
+              {
+                "ordinal": 10,
+                "generation": 1,
+                "heading": "4. 索引重试",
+                "text": "POST /api/v1/documents/{id}/index-retry 为 failed 文档重新排队。已在 pending 或 processing 的任务不重复创建，返回当前任务状态。重复执行同一任务不得产生重复片段，索引写入使用文档与内容版本作为关联标识。",
+                "score": 0.561573
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "check": "live_category_archive_restore_filters_and_download",
+        "passed": true
+      },
+      {
+        "check": "independent_sqlite_persisted_512d_unique_chunks",
+        "passed": true,
+        "documents": [
+          {
+            "id": "b2574187-bda5-478c-9904-51448bda2822",
+            "chunks": 11,
+            "embeddingBytes": [
+              2048
+            ]
+          },
+          {
+            "id": "67c81e0b-829b-425d-b77f-c54935959af8",
+            "chunks": 11,
+            "embeddingBytes": [
+              2048
+            ]
+          },
+          {
+            "id": "1aacb1dc-f7ef-4395-a4aa-926ba4775a60",
+            "chunks": 14,
+            "embeddingBytes": [
+              2048
+            ]
+          },
+          {
+            "id": "4842b9c9-989e-4534-b49a-2b7361693028",
+            "chunks": 0,
+            "embeddingBytes": []
+          },
+          {
+            "id": "4e80f363-211d-4a10-9aa4-bf708ee6660d",
+            "chunks": 7,
+            "embeddingBytes": [
+              2048
+            ]
+          },
+          {
+            "id": "462f76a8-4da5-45fb-90e1-11099211d750",
+            "chunks": 9,
+            "embeddingBytes": [
+              2048
+            ]
+          },
+          {
+            "id": "63190f8d-e579-449e-815d-b25e520741d4",
+            "chunks": 11,
+            "embeddingBytes": [
+              2048
+            ]
+          },
+          {
+            "id": "7f9fd007-d803-48d3-b589-b71d5966a527",
+            "chunks": 0,
+            "embeddingBytes": []
+          },
+          {
+            "id": "26097312-cc9b-492f-90b5-dcd00671f04c",
+            "chunks": 11,
+            "embeddingBytes": [
+              2048
+            ]
+          },
+          {
+            "id": "b4347b53-890b-4cbc-9946-6ccde7ad95bd",
+            "chunks": 0,
+            "embeddingBytes": []
+          }
+        ]
+      },
+      {
+        "check": "reindex_replaces_chunks_without_duplicates",
+        "passed": true,
+        "count": 11
+      }
+    ],
+    "health": {
+      "milestone": "M5",
+      "indexing": {
+        "concurrency": 1,
+        "workerRunning": true,
+        "recovery": {
+          "requeued": 0,
+          "scheduled": 0
+        }
+      },
+      "uploadRecovery": {
+        "committedIntentsCleared": 0,
+        "quarantined": [],
+        "retainedAnomalies": []
+      },
+      "keywordBackfill": {
+        "ready": 0,
+        "failed": 0,
+        "not_supported": 0,
+        "unconfirmed": 0
+      },
+      "status": "ready",
+      "database": {
+        "status": "ready",
+        "probeCount": 0
+      },
+      "storage": {
+        "startupWriteCheck": "passed"
+      },
+      "model": {
+        "status": "ready",
+        "id": "BAAI/bge-small-zh-v1.5",
+        "revision": "7999e1d3359715c523056ef9478215996d62a620",
+        "dimension": 512,
+        "device": "cpu",
+        "loadSeconds": 0.063
+      },
+      "startupSeconds": 4.215
+    },
+    "categoryId": "64dc0030-1088-4008-b174-129fe432c839"
+  },
+  "keywords": {
+    "checks": [
+      {
+        "check": "zip_7_texts_ready_3_pdfs_name_only_and_10_downloads_unchanged",
+        "passed": true
+      },
+      {
+        "check": "chinese_keywords_complete_identifiers_and_pdf_filename_return_expected_zip_files_with_snippets",
+        "passed": true
+      },
+      {
+        "check": "identifier_case_insensitive_and_underscore_percent_are_literal_not_wildcards",
+        "passed": true
+      },
+      {
+        "check": "empty_results_and_invalid_query_feedback",
+        "passed": true
+      },
+      {
+        "check": "search_count_and_pagination_are_consistent",
+        "passed": true
+      },
+      {
+        "check": "move_search_archive_search_restore_search_and_download_consistency",
+        "passed": true
+      },
+      {
+        "check": "invalid_category_search_has_clear_feedback",
+        "passed": true
+      },
+      {
+        "check": "actual_invalid_encoding_fails_extraction_but_upload_name_search_retry_and_original_download_work",
+        "passed": true
+      },
+      {
+        "check": "pdf_extraction_not_supported_and_missing_document_retry_feedback",
+        "passed": true
+      }
+    ],
+    "queries": [
+      {
+        "query": "代码提交规范",
+        "total": 2,
+        "hits": [
+          {
+            "name": "01_代码提交规范_v2.1.md",
+            "fields": [
+              "name",
+              "body"
+            ],
+            "snippet": "# 代码提交规范\n\n文档编号:eng-014  \n版本:2.1  \n维护团队:研发效能组  \n生效日期:2026-09-10  \n适用范围:星桥协作平台的前端、api 和后台任务服务\n\n## 1. 目的与边界\n\n本文约定开发者把修改交给同事审阅之…"
+          },
+          {
+            "name": "02_发布检查清单_v1.4.md",
+            "fields": [
+              "body"
+            ],
+            "snippet": "…清单只说明应该做什么,某一天做了什么应写入对应项目的发布执行记录。\n\n## 6. 关联资料\n\n提交前的质量检查见 eng-014《代码提交规范》。docker 启动、端口和存储问题见 run-008《本地部署故障排查》。星桥项目 2026-09-18 的发布执行记录单独保存,不代表本清单已经全部执行。\n"
+          }
+        ]
+      },
+      {
+        "query": "最终版",
+        "total": 1,
+        "hits": [
+          {
+            "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+            "fields": [
+              "body"
+            ],
+            "snippet": "…求讨论,不代表统计调查结论。\n\n一、最近一次找不到文件的经历\n产品角色:想找已经确认的需求稿,搜索“需求”出现十几份,名称里都有“最终版”。最后去聊天记录里问哪一份有效。比起更多搜索结果,更希望看到文件的所属项目、更新时间和当前状态。\n\n开发角色:同事只说“看一下发布检查清单”,找到一份通用规范和一份某次发布的执行记录。两份文件都相关,但用途不同。通用规范告诉我下…"
+          }
+        ]
+      },
+      {
+        "query": "幂等",
+        "total": 3,
+        "hits": [
+          {
+            "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+            "fields": [
+              "body"
+            ],
+            "snippet": "…摘要如果能显示文档类型,会少点开几次。\n\n测试角色:知道自己要找“同样的请求重发会不会多建一份文件”,但不知道资料里把这件事叫作“幂等”。直接输入自己的问题比猜术语更自然。找到结果后仍然需要看到原文依据,不能只有一个相关性分数。\n\n二、分类的使用习惯\n三个角色都能理解“项目文件”和“技术规范”这两个大类,但有人会把接口约定放在所属项目下,有人认为它应归入技术规范…"
+          },
+          {
+            "name": "06_星桥项目_故障复盘_2026-09-21.md",
+            "fields": [
+              "body"
+            ],
+            "snippet": "…组 | 覆盖旧格式、新格式和空正文 |\n| 增加失败任务告警 | 值班维护岗 | 失败持续增长时可定位到处理阶段 |\n| 重复任务幂等验证 | 测试负责人 | 同一任务重放不会产生重复片段 |\n\n对用户的说明应准确:文件已经保存,索引处理失败,正在恢复检索。不要让用户为了恢复搜索而反复上传同一份文件。\n"
+          },
+          {
+            "name": "03_文件服务接口约定_v1.2.md",
+            "fields": [
+              "body"
+            ],
+            "snippet": "…,超出后交给人工重试,避免无限消耗资源。\n\n## 5. 常用错误\n\n400:请求字段不完整或分类无效;404:文档不存在;409:幂等键对应的内容冲突或状态不允许;413:文件超过上传上限。接口不返回服务器磁盘路径、内部凭证或完整堆栈。\n\n正文和语义搜索都应检查 archived 状态。归档与恢复的产品规则见 pol-006,索引异常的排查案例见 inc-202…"
+          }
+        ]
+      },
+      {
+        "query": "ENG-014",
+        "total": 2,
+        "hits": [
+          {
+            "name": "02_发布检查清单_v1.4.md",
+            "fields": [
+              "body"
+            ],
+            "snippet": "…勾选为通过。通用清单只说明应该做什么,某一天做了什么应写入对应项目的发布执行记录。\n\n## 6. 关联资料\n\n提交前的质量检查见 eng-014《代码提交规范》。docker 启动、端口和存储问题见 run-008《本地部署故障排查》。星桥项目 2026-09-18 的发布执行记录单独保存,不代表本清单已经全部执行。\n"
+          },
+          {
+            "name": "01_代码提交规范_v2.1.md",
+            "fields": [
+              "body"
+            ],
+            "snippet": "# 代码提交规范\n\n文档编号:eng-014  \n版本:2.1  \n维护团队:研发效能组  \n生效日期:2026-09-10  \n适用范围:星桥协作平台的前端、api 和后台任务服务\n\n## 1. 目的与边界\n\n本文约定开发者把修改交给同事审阅之前必须完成的准备。合并代码不…"
+          }
+        ]
+      },
+      {
+        "query": "API-032",
+        "total": 1,
+        "hits": [
+          {
+            "name": "03_文件服务接口约定_v1.2.md",
+            "fields": [
+              "body"
+            ],
+            "snippet": "# 文件服务接口约定\n\n文档编号:api-032  \n版本:1.2  \n维护团队:文件服务组  \n更新日期:2026-09-15  \n适用系统:星桥协作平台\n\n## 1. 文件与索引分别记录\n\n文件保存成功表示原始字节已经持久化,并产生 documentid。能否被正文检索或语…"
+          }
+        ]
+      },
+      {
+        "query": "REL-20260918",
+        "total": 1,
+        "hits": [
+          {
+            "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+            "fields": [
+              "body"
+            ],
+            "snippet": "星桥项目 - 发布检查清单(执行记录)\n记录编号:rel-20260918\n计划版本:1.4.0\n执行时间:2026-09-18 18:30-19:20\n负责人:发布值班岗\n依据文档:ops-021《发布检查清单》v1.4\n记录状态:发布中止,应用已回退至 1.3.2\n\n一、这次准备发布什么\n1.4.0…"
+          }
+        ]
+      },
+      {
+        "query": "INC-20260921",
+        "total": 3,
+        "hits": [
+          {
+            "name": "06_星桥项目_故障复盘_2026-09-21.md",
+            "fields": [
+              "body"
+            ],
+            "snippet": "# 上传成功后正文检索缺失 - 故障复盘\n\n事件编号:inc-20260921  \n所属项目:星桥协作平台  \n事件窗口:2026-09-21 09:10-10:35  \n编写日期:2026-09-22  \n状态:已恢复,改进项跟进中\n\n## 1. 用户首先遇到了什么\n\n用户上传一份 markdown 方案…"
+          },
+          {
+            "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+            "fields": [
+              "body"
+            ],
+            "snippet": "…记录的区别\n本文件是 9 月 18 日一次部署的实际执行记录。9 月 21 日的正文检索故障由新格式响应解析失败引起,处理过程见 inc-20260921,不能套用本次 redis 配置问题的结论。\n"
+          },
+          {
+            "name": "03_文件服务接口约定_v1.2.md",
+            "fields": [
+              "body"
+            ],
+            "snippet": "…凭证或完整堆栈。\n\n正文和语义搜索都应检查 archived 状态。归档与恢复的产品规则见 pol-006,索引异常的排查案例见 inc-20260921。\n"
+          }
+        ]
+      },
+      {
+        "query": "RUN-008",
+        "total": 2,
+        "hits": [
+          {
+            "name": "09_本地部署故障排查_v1.3.txt",
+            "fields": [
+              "body"
+            ],
+            "snippet": "本地部署故障排查\n文档编号:run-008\n版本:1.3\n维护团队:平台运维组\n更新日期:2026-09-17\n适用环境:星桥协作平台 docker compose 演示部署\n\n一、先确认失败发生在哪一层\n不要在看到网页打不开后立即重建数据库。先检查容器状态和最近日志,再…"
+          },
+          {
+            "name": "02_发布检查清单_v1.4.md",
+            "fields": [
+              "body"
+            ],
+            "snippet": "…布执行记录。\n\n## 6. 关联资料\n\n提交前的质量检查见 eng-014《代码提交规范》。docker 启动、端口和存储问题见 run-008《本地部署故障排查》。星桥项目 2026-09-18 的发布执行记录单独保存,不代表本清单已经全部执行。\n"
+          }
+        ]
+      },
+      {
+        "query": "04_星桥项目_需求与范围_v1.0.pdf",
+        "total": 1,
+        "hits": [
+          {
+            "name": "04_星桥项目_需求与范围_v1.0.pdf",
+            "fields": [
+              "name"
+            ],
+            "snippet": "04_星桥项目_需求与范围_v1.0.pdf"
+          }
+        ]
+      }
+    ],
+    "original_files": [
+      {
+        "id": "b2574187-bda5-478c-9904-51448bda2822",
+        "name": "01_代码提交规范_v2.1.md",
+        "sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+        "equal": true,
+        "textStatus": "ready"
+      },
+      {
+        "id": "67c81e0b-829b-425d-b77f-c54935959af8",
+        "name": "02_发布检查清单_v1.4.md",
+        "sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+        "equal": true,
+        "textStatus": "ready"
+      },
+      {
+        "id": "1aacb1dc-f7ef-4395-a4aa-926ba4775a60",
+        "name": "03_文件服务接口约定_v1.2.md",
+        "sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+        "equal": true,
+        "textStatus": "ready"
+      },
+      {
+        "id": "4842b9c9-989e-4534-b49a-2b7361693028",
+        "name": "04_星桥项目_需求与范围_v1.0.pdf",
+        "sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+        "equal": true,
+        "textStatus": "not_supported"
+      },
+      {
+        "id": "4e80f363-211d-4a10-9aa4-bf708ee6660d",
+        "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+        "sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+        "equal": true,
+        "textStatus": "ready"
+      },
+      {
+        "id": "462f76a8-4da5-45fb-90e1-11099211d750",
+        "name": "06_星桥项目_故障复盘_2026-09-21.md",
+        "sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+        "equal": true,
+        "textStatus": "ready"
+      },
+      {
+        "id": "63190f8d-e579-449e-815d-b25e520741d4",
+        "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+        "sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+        "equal": true,
+        "textStatus": "ready"
+      },
+      {
+        "id": "7f9fd007-d803-48d3-b589-b71d5966a527",
+        "name": "08_检索技术说明_关键词与语义_v1.0.pdf",
+        "sha256": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+        "equal": true,
+        "textStatus": "not_supported"
+      },
+      {
+        "id": "26097312-cc9b-492f-90b5-dcd00671f04c",
+        "name": "09_本地部署故障排查_v1.3.txt",
+        "sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+        "equal": true,
+        "textStatus": "ready"
+      },
+      {
+        "id": "b4347b53-890b-4cbc-9946-6ccde7ad95bd",
+        "name": "10_文档分类与归档规范_v1.0.pdf",
+        "sha256": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+        "equal": true,
+        "textStatus": "not_supported"
+      }
+    ],
+    "categories": {
+      "a": "767c1b41-bfad-44cd-adff-0dc139297571",
+      "b": "5c6b221a-fde2-4a19-96da-6dfb4886d3f0"
+    },
+    "consistency_flow": [
+      {
+        "action": "move_then_search",
+        "category": "767c1b41-bfad-44cd-adff-0dc139297571",
+        "total": 1
+      },
+      {
+        "action": "move_then_search",
+        "category": "5c6b221a-fde2-4a19-96da-6dfb4886d3f0",
+        "total": 1
+      },
+      {
+        "action": "archive_then_search",
+        "default_contains_document": false,
+        "category_total": 0,
+        "archive_total": 1
+      },
+      {
+        "action": "restore_then_search",
+        "category_total": 1,
+        "download_http": 200,
+        "download_sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599"
+      }
+    ],
+    "extraction_failure": {
+      "id": "1bcf78eb-8458-4d8a-b41c-9036a62102d5",
+      "name": "M4-正文失败-c8a78dea.txt",
+      "upload_http": 201,
+      "textStatus": "failed",
+      "error": "正文编码无效或含二进制控制字符；请使用 UTF-8、带 BOM 的 UTF-16 或 GB18030 文本。原文件仍保留，可下载。",
+      "retryStatus": "failed",
+      "download_http": 200,
+      "original_sha256": "d5e1679bb098e65c4f1efd9c1db7febb2b90dcbe0df1ae64da614520492247b6",
+      "download_sha256": "d5e1679bb098e65c4f1efd9c1db7febb2b90dcbe0df1ae64da614520492247b6",
+      "equal": true
+    }
+  },
+  "archivedIds": [
+    "4842b9c9-989e-4534-b49a-2b7361693028",
+    "b2574187-bda5-478c-9904-51448bda2822"
+  ],
+  "snapshot": {
+    "documents": {
+      "1bcf78eb-8458-4d8a-b41c-9036a62102d5": {
+        "id": "1bcf78eb-8458-4d8a-b41c-9036a62102d5",
+        "name": "M4-正文失败-c8a78dea.txt",
+        "extension": "txt",
+        "mediaType": "text/plain",
+        "sizeBytes": 3,
+        "sha256": "d5e1679bb098e65c4f1efd9c1db7febb2b90dcbe0df1ae64da614520492247b6",
+        "uploadedAt": "2026-10-08T04:13:49.081613Z",
+        "category": null,
+        "archivedAt": null,
+        "textStatus": "failed",
+        "textError": "正文编码无效或含二进制控制字符；请使用 UTF-8、带 BOM 的 UTF-16 或 GB18030 文本。原文件仍保留，可下载。",
+        "textEncoding": null,
+        "vectorStatus": "failed",
+        "vectorError": "正文提取失败，请查看正文错误并重试。",
+        "chunkCount": 0,
+        "downloadUrl": "/api/v1/documents/1bcf78eb-8458-4d8a-b41c-9036a62102d5/download"
+      },
+      "b4347b53-890b-4cbc-9946-6ccde7ad95bd": {
+        "id": "b4347b53-890b-4cbc-9946-6ccde7ad95bd",
+        "name": "10_文档分类与归档规范_v1.0.pdf",
+        "extension": "pdf",
+        "mediaType": "application/pdf",
+        "sizeBytes": 170109,
+        "sha256": "bc91d25e2db7f8c36d8ea0ffc8a18ee6993752d14eb5dcbc221fcc4e7b24b695",
+        "uploadedAt": "2026-10-08T04:13:48.250661Z",
+        "category": {
+          "id": "64dc0030-1088-4008-b174-129fe432c839",
+          "name": "M6验收-规范"
+        },
+        "archivedAt": null,
+        "textStatus": "not_supported",
+        "textError": null,
+        "textEncoding": null,
+        "vectorStatus": "not_supported",
+        "vectorError": null,
+        "chunkCount": 0,
+        "downloadUrl": "/api/v1/documents/b4347b53-890b-4cbc-9946-6ccde7ad95bd/download"
+      },
+      "26097312-cc9b-492f-90b5-dcd00671f04c": {
+        "id": "26097312-cc9b-492f-90b5-dcd00671f04c",
+        "name": "09_本地部署故障排查_v1.3.txt",
+        "extension": "txt",
+        "mediaType": "text/plain",
+        "sizeBytes": 3017,
+        "sha256": "f06706263f499059e1225f5cfb9d491196d7e4501b56fc0aae23605fa6e8003f",
+        "uploadedAt": "2026-10-08T04:13:47.612447Z",
+        "category": {
+          "id": "64dc0030-1088-4008-b174-129fe432c839",
+          "name": "M6验收-规范"
+        },
+        "archivedAt": null,
+        "textStatus": "ready",
+        "textError": null,
+        "textEncoding": "utf-8",
+        "vectorStatus": "ready",
+        "vectorError": null,
+        "chunkCount": 11,
+        "downloadUrl": "/api/v1/documents/26097312-cc9b-492f-90b5-dcd00671f04c/download"
+      },
+      "7f9fd007-d803-48d3-b589-b71d5966a527": {
+        "id": "7f9fd007-d803-48d3-b589-b71d5966a527",
+        "name": "08_检索技术说明_关键词与语义_v1.0.pdf",
+        "extension": "pdf",
+        "mediaType": "application/pdf",
+        "sizeBytes": 187732,
+        "sha256": "6ad61f30a48e2d4a447fdae23ed2fc2409f504814b3155ec1cb4fd1949971368",
+        "uploadedAt": "2026-10-08T04:13:47.593311Z",
+        "category": {
+          "id": "64dc0030-1088-4008-b174-129fe432c839",
+          "name": "M6验收-规范"
+        },
+        "archivedAt": null,
+        "textStatus": "not_supported",
+        "textError": null,
+        "textEncoding": null,
+        "vectorStatus": "not_supported",
+        "vectorError": null,
+        "chunkCount": 0,
+        "downloadUrl": "/api/v1/documents/7f9fd007-d803-48d3-b589-b71d5966a527/download"
+      },
+      "63190f8d-e579-449e-815d-b25e520741d4": {
+        "id": "63190f8d-e579-449e-815d-b25e520741d4",
+        "name": "07_星桥项目_用户访谈纪要_2026-09-12.txt",
+        "extension": "txt",
+        "mediaType": "text/plain",
+        "sizeBytes": 2908,
+        "sha256": "6872d1e8ed62ed0925c5a76d82be13021908655e3c6fe7ee6e832c274691338b",
+        "uploadedAt": "2026-10-08T04:13:46.954429Z",
+        "category": {
+          "id": "64dc0030-1088-4008-b174-129fe432c839",
+          "name": "M6验收-规范"
+        },
+        "archivedAt": null,
+        "textStatus": "ready",
+        "textError": null,
+        "textEncoding": "utf-8",
+        "vectorStatus": "ready",
+        "vectorError": null,
+        "chunkCount": 11,
+        "downloadUrl": "/api/v1/documents/63190f8d-e579-449e-815d-b25e520741d4/download"
+      },
+      "462f76a8-4da5-45fb-90e1-11099211d750": {
+        "id": "462f76a8-4da5-45fb-90e1-11099211d750",
+        "name": "06_星桥项目_故障复盘_2026-09-21.md",
+        "extension": "md",
+        "mediaType": "text/markdown",
+        "sizeBytes": 3092,
+        "sha256": "6ab30bcc2159c3d5a613480626ada1bd9ebbe770521cb033d9ac4ff607b29527",
+        "uploadedAt": "2026-10-08T04:13:45.914724Z",
+        "category": {
+          "id": "64dc0030-1088-4008-b174-129fe432c839",
+          "name": "M6验收-规范"
+        },
+        "archivedAt": null,
+        "textStatus": "ready",
+        "textError": null,
+        "textEncoding": "utf-8",
+        "vectorStatus": "ready",
+        "vectorError": null,
+        "chunkCount": 9,
+        "downloadUrl": "/api/v1/documents/462f76a8-4da5-45fb-90e1-11099211d750/download"
+      },
+      "4e80f363-211d-4a10-9aa4-bf708ee6660d": {
+        "id": "4e80f363-211d-4a10-9aa4-bf708ee6660d",
+        "name": "05_星桥项目_发布检查清单_2026-09-18.txt",
+        "extension": "txt",
+        "mediaType": "text/plain",
+        "sizeBytes": 2483,
+        "sha256": "bfd47158f7f72eabb1620620b769fde09a3f63c70451c08d814b35672e13f1a1",
+        "uploadedAt": "2026-10-08T04:13:45.079045Z",
+        "category": {
+          "id": "64dc0030-1088-4008-b174-129fe432c839",
+          "name": "M6验收-规范"
+        },
+        "archivedAt": null,
+        "textStatus": "ready",
+        "textError": null,
+        "textEncoding": "utf-8",
+        "vectorStatus": "ready",
+        "vectorError": null,
+        "chunkCount": 7,
+        "downloadUrl": "/api/v1/documents/4e80f363-211d-4a10-9aa4-bf708ee6660d/download"
+      },
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60": {
+        "id": "1aacb1dc-f7ef-4395-a4aa-926ba4775a60",
+        "name": "03_文件服务接口约定_v1.2.md",
+        "extension": "md",
+        "mediaType": "text/markdown",
+        "sizeBytes": 2984,
+        "sha256": "35b8a7aef0d004cc1c239b85c34fdfbab197aa420f07974417d468c1f692f53b",
+        "uploadedAt": "2026-10-08T04:13:44.421729Z",
+        "category": {
+          "id": "64dc0030-1088-4008-b174-129fe432c839",
+          "name": "M6验收-规范"
+        },
+        "archivedAt": null,
+        "textStatus": "ready",
+        "textError": null,
+        "textEncoding": "utf-8",
+        "vectorStatus": "ready",
+        "vectorError": null,
+        "chunkCount": 14,
+        "downloadUrl": "/api/v1/documents/1aacb1dc-f7ef-4395-a4aa-926ba4775a60/download"
+      },
+      "67c81e0b-829b-425d-b77f-c54935959af8": {
+        "id": "67c81e0b-829b-425d-b77f-c54935959af8",
+        "name": "02_发布检查清单_v1.4.md",
+        "extension": "md",
+        "mediaType": "text/markdown",
+        "sizeBytes": 2963,
+        "sha256": "df9db82dd8de4ef7eba124641006b3408af87aa5db253dbdacbc7027d6d7bd19",
+        "uploadedAt": "2026-10-08T04:13:43.581048Z",
+        "category": {
+          "id": "64dc0030-1088-4008-b174-129fe432c839",
+          "name": "M6验收-规范"
+        },
+        "archivedAt": null,
+        "textStatus": "ready",
+        "textError": null,
+        "textEncoding": "utf-8",
+        "vectorStatus": "ready",
+        "vectorError": null,
+        "chunkCount": 11,
+        "downloadUrl": "/api/v1/documents/67c81e0b-829b-425d-b77f-c54935959af8/download"
+      },
+      "4842b9c9-989e-4534-b49a-2b7361693028": {
+        "id": "4842b9c9-989e-4534-b49a-2b7361693028",
+        "name": "04_星桥项目_需求与范围_v1.0.pdf",
+        "extension": "pdf",
+        "mediaType": "application/pdf",
+        "sizeBytes": 186886,
+        "sha256": "e667d079d17393fd6c3d06a7b9a99affa932515798d9ad3c7e6fad2f9d0615c7",
+        "uploadedAt": "2026-10-08T04:13:45.058618Z",
+        "category": {
+          "id": "64dc0030-1088-4008-b174-129fe432c839",
+          "name": "M6验收-规范"
+        },
+        "archivedAt": "2026-10-08T04:13:49.624052Z",
+        "textStatus": "not_supported",
+        "textError": null,
+        "textEncoding": null,
+        "vectorStatus": "not_supported",
+        "vectorError": null,
+        "chunkCount": 0,
+        "downloadUrl": "/api/v1/documents/4842b9c9-989e-4534-b49a-2b7361693028/download"
+      },
+      "b2574187-bda5-478c-9904-51448bda2822": {
+        "id": "b2574187-bda5-478c-9904-51448bda2822",
+        "name": "01_代码提交规范_v2.1.md",
+        "extension": "md",
+        "mediaType": "text/markdown",
+        "sizeBytes": 3131,
+        "sha256": "4db0b06b4701f5b22aa03a8ee8f6bf1eb2cd6fc4f66fafce46a2255aeb09a599",
+        "uploadedAt": "2026-10-08T04:13:43.145560Z",
+        "category": {
+          "id": "64dc0030-1088-4008-b174-129fe432c839",
+          "name": "M6验收-规范"
+        },
+        "archivedAt": "2026-10-08T04:13:49.629295Z",
+        "textStatus": "ready",
+        "textError": null,
+        "textEncoding": "utf-8",
+        "vectorStatus": "ready",
+        "vectorError": null,
+        "chunkCount": 11,
+        "downloadUrl": "/api/v1/documents/b2574187-bda5-478c-9904-51448bda2822/download"
+      }
+    },
+    "vectors": {
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:0": "65973e820285cee49be549138fadd8652d15a80b9332b38e75794ea522a1dca5",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:1": "56613c0b27f939f13bf852f57a7303f561fc12c86eacf36210f43a0aebd4a669",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:2": "ef9f78d6c27aa2a8c96b245c8048ffac86f8005e2def815f9c7a676ced3f443b",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:3": "0fe62148a349899638394ef664bdc6530144cfca3ca61c24235d61f6e70a21d0",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:4": "1e975eb84a9798230e001de82f0c2212c17d8f0161a238b7aacc39991124af13",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:5": "f44279fb4bac11a95b651d5e5a605f4fb8892ac8d4430ab845c894c05353d48e",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:6": "1483379c6bd610efd108c9560e91b23cb849d63b365f430894b83b52563231b2",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:7": "0b4c66d9c0e55434df4f4cb2405f5977a7799050260bbd1dfee83ae547e1db17",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:8": "1971fe5be6ded59ecc20066a5e7483da87a0570eed884f916f5077cccb1d4b49",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:9": "c157af91246591ccbadfe75f304d8534977d4a07e4e3287fe3628af6a3db4c44",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:10": "dc3735efded369c9b8e11e9fa58270285d86cf599a520d3c0aca7767955a9e5a",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:11": "c26b60dea1279b8a1cf4bd39f9466e49c95f5910a753b8d315e60456e6430caa",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:12": "8b9cb5883715a9cd54d0c1e21fec554efe8600e2f60148e52097494d9350d1fe",
+      "1aacb1dc-f7ef-4395-a4aa-926ba4775a60:13": "d5bdeb15050b47fafc51acfe7fed95fef235209e2b20aba64dee131d257a9a1b",
+      "26097312-cc9b-492f-90b5-dcd00671f04c:0": "8b3dc6d361e650bd143355523f4764de17dc70bf55c70ba90577635a20255df3",
+      "26097312-cc9b-492f-90b5-dcd00671f04c:1": "1227ea29ee13207d4712f3f65dd6e04c17caa3d262a3d94e5c2d0539fd6dbb00",
+      "26097312-cc9b-492f-90b5-dcd00671f04c:2": "1c364c1b082c7a61be79ee7fd08b3d7a90aa2a662dccd9592a97300ad9cd722e",
+      "26097312-cc9b-492f-90b5-dcd00671f04c:3": "7266e70d037fe23a6ac941a71ebfd70cd3169dc8790e4f2bdf502ea73a71b042",
+      "26097312-cc9b-492f-90b5-dcd00671f04c:4": "5040caa51659c6d74dcb7759a2fc2ff3d1fbf0dd673f93f4a398c5f8a408cbea",
+      "26097312-cc9b-492f-90b5-dcd00671f04c:5": "84c6ce8f219db1839492220049b6814ed97d4b2070328ca4fcdb6c76f1a97e80",
+      "26097312-cc9b-492f-90b5-dcd00671f04c:6": "5d9153bdb289cae7aca867f1cab41950b8944415d4855ca0743f6f41b5aa4805",
+      "26097312-cc9b-492f-90b5-dcd00671f04c:7": "7ddc952bfde7dca6776465529c1ebb534615fa10e0f39c8cdeb9d77b556c584a",
+      "26097312-cc9b-492f-90b5-dcd00671f04c:8": "e8378b0110492746562068e0cd4ea2d9ad2e9bebad9e91681ef35900e309e194",
+      "26097312-cc9b-492f-90b5-dcd00671f04c:9": "e22cc2c5ba2a1811083aa0f42b8b4250222d73633f5a78373019b507bf7fc784",
+      "26097312-cc9b-492f-90b5-dcd00671f04c:10": "0df30d53fc2a2a0adf51f7bd310ff00b5317b62943990d95c3373a0ff4c711c0",
+      "462f76a8-4da5-45fb-90e1-11099211d750:0": "8c9d4cabd17100bf9bd156514f19403cb829103bac61ec5637004bbb415a00ad",
+      "462f76a8-4da5-45fb-90e1-11099211d750:1": "6add9880c5acf89dbc6a8bb27573f4ea6f22c7f986eb7657b7d84b217fcd37a1",
+      "462f76a8-4da5-45fb-90e1-11099211d750:2": "b01984b364f21b9f5f4c6ce8283273573c3e0644fa382ea0a1c28ebddd445e49",
+      "462f76a8-4da5-45fb-90e1-11099211d750:3": "1c45f72e9911b999bb4e39bd4e7b4c709436ad4fb9321df8632655d02e9f9ad3",
+      "462f76a8-4da5-45fb-90e1-11099211d750:4": "3de96212dbb5e18218d547ec0d9b0f591a349e211aafadde3b62ee5780beee29",
+      "462f76a8-4da5-45fb-90e1-11099211d750:5": "b46d5cc8f758f8491943580bd99d2a8b5a7c22839740f8d3f9a9bd1cb834e18b",
+      "462f76a8-4da5-45fb-90e1-11099211d750:6": "293993997ed17d17a8b0a9580591de723042db033c5750dcb9489de864e31fe5",
+      "462f76a8-4da5-45fb-90e1-11099211d750:7": "8c1013b238b12c059e4083f393b184105c28ee0fb8b8d63752a4d5747ff2f90c",
+      "462f76a8-4da5-45fb-90e1-11099211d750:8": "b8680a6475cc9e1983088cb4cc3f526388e4b5c225953f2b3638431605335130",
+      "4e80f363-211d-4a10-9aa4-bf708ee6660d:0": "8b487a2a8dd30abf23c45ae6703dcc9c537f949d7408d502591d9598828e6487",
+      "4e80f363-211d-4a10-9aa4-bf708ee6660d:1": "21c894b809ae7e9cbf433da79ce9339fd17d36a8e2d412b3bcdaac40b60c6109",
+      "4e80f363-211d-4a10-9aa4-bf708ee6660d:2": "fe4d488b8b43a3067f3bca659f5bad5e051bb0234e0967583cc7af3baf532c0d",
+      "4e80f363-211d-4a10-9aa4-bf708ee6660d:3": "59e575e4f563129e3cc5ddec23aeccc9c977b2065ef54d1ff4b2669da21f2f93",
+      "4e80f363-211d-4a10-9aa4-bf708ee6660d:4": "6f0fcd717d0050fbf5ac50306de5cff99009f9fe71c61f3a6756e42b574356ba",
+      "4e80f363-211d-4a10-9aa4-bf708ee6660d:5": "ad494b8ad0d0347b277984a0c4d0f9f683bbad3bc119fc2451c520c856dc4b7d",
+      "4e80f363-211d-4a10-9aa4-bf708ee6660d:6": "5409c43c15ce538f2386cdd7b2b59bf8affb93282c71eafafd9fad98c5f06fcd",
+      "63190f8d-e579-449e-815d-b25e520741d4:0": "ea3819e40e508aea8dc49770a6a149c8148f121fe5dc88990aab1938c61a2b9e",
+      "63190f8d-e579-449e-815d-b25e520741d4:1": "96ab129668932a9a48bc9e492bba1c52b5cc8c2279883c92f4c5c37632b05db7",
+      "63190f8d-e579-449e-815d-b25e520741d4:2": "8bf97476e5f21a6568eceb3e61fada8384c8b3af052f1a9b177de0de511bf945",
+      "63190f8d-e579-449e-815d-b25e520741d4:3": "1e69d346bc44c18168f9ca660f78c55f74dc73e3bf6a68263477a300df471cf2",
+      "63190f8d-e579-449e-815d-b25e520741d4:4": "cb6f9dd6f78c1c2d600fd18212ab285b19e68c7f4c45aa5d918e155824422494",
+      "63190f8d-e579-449e-815d-b25e520741d4:5": "113c46f8c38a6005c5f9d1c3dbd7e41abe9eb96ad3b3b4c6e4b7feea312ffd32",
+      "63190f8d-e579-449e-815d-b25e520741d4:6": "5fc4e34cca125a1d76d0cf152cea9e77765fd2f667dac79934bfa4e0b86ac1f7",
+      "63190f8d-e579-449e-815d-b25e520741d4:7": "85fdb1598e174ccadeb23bc8f15a5dbbc73c3b402afc3f909a6397f639a613c0",
+      "63190f8d-e579-449e-815d-b25e520741d4:8": "261f3f55d1c89a2746026e8897f08de78063057dcff335a8c13e47745275a3ce",
+      "63190f8d-e579-449e-815d-b25e520741d4:9": "a49925d8185d5f51eb3e20fce70912e81b83ba4181a3700cee1170dfb66538a9",
+      "63190f8d-e579-449e-815d-b25e520741d4:10": "95d663ef6cbcbe07302f50e590f875b7f07bef647625bf17c39c6f4b84f24037",
+      "67c81e0b-829b-425d-b77f-c54935959af8:0": "28efc8c6d49543b6bd20aa878f47c5439515ae2c1cb7943f46a9565674937852",
+      "67c81e0b-829b-425d-b77f-c54935959af8:1": "7bdc06e38e423efdd3845c30bb1314a9875910f745c5367d3ca8545f2fbfbef1",
+      "67c81e0b-829b-425d-b77f-c54935959af8:2": "cc6ad16df0a3d1ef3697c1835abaf65af636ceb0cade4463e51181e19a779901",
+      "67c81e0b-829b-425d-b77f-c54935959af8:3": "37892c975d862c0e02a0b45e788390569f6102a14b61e45f109905bff66d2ca1",
+      "67c81e0b-829b-425d-b77f-c54935959af8:4": "49694815a9ea859bad5f86053139118a29d0aa14ab1da374c96a7f7a5798edda",
+      "67c81e0b-829b-425d-b77f-c54935959af8:5": "26ebf6244b3eaec515fe426d2a845d71e90d6608f827f0e9e1dd53b775c8bc3f",
+      "67c81e0b-829b-425d-b77f-c54935959af8:6": "fa4a29f0a4782669f3d67f828ad7be7d135fd74829e5e22896016ee2021c51b0",
+      "67c81e0b-829b-425d-b77f-c54935959af8:7": "773307551ea33dade33ab85b7b8a470fa32e0f218db2a0fb3ea147a9a9a1d13e",
+      "67c81e0b-829b-425d-b77f-c54935959af8:8": "38423d3c1f2824e75d67bc0557a85450b1554b1fe0b8ba2ea52cc80a0ead835b",
+      "67c81e0b-829b-425d-b77f-c54935959af8:9": "a1c30d10494cc542979c1da2bb2f65a2ccb4b0138c546cc5f5bfc1e547a8fa41",
+      "67c81e0b-829b-425d-b77f-c54935959af8:10": "55cef3d3064cca52bab2d930ae1c5df7a8a62dd5d8f773822fb20c5e0819fa43",
+      "b2574187-bda5-478c-9904-51448bda2822:0": "68330c655f10f4868fd8620f33fa11be115fabad2cfdded6172b03b085c3863e",
+      "b2574187-bda5-478c-9904-51448bda2822:1": "43b2d0b2bd0b2063f40a69c9d2a354cddfae7cb1904fb54b3e1e73c8560ef3d5",
+      "b2574187-bda5-478c-9904-51448bda2822:2": "90ea3eae48a215bb556aea5b91e3cbcb1a2b4f476e023ae3ef0bf457ecf6cdc1",
+      "b2574187-bda5-478c-9904-51448bda2822:3": "08d82e200f4f17c4b714877e713dd44c393daf875b885541ee7bd0e1ce73287b",
+      "b2574187-bda5-478c-9904-51448bda2822:4": "86db853fce484ecc1d523ce0a83985140db3a9cca14a6773a7cb3bf97d03af83",
+      "b2574187-bda5-478c-9904-51448bda2822:5": "03f2198c7df62efffea3d7a7f9d141fed88960c3253846c97a145c5569ac0722",
+      "b2574187-bda5-478c-9904-51448bda2822:6": "78893c3aacc05cd95b13916225c5f54f6f68e9201de2a0bbdd759d5cadc792c6",
+      "b2574187-bda5-478c-9904-51448bda2822:7": "01c3271a86762df883ff70c3bea15d7d4419d6d1716de1d3f92774ab188d63fc",
+      "b2574187-bda5-478c-9904-51448bda2822:8": "f891ee300b143c8bce15ba8a9149ef082d3d2524007c6d791364746e4d9ec8e3",
+      "b2574187-bda5-478c-9904-51448bda2822:9": "29bae77a5a90359505cf223f3e74571b26ca6ea75bc63cda087b27dd3ad18a49",
+      "b2574187-bda5-478c-9904-51448bda2822:10": "63e17985b1ac12a8c6a5d241ac067e7fcec0938ac68f5da42f0c4f2130cbfc4d"
+    },
+    "jobs": [
+      [
+        "1aacb1dc-f7ef-4395-a4aa-926ba4775a60",
+        1,
+        "ready",
+        1
+      ],
+      [
+        "1bcf78eb-8458-4d8a-b41c-9036a62102d5",
+        2,
+        "failed",
+        1
+      ],
+      [
+        "26097312-cc9b-492f-90b5-dcd00671f04c",
+        1,
+        "ready",
+        1
+      ],
+      [
+        "462f76a8-4da5-45fb-90e1-11099211d750",
+        1,
+        "ready",
+        1
+      ],
+      [
+        "4e80f363-211d-4a10-9aa4-bf708ee6660d",
+        1,
+        "ready",
+        1
+      ],
+      [
+        "63190f8d-e579-449e-815d-b25e520741d4",
+        1,
+        "ready",
+        1
+      ],
+      [
+        "67c81e0b-829b-425d-b77f-c54935959af8",
+        1,
+        "ready",
+        1
+      ],
+      [
+        "b2574187-bda5-478c-9904-51448bda2822",
+        2,
+        "ready",
+        2
+      ]
+    ],
+    "categories": {
+      "items": [
+        {
+          "id": "767c1b41-bfad-44cd-adff-0dc139297571",
+          "name": "M4检索-A-c8a78dea",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "5c6b221a-fde2-4a19-96da-6dfb4886d3f0",
+          "name": "M4检索-B-c8a78dea",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "660ab420-50f5-4b61-83a1-e5e6f77cc95a",
+          "name": "M5空范围-a8814d69",
+          "activeCount": 0,
+          "archivedCount": 0
+        },
+        {
+          "id": "64dc0030-1088-4008-b174-129fe432c839",
+          "name": "M6验收-规范",
+          "activeCount": 8,
+          "archivedCount": 2
+        }
+      ],
+      "unclassified": {
+        "activeCount": 1,
+        "archivedCount": 0
+      }
+    }
+  },
+  "seconds": 6.651
+}

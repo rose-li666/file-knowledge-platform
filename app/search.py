@@ -67,13 +67,14 @@ def retry_text(request: Request, document_id: uuid.UUID):
     if row.extension == "pdf":
         raise FileError(409, "TEXT_NOT_SUPPORTED", "PDF 本轮仅支持文件名搜索。")
     try:
-        with request.app.state.text_lock:
-            extract_document(request.app.state.document_engine, request.app.state.data_dir, str(document_id))
         from .indexing import queue_document
-        with Session(request.app.state.document_engine) as session:
-            session.execute(text("BEGIN IMMEDIATE"))
-            queue_document(session, session.get(Document, str(document_id)))
-            session.commit()
+        with request.app.state.text_lock:
+            # Invalidate any in-flight text snapshot before changing the body.
+            with Session(request.app.state.document_engine) as session:
+                session.execute(text("BEGIN IMMEDIATE"))
+                queue_document(session, session.get(Document, str(document_id)), force=True)
+                session.commit()
+            extract_document(request.app.state.document_engine, request.app.state.data_dir, str(document_id))
         return serialize(find_document(request, document_id))
     except SQLAlchemyError as error:
         logger.exception("Text retry could not commit: %s", document_id)
@@ -98,7 +99,7 @@ async def semantic_search(request: Request, q: str = Query(min_length=1, max_len
                 filters = document_filters(session, archived, category_id)
                 rows = session.execute(select(Document, Chunk).join(Chunk, Chunk.document_id == Document.id)
                     .join(IndexJob, IndexJob.document_id == Document.id)
-                    .where(*filters, Document.vector_status == "ready", IndexJob.state == "ready",
+                    .where(*filters, Document.text_status == "ready", Document.vector_status == "ready", IndexJob.state == "ready",
                            Chunk.generation == IndexJob.generation, Chunk.model_revision == SPEC["revision"])).all()
                 unavailable = session.scalar(select(func.count()).select_from(Document).where(
                     *filters, Document.extension != "pdf", Document.vector_status != "ready"))

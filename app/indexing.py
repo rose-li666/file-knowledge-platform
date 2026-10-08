@@ -21,13 +21,13 @@ def now():
     return datetime.now(timezone.utc)
 
 
-def queue_document(session, row):
+def queue_document(session, row, *, force=False):
     """Caller owns a transaction. Repeated queued/running requests are idempotent."""
     if row.extension == "pdf":
         row.vector_status = "not_supported"
         return False
     job = session.get(IndexJob, row.id)
-    if job and job.state in {"pending", "processing"}:
+    if job and job.state in {"pending", "processing"} and not force:
         return False
     if job is None:
         job = IndexJob(document_id=row.id, generation=1, attempts=0, state="pending", updated_at=now())

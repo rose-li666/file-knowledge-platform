@@ -8,7 +8,7 @@
 
 索引 pending → processing → ready / failed。一条文档只有一条任务；processing 先独立提交，再读取正文、分片和本地模型编码，最后以当前 generation/state 核对，事务内替换片段并更新 ready。失败不影响正文或原文件，旧代次不会参与语义结果。重启将 processing 回到 pending；failed 保留错误，需要手动重试。
 
-`POST /api/v1/documents/{id}/index/retry` 返回 202 DocumentResponse。pending/processing 原样返回，避免重复排队；failed/ready 增加 generation 后排队，当前片段数置 0，成功后原子替换。PDF 409，未知文件 404，任务提交异常 503（提示先刷新核对）。`POST .../text/retry` 可重试正文，并提交索引任务。
+`POST /api/v1/documents/{id}/index/retry` 返回 202 DocumentResponse。pending/processing 原样返回，避免重复排队；failed/ready 增加 generation 后排队，当前片段数置 0，成功后原子替换。PDF 409，未知文件 404，任务提交异常 503（提示先刷新核对）。`POST .../text/retry` 在正文锁内先提交新 generation、使旧任务失效，再重新提取正文；即使旧任务正在推理，它也不能发布旧代次片段。正文和向量均 ready 才参与语义检索。
 
 `GET /api/v1/search/semantic?q=自然语言问题&category_id=分类UUID&archived=false&limit=10&offset=0&min_score=0.45`。q 为 1–200 字；limit 1–25；min_score 0–1。分类支持 unclassified；缺省仅未归档。返回 items（DocumentResponse + score + sources）、total/limit/offset/query/minScore/vectorUnavailableCount/modelRevision；每 sources 包含 ordinal/generation/heading/text/score，最多 2 个原文片段。按文件最佳片段点积排序，分数不是概率，无关键词回退或 reranker。只检索 ready、任务代次一致且当前模型版本的片段。空范围/低于阈值返回 200 空数组；模型未加载或向量计算/存储异常 503，关键词和下载接口仍工作。
 

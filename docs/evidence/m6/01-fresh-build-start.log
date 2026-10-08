@@ -1,0 +1,150 @@
+Command: docker compose -p m6-3abc52dc4a32 -f C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\platform\compose.yaml up --build -d --wait --wait-timeout 180
+ Image m6-3abc52dc4a32-app Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 635B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.52kB done
+#2 DONE 0.0s
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [auth] library/node:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#5 ...
+
+#6 [internal] load metadata for docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#6 ...
+
+#7 [auth] library/python:pull token for registry-1.docker.io
+#7 DONE 0.0s
+
+#8 [auth] library/node:pull token for registry-1.docker.io
+#8 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#5 DONE 43.0s
+
+#6 [internal] load metadata for docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#6 DONE 43.0s
+
+#9 [internal] load .dockerignore
+#9 transferring context: 134B done
+#9 DONE 0.0s
+
+#10 [internal] load build context
+#10 DONE 0.0s
+
+#11 [auth] library/python:pull token for registry-1.docker.io
+#11 DONE 0.0s
+
+#12 [auth] library/node:pull token for registry-1.docker.io
+#12 DONE 0.0s
+
+#13 [stage-1  1/11] FROM docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#13 resolve docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#13 ...
+
+#14 [frontend 1/7] FROM docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#14 resolve docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#14 ...
+
+#15 [auth] library/python:pull token for registry-1.docker.io
+#15 DONE 0.0s
+
+#16 [auth] library/node:pull token for registry-1.docker.io
+#16 DONE 0.0s
+
+#14 [frontend 1/7] FROM docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df
+#14 resolve docker.io/library/node:24.19.0-bookworm-slim@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df 42.7s done
+#14 DONE 42.7s
+
+#13 [stage-1  1/11] FROM docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#13 resolve docker.io/library/python:3.12.14-slim-bookworm@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e 42.7s done
+#13 DONE 42.7s
+
+#10 [internal] load build context
+#10 transferring context: 36.51kB done
+#10 DONE 0.0s
+
+#17 [frontend 3/7] RUN npm install --global npm@11.6.2
+#17 CACHED
+
+#18 [frontend 6/7] COPY frontend/ ./
+#18 CACHED
+
+#19 [frontend 4/7] COPY frontend/package.json frontend/package-lock.json ./
+#19 CACHED
+
+#20 [frontend 2/7] WORKDIR /frontend
+#20 CACHED
+
+#21 [frontend 5/7] RUN npm ci
+#21 CACHED
+
+#22 [stage-1  4/11] RUN pip install --no-cache-dir torch==2.9.0 --index-url https://download.pytorch.org/whl/cpu     && pip install --no-cache-dir -r requirements.txt -c requirements.lock.txt
+#22 CACHED
+
+#23 [stage-1  6/11] COPY scripts/download_model.py scripts/utf8_logs.py ./scripts/
+#23 CACHED
+
+#24 [stage-1  5/11] COPY model-spec.json ./
+#24 CACHED
+
+#25 [stage-1  2/11] WORKDIR /app
+#25 CACHED
+
+#26 [stage-1  3/11] COPY requirements.txt requirements.lock.txt ./
+#26 CACHED
+
+#27 [frontend 7/7] RUN npm run build
+#27 CACHED
+
+#28 [stage-1  7/11] RUN python scripts/download_model.py --destination /opt/models/bge
+#28 CACHED
+
+#29 [stage-1  8/11] COPY app/ ./app/
+#29 DONE 0.0s
+
+#30 [stage-1  9/11] COPY scripts/ ./scripts/
+#30 DONE 0.0s
+
+#31 [stage-1 10/11] COPY --from=frontend /frontend/dist ./frontend/dist/
+#31 DONE 0.0s
+
+#32 [stage-1 11/11] RUN useradd --uid 10001 --create-home appuser     && mkdir -p /data/db /data/uploads /data/tmp /data/quarantine     && chown -R appuser:appuser /data
+#32 DONE 0.2s
+
+#33 exporting to image
+#33 exporting layers 0.1s done
+#33 exporting manifest sha256:5a10a0ad4d2b32f767851a2fcbdee78b60407b725db073037d64fdaee89b26fb done
+#33 exporting config sha256:896bca95026d238d7c7d54fc44ad127566309db61a4908613b2dc4c28a106014 done
+#33 exporting attestation manifest sha256:66cb719911b05bf7710419269c58467520a9ce173089bf8fef880cf3e2263ef5 done
+#33 exporting manifest list sha256:8c11ea967f8f4a172bcd973b69fa055bcc51dfb8494f3c3c3d53605708849ba3 done
+#33 naming to docker.io/library/m6-3abc52dc4a32-app:latest done
+#33 unpacking to docker.io/library/m6-3abc52dc4a32-app:latest 0.1s done
+#33 DONE 0.2s
+
+#34 resolving provenance for metadata file
+#34 DONE 0.0s
+ Image m6-3abc52dc4a32-app Built 
+ Network m6-3abc52dc4a32_default Creating 
+ Volume m6-3abc52dc4a32_platform_data Creating 
+ Volume m6-3abc52dc4a32_platform_data Creating 
+ Network m6-3abc52dc4a32_default Creating 
+ Volume m6-3abc52dc4a32_platform_data Created 
+ Volume m6-3abc52dc4a32_platform_data Created 
+ Network m6-3abc52dc4a32_default Created 
+ Network m6-3abc52dc4a32_default Created 
+ Container m6-3abc52dc4a32-app-1 Creating 
+ Container m6-3abc52dc4a32-app-1 Created 
+ Container m6-3abc52dc4a32-app-1 Starting 
+ Container m6-3abc52dc4a32-app-1 Started 
+ Container m6-3abc52dc4a32-app-1 Waiting 
+ Container m6-3abc52dc4a32-app-1 Healthy 
+
+Exit code: 0; seconds: 93.022
