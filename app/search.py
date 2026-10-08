@@ -86,7 +86,7 @@ async def semantic_search(request: Request, q: str = Query(min_length=1, max_len
                           category_id: str | None = None, archived: bool = False,
                           limit: int = Query(5, ge=1, le=25), offset: int = Query(0, ge=0),
                           min_score: float = Query(0.45, ge=0, le=1),
-                          score_window: float = Query(0.12, ge=0, le=1),
+                          score_window: float = Query(0.08, ge=0, le=1),
                           source_window: float = Query(0.08, ge=0, le=1)):
     import asyncio
     import numpy as np

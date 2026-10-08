@@ -149,7 +149,7 @@ function App() {
     try {
       const semantic = !!query && searchMode === 'semantic';
       const parameters = new URLSearchParams({ limit: semantic && !wideResults ? '5' : '25', offset: String(offset), archived: String(archivedView) });
-      if (semantic) parameters.set('score_window', wideResults ? '1' : '0.12');
+      if (semantic) parameters.set('score_window', wideResults ? '1' : '0.08');
       if (categoryFilter) parameters.set('category_id', categoryFilter);
       if (query) parameters.set('q', query);
       const result = await json<Page>(`${query ? `/api/v1/search/${searchMode}` : '/api/v1/documents'}?${parameters}`);

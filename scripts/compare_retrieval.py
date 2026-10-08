@@ -119,13 +119,13 @@ def compare(args, report):
         clock = time.perf_counter()
         vector = model.encode([case['question']], query=True)[0]
         http = query(client, case['question'], **({'category_id': category} if category else {}))
-        entry = {'case': case, 'baselineHttp': http, 'variants': {}}
+        entry = {'case': case, 'httpResponse': http, 'httpVariant': args.http_variant, 'variants': {}}
         for variant in variants:
             items = rank(chunks, vector, body_vectors, category, variant)
             entry['variants'][variant] = {'items': items, 'metrics': measure(items, case)}
-        baseline = entry['variants']['baseline']['items']
-        assert [r['id'] for r in baseline] == [r['id'] for r in http['items']], ('Offline/HTTP mismatch', case['id'])
-        for calculated, returned in zip(baseline, http['items']):
+        expected = entry['variants'][args.http_variant]['items']
+        assert [r['id'] for r in expected] == [r['id'] for r in http['items']], ('Offline/HTTP mismatch', case['id'])
+        for calculated, returned in zip(expected, http['items']):
             assert abs(calculated['score'] - returned['score']) <= .00001
             assert [s['ordinal'] for s in calculated['sources']] == [s['ordinal'] for s in returned['sources']]
         entry['seconds'] = round(time.perf_counter() - clock, 3)
@@ -156,6 +156,8 @@ def main():
     parser.add_argument('--zip', type=Path, required=True)
     parser.add_argument('--cases', type=Path, default=Path(__file__).with_name('retrieval_comparison_cases.json'))
     parser.add_argument('--report', type=Path, required=True)
+    parser.add_argument('--http-variant', choices=['baseline', 'window_008'], default='window_008',
+                        help='Expected production default; no override is sent to HTTP queries')
     args = parser.parse_args()
     report = {'transport': 'isolated Docker HTTP new uploads; variant ranking diagnostic over persisted vectors',
               'results': [], 'downloads': [], 'summary': {}, 'failure': None}

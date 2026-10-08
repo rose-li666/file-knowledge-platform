@@ -1,0 +1,4 @@
+Command: docker run -d --name retrieval-round-fbe2661e7c -e ACCEPTANCE_TEST_RUN=retrieval-round-fbe2661e7c -p 127.0.0.1:55652:8000 --mount type=volume,source=retrieval-round-fbe2661e7c-data,target=/data --mount type=bind,source=C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\outputs\platform\scripts,target=/app/scripts,readonly --mount type=bind,source=D:\__10_.zip,target=/fixtures/documents.zip,readonly m6-dec5b5de6fc8-app
+7b8db8560990afe64adae4959cc1ec3b9e91983aaa76840cfea73c1303e0087a
+
+Exit code: 0

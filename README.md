@@ -62,7 +62,7 @@ docker rm platform-m5-check
 
 本人实现文件保存及崩溃对账、分类归档、正文提取、分片任务、向量存储与精确检索、API、React 操作页面和验证脚本。使用开源组件：[FastAPI](https://github.com/fastapi/fastapi)、[React](https://github.com/facebook/react)、[SQLAlchemy](https://github.com/sqlalchemy/sqlalchemy)、[Sentence Transformers](https://github.com/huggingface/sentence-transformers)、[BGE 模型](https://huggingface.co/BAAI/bge-small-zh-v1.5)。包版本锁定在 requirements 和前端 lock 文件；模型版本及查询前缀在 model-spec.json。未复制现成知识库项目。
 
-SQLite BLOB 保存标准化 512 维向量，NumPy 点积精确检索，以文件最佳片段排序，展示最多 2 个来源片段；基础相似度阈值0.45，默认最多5项且距首位得分不超过0.12；可展开原门槛下全部候选（25项/页）。来源片段距文件最佳得分不超过0.08，最多2段。相似度非相关性概率，窗口可能隐藏低分相关项；实测与局限见 `docs/retrieval-quality.md`。适合少量考核文档，无 ANN、大库性能承诺或统一排序精度保证。单文件最多 2000 片段，过多时索引失败仍保留原文件。暂不做用户权限、问答、文件版本、PDF 正文/OCR；当前用于本地考核演示。
+SQLite BLOB 保存标准化 512 维向量，NumPy 点积精确检索，以文件最佳片段排序，展示最多 2 个来源片段；基础相似度阈值0.45，默认最多5项且距首位得分不超过0.08；可展开原门槛下全部候选（25项/页）。来源片段距文件最佳得分不超过0.08，最多2段。相似度非相关性概率，窗口可能隐藏低分相关项；实测与局限见 `docs/retrieval-round.md`（本轮对照）及 `docs/retrieval-quality.md`（历史实验）。适合少量考核文档，无 ANN、大库性能承诺或统一排序精度保证。单文件最多 2000 片段，过多时索引失败仍保留原文件。暂不做用户权限、问答、文件版本、PDF 正文/OCR；当前用于本地考核演示。
 
 
 ## 独立回归与常见失败

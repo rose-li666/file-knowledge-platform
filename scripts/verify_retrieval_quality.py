@@ -108,7 +108,7 @@ def main():
     result={'queries':[],'negatives':[],'filters':[],'downloads':[],'checks':[],'failure':None,
             'transport':'isolated real Docker TCP HTTP, actual new model vectors',
             'beforePolicy':'min_score=.45, score_window=1, source_window=1, limit=10; same new-upload index',
-            'afterPolicy':'min_score=.45 unchanged, score_window=.12, source_window=.08, limit=5'}
+            'afterPolicy':'min_score=.45 unchanged, score_window=.08, source_window=.08, limit=5'}
     started=time.perf_counter()
     try:verify(TcpClient('http://127.0.0.1:8000'),args.zip,result)
     except Exception as error:
