@@ -1,6 +1,4 @@
-# 正式交付导航
-
-代码与交付文档已完成；本次定稿只修改当前交付说明，已执行测试和历史报告保留。GitHub源码发布已完成；**考核平台SHA锁定、原始日志上传和真实材料回执尚未完成**，见[剩余平台手续](remaining-acceptance.md)。最终源码版本以本次定稿提交的完整40位Git SHA为准，随本次交付核对结果提供，可在源码根目录用 `git rev-parse HEAD` 核对。
+# 交付资料导航
 
 公开仓库：[rose-li666/file-knowledge-platform](https://github.com/rose-li666/file-knowledge-platform)，main分支。考官取得源码后按根目录README启动，不需要开发者Windows目录、既有数据或测试ZIP。默认空库；测试脚本主动执行时才导入独立卷。源码包含Dockerfile、Compose、Python依赖锁、前端lock和固定模型revision，首次构建联网下载依赖/模型，运行离线。
 
@@ -14,8 +12,7 @@
 | 最新语义对照与取舍、受影响回归 | [retrieval-round.md](retrieval-round.md)及before/after/p0/quality原始JSON |
 | 页面截图、侧栏修复、窄屏与批量整理 | [ui-optimization.md](ui-optimization.md)、[category-dialog-fix.md](category-dialog-fix.md)、[batch-organization.md](batch-organization.md) |
 | 用户人工确认（与自动化/Agent浏览器分开） | [user-validation.md](user-validation.md)、[manual-check.md](manual-check.md) |
-| 代码/文档完成状态、待办平台手续、未验证边界 | [remaining-acceptance.md](remaining-acceptance.md) |
-| 真实公开仓库发布、匿名访问核对 | [github-publication.md](github-publication.md) |
+| 技术限制与专项验证边界 | [remaining-acceptance.md](remaining-acceptance.md) |
 
 ## 统一资料的五组查询
 
@@ -35,4 +32,4 @@
 
 语义结果可能混入高分无关流程文档、来源片段可能偏泛化。默认相对窗口可能隐藏低分相关资料，展开更多保留基础门槛候选；没有未知问法精度保证。PDF仅名称搜索/原字节预览下载，无正文提取/OCR；扫描件不识别。精确遍历、单索引/推理并发用于小资料集，未压测大库。无登录/权限、问答、版本、目录树或多服务。
 
-用户已汇总确认人工验证完成，专项记录只保留实际原话，不补造尺寸、时间、截图或逐动作结果。PDF阅读器显示、普通浏览器“正文ready/向量failed”、低高度/窄屏键盘等专项人工明细未提供；大库性能和其他宿主系统未单独验证，不能追加通过结论。历史报告中的候选版本、失败与当时待验证状态仍保留。当前定稿提交代表源码与文档交付版本，不等于平台SHA锁定或材料提交成功；取得正式上传说明后再完成平台手续。
+用户已汇总确认人工验证完成，专项记录只保留实际原话，不补造尺寸、时间、截图或逐动作结果。PDF阅读器显示、普通浏览器“正文ready/向量failed”、低高度/窄屏键盘等专项人工明细未提供；大库性能和其他宿主系统未单独验证，不能追加通过结论。人工与自动化记录按来源分别保存，历史测试报告反映当时实际执行结果。

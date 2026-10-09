@@ -1,6 +1,6 @@
 # 题目要求 → 页面/API → 实际证据
 
-当前交付状态（2026-10-09）：代码与交付文档已完成、GitHub公开源码已发布；平台SHA锁定、原始日志上传及材料回执尚未完成，见[remaining-acceptance.md](remaining-acceptance.md)。本次只定稿文档，未重新执行业务回归。下表使用已有最新实测证据；自动化Docker真实HTTP、Agent浏览器、用户手动验证彼此不替代，不推断未测环境。表后历史追加记录保留当时措辞。
+核心功能交付复核已获用户确认。下表按已执行的测试证据列示功能与技术限制；自动化Docker真实HTTP、Agent浏览器、用户手动验证彼此不替代，不推断未测环境或未说明的专项动作。技术与证据边界见[remaining-acceptance.md](remaining-acceptance.md)，表后历史追加记录保留当时措辞。
 
 | 题目硬条件 | 页面入口 / API | 实际证据与状态 | 已知限制/待验证 |
 | --- | --- | --- | --- |
@@ -15,7 +15,7 @@
 | 持久化文件、分类、归档及检索 | /data 命名卷 | 自动化通过：M6 11文件、2非空归档状态、74向量字节哈希重启/强制重建完全一致 | 不覆盖清空数据卷或更改Compose项目名后的数据迁移 |
 | 异常反馈和空结果 | 上传错误、详情错误、空结果页 | 自动化通过：400/413/415/422/404/409，正文失败原文件保存；M6。内置浏览器空结果/失败重试通过 | 新UI已有内置浏览器空结果/错误展示证据，后续用户汇总确认完成，未附错误反馈专项明细 |
 | 清晰入口、普通屏幕可操作 | 页面布局 | 内置浏览器新版1280×900、390×844分类/搜索/详情/归档操作通过，见ui-optimization.md；用户手动记录见 user-validation.md | 普通Chrome批量整理入口/操作通过；后续用户汇总确认完成；尺寸/键盘专项明细未提供 |
-| 5组真实资料语义示例、源码来源、设计与限制 | [交付导航](submission.md)、model-spec.json、README | 五问真实HTTP排名1/1/2/1/1及来源见[最新检索报告](retrieval-round.md)；架构/组件来源/本人范围见[delivery.md](delivery.md)，真实公开仓库已发布 | 代码与文档已完成；平台SHA锁定、原始日志上传/回执未完成，见[remaining-acceptance.md](remaining-acceptance.md) |
+| 5组真实资料语义示例、源码来源、设计与限制 | [交付导航](submission.md)、model-spec.json、README | 五问真实HTTP排名1/1/2/1/1及来源见[最新检索报告](retrieval-round.md)；架构/组件来源/本人范围见[delivery.md](delivery.md) | 五问召回不代表所有未知问题相关性通过；技术限制与未专项验证范围见[remaining-acceptance.md](remaining-acceptance.md) |
 
 ## 历史阶段追加记录（保留当时状态）
 

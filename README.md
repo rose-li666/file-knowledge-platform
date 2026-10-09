@@ -2,7 +2,7 @@
 
 一个 Docker 服务，提供 React 页面、FastAPI 接口、SQLite 数据库和本地文本向量模型。支持 PDF/TXT/Markdown 上传下载、扁平分类、归档恢复、关键词和语义检索。无需预置文件、数据库或宿主机 Python/Node。
 
-公开源码：[rose-li666/file-knowledge-platform](https://github.com/rose-li666/file-knowledge-platform)。代码、交付文档和已执行的验收证据已完成，范围与限制见 [交付导航](docs/submission.md)。**考核平台的 SHA 锁定、原始日志上传及材料回执尚未完成**，不等同于 GitHub 源码发布。
+公开源码：[rose-li666/file-knowledge-platform](https://github.com/rose-li666/file-knowledge-platform)。架构、接口、测试证据和五组检索示例见 [资料导航](docs/submission.md)。
 
 ## 启动
 
@@ -90,4 +90,4 @@ python scripts/run_acceptance_docker.py --image knowledge-platform-app --port 18
 
 更新源码后运行 `docker compose up --build -d`，保持同一Compose项目名以使用原卷。独立考官环境直接用干净源码和新Compose项目即可，ZIP不属于启动依赖。验收表、人工检查步骤和用户记录分别见 `docs/acceptance.md`、`docs/manual-check.md`、`docs/user-validation.md`。
 
-代码与文档已完成并发布到GitHub；独立源码无缓存部署及完整回归记录见 [final-candidate-review.md](docs/final-candidate-review.md)，后续检索修改已另有源码空卷和HTTP回归，见 [retrieval-round.md](docs/retrieval-round.md)。本次定稿仅改文档，不重复完整业务回归。平台SHA锁定、原始日志上传和真实回执仍未完成，见 [remaining-acceptance.md](docs/remaining-acceptance.md)。历史报告的候选标识、失败与当时待验证项保留原样。
+独立源码无缓存部署与完整回归记录见 [final-candidate-review.md](docs/final-candidate-review.md)，检索对照及分类/归档回归见 [retrieval-round.md](docs/retrieval-round.md)。技术限制与专项验证边界见 [remaining-acceptance.md](docs/remaining-acceptance.md)。
