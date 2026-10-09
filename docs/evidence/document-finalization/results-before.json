@@ -1,0 +1,380 @@
+{
+  "scope": "Documentation only; no deployment or business regression executed",
+  "files": [
+    "README.md",
+    "docs/submission.md",
+    "docs/acceptance.md",
+    "docs/remaining-acceptance.md",
+    "docs/delivery.md"
+  ],
+  "commands": [],
+  "links": [
+    {
+      "from": "README.md",
+      "target": "docs/submission.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/user-validation.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/m5-report.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/manual-check.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/delivery.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/delivery.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "model-spec.json",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/remaining-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "compose.yaml",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/batch-organization.md",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/retrieval-round.md",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/retrieval-quality.md",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "run_m1_docker.py",
+      "kind": "code-path",
+      "exists": false
+    },
+    {
+      "from": "README.md",
+      "target": "run_m5_docker.py",
+      "kind": "code-path",
+      "exists": false
+    },
+    {
+      "from": "README.md",
+      "target": "docs/acceptance.md",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/manual-check.md",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/user-validation.md",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "remaining-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "../Dockerfile",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "../compose.yaml",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "../.env.example",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "delivery.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "../model-spec.json",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "m2-api.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "m3-api.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "m4-api.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "m5-api.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "batch-organization.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "ui-optimization.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "category-dialog-fix.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "batch-organization.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "user-validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "manual-check.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "remaining-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "github-publication.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "remaining-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "evidence/retrieval-round/p0/results.json",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "batch-organization.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "evidence/retrieval-round/p0/results.json",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "submission.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "delivery.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "remaining-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "batch-organization.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "category-dialog-fix.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "user-validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "remaining-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/remaining-acceptance.md",
+      "target": "final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "docs/remaining-acceptance.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/remaining-acceptance.md",
+      "target": "github-publication.md",
+      "exists": true
+    },
+    {
+      "from": "docs/remaining-acceptance.md",
+      "target": "user-validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/remaining-acceptance.md",
+      "target": "delivery.md",
+      "exists": true
+    },
+    {
+      "from": "docs/delivery.md",
+      "target": "final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "docs/delivery.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/delivery.md",
+      "target": "submission.md",
+      "exists": true
+    },
+    {
+      "from": "docs/delivery.md",
+      "target": "remaining-acceptance.md",
+      "exists": true
+    }
+  ],
+  "externalLinks": [],
+  "failure": "AssertionError('Missing local link')",
+  "seconds": 0.012
+}

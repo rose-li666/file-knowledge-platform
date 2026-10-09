@@ -1,0 +1,20 @@
+Command: C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\work\m1-venv\Scripts\python.exe scripts/run_acceptance_docker.py --help
+usage: run_acceptance_docker.py [-h] [--image IMAGE] [--port PORT]
+                                [--keep-running] [--frontend-dir FRONTEND_DIR]
+                                [--app-dir APP_DIR] [--zip ZIP]
+                                [--quality | --comparison]
+                                [--http-variant {baseline,window_008}]
+
+options:
+  -h, --help            show this help message and exit
+  --image IMAGE
+  --port PORT
+  --keep-running
+  --frontend-dir FRONTEND_DIR
+  --app-dir APP_DIR
+  --zip ZIP
+  --quality
+  --comparison
+  --http-variant {baseline,window_008}
+
+Exit code: 0

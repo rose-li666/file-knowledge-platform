@@ -1,0 +1,12 @@
+Command: C:\Users\lenovo\Documents\Codex\2026-10-07\48-web-docker-1-2-pdf\work\m1-venv\Scripts\python.exe scripts/run_m6_docker.py --help
+usage: run_m6_docker.py [-h] --zip ZIP [--source-dir SOURCE_DIR]
+                        [--source-sha SOURCE_SHA] [--no-cache]
+
+options:
+  -h, --help            show this help message and exit
+  --zip ZIP
+  --source-dir SOURCE_DIR
+  --source-sha SOURCE_SHA
+  --no-cache
+
+Exit code: 0

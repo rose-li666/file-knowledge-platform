@@ -1,0 +1,4 @@
+Command: docker compose config --images
+knowledge-platform-app
+
+Exit code: 0

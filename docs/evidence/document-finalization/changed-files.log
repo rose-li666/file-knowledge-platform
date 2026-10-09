@@ -1,0 +1,13 @@
+Command: git diff --name-only
+README.md
+docs/acceptance.md
+docs/delivery.md
+docs/remaining-acceptance.md
+docs/submission.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/acceptance.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/delivery.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/remaining-acceptance.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/submission.md', LF will be replaced by CRLF the next time Git touches it
+
+Exit code: 0

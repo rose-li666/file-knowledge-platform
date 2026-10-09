@@ -1,0 +1,561 @@
+{
+  "scope": "Documentation only; no deployment or business regression executed",
+  "files": [
+    "README.md",
+    "docs/submission.md",
+    "docs/acceptance.md",
+    "docs/remaining-acceptance.md",
+    "docs/delivery.md"
+  ],
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\work\\m1-venv\\Scripts\\python.exe",
+        "scripts/run_m6_docker.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "seconds": 0.092
+    },
+    {
+      "command": [
+        "C:\\Users\\lenovo\\Documents\\Codex\\2026-10-07\\48-web-docker-1-2-pdf\\work\\m1-venv\\Scripts\\python.exe",
+        "scripts/run_acceptance_docker.py",
+        "--help"
+      ],
+      "exit_code": 0,
+      "seconds": 0.076
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "config",
+        "--quiet"
+      ],
+      "exit_code": 0,
+      "seconds": 0.316
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "config",
+        "--images"
+      ],
+      "exit_code": 0,
+      "seconds": 0.317
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "up",
+        "--help"
+      ],
+      "exit_code": 0,
+      "seconds": 0.156
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "restart",
+        "--help"
+      ],
+      "exit_code": 0,
+      "seconds": 0.151
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "logs",
+        "--help"
+      ],
+      "exit_code": 0,
+      "seconds": 0.154
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "ps",
+        "--help"
+      ],
+      "exit_code": 0,
+      "seconds": 0.152
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "exit_code": 0,
+      "seconds": 0.045
+    }
+  ],
+  "links": [
+    {
+      "from": "README.md",
+      "target": "docs/submission.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/user-validation.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/m5-report.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/manual-check.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/delivery.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/delivery.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "model-spec.json",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/remaining-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "compose.yaml",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/batch-organization.md",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/retrieval-round.md",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/retrieval-quality.md",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "scripts/run_m1_docker.py",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "scripts/run_m5_docker.py",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/acceptance.md",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/manual-check.md",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "README.md",
+      "target": "docs/user-validation.md",
+      "kind": "code-path",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "remaining-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "../Dockerfile",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "../compose.yaml",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "../.env.example",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "delivery.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "../model-spec.json",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "m2-api.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "m3-api.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "m4-api.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "m5-api.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "batch-organization.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "ui-optimization.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "category-dialog-fix.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "batch-organization.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "user-validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "manual-check.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "remaining-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/submission.md",
+      "target": "github-publication.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "remaining-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "../README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "evidence/retrieval-round/p0/results.json",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "batch-organization.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "evidence/retrieval-round/p0/results.json",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "submission.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "delivery.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "remaining-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "batch-organization.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "category-dialog-fix.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "user-validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "remaining-acceptance.md",
+      "exists": true
+    },
+    {
+      "from": "docs/acceptance.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/remaining-acceptance.md",
+      "target": "final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "docs/remaining-acceptance.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/remaining-acceptance.md",
+      "target": "github-publication.md",
+      "exists": true
+    },
+    {
+      "from": "docs/remaining-acceptance.md",
+      "target": "user-validation.md",
+      "exists": true
+    },
+    {
+      "from": "docs/remaining-acceptance.md",
+      "target": "delivery.md",
+      "exists": true
+    },
+    {
+      "from": "docs/delivery.md",
+      "target": "final-candidate-review.md",
+      "exists": true
+    },
+    {
+      "from": "docs/delivery.md",
+      "target": "retrieval-round.md",
+      "exists": true
+    },
+    {
+      "from": "docs/delivery.md",
+      "target": "submission.md",
+      "exists": true
+    },
+    {
+      "from": "docs/delivery.md",
+      "target": "remaining-acceptance.md",
+      "exists": true
+    }
+  ],
+  "externalLinks": [
+    {
+      "url": "https://github.com/Kludex/python-multipart",
+      "status": 200,
+      "resolvedUrl": "https://github.com/Kludex/python-multipart",
+      "seconds": 1.649
+    },
+    {
+      "url": "https://github.com/encode/starlette",
+      "status": 200,
+      "resolvedUrl": "https://github.com/Kludex/starlette",
+      "seconds": 2.462
+    },
+    {
+      "url": "https://github.com/encode/uvicorn",
+      "status": 200,
+      "resolvedUrl": "https://github.com/Kludex/uvicorn",
+      "seconds": 2.763
+    },
+    {
+      "url": "https://github.com/facebook/react",
+      "status": 200,
+      "resolvedUrl": "https://github.com/react/react",
+      "seconds": 2.841
+    },
+    {
+      "url": "https://github.com/fastapi/fastapi",
+      "status": 200,
+      "resolvedUrl": "https://github.com/fastapi/fastapi",
+      "seconds": 1.749
+    },
+    {
+      "url": "https://github.com/huggingface/sentence-transformers",
+      "status": 200,
+      "resolvedUrl": "https://github.com/huggingface/sentence-transformers",
+      "seconds": 1.652
+    },
+    {
+      "url": "https://github.com/huggingface/transformers",
+      "status": 200,
+      "resolvedUrl": "https://github.com/huggingface/transformers",
+      "seconds": 1.259
+    },
+    {
+      "url": "https://github.com/microsoft/TypeScript",
+      "status": 200,
+      "resolvedUrl": "https://github.com/microsoft/TypeScript",
+      "seconds": 1.256
+    },
+    {
+      "url": "https://github.com/numpy/numpy",
+      "status": 200,
+      "resolvedUrl": "https://github.com/numpy/numpy",
+      "seconds": 1.432
+    },
+    {
+      "url": "https://github.com/pytorch/pytorch",
+      "status": 200,
+      "resolvedUrl": "https://github.com/pytorch/pytorch",
+      "seconds": 1.569
+    },
+    {
+      "url": "https://github.com/rose-li666/file-knowledge-platform",
+      "status": 200,
+      "resolvedUrl": "https://github.com/rose-li666/file-knowledge-platform",
+      "seconds": 1.401
+    },
+    {
+      "url": "https://github.com/sqlalchemy/sqlalchemy",
+      "status": 200,
+      "resolvedUrl": "https://github.com/sqlalchemy/sqlalchemy",
+      "seconds": 1.29
+    },
+    {
+      "url": "https://github.com/vitejs/vite",
+      "status": 200,
+      "resolvedUrl": "https://github.com/vitejs/vite",
+      "seconds": 1.363
+    },
+    {
+      "url": "https://huggingface.co/BAAI/bge-small-zh-v1.5",
+      "status": 200,
+      "resolvedUrl": "https://huggingface.co/BAAI/bge-small-zh-v1.5",
+      "seconds": 1.297
+    },
+    {
+      "url": "https://sqlite.org/",
+      "status": 200,
+      "resolvedUrl": "https://sqlite.org/",
+      "seconds": 1.831
+    }
+  ],
+  "failure": "AssertionError()",
+  "unchangedHistoricalDocumentsAndEvidence": 312,
+  "unexpectedHistoricalChanges": [],
+  "seconds": 18.236
+}

@@ -65,4 +65,4 @@ Vite旧依赖在冷构建审计中实际发现高危项，升级精确7.3.7后np
 
 精确向量遍历适用于小资料集，未压测大型库；阈值和窗口不保证未知问题精度/召回，可展开更多。PDF正文/OCR不支持；预览阅读器兼容性仍需普通Chrome确认，下载作为替代。重复上传是独立ID，无文件去重/版本；索引不重复片段是另一件事。无登录/权限、问答或多服务。
 
-用户已确认内置浏览器TXT/MD上传和设备来源、早期浏览器上传/详情/下载，以及普通Chrome批量分类的入口、多选移动、数量、刷新和两种搜索过滤。随后用户汇总确认“我已验证完成”，未补造专项动作/尺寸/预览明细。候选Git源码无缓存空卷部署、完整回归和最终review已完成，见final-candidate-review.md；后续检索调整与受影响回归见retrieval-round.md。真实公开仓库已按用户指定创建为[rose-li666/file-knowledge-platform](https://github.com/rose-li666/file-knowledge-platform)，交付导航见submission.md；剩余最终版本/平台原始日志条件见remaining-acceptance.md。当前提交仅候选，不锁定最终SHA或提前填材料回执。
+用户已确认内置浏览器TXT/MD上传和设备来源、早期浏览器上传/详情/下载，以及普通Chrome批量分类的入口、多选移动、数量、刷新和两种搜索过滤。随后用户汇总确认“我已验证完成”，未补造专项动作/尺寸/预览明细。代码与交付文档已完成并发布到[rose-li666/file-knowledge-platform](https://github.com/rose-li666/file-knowledge-platform)。独立Git源码无缓存空卷部署、完整回归和review的历史证据见[final-candidate-review.md](final-candidate-review.md)，后续检索调整与受影响回归见[retrieval-round.md](retrieval-round.md)，交付导航见[submission.md](submission.md)。本次最终文档定稿未修改运行代码，未重复业务回归。平台SHA锁定、原始日志上传及真实材料回执尚未完成，见[remaining-acceptance.md](remaining-acceptance.md)；历史版本、失败和待验证记录保持原样。
